@@ -5,7 +5,31 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx,vue}",
   ],
   theme: {
-    extend: {},
+    extend: {
+		screens: {
+			'tablet': '640px',
+			// => @media (min-width: 640px) { ... }
+
+			'laptop': '1024px',
+			// => @media (min-width: 1024px) { ... }
+
+			'desktop': '1280px',
+			// => @media (min-width: 1280px) { ... }
+		},
+
+		colors: {
+			'deafult': '#FFFFFF',
+			'button': '#8DD3BB',
+			'black' : '#000',
+			'green' : '#112211'
+		},
+		fontFamily: {
+			'serrat': ['Montserrat','sans'],
+		},
+	},
+
+		
+			
   },
   plugins: [],
 }
