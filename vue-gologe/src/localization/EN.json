@@ -1,0 +1,13 @@
+{
+	"Header": {
+		"login": "Login",
+		"signUp": "Sign Up"
+	},
+	"Landing": {
+		"Preview": {
+			"headerTop": "Helping Others",
+			"header": "Live & Travel",
+			"headerBottom": "Special offers to suit your plan"
+		}
+	}
+}
