@@ -16,7 +16,7 @@
 				alt="flight"
 				v-else
 			>
-			Find Flight
+			{{ $t("Navigation.flight") }}
 		</router-link>
 
 		<router-link   
@@ -33,7 +33,7 @@
 				alt="hotel"
 				v-else
 			>
-			Find Stays
+			{{ $t("Navigation.hotel") }}
 		</router-link>
 	</div>
 </template>

@@ -6,7 +6,7 @@
 			class="flex items-center px-[7px] py-[10px]"
 		>
 			<img
-				:src="getUserImageUrl(locale)"
+				:src="getImageUrl(locale)"
 				alt="Flag uk" 
 				class="w-[25px] rounded-[4px] transition duration-200 hover:cursor-pointer hover:scale-105"
 				@click="toggleVisible = !toggleVisible"
@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { getUserImageUrl } from '../../helpers/Helpers.ts'
+import { getImageUrl } from '../../helpers/Helpers.ts'
 import { useI18n } from 'vue-i18n'
 
 const { locale } = useI18n()

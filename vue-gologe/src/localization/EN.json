@@ -9,5 +9,9 @@
 			"header": "Live & Travel",
 			"headerBottom": "Special offers to suit your plan"
 		}
+	},
+	"Navigation": {
+		"flight": "Find Flight",
+		"hotel": "Find Stays"
 	}
 }
