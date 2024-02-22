@@ -1,9 +1,11 @@
 <template>
-	<div class="h-[90px] flex gap-[30px] items-center">
+	<div 
+		class="h-[90px] flex gap-[30px] items-center"
+	>
 		<router-link  
 			to="/flight"
 			class="h-[20px] flex gap-[4px] font-serrat font-bold text-sm whitespace-nowrap"
-			>
+		>
 			<img 
 				src="../../assets/images/flight.svg" 
 				alt="flight"
@@ -16,10 +18,11 @@
 			>
 			Find Flight
 		</router-link>
+
 		<router-link   
 			to="/hotel"
 			class="h-[20px] flex gap-[4px] font-serrat font-bold text-sm whitespace-nowrap"
-			>
+		>
 			<img 
 				src="../../assets/images/hotel.svg" 
 				alt="hotel"
@@ -41,7 +44,3 @@ import { useRoute } from 'vue-router';
 const route = useRoute();
 
 </script>
-
-<style scoped>
-
-</style>

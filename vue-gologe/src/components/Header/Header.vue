@@ -20,7 +20,9 @@
 			v-else
 		>
 		
-		<div class="  flex items-center gap-[10px]">
+		<div 
+			class="  flex items-center gap-[10px]"
+		>
 			<button 
 				:class="route.name !== 'Landing' ? 'text-green' : 'text-white'"
 				class="font-serrat font-bold text-sm
@@ -36,17 +38,20 @@
 			>
 			{{$t("Header.signUp")}}
 			</button>
+
+			<Localization />
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
 import Navigation from '../UI/Navigation.vue'
+import Localization from './Localization.vue'
+
 import { useRoute } from 'vue-router';
 import { ref } from 'vue'
 
 const route = useRoute();
-
 let text = ref<string>();
 
 if ( route.name !== 'Landing' ){
@@ -55,5 +60,8 @@ if ( route.name !== 'Landing' ){
 else {
 	text.value = 'text-white';
 };
+
+
+
 
 </script>

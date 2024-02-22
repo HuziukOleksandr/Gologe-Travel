@@ -15,7 +15,7 @@
 			<h2
 				class="text-5xl font-serrat font-semibold text-white"
 			>
-				{{ $t('Landing.Preview.headerTop')}}
+			{{ $t('Landing.Preview.headerTop')}}
 			</h2>
 			<h1
 				class="text-8xl font-serrat font-semibold text-white uppercase"
@@ -25,7 +25,7 @@
 			<h3
 				class="text-2xl font-serrat font-bold text-white"
 			>
-				{{ $t('Landing.Preview.headerBottom')}}
+			{{ $t('Landing.Preview.headerBottom')}}
 			</h3>
 		</div>
 	</div>
