@@ -28,8 +28,55 @@
 		</div>
 
 		<div 
-			class="w-[100%] h-[56px]"
+			class="w-[100%] h-[56px] flex justify-between"
 		>
+			<CustomInput
+				class="max-w-[325px] w-[100%] h-[56px] font-serrat text-green font-medium"
+			>
+				<template v-slot:input>
+					{{ $t("Landing.QuickSearch.fromTo")}}
+				</template>
+
+				<template v-slot:image>
+					<img 
+						src="../../assets/images/arrowswap.svg" 
+						alt="arrowswap"
+						class="h-[24px]"
+					>
+				</template>
+			</CustomInput>
+
+			<CustomInput
+				class="max-w-[140px] w-[100%] h-[56px] font-serrat text-green font-medium"
+			>
+				<template v-slot:input>
+					{{ $t("Landing.QuickSearch.trip")}}
+				</template>
+
+				<template v-slot:image>
+					<img 
+						src="../../assets/images/chevron-down.svg" 
+						alt="arrowswap"
+						class="h-[24px]"
+					>
+				</template>
+			</CustomInput>
+
+			<CustomInput
+				class="max-w-[325px] w-[100%] h-[56px] font-serrat text-green font-medium"
+			>
+				<template v-slot:input>
+					{{ $t("Landing.QuickSearch.departReturn")}}
+				</template>
+			</CustomInput>
+
+			<CustomInput
+				class="max-w-[325px] w-[100%] h-[56px] font-serrat text-green font-medium"
+			>
+				<template v-slot:input>
+					{{ $t("Landing.QuickSearch.pasengerClass")}}
+				</template>
+			</CustomInput>
 
 		</div>
 

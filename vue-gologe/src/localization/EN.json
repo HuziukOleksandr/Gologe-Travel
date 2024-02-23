@@ -18,7 +18,11 @@
 			"stays": "Stays",
 			"buttonFlight": "Show Flight",
 			"buttonStays": "Show Stays",
-			"addPromoCode": "Add Promo Code"
+			"addPromoCode": "Add Promo Code",
+			"fromTo": "From - To",
+			"trip": "Trip",
+			"departReturn": "Depart - Return",
+			"pasengerClass": "Passenger - Class"
 		}
 	}
 	

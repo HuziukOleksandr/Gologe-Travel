@@ -12,9 +12,13 @@ const CustomButtonWithImage = defineAsyncComponent(
 	() => import("./CustomButtonWithImage.vue")
 )
 
+const CustomInput = defineAsyncComponent(
+	() => import("./CustomInput.vue")
+)
 
 export default {
 	CustomNavigation,
 	CustomLocalization,
-	CustomButtonWithImage
+	CustomButtonWithImage,
+	CustomInput
 }

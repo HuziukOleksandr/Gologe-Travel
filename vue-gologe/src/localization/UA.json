@@ -18,7 +18,11 @@
 			"stays": "Житло",
 			"buttonFlight": "Показати Рейс",
 			"buttonStays": "Покачати Житло",
-			"addPromoCode": "Додати Промо Код"
+			"addPromoCode": "Додати Промо Код",
+			"fromTo": "Звідки - Куди",
+			"trip": "Поїздка",
+			"departReturn": "Від'їзд - Повернення",
+			"pasengerClass": "Пасажир - Клас"
 		}
 	}
 

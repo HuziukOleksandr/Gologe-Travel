@@ -22,7 +22,7 @@
 import Preview from '../components/Landing/Preview.vue'
 import Header from '../components/Header/Header.vue'
 import PreviewText from '../components/Landing/PreviewText.vue'
-import  QuickSearch from '../components/Landing/ QuickSearch.vue'
+import QuickSearch from '../components/Landing/QuickSearch.vue'
 
 </script>
 

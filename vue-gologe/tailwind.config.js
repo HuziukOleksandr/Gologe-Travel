@@ -22,7 +22,8 @@ export default {
 			'button': '#8DD3BB',
 			'black' : '#000',
 			'green' : '#112211',
-			"bg-second": "#D7E2EE"
+			"bg-second": "#D7E2EE",
+			"grey": "#79747E"
 		},
 		fontFamily: {
 			'serrat': ['Montserrat','sans'],
