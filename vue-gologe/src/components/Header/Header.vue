@@ -2,7 +2,7 @@
 	<div 
 		class="max-w-[1440px] w-[100%] h-[90px] flex justify-between items-center px-[104px] m-auto"
 	>
-		<Navigation 
+		<CustomNavigation 
 			:class="route.name !== 'Landing' ? 'text-green' : 'text-white'" 
 		/>
 
@@ -45,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import Navigation from '../UI/Navigation.vue'
+
 import Localization from './Localization.vue'
 
 import { useRoute } from 'vue-router';

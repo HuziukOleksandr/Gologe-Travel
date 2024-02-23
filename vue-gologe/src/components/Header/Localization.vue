@@ -13,7 +13,7 @@
 			>
 		</div>
 		
-		<MyLocalization  
+		<CustomLocalization  
 			:dialogVisible="toggleVisible"
 			@close-window="close"
 		/>

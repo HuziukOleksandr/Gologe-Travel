@@ -3,15 +3,23 @@
 		"login": "Вхід",
 		"signUp": "Реєстрація"
 	},
+	"Navigation": {
+		"flight": "Знайти Рейс",
+		"hotel": "Знайти Житло"
+	},
 	"Landing": {
 		"Preview": {
 			"headerTop": "Допомагати іншим",
 			"header": "Жити & Подорожувати",
 			"headerBottom": "Спеціальні пропозиції відповідно до вашого плану"
+		},
+		"QuickSearch": {
+			"flights": "Рейси",
+			"stays": "Житло",
+			"buttonFlight": "Показати Рейс",
+			"buttonStays": "Покачати Житло",
+			"addPromoCode": "Додати Промо Код"
 		}
-	},
-	"Navigation": {
-		"flight": "Знайти Рейс",
-		"hotel": "Знайти Житло"
 	}
+
 }

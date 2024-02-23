@@ -3,15 +3,23 @@
 		"login": "Login",
 		"signUp": "Sign Up"
 	},
+	"Navigation": {
+		"flight": "Find Flight",
+		"hotel": "Find Stays"
+	},
 	"Landing": {
 		"Preview": {
 			"headerTop": "Helping Others",
 			"header": "Live & Travel",
 			"headerBottom": "Special offers to suit your plan"
+		},
+		"QuickSearch": {
+			"flights": "Flights",
+			"stays": "Stays",
+			"buttonFlight": "Show Flight",
+			"buttonStays": "Show Stays",
+			"addPromoCode": "Add Promo Code"
 		}
-	},
-	"Navigation": {
-		"flight": "Find Flight",
-		"hotel": "Find Stays"
 	}
+	
 }

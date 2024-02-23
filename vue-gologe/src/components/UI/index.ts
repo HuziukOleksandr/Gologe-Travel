@@ -1,15 +1,20 @@
 import { defineAsyncComponent } from 'vue'
 
-const Navigation = defineAsyncComponent(
-	() => import("./Navigation.vue")
+const CustomNavigation = defineAsyncComponent(
+	() => import("./CustomNavigation.vue")
 )
 
-const MyLocalization = defineAsyncComponent(
-	() => import("./MyLocalization.vue")
+const CustomLocalization = defineAsyncComponent(
+	() => import("./CustomLocalization.vue")
+)
+
+const CustomButtonWithImage = defineAsyncComponent(
+	() => import("./CustomButtonWithImage.vue")
 )
 
 
 export default {
-	Navigation,
-	MyLocalization,
+	CustomNavigation,
+	CustomLocalization,
+	CustomButtonWithImage
 }

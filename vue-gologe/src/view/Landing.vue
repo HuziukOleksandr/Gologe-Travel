@@ -12,6 +12,9 @@
 		<PreviewText 
 			class="relative"
 		/>
+    <QuickSearch
+      class="relative mx-auto top-[200px]"
+    />
 	</div>
 </template>
 
@@ -19,6 +22,7 @@
 import Preview from '../components/Landing/Preview.vue'
 import Header from '../components/Header/Header.vue'
 import PreviewText from '../components/Landing/PreviewText.vue'
+import  QuickSearch from '../components/Landing/ QuickSearch.vue'
 
 </script>
 
