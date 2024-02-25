@@ -23,6 +23,18 @@
 			"trip": "Trip",
 			"departReturn": "Depart - Return",
 			"pasengerClass": "Passenger - Class"
+		},
+		"Trips": {
+			"title": "Plan your perfect trip",
+			"sub-title": "Search Flights & Places Hire to our most popular destinations",
+			"button": "See more places",
+			"flights": "Flights",
+			"hotels": "Hotels",
+			"resorts": "Resorts",
+			"textFlight": "Search Flights & Places Hire to our most popular destinations",
+			"textHotel": "Search hotels & Places Hire to our most popular destinations",
+			"buttonFlight": "Show Filghts",
+			"buttonHotel": "Show Hotels"
 		}
 	}
 	

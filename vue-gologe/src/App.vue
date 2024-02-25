@@ -1,5 +1,5 @@
 <template>
-	<div class="w-[100%] flex flex-col ">
+	<div class="w-[100%] flex flex-col bg-background">
 		<router-view name="Header" v-if="route.name !== 'Landing'"/>
 		<router-view />
 		<router-view name="Footer" v-if="route.name !== 'Landing'"/>

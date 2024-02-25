@@ -23,7 +23,8 @@ export default {
 			'black' : '#000',
 			'green' : '#112211',
 			"bg-second": "#D7E2EE",
-			"grey": "#79747E"
+			"grey": "#79747E",
+			"background": "#FAFBFC"
 		},
 		fontFamily: {
 			'serrat': ['Montserrat','sans'],

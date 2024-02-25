@@ -1,7 +1,7 @@
 <template>
 	<div
 		class="max-w-[1230px] w-[100%] h-[280px] bg-white rounded-[15px] p-[32px]
-		flex flex-col justify-between"
+		flex flex-col justify-between shadow-2xl"
 	>
 		<div
 			class="flex gap-[65px]"
@@ -109,7 +109,3 @@
 <script setup lang="ts">
 
 </script>
-
-<style scoped>
-
-</style>
