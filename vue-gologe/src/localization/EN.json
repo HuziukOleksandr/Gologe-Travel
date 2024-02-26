@@ -35,7 +35,50 @@
 			"textHotel": "Search hotels & Places Hire to our most popular destinations",
 			"buttonFlight": "Show Filghts",
 			"buttonHotel": "Show Hotels"
+		},
+		"Review": {
+			"title": "Reviews",
+			"subTitle": "What people says about Golobe facilities",
+			"button": "See All",
+			"more": "View more"
+		}
+	},
+	"Footer": {
+		"title": "Subscribe Newsletter",
+		"subTitle": "The Travel",
+		"text": "Get inspired! Receive travel discounts, tips and behind the scenes stories.",
+		"button": "Subscribe",
+		"placeholder": "Your email address",
+		"ourDestination": "Our Destinations",
+		"Destination": {
+			"Canada": "Canada",
+			"Alaska": "Alaska",
+			"France": "France",
+			"Iceland": "Iceland"
+		},
+		"ourActivities": "Our Activities",
+		"Activities": {
+			"NorthernLights": "Northern Lights",
+			"CruisingSailing": "Cruising & Sailing",
+			"MultiActivities": "Multi-activities",
+			"Kayaing": "Kayaing"
+		},
+		"travelBlogs": "Travel Blogs",
+		"Blogs": {
+			"Bali": "Bali Travel Guide",
+			"SriLanks": "Sri Lanks Travel Guide",
+			"Peru": "Peru Travel Guide",
+			"Dubai": "Dubai Travel Guide"
+		},
+		"aboutUs": "About Us",
+		"AboutUs": {
+			"OurStory": "Our Story",
+			"Workwithus": "Work with us"
+		},
+		"ContactUs": "Contact Us",
+		"Contact": {
+			"OurStory": "Our Story",
+			"Workwithus": "Work with us"
 		}
 	}
-	
 }

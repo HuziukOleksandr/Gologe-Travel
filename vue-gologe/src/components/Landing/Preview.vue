@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="background max-w-[1380px] w-[100%] h-[600px] flex items-center"	
+		class="background max-w-[1380px] w-[100%] min-h-[600px] flex items-center"	
 	>
 		<div 
 		class="w-[100%] flex flex-col items-center gap-[24px] "
