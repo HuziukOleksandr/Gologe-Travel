@@ -4,7 +4,7 @@
 	>
 		<router-link  
 			to="/flight"
-			class="h-[20px] flex gap-[4px] font-serrat font-bold text-sm whitespace-nowrap"
+			class="custom-text-sm h-[20px] flex gap-[4px]  whitespace-nowrap"
 		>
 			<img 
 				src="../../assets/images/flight.svg" 
@@ -16,12 +16,12 @@
 				alt="flight"
 				v-else
 			>
-			{{ $t("Navigation.flight") }}
+				{{ $t("Navigation.flight") }}
 		</router-link>
 
 		<router-link   
 			to="/hotel"
-			class="h-[20px] flex gap-[4px] font-serrat font-bold text-sm whitespace-nowrap"
+			class="custom-text-sm h-[20px] flex gap-[4px] whitespace-nowrap"
 		>
 			<img 
 				src="../../assets/images/hotel.svg" 
@@ -33,7 +33,7 @@
 				alt="hotel"
 				v-else
 			>
-			{{ $t("Navigation.hotel") }}
+				{{ $t("Navigation.hotel") }}
 		</router-link>
 	</div>
 </template>

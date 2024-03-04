@@ -52,7 +52,7 @@
 				<h2
 					class="font-serrat font-regular text-base text-grey text-center"
 				>
-				{{ $t("Landing.Trips.textFlight") }}
+					{{ $t("Landing.Trips.textFlight") }}
 				</h2>
 				<CustomButtonWithImage
 					class="h-[48px] p-[16px] font-medium bg-button"
@@ -61,7 +61,7 @@
 						src="./../../assets/images/show-flights.svg" 
 						alt="hotel"
 					>
-					{{ $t("Landing.Trips.buttonFlight")}}
+						{{ $t("Landing.Trips.buttonFlight")}}
 				</CustomButtonWithImage>
 			</div>
 
@@ -78,7 +78,7 @@
 				<h2
 					class="font-serrat font-regular text-base text-grey text-center"
 				>
-				{{ $t("Landing.Trips.textHotel") }}
+					{{ $t("Landing.Trips.textHotel") }}
 				</h2>
 				<CustomButtonWithImage
 					class="h-[48px] p-[16px] font-medium bg-button"
@@ -87,14 +87,10 @@
 						src="./../../assets/images/show-flights.svg" 
 						alt="hotel"
 					>
-					{{ $t("Landing.Trips.buttonHotel")}}
+						{{ $t("Landing.Trips.buttonHotel")}}
 				</CustomButtonWithImage>
 			</div>
-
 		</div>
-	<div>
-
-	</div>
 	</div>
 </template>
 
@@ -130,8 +126,6 @@ const cards = ref([
 	background: url('../../assets/images/Hotel.png') no-repeat;
 	background-size: cover;
 	background-position: center;
-	
-
 }
 
 </style>

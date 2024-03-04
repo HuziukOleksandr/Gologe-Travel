@@ -3,24 +3,24 @@
 		class="flex flex-col gap-[15px]"
 	>
 		<h1
-			class="font-serrat font-bold text-base text-green"
+			class="custom-text-base text-green"
 		>
-		{{ $t("Footer.aboutUs") }}
+			{{ $t("Footer.aboutUs") }}
 		</h1>
 		<div
 			class="flex flex-col gap-[10px]"
 		>
 			<router-link 
 				to="#"
-				class="font-serrat font-bold text-sm h-[17px] text-grey"
+				class="custom-text-sm h-[17px] text-grey"
 			>
-			{{ $t("Footer.AboutUs.OurStory") }}
+				{{ $t("Footer.AboutUs.OurStory") }}
 			</router-link>
 			<router-link 
 				to="#"
-				class="font-serrat font-bold text-sm h-[17px] text-grey"
+				class="custom-text-sm h-[17px] text-grey"
 			>
-			{{ $t("Footer.AboutUs.Workwithus") }}
+				{{ $t("Footer.AboutUs.Workwithus") }}
 			</router-link>
 		</div>
 	</div>

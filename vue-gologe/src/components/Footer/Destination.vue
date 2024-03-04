@@ -3,7 +3,7 @@
 		class="flex flex-col gap-[15px]"
 	>
 		<h1
-			class="font-serrat font-bold text-base text-green"
+			class="custom-text-base text-green"
 		>
 		{{ $t("Footer.ourDestination") }}
 		</h1>
@@ -12,27 +12,27 @@
 		>
 			<router-link 
 				to="#"
-				class="font-serrat font-bold text-sm h-[17px] text-grey"
+				class="custom-text-sm h-[17px] text-grey"
 			>
-			{{ $t("Footer.Destination.Canada") }}
+				{{ $t("Footer.Destination.Canada") }}
 			</router-link>
 			<router-link 
 				to="#"
-				class="font-serrat font-bold text-sm h-[17px] text-grey"
+				class="custom-text-sm h-[17px] text-grey"
 			>
-			{{ $t("Footer.Destination.Alaska") }}
+				{{ $t("Footer.Destination.Alaska") }}
 			</router-link>
 			<router-link 
 				to="#"
-				class="font-serrat font-bold text-sm h-[17px] text-grey"
+				class="custom-text-sm h-[17px] text-grey"
 			>
-			{{ $t("Footer.Destination.France") }}
+				{{ $t("Footer.Destination.France") }}
 			</router-link>
 			<router-link 
 				to="#"
-				class="font-serrat font-bold text-sm h-[17px] text-grey"
+				class="custom-text-sm h-[17px] text-grey"
 			>
-			{{ $t("Footer.Destination.Iceland") }}
+				{{ $t("Footer.Destination.Iceland") }}
 			</router-link>
 		</div>
 	</div>
@@ -41,7 +41,3 @@
 <script setup lang="ts">
 
 </script>
-
-<style scoped>
-
-</style>

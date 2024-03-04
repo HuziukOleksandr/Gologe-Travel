@@ -1,6 +1,7 @@
 <template>
 	<div
-		class="w-[100%] h-[420px] m-auto bg-button mt-[150px] flex flex-col justify-between pb-[64px]"
+		class="w-[100%] h-[420px] m-auto mt-[150px] pb-[64px]
+			bg-button  flex flex-col justify-between "
 	>
 		<Subscribe
 			class="mt-[-150px]"
@@ -15,14 +16,27 @@
 				<img 
 					src="../../assets/images/logo-footer.svg" 
 					alt="logo"
+					class="logo"
 				>
 				<div
 					class="flex justify-between"
 				>
-					<img src="../../assets/images/facebook.svg" alt="facebook">
-					<img src="../../assets/images/twitter.svg" alt="twitter">
-					<img src="../../assets/images/youtube.svg" alt="youtube">
-					<img src="../../assets/images/instagram.svg" alt="instagram">
+					<img 
+						src="../../assets/images/facebook.svg" 
+						alt="facebook"
+					>
+					<img 
+						src="../../assets/images/twitter.svg" 
+						alt="twitter"
+					>
+					<img 
+						src="../../assets/images/youtube.svg" 
+						alt="youtube"
+					>
+					<img 
+						src="../../assets/images/instagram.svg" 
+						alt="instagram"
+					>
 				</div>
 			</div>
 			<div
@@ -46,5 +60,13 @@ import AboutUs from './AboutUs.vue'
 </script>
 
 <style scoped>
+
+.logo:hover { 
+
+	transition-duration: 500ms;
+	cursor: pointer;
+	transform: scale(1.02);
+
+}
 
 </style>

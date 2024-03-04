@@ -4,7 +4,7 @@
 		shadow-2xl p-[24px] flex flex-col justify-between"
 	>
 		<h1
-			class="font-serrat font-bold text-2xl text-green"
+			class="custom-text-2xl text-green"
 		>
 		“A real sense of community, nurtured”
 		</h1>
@@ -12,7 +12,7 @@
 			class="flex flex-col"
 		>
 			<p
-				class="h-[22px] font-serrat fonr-regular text-sm text-grey
+				class="h-[22px] font-serrat font-regular text-sm text-grey
 				truncate ..."
 			>
 			Really appreciate the help and support from the staff during
@@ -21,7 +21,7 @@
 			when needed.
 			</p>
 			<button
-				class="font-serrat font-bold text-base text-green flex self-end"
+				class="custom-text-base text-green flex self-end"
 			>
 				{{ $t("Landing.Review.more")}}
 			</button>
@@ -83,7 +83,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-const rates = ref<number>(1)
+
+const rates = ref<number>(3)
 
 </script>
 

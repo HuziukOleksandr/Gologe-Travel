@@ -8,6 +8,7 @@ import App from './App.vue'
 
 import '././assets/root/style.css'
 import '././assets/root/fonts.css'
+import '././assets/root/reset.css'
 
 const app = createApp(App);
 

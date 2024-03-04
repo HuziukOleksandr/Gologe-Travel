@@ -1,7 +1,7 @@
 <template>
 	<TransitionGroup>
 		<div 
-			class="flex flex-col p-[7px] gap-[10px] rounded-[5px] w-[39px] absolute " 
+			class="w-[39px] p-[7px] flex flex-col  gap-[10px] rounded-[5px] absolute " 
 			v-if="props.dialogVisible"
 		>
 			<img 
@@ -52,7 +52,7 @@ const change = (item: string) => {
 <style scoped>
 
 .v-enter-active, .v-leave-active {
-  transition: opacity 0.7s ease;
+  transition: opacity 0.5s ease;
 }
 
 .v-enter-from, .v-leave-to {

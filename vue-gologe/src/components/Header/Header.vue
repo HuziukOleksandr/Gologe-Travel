@@ -1,44 +1,28 @@
 <template>
 	<div 
-		class="max-w-[1440px] w-[100%] h-[90px] flex justify-between items-center px-[104px] m-auto"
+		class="m-auto max-w-[1440px] w-[100%] h-[90px] px-[104px] 
+			flex justify-between items-center"
 	>
 		<CustomNavigation 
 			:class="route.name !== 'Landing' ? 'text-green' : 'text-white'" 
 		/>
-
-		<img 
-			src="../../assets/images/logo.svg" 
-			alt="Logo"
-			class="h-[36px]"
-			v-if="route.name == 'Landing'"
-		>
-
-		<img 
-			src="../../assets/images/logo-black.svg" 
-			alt="Logo"
-			class="h-[36px]"
-			v-else
-		>
+		<CustomLogo/>
 		
 		<div 
 			class="  flex items-center gap-[10px]"
 		>
-			<button 
+			<CustomButton 
 				:class="route.name !== 'Landing' ? 'text-green' : 'text-white'"
-				class="font-serrat font-bold text-sm
-				h-[45px] px-[24px]"
 			>
-			{{$t("Header.login")}}
-			</button>
+				{{$t("Header.login")}}
+			</CustomButton>
 
-			<button
-				:class="route.name !== 'Landing' ? 'text-white ' : 'text-green bg-white'"
-				class="font-serrat font-bold text-sm
-				h-[45px] px-[24px] rounded-[8px] bg-black"
+			<CustomButton
+				:class="route.name !== 'Landing' ? 'text-white bg-green' : 'text-green bg-white'"
 			>
-			{{$t("Header.signUp")}}
-			</button>
-
+				{{$t("Header.signUp")}}
+			</CustomButton>
+			
 			<Localization />
 		</div>
 	</div>
@@ -60,8 +44,15 @@ if ( route.name !== 'Landing' ){
 else {
 	text.value = 'text-white';
 };
-
-
-
-
 </script>
+
+<style scoped>
+
+.logo:hover { 
+
+    transition-duration: 500ms;
+    cursor: pointer;
+	transform: scale(1.02);
+}
+
+</style>

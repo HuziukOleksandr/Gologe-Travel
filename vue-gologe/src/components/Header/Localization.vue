@@ -22,8 +22,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { getImageUrlSvg } from '../../helpers/Helpers.ts'
 import { useI18n } from 'vue-i18n'
+import { getImageUrlSvg } from '../../helpers/Helpers.ts'
 
 const { locale } = useI18n()
 const toggleVisible = ref<boolean>(false) 
@@ -31,5 +31,4 @@ const toggleVisible = ref<boolean>(false)
 const close = () => {
 	toggleVisible.value = !toggleVisible
 }
-
 </script>

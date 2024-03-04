@@ -13,18 +13,26 @@
 			class="flex flex-col gap-[5px]"
 		>
 			<h2
-				class="font-serrat font-bold text-green text-base"
+				class="custom-text-base text-green "
 			>
-			{{ card?.city}}, {{ card?.country }}
+				{{ card?.city}}, {{ card?.country }}
 			</h2>
 			<div
 				class="font-serrat font-medium text-green text-sm flex items-center gap-[10px]"
 			>
-			{{ $t("Landing.Trips.flights") }}
-			<div class="w-[3px] h-[3px] bg-green rounded-[50%]" ></div>
-			{{ $t("Landing.Trips.hotels") }}
-			<div class="w-[3px] h-[3px] bg-green rounded-[50%]" ></div>
-			{{ $t("Landing.Trips.resorts") }}
+				{{ $t("Landing.Trips.flights") }}
+
+				<div
+					class="w-[3px] h-[3px] bg-green rounded-[50%]" 
+				></div>
+
+				{{ $t("Landing.Trips.hotels") }}
+
+				<div 
+					class="w-[3px] h-[3px] bg-green rounded-[50%]" 
+				></div>
+
+				{{ $t("Landing.Trips.resorts") }}
 			</div>
 		</div>
 	</div>

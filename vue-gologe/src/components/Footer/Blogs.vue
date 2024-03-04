@@ -3,7 +3,7 @@
 		class="flex flex-col gap-[15px]"
 	>
 		<h1
-			class="font-serrat font-bold text-base text-green"
+			class="custom-text-base text-green"
 		>
 		{{ $t("Footer.travelBlogs") }}
 		</h1>
@@ -12,27 +12,27 @@
 		>
 			<router-link 
 				to="#"
-				class="font-serrat font-bold text-sm h-[17px] text-grey"
+				class="custom-text-sm h-[17px] text-grey"
 			>
-			{{ $t("Footer.Blogs.Bali") }}
+				{{ $t("Footer.Blogs.Bali") }}
 			</router-link>
 			<router-link 
 				to="#"
-				class="font-serrat font-bold text-sm h-[17px] text-grey"
+				class="custom-text-sm h-[17px] text-grey"
 			>
-			{{ $t("Footer.Blogs.SriLanks") }}
+				{{ $t("Footer.Blogs.SriLanks") }}
 			</router-link>
 			<router-link 
 				to="#"
-				class="font-serrat font-bold text-sm h-[17px] text-grey"
+				class="custom-text-sm h-[17px] text-grey"
 			>
-			{{ $t("Footer.Blogs.Peru") }}
+				{{ $t("Footer.Blogs.Peru") }}
 			</router-link>
 			<router-link 
 				to="#"
-				class="font-serrat font-bold text-sm h-[17px] text-grey"
+				class="custom-text-sm h-[17px] text-grey"
 			>
-			{{ $t("Footer.Blogs.Dubai") }}
+				{{ $t("Footer.Blogs.Dubai") }}
 			</router-link>
 		</div>
 	</div>

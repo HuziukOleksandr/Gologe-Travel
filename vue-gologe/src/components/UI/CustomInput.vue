@@ -3,7 +3,7 @@
 		class="flex gap-[10px] items-center rounded-[4px] px-[15px] 
 		border-2 border-grey border-solid relative"
 	>
-		<h1 
+		<h1 	
 			class="absolute top-[-12px] z-55 px-[10px]
 			bg-white font-serrat text-green"
 		>

@@ -8,23 +8,23 @@
 			class="max-w-[700px] w-[100%] py-[24px] flex flex-col justify-between"
 		>
 			<h1
-				class="font-serrat font-bold text-4xl text-green"
+				class="custom-text-4xl text-green"
 			>
-			{{ $t("Footer.title")}}
+				{{ $t("Footer.title")}}
 			</h1>
 
 			<div 
 				class="flex flex-col gap-[10px]"
 			>
 				<h2
-					class="font-serrat font-bold text-xl text-green"
+					class="custom-text-xl text-green"
 				>
-				{{ $t("Footer.subTitle")}}
+					{{ $t("Footer.subTitle")}}
 				</h2>
 				<p
-					class="font-serrat font-bold text-base text-green"
+					class="custom-text-base text-green"
 				>
-				{{ $t("Footer.text")}}
+					{{ $t("Footer.text")}}
 				</p>
 			</div>
 
@@ -34,15 +34,15 @@
 				<input 
 					type="email"
 					:placeholder="$t('Footer.placeholder')"
-					class="max-w-[460px] w-[100%] h-[56px] bg-white text-green 
-						px-[16px] font-serrat font-bold rounded-[4px]
+					class="custom-text-base max-w-[460px] w-[100%] h-[56px] px-[16px] rounded-[8px]
+						bg-white text-green 
 							placeholder:text-base placeholder:text-green"
 				>
-				<button
-					class="px-[16px] h-[56px] font-serrat font-bold text-white bg-green rounded-[4px] uppercase"
+				<CustomButton
+					class="h-[56px] text-white bg-green uppercase"
 				>
-				{{ $t("Footer.button") }}
-				</button>
+					{{ $t("Footer.button") }}
+				</CustomButton>
 			</div>
 		</div>
 
@@ -59,7 +59,3 @@
 <script setup lang="ts">
 
 </script>
-
-<style scoped>
-
-</style>

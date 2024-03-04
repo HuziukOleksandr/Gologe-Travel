@@ -16,9 +16,20 @@ const CustomInput = defineAsyncComponent(
 	() => import("./CustomInput.vue")
 )
 
+const CustomLogo = defineAsyncComponent(
+	() => import("./CustomLogo.vue")
+)
+
+const CustomButton = defineAsyncComponent(
+	() => import("./CustomButton.vue")
+)
+
+
 export default {
 	CustomNavigation,
 	CustomLocalization,
 	CustomButtonWithImage,
-	CustomInput
+	CustomInput,
+	CustomLogo,
+	CustomButton
 }

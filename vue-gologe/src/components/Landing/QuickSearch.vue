@@ -90,7 +90,7 @@
 					src="./../../assets/images/add-promo.svg" 
 					alt="hotel"
 				>
-				{{ $t("Landing.QuickSearch.addPromoCode")}}
+					{{ $t("Landing.QuickSearch.addPromoCode")}}
 			</CustomButtonWithImage>
 
 			<CustomButtonWithImage
@@ -100,7 +100,7 @@
 					src="./../../assets/images/show-flights.svg" 
 					alt="hotel"
 				>
-				{{ $t("Landing.QuickSearch.buttonFlight")}}
+					{{ $t("Landing.QuickSearch.buttonFlight")}}
 			</CustomButtonWithImage>
 		</div>
 	</div>
