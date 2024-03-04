@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: [
     "./index.html",
@@ -7,14 +8,9 @@ export default {
   theme: {
     extend: {
 		screens: {
-			'tablet': '640px',
-			// => @media (min-width: 640px) { ... }
-
-			'laptop': '1024px',
-			// => @media (min-width: 1024px) { ... }
-
-			'desktop': '1280px',
-			// => @media (min-width: 1280px) { ... }
+			'sm': {'min': '200px','max': '767px'},
+			'md': {'min': '768px', 'max': '1279px'},
+			'lg': {'min': '1280px'}
 		},
 
 		colors: {
@@ -31,9 +27,6 @@ export default {
 			'serrat': ['Montserrat','sans'],
 		},
 	},
-
-		
-			
   },
   plugins: [],
 }

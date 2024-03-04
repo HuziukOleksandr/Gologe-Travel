@@ -16,7 +16,11 @@
 				alt="flight"
 				v-else
 			>
+			<div
+				class="hidden lg:block"
+			>
 				{{ $t("Navigation.flight") }}
+			</div>
 		</router-link>
 
 		<router-link   
@@ -33,7 +37,11 @@
 				alt="hotel"
 				v-else
 			>
+			<div
+				class="hidden lg:block"
+			>
 				{{ $t("Navigation.hotel") }}
+			</div>
 		</router-link>
 	</div>
 </template>

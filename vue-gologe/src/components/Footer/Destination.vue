@@ -8,7 +8,7 @@
 		{{ $t("Footer.ourDestination") }}
 		</h1>
 		<div
-			class="flex flex-col gap-[10px]"
+			class="w-[170px] flex flex-col gap-[10px]"
 		>
 			<router-link 
 				to="#"

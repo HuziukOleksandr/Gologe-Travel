@@ -16,7 +16,6 @@ app.use(router)
 app.use(i18n)
 
 for (let index = 0; index < Object.keys(components).length; index++) {
-	//global initialization of reused custom elements
 	const element = Object.keys(components)[index];
 	app.component(element, components[element]);
 }

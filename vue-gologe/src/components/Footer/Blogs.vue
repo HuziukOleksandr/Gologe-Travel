@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="flex flex-col gap-[15px]"
+		class="w-[170px] flex flex-col gap-[15px]"
 	>
 		<h1
 			class="custom-text-base text-green"

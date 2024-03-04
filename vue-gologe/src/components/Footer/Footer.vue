@@ -1,17 +1,21 @@
 <template>
 	<div
-		class="w-[100%] h-[420px] m-auto mt-[150px] pb-[64px]
-			bg-button  flex flex-col justify-between "
+		class="w-[100%] min-h-[420px] m-auto mt-[150px] pb-[64px]
+			bg-button  flex flex-col justify-between 
+				md:px-[50px] 
+					sm:px-[25px]"
 	>
 		<Subscribe
 			class="mt-[-150px]"
 		/>
 
 		<div
-			class="max-w-[1230px] w-[100%] h-[140px] mx-auto flex justify-between"
+			class="max-w-[1230px] w-[100%] min-h-[140px] mx-auto py-[50px] flex justify-between gap-[20px]
+				lg:gap-[100px] 
+					sm:flex-col sm:items-center"
 		>
 			<div
-				class="w-[120px] flex flex-col gap-[25px]"	
+				class="min-w-[120px] flex flex-col gap-[25px] sm:flex-row sm:gap-[5px]"	
 			>
 				<img 
 					src="../../assets/images/logo-footer.svg" 
@@ -19,28 +23,32 @@
 					class="logo"
 				>
 				<div
-					class="flex justify-between"
+					class="min-w-[100px] flex justify-between sm:gap-[4px] sm:flex-wrap sm:h-[55px]"
 				>
 					<img 
 						src="../../assets/images/facebook.svg" 
 						alt="facebook"
+						class="w-[24px]"
 					>
 					<img 
 						src="../../assets/images/twitter.svg" 
 						alt="twitter"
+						class="w-[24px]"
 					>
 					<img 
 						src="../../assets/images/youtube.svg" 
 						alt="youtube"
+						class="w-[24px]"
 					>
 					<img 
 						src="../../assets/images/instagram.svg" 
 						alt="instagram"
+						class="w-[24px]"
 					>
 				</div>
 			</div>
 			<div
-				class="max-w-[970px] w-[100%] flex justify-between"
+				class="w-[100%] flex justify-between flex-wrap gap-[20px] sm:justify-center"
 			>
 				<Destination />
 				<Activities />
