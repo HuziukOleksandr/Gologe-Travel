@@ -1,10 +1,11 @@
 <template>
 	<TransitionGroup>
 		<div
-			class="absolute w-[325px] h-[500px] mt-[20px] bg-white  
+			class="absolute h-[400px] mt-[10px] bg-white w-full
 				border-2 border-grey border-solid
-					rounded-[4px] opacity-100"
-			v-if="props.dialogVisible"
+					rounded-[4px] opacity-100 z-[99]"
+			v-if="dialogVisible"
+			v-click-away="onClickAway"
 		>
 
 		</div>
@@ -15,6 +16,11 @@
 
 
 const props = defineProps<{ dialogVisible: boolean }>()
+const emit = defineEmits(['closeWindow'])
+
+const onClickAway = () => {
+	emit('closeWindow')
+}
 
 </script>
 

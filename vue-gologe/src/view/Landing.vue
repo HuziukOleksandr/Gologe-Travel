@@ -9,14 +9,14 @@
 			class="mt-[-100px] w-[100%] h-auto z-[0] mx-auto  relative"
 		/>
 		<QuickSearch
-			class="mx-auto top-[-100px] relative z-[99]"
+			class="mx-auto top-[-100px] relative z-[97]"
 		/>
 		<Trips 
-			class=" mx-auto relative z-[99]"
+			class=" mx-auto relative z-[90]"
 
 		/>
 		<Review 
-			class="mx-auto relative z-[99]"
+			class="mx-auto mt-[100px] relative z-[99]"
 		/>
 	</div>
 

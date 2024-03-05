@@ -24,7 +24,7 @@
 				class="h-[40px] px-[16px] 
 					border-[2px] border-button rounded-[4px]"
 			>	
-				{{ $t("Landing.Trips.button") }}
+				{{ $t("Landing.Review.button") }}
 			</button>
 		</div>
 

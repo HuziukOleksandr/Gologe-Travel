@@ -1,7 +1,7 @@
 <template>
 	<div
-		class="max-w-[1230px] w-[100%] h-[280px] bg-white rounded-[15px] p-[32px]
-		flex flex-col justify-between shadow-2xl"
+		class="max-w-[1230px] w-full min=h-[280px] bg-white rounded-[15px] p-[32px]
+		flex flex-col gap-[20px] shadow-2xl"
 	>
 		<div
 			class="flex gap-[65px]"
@@ -28,14 +28,16 @@
 		</div>
 
 		<div 
-			class="w-[100%] h-[56px] flex justify-between"
+			class="w-[100%] min-h-[56px] flex justify-between flex-wrap md:gap-[30px] md:justify-start"
 		>
 			<div
-				class="relative max-w-[325px] w-[100%]"
+				class="relative max-w-[325px] w-full"
+				@click="fromVisible = !fromVisible"
+				
 			>
 				<CustomInput
 					class="w-[100%] h-[56px] font-serrat text-green font-medium	"
-					@click="toggleVisible = !toggleVisible"
+					
 				>
 					<template v-slot:input>
 						{{ $t("Landing.QuickSearch.fromTo")}}
@@ -51,43 +53,72 @@
 				</CustomInput>
 
 				<CustomInputList
-					:dialogVisible="toggleVisible"
-					class="w-[100%]"
+					:dialogVisible="fromVisible"
+					@close-window="fromVisible = !fromVisible"
 				/>
 			</div>
 
-			<CustomInput
-				class="max-w-[140px] w-[100%] h-[56px] font-serrat text-green font-medium"
+			<div
+				class="relative max-w-[140px] w-full"
+				@click="tripVisible = !tripVisible"
 			>
-				<template v-slot:input>
-					{{ $t("Landing.QuickSearch.trip")}}
-				</template>
+				<CustomInput
+					class="h-[56px] font-serrat text-green font-medium"
+				>
+					<template v-slot:input>
+						{{ $t("Landing.QuickSearch.trip")}}
+					</template>
 
-				<template v-slot:image>
-					<img 
-						src="../../assets/images/chevron-down.svg" 
-						alt="arrowswap"
-						class="h-[24px]"
-					>
-				</template>
-			</CustomInput>
+					<template v-slot:image>
+						<img 
+							src="../../assets/images/chevron-down.svg" 
+							alt="arrowswap"
+							class="h-[24px]"
+						>
+					</template>
+				</CustomInput>
 
-			<CustomInput
-				class="max-w-[325px] w-[100%] h-[56px] font-serrat text-green font-medium"
+				<CustomInputList
+					:dialogVisible="tripVisible"
+					@close-window="tripVisible = !tripVisible"
+				/>
+
+			</div>
+
+			<div
+				class="relative max-w-[325px] w-full "
 			>
-				<template v-slot:input>
-					{{ $t("Landing.QuickSearch.departReturn")}}
-				</template>
-			</CustomInput>
+				<CustomInput
+					class="h-[56px] font-serrat text-green font-medium"
+					@click="departVisible = !departVisible"
+				>
+					<template v-slot:input>
+						{{ $t("Landing.QuickSearch.departReturn")}}
+					</template>
+				</CustomInput>
 
-			<CustomInput
-				class="max-w-[325px] w-[100%] h-[56px] font-serrat text-green font-medium"
+				<CustomInputList
+					:dialogVisible="departVisible"
+					@close-window="departVisible = !departVisible"
+				/>
+			</div>
+			<div
+				class="relative max-w-[325px] w-full"
 			>
-				<template v-slot:input>
-					{{ $t("Landing.QuickSearch.pasengerClass")}}
-				</template>
-			</CustomInput>
+				<CustomInput
+					class="max-w-[325px] w-[100%] h-[56px] font-serrat text-green font-medium"
+					@click="classVisible = !classVisible"
+				>
+					<template v-slot:input>
+						{{ $t("Landing.QuickSearch.pasengerClass")}}
+					</template>
+				</CustomInput>
 
+				<CustomInputList
+					:dialogVisible="classVisible"
+					@close-window="classVisible = !classVisible"
+				/>
+			</div>	
 		</div>
 
 		<div
@@ -119,5 +150,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const toggleVisible = ref<boolean>(false) 
+const fromVisible = ref<boolean>(false) 
+const tripVisible = ref<boolean>(false) 
+const departVisible = ref<boolean>(false) 
+const classVisible = ref<boolean>(false) 
+
 </script>

@@ -1,6 +1,6 @@
 <template>
 	<div 
-		class="m-auto max-w-[1440px] w-[100%] h-[90px] lg:px-[104px] 
+		class="m-auto max-w-[1440px] w-full h-[90px] lg:px-[104px] 
 			flex justify-between items-center md:px-[50px] sm:px-[25px]"
 	>
 		<CustomNavigation 
