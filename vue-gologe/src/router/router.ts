@@ -42,10 +42,26 @@ const routes = [
 			default: Account,
 			Footer
 		}
+	},
+	{
+		path: '/login', 
+		name: 'Login',
+		components: {
+			Header,
+			default: Account,
+			Footer
+		}
+	},
+	{
+		path: '/register', 
+		name: 'Register',
+		components: {
+			Header,
+			default: Account,
+			Footer
+		}
 	}
-	
 ]
-
 
 const router = createRouter({
 	history: createWebHistory(), 

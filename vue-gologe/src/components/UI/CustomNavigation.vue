@@ -1,10 +1,11 @@
 <template>
 	<div 
-		class="h-[90px] flex gap-[30px] items-center"
+		class="navigation h-[90px] flex gap-[30px] items-center"
 	>
 		<router-link  
 			to="/flight"
-			class="custom-text-sm h-[20px] flex gap-[4px]  whitespace-nowrap"
+			class="custom-text-sm h-[100%] flex items-center gap-[4px] whitespace-nowrap"
+			:class="route.name == 'Flight' ? 'border-b-button border-b-[4px]': ''"
 		>
 			<img 
 				src="../../assets/images/flight.svg" 
@@ -14,6 +15,7 @@
 			<img 
 				src="../../assets/images/flight-black.svg" 
 				alt="flight"
+				class="w-[25px]"
 				v-else
 			>
 			<div
@@ -25,7 +27,8 @@
 
 		<router-link   
 			to="/hotel"
-			class="custom-text-sm h-[20px] flex gap-[4px] whitespace-nowrap"
+			class="custom-text-sm h-[100%] flex items-center gap-[4px] whitespace-nowrap"
+			:class="route.name == 'Hotel' ? 'border-b-button border-b-[4px]': ''"
 		>
 			<img 
 				src="../../assets/images/hotel.svg" 
@@ -52,3 +55,12 @@ import { useRoute } from 'vue-router';
 const route = useRoute();
 
 </script>
+
+<style scoped>
+
+.active-bar {
+	border-bottom: 4px solid #122112;
+	
+}
+
+</style>

@@ -3,6 +3,7 @@ import { createApp } from 'vue'
 import router from './router/router.ts'
 import i18n from './localization/i18n.ts'
 import components from './components/UI'
+import VueClickAway  from  'vue3-click-away'
 
 import App from './App.vue'
 
@@ -14,6 +15,7 @@ const app = createApp(App);
 
 app.use(router)
 app.use(i18n)
+app.use(VueClickAway)
 
 for (let index = 0; index < Object.keys(components).length; index++) {
 	const element = Object.keys(components)[index];

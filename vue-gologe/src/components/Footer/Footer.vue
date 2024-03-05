@@ -21,6 +21,7 @@
 					src="../../assets/images/logo-footer.svg" 
 					alt="logo"
 					class="logo"
+					@click="$router.push({name:'Landing'})"
 				>
 				<div
 					class="min-w-[100px] flex justify-between sm:gap-[4px] sm:flex-wrap sm:h-[55px]"

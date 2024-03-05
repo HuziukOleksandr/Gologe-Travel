@@ -56,6 +56,7 @@
 				</h2>
 				<CustomButtonWithImage
 					class="h-[48px] p-[16px] font-medium bg-button"
+					@click="$router.push({name:'Flight'})"
 				>
 					<img 
 						src="./../../assets/images/show-flights.svg" 
@@ -82,6 +83,7 @@
 				</h2>
 				<CustomButtonWithImage
 					class="h-[48px] p-[16px] font-medium bg-button"
+					@click="$router.push({name:'Hotel'})"
 				>
 					<img 
 						src="./../../assets/images/show-flights.svg" 

@@ -30,21 +30,31 @@
 		<div 
 			class="w-[100%] h-[56px] flex justify-between"
 		>
-			<CustomInput
-				class="max-w-[325px] w-[100%] h-[56px] font-serrat text-green font-medium"
+			<div
+				class="relative max-w-[325px] w-[100%]"
 			>
-				<template v-slot:input>
-					{{ $t("Landing.QuickSearch.fromTo")}}
-				</template>
+				<CustomInput
+					class="w-[100%] h-[56px] font-serrat text-green font-medium	"
+					@click="toggleVisible = !toggleVisible"
+				>
+					<template v-slot:input>
+						{{ $t("Landing.QuickSearch.fromTo")}}
+					</template>
 
-				<template v-slot:image>
-					<img 
-						src="../../assets/images/arrowswap.svg" 
-						alt="arrowswap"
-						class="h-[24px]"
-					>
-				</template>
-			</CustomInput>
+					<template v-slot:image>
+						<img 
+							src="../../assets/images/arrowswap.svg" 
+							alt="arrowswap"
+							class="h-[24px]"
+						>
+					</template>
+				</CustomInput>
+
+				<CustomInputList
+					:dialogVisible="toggleVisible"
+					class="w-[100%]"
+				/>
+			</div>
 
 			<CustomInput
 				class="max-w-[140px] w-[100%] h-[56px] font-serrat text-green font-medium"
@@ -107,5 +117,7 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 
+const toggleVisible = ref<boolean>(false) 
 </script>

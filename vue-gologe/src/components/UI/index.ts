@@ -24,6 +24,9 @@ const CustomButton = defineAsyncComponent(
 	() => import("./CustomButton.vue")
 )
 
+const CustomInputList = defineAsyncComponent(
+	() => import("./CustomInputList.vue")
+)
 
 export default {
 	CustomNavigation,
@@ -31,5 +34,6 @@ export default {
 	CustomButtonWithImage,
 	CustomInput,
 	CustomLogo,
-	CustomButton
+	CustomButton,
+	CustomInputList
 }

@@ -16,6 +16,7 @@
 			<CustomButton 
 				:class="route.name !== 'Landing' ? 'text-green' : 'text-white'"
 				class="hidden lg:block"
+				@click="$router.push({name:'Login'})"
 			>
 				{{$t("Header.login")}}
 			</CustomButton>
@@ -23,11 +24,11 @@
 			<CustomButton
 				:class="route.name !== 'Landing' ? 'text-white bg-green' : 'text-green bg-white'"
 				class="hidden lg:block"
+				@click="$router.push({name:'Register'})"
 			>
 				{{$t("Header.signUp")}}
 			</CustomButton>
 
-			
 			<Localization />
 
 			<img 

@@ -1,8 +1,9 @@
 <template>
 	<TransitionGroup>
 		<div 
-			class="w-[39px] p-[7px] flex flex-col  gap-[10px] rounded-[5px] absolute " 
+			class="w-[39px] p-[7px] flex flex-col gap-[10px] rounded-[5px] absolute" 
 			v-if="props.dialogVisible"
+			v-click-away="onClickAway"
 		>
 			<img 
 				src="../../assets/images/EN.svg" 
@@ -27,6 +28,7 @@
 import { useI18n } from 'vue-i18n';
 import { ref } from 'vue';
 
+
 const props = defineProps<{ dialogVisible: boolean }>()
 let language = ref('EN');
 const { locale } = useI18n()
@@ -38,7 +40,7 @@ const close = (item: string) => {
 	emit('closeWindow')
 	language.value = item
 	change(item)
-}
+};
 
 const change = (item: string) => {
 	localStorage.setItem('language', item)
@@ -46,6 +48,10 @@ const change = (item: string) => {
 		locale.value = item
 	}
 };
+
+const onClickAway = () => {
+	emit('closeWindow')
+}
 
 </script>
 
