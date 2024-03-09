@@ -11,7 +11,7 @@
 		</h1>
 
 		<input 
-			type="text"
+			:type="props.type"
 			class="w-[100%] h-[100%]"
 			placeholder="Lahore - Karachi"
 		>
@@ -22,5 +22,7 @@
 </template>
 
 <script setup lang="ts">
+
+const props = defineProps<{type: string}>()
 
 </script>

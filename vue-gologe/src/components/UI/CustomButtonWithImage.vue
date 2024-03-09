@@ -2,7 +2,7 @@
 	<button
 		class="flex gap-[8px] items-center font-serrat"
 	>
-	<slot></slot>
+		<slot></slot>
 	</button>
 </template>
 

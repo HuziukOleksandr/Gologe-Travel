@@ -12,7 +12,7 @@
 			class="mx-auto top-[-100px] relative z-[97]"
 		/>
 		<Trips 
-			class=" mx-auto relative z-[90]"
+			class="mx-auto relative z-[90]"
 
 		/>
 		<Review 

@@ -2,8 +2,10 @@ import {createRouter, createWebHistory} from 'vue-router'
 import Header from '../components/Header/Header.vue'
 import Landing from '../view/Landing.vue'
 import Flight from '../view/Flight.vue'
-import Hotel from '../view/Flight.vue'
+import Hotel from '../view/Hotel.vue'
 import Account from '../view/Account.vue'
+import Login from '../view/Login.vue'
+import Register from '../view/Register.vue'
 import Footer from '../components/Footer/Footer.vue'
 
 const routes = [
@@ -48,7 +50,7 @@ const routes = [
 		name: 'Login',
 		components: {
 			Header,
-			default: Account,
+			default: Login,
 			Footer
 		}
 	},
@@ -57,7 +59,7 @@ const routes = [
 		name: 'Register',
 		components: {
 			Header,
-			default: Account,
+			default: Register,
 			Footer
 		}
 	}

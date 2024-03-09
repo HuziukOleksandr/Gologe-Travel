@@ -7,6 +7,17 @@
 		"flight": "Find Flight",
 		"hotel": "Find Stays"
 	},
+	"Login": {
+		"title": "Login",
+		"subTitle": "Login to access your Golobe account",
+		"email": "Email",
+		"password": "Password",
+		"remember": "Remember me",
+		"forgot": "Forgot Password",
+		"question": "Don’t have an account?",
+		"signUp": "Sign Up",
+		"orLoginWith": "Or login with"
+	},
 	"Landing": {
 		"Preview": {
 			"headerTop": "Helping Others",
