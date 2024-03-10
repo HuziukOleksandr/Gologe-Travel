@@ -5,7 +5,7 @@
 	>
 		<h1 	
 			class="absolute top-[-12px] z-55 px-[10px]
-			bg-white font-serrat text-green"
+			bg-background font-serrat text-green"
 		>
 			<slot name="input"></slot>
 		</h1>

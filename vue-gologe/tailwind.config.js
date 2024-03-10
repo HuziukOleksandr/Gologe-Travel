@@ -14,14 +14,15 @@ export default {
 		},
 
 		colors: {
-			'deafult': '#FFFFFF',
+			'default': '#FFFFFF',
 			'button': '#8DD3BB',
 			'black' : '#000',
 			'green' : '#112211',
 			"bg-second": "#D7E2EE",
-			"grey": "#79747E",
+			"gray": "#79747E",
 			"background": "#FAFBFC",
-			"lightGreen": "#CDEAE1"
+			"lightGreen": "#CDEAE1",
+			"red": "#FF8682"
 		},
 		fontFamily: {
 			'serrat': ['Montserrat','sans'],
