@@ -1,7 +1,7 @@
 <template>
 	<div
 		class="w-[100%] min-h-[420px] m-auto mt-[150px] pb-[64px]
-			bg-button  flex flex-col justify-between 
+			bg-buttonGreen  flex flex-col justify-between 
 				md:px-[50px] 
 					sm:px-[25px]"
 	>
@@ -10,12 +10,13 @@
 		/>
 
 		<div
-			class="max-w-[1230px] w-[100%] min-h-[140px] mx-auto py-[50px] flex justify-between gap-[20px]
+			class="max-w-[1230px] w-full min-h-[140px] mx-auto py-[50px] flex justify-between gap-[20px]
 				lg:gap-[100px] 
 					sm:flex-col sm:items-center"
 		>
 			<div
-				class="min-w-[120px] flex flex-col gap-[25px] sm:flex-row sm:gap-[5px]"	
+				class="min-w-[120px] flex flex-col gap-[25px] 
+					sm:flex-row sm:gap-[5px]"	
 			>
 				<img 
 					src="../../assets/images/logo-footer.svg" 
@@ -24,7 +25,8 @@
 					@click="$router.push({name:'Landing'})"
 				>
 				<div
-					class="min-w-[100px] flex justify-between sm:gap-[4px] sm:flex-wrap sm:h-[55px]"
+					class="min-w-[100px] flex justify-between 
+						sm:gap-[4px] sm:flex-wrap sm:h-[55px]"
 				>
 					<img 
 						src="../../assets/images/facebook.svg" 
@@ -49,7 +51,8 @@
 				</div>
 			</div>
 			<div
-				class="w-[100%] flex justify-between flex-wrap gap-[20px] sm:justify-center"
+				class="w-full flex justify-between flex-wrap gap-[20px] 
+					sm:justify-center sm:hidden"
 			>
 				<Destination />
 				<Activities />
@@ -71,11 +74,9 @@ import AboutUs from './AboutUs.vue'
 <style scoped>
 
 .logo:hover { 
-
 	transition-duration: 500ms;
 	cursor: pointer;
 	transform: scale(1.02);
-
 }
 
 </style>

@@ -3,21 +3,29 @@
 @tailwind utilities;
 
 .custom-text-sm {
-	@apply font-serrat font-bold text-sm
+	@apply font-serrat text-sm
 }
 
 .custom-text-base {
-	@apply font-serrat font-bold text-base
+	@apply font-serrat text-base
 }
 
 .custom-text-xl {
-	@apply font-serrat font-bold text-xl
+	@apply font-serrat text-xl
 }
 
 .custom-text-2xl {
-	@apply font-serrat font-bold text-2xl
+	@apply font-serrat text-2xl
+}
+
+.custom-text-3xl {
+	@apply font-serrat text-3xl
 }
 
 .custom-text-4xl {
-	@apply font-serrat font-bold text-4xl
+	@apply font-serrat text-4xl
+}
+
+.custom-text-5xl {
+	@apply font-serrat text-5xl
 }

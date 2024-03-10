@@ -10,12 +10,12 @@
 			/>
 
 			<h1
-				class="custom-text-4xl mb-[16px]"
+				class="custom-text-4xl font-bold mb-[16px]"
 			>
 				{{ $t("Login.title") }}
 			</h1>
 			<h2	
-				class="font-serrat text-base font-[400] text-grey mb-[48px]"
+				class="custom-text-base font-regular mb-[48px] text-gray"
 			>
 				{{ $t("Login.subTitle") }}
 			</h2>
@@ -24,7 +24,7 @@
 				class="flex flex-col gap-[24px] mb-[40px]"
 			>
 				<CustomInput
-					class="h-[56px] font-serrat text-green font-medium"
+					class="h-[56px] font-serrat font-medium text-green"
 					:props="email"
 				>
 					<template v-slot:input>
@@ -33,7 +33,8 @@
 				</CustomInput>
 
 				<CustomInput
-					class="h-[56px] font-serrat text-green font-medium" type="password"
+					class="h-[56px] font-serrat font-medium text-green" 
+					type="password"
 					:props="password"
 				>
 					<template v-slot:input>
@@ -58,15 +59,15 @@
 						<input 
 							id="remember" 
 							type="checkbox"
-							class="w-[20px] h-[20px] rounded-[4px] border-[3px] border-green border-solid cursor-pointer"
+							class="w-[20px] h-[20px] rounded-[4px] border-2 border-green border-solid cursor-pointer"
 						>
 						<label 
 							for="remember"
-							class="custom-text-base cursor-pointer flex items-center gap-[5px]"
+							class="custom-text-base font-bold cursor-pointer flex items-center gap-[5px]"
 						>
 							<img 
 								src="../../assets/images/checked.svg" 
-								alt=""
+								alt="checked"
 								class="w-[20px] h-[20px]"
 							>
 							{{ $t("Login.remember") }}
@@ -75,43 +76,41 @@
 
 					<router-link 
 						to="#"
-						class="custom-text-base text-red"
+						class="custom-text-base font-bold text-red"
 					>
 						{{ $t("Login.forgot") }}
 					</router-link>
 				</div>
 			</div>
 
-			<CustomButtonWithImage
-				class="w-full h-[48px] rounded-[4px] mb-[16px] bg-button justify-center font-bold text-green text-sm"
+			<CustomButton
+				class="w-full h-[48px] rounded-[4px] mb-[16px] justify-center custom-text-sm font-bold bg-buttonGreen text-green "
 			>
 				{{ $t("Login.title") }}
-			</CustomButtonWithImage> 
+			</CustomButton> 
 
 			<div
 				class="mb-[40px] w-full h-[20px] flex justify-center gap-[5px]"
 			>
 				<span
-					class="custom-text-base"
+					class="custom-text-base font-bold"
 				>
 					{{ $t("Login.question") }}
 				</span>
 				<router-link 
 					to="/register"
-					class="custom-text-base text-red"
+					class="custom-text-base font-bold text-red"
 				>
 					{{ $t("Login.signUp") }}
 				</router-link>
-
 			</div>
-			
 			
 			<div
 				class="w-full h-[18px] flex items-center mb-[40px] "
 			>
 				<hr class="grow text-gray">
 				<div
-					class="font-serrat font-[400] text-sm text-gray bg-background px-[10px] grow-0"
+					class="font-serrat font-[400] text-sm px-[10px] grow-0 text-gray bg-background"
 				>
 					{{ $t("Login.orLoginWith") }}
 				</div>
@@ -120,32 +119,32 @@
 			<div 
 				class="flex justify-between"
 			>
-				<CustomButtonWithImage
-					class="h-[48px] px-[68px]  justify-center border-[2px] border-solid border-button"
+				<CustomButton
+					class="h-[48px] px-[68px] justify-center border-[2px] border-solid border-buttonGreen"
 				>
 					<img 
 						src="../../assets/images/facebook-login.svg" 
-						alt=""
+						alt="facebook"
 					>
-				</CustomButtonWithImage>
+				</CustomButton>
 
-				<CustomButtonWithImage
-					class="h-[48px] px-[68px]  justify-center border-[2px] border-solid border-button"
+				<CustomButton
+					class="h-[48px] px-[68px] justify-center border-[2px] border-solid border-buttonGreen"
 				>
 					<img 
 						src="../../assets/images/google-login.svg" 
-						alt=""
+						alt="google"
 					>
-				</CustomButtonWithImage> 
+				</CustomButton> 
 
-				<CustomButtonWithImage
-					class="h-[48px] px-[68px]  justify-center border-[2px] border-solid border-button"
+				<CustomButton
+					class="h-[48px] px-[68px] justify-center border-[2px] border-solid border-buttonGreen"
 				>
 					<img 
 						src="../../assets/images/apple-login.svg" 
-						alt=""
+						alt="apple"
 					>
-				</CustomButtonWithImage>  
+				</CustomButton>  
 			</div>
 		</div>
 

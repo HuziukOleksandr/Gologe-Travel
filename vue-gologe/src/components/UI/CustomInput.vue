@@ -1,7 +1,7 @@
 <template>
 	<div
 		class="flex gap-[10px] items-center rounded-[4px] px-[15px] 
-		border-2 border-grey border-solid relative"
+		border-2 border-gray border-solid relative"
 	>
 		<h1 	
 			class="absolute top-[-12px] z-55 px-[10px]

@@ -49,7 +49,7 @@
 		},
 		"Review": {
 			"title": "Reviews",
-			"subTitle": "What people says about Golobe facilities",
+			"sub-title": "What people says about Golobe facilities",
 			"button": "See All",
 			"more": "View more"
 		}

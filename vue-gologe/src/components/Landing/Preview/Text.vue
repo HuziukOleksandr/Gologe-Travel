@@ -1,15 +1,15 @@
 <template>
 	<div 
-		class="w-[100%] flex flex-col items-center top-[50px] gap-[24px]"
+		class="w-full flex flex-col items-center gap-[24px]"
 	>
 		<h2
-			class="font-serrat font-semibold text-5xl text-white"
+			class="custom-text-5xl font-semibold text-white"
 			
 		>
 			{{ $t('Landing.Preview.headerTop')}}
 		</h2>
 		<h1
-			class=" font-serrat font-semibold text-white uppercase"
+			class="font-serrat font-semibold text-white uppercase"
 			:class="getTitleStyles(locale)"
 		>
 			{{ $t('Landing.Preview.header')}}
@@ -23,13 +23,9 @@
 </template>
 
 <script setup lang="ts">
-
-import { getTitleStyles } from "../../helpers/Localization.ts"
+import { getTitleStyles } from "../../../helpers/Localization.ts"
 import { useI18n } from 'vue-i18n'
 
 const { locale } = useI18n()
+
 </script>
-
-<style scoped>
-
-</style>

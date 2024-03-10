@@ -3,7 +3,7 @@
 		class="flex flex-col gap-[15px]"
 	>
 		<h1
-			class="custom-text-base text-green"
+			class="custom-text-base font-bold text-green"
 		>
 			{{ $t("Footer.ourActivities") }}
 		</h1>
@@ -12,36 +12,28 @@
 		>
 			<router-link 
 				to="#"
-				class="custom-text-sm h-[17px] text-grey"
+				class="custom-text-sm h-[17px] text-gray"
 			>
 				{{ $t("Footer.Activities.NorthernLights") }}
 			</router-link>
 			<router-link 
 				to="#"
-				class="custom-text-sm h-[17px] text-grey"
+				class="custom-text-sm h-[17px] text-gray"
 			>
 				{{ $t("Footer.Activities.CruisingSailing") }}
 			</router-link>
 			<router-link 
 				to="#"
-				class="custom-text-sm h-[17px] text-grey"
+				class="custom-text-sm h-[17px] text-gray"
 			>
 				{{ $t("Footer.Activities.MultiActivities") }}
 			</router-link>
 			<router-link 
 				to="#"
-				class="custom-text-sm h-[17px] text-grey"
+				class="custom-text-sm h-[17px] text-gray"
 			>
 				{{ $t("Footer.Activities.Kayaing") }}
 			</router-link>
 		</div>
 	</div>
 </template>
-
-<script setup lang="ts">
-
-</script>
-
-<style scoped>
-
-</style>

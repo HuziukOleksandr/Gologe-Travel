@@ -3,7 +3,7 @@
 		class="flex flex-col gap-[15px]"
 	>
 		<h1
-			class="customtext-base text-green"
+			class="customtext-base font-bold text-green"
 		>
 			{{ $t("Footer.ContactUs") }}
 		</h1>
@@ -12,13 +12,14 @@
 		>
 			<router-link 
 				to="#"
-				class="custom-text-sm h-[17px] text-grey"
+				class="custom-text-sm h-[17px] text-gray"
 			>
 				{{ $t("Footer.Contact.OurStory") }}
 			</router-link>
+			
 			<router-link 
 				to="#"
-				class="custom-text-sm h-[17px] text-grey"
+				class="custom-text-sm h-[17px] text-gray"
 			>
 				{{ $t("Footer.Contact.Workwithus") }}
 			</router-link>

@@ -1,7 +1,7 @@
 <template>
 	<button
-		class="custom-text-sm h-[45px] px-[24px] rounded-[8px]"
+		class="flex items-center gap-[5px] rounded-[4px]"
 	>
-	<slot></slot>
+		<slot></slot>
 	</button>
 </template>

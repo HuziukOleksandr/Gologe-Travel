@@ -1,14 +1,15 @@
 <template>
 	<div 
-		class="max-w-[1230px] w-[100%] min-h-[300px] 
+		class="max-w-[1230px] w-full min-h-[300px] 
 			m-auto bg-lightGreen rounded-[20px]
 				flex justify-between p-[24px]"
 	>
 		<div
-			class="max-w-[700px] w-[100%]  flex flex-col justify-between gap-[20px]"
+			class="max-w-[700px] w-full  flex flex-col justify-between gap-[20px]"
 		>
 			<h1
-				class="custom-text-4xl text-green sm:text-2xl"
+				class="custom-text-4xl font-bold text-green 
+					sm:text-2xl"
 			>
 				{{ $t("Footer.title")}}
 			</h1>
@@ -17,12 +18,13 @@
 				class="flex flex-col gap-[10px]"
 			>
 				<h2
-					class="custom-text-xl text-green"
+					class="custom-text-xl font-bold text-green"
 				>
 					{{ $t("Footer.subTitle")}}
 				</h2>
+
 				<p
-					class="custom-text-base text-green"
+					class="custom-text-base font-medium text-green"
 				>
 					{{ $t("Footer.text")}}
 				</p>
@@ -34,12 +36,12 @@
 				<input 
 					type="email"
 					:placeholder="$t('Footer.placeholder')"
-					class="custom-text-base  w-[100%] h-[45px] px-[16px] rounded-[8px]
+					class="custom-text-base  w-full h-[45px] px-[16px] rounded-[8px]
 						bg-white text-green 
 							placeholder:text-base placeholder:text-green lg:h-[56px]"
 				>
 				<CustomButton
-					class="h-[45px] text-white bg-green uppercase lg:h-[56px]"
+					class="custom-text-sm font-semibold h-[45px] px-[16px] text-white bg-green lg:h-[56px]"
 				>
 					{{ $t("Footer.button") }}
 				</CustomButton>
@@ -57,7 +59,3 @@
 		</div>
 	</div>
 </template>
-
-<script setup lang="ts">
-
-</script>

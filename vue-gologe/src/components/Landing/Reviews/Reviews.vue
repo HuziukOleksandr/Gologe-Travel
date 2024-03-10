@@ -11,18 +11,18 @@
 				<h1
 					class="h-[35px] font-serrat font-semibold text-[32px]"
 				> 
-					{{ $t("Landing.Trips.title") }}
+					{{ $t("Landing.Review.title") }}
 				</h1>
 				<h2
 					class="font-serrat font-regilar text-[16px] text-gray"
 				>
-					{{ $t("Landing.Trips.sub-title") }}
+					{{ $t("Landing.Review.sub-title") }}
 				</h2>
 			</div>
 
 			<button 
 				class="h-[40px] px-[16px] 
-					border-[2px] border-button rounded-[4px]"
+					border-[2px] rounded-[4px] border-buttonGreen"
 			>	
 				{{ $t("Landing.Review.button") }}
 			</button>
@@ -31,16 +31,16 @@
 		<div
 			class="flex flex-wrap justify-between"
 		>
-			<ReviewCard />
-			<ReviewCard />
-			<ReviewCard />
+			<Card />
+			<Card />
+			<Card />
 		</div>
 	</div>
 
 </template>
 
 <script setup lang="ts">
-import ReviewCard from './RaviewCard.vue'
+import Card from './Card.vue'
 
 </script>
 

@@ -4,7 +4,7 @@
 	>
 		<router-link  
 			to="/flight"
-			class="custom-text-sm h-[100%] flex items-center gap-[4px] whitespace-nowrap"
+			class="custom-text-sm h-full flex items-center gap-[4px] whitespace-nowrap"
 			:class="route.name == 'Flight' ? 'border-b-button border-b-[4px]': ''"
 		>
 			<img 
@@ -27,8 +27,8 @@
 
 		<router-link   
 			to="/hotel"
-			class="custom-text-sm h-[100%] flex items-center gap-[4px] whitespace-nowrap"
-			:class="route.name == 'Hotel' ? 'border-b-button border-b-[4px]': ''"
+			class="custom-text-sm h-full flex items-center gap-[4px] whitespace-nowrap"
+			:class="route.name == 'Hotel' ? 'border-b-buttonGreen border-b-[4px]': ''"
 		>
 			<img 
 				src="../../assets/images/hotel.svg" 

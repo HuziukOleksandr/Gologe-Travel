@@ -27,7 +27,6 @@ import { getImageUrlSvg } from '../../helpers/Helpers.ts'
 
 const { locale } = useI18n()
 const toggleVisible = ref<boolean>(false) 
-
 const close = () => {
 	toggleVisible.value = !toggleVisible
 }
