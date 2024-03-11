@@ -8,10 +8,6 @@ const CustomLocalization = defineAsyncComponent(
 	() => import("./CustomLocalization.vue")
 )
 
-const CustomButtonWithImage = defineAsyncComponent(
-	() => import("./CustomButtonWithImage.vue")
-)
-
 const CustomInput = defineAsyncComponent(
 	() => import("./CustomInput.vue")
 )
@@ -31,7 +27,6 @@ const CustomInputList = defineAsyncComponent(
 export default {
 	CustomNavigation,
 	CustomLocalization,
-	CustomButtonWithImage,
 	CustomInput,
 	CustomLogo,
 	CustomButton,

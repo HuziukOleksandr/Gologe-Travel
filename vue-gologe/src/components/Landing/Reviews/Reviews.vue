@@ -31,9 +31,7 @@
 		<div
 			class="flex flex-wrap justify-between"
 		>
-			<Card />
-			<Card />
-			<Card />
+			<Card :review="review.slice(0, 3)"/>
 		</div>
 	</div>
 
@@ -41,6 +39,25 @@
 
 <script setup lang="ts">
 import Card from './Card.vue'
+import axios from 'axios'
+import { ref } from 'vue'
+
+const review = ref()
+
+axios.get('/Review.json')
+  .then(function (response) {
+    review.value = response.data.Reviews
+	console.log(review.value);
+	
+    
+  })
+  .catch(function (error) {
+    
+    console.log(error);
+  })
+  .finally(function () {
+   
+});
 
 </script>
 

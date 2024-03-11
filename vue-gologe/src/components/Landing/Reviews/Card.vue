@@ -1,12 +1,13 @@
 <template>
 	<div
 		class="max-w-[425px] w-[100%] h-[585px] bg-white rounded-[20px]
-		shadow-2xl p-[24px] flex flex-col justify-between"
+			shadow-2xl p-[24px] flex flex-col justify-between"
+		v-for="review in props.review"
 	>
 		<h1
-			class="custom-text-2xl text-green"
+			class="custom-text-2xl font-bold text-green"
 		>
-		“A real sense of community, nurtured”
+			{{ review.title }}
 		</h1>
 		<div
 			class="flex flex-col"
@@ -15,13 +16,10 @@
 				class="h-[22px] font-serrat font-regular text-sm text-grey
 				truncate ..."
 			>
-			Really appreciate the help and support from the staff during
-			these tough times. Shoutout to Katie for helping me always,
-			even when I was out of the country. And always available
-			when needed.
+			{{ review.text }}
 			</p>
 			<button
-				class="custom-text-base text-green flex self-end"
+				class="custom-text-base font-bold text-green flex self-end"
 			>
 				{{ $t("Landing.Review.more")}}
 			</button>
@@ -31,20 +29,19 @@
 			class="w-[100%] h-[45px] flex gap-[10px]"
 		>
 			<div
-				v-for="index in rates"
+				v-for="index in +review.rate"
 			>
 				<img 
-					src="../../assets/images/star.svg" 
+					src="../../../assets/images/star.svg" 
 					alt="star"
 				>
 			</div>
 
 			<div
-				v-for="index in (5-rates)"
-				class=""
+				v-for="index in (5-review.rate)"
 			>
 				<img 
-					src="../../assets/images/star.svg" 
+					src="../../../assets/images/star.svg" 
 					alt="star"
 					class="opacity-35"
 				>
@@ -55,34 +52,43 @@
 			class="flex flex-col gap-[5px]"
 		>
 			<h1
-				class="font-serrat font-bold text-[14px] text-green"
+				class="custom-text-sm font-bold text-green"
 			>
-				Olga
+				{{review.name}}
 			</h1>
 			<p
-				class="font-serrat text-[14px] text-grey"
+				class="custom-text-sm text-gray"
 			>
-				Weave Studios – Kai Tak
+				{{ review.subTitle}}
 			</p>
 		</div>
 
 		<div
 			class="flex gap-[10px]"
 		>
-			<img src="../../assets/images/google.svg" alt="google">
+			<img 
+				src="../../../assets/images/google.svg" 
+				alt="google"
+			>
 			<p
 				class="font-serrat font-bold text-[14px] text-grey"
 			>
-			Google
+				Google
 			</p>
 		</div>
 
-		<img src="../../assets/images/Olga.png" alt="Olga">
+		<img 
+			:src="getImageUrlPng(review.picture)" 
+			:alt="review.picture"
+		>
 	</div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { getImageUrlPng } from '../../../helpers/Helpers.ts'
+
+const props = defineProps<{ review: object }>()
 
 const rates = ref<number>(3)
 
