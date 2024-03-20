@@ -18,6 +18,25 @@
 		"signUp": "Sign Up",
 		"orLoginWith": "Or login with"
 	},
+	"Register": {
+		"title": "Register",
+		"subTitle": "Let’s get you all st up so you can access your personal account.",
+		"email": "Email",
+		"first": "First Name",
+		"last": "Last Name",
+		"phone": "Phone Number",
+		"password": "Password",
+		"confirm": "Comfirm Password",
+		"inputStart": "I agree to all the",
+		"terms": "Terms",
+		"inputAnd": "and",
+		"privacy": "Privacy Policies",
+		"button": "Create account",
+		"question": "Already have an account?",
+		"login": "Login",
+		"orSignUpWith": "Or Sign up With" 
+
+	},
 	"Landing": {
 		"Preview": {
 			"headerTop": "Helping Others",

@@ -24,11 +24,21 @@ const CustomInputList = defineAsyncComponent(
 	() => import("./CustomInputList.vue")
 )
 
+const CustomCarousel = defineAsyncComponent(
+	() => import("./CustomCarousel.vue")
+)
+
+const CustomCheckbox = defineAsyncComponent(
+	() => import("./CustomCheckbox.vue")
+)
+
 export default {
 	CustomNavigation,
 	CustomLocalization,
 	CustomInput,
 	CustomLogo,
 	CustomButton,
-	CustomInputList
+	CustomInputList,
+	CustomCarousel,
+	CustomCheckbox
 }

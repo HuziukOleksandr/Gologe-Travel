@@ -14,8 +14,9 @@
 			>
 				{{ $t("Login.title") }}
 			</h1>
+
 			<h2	
-				class="custom-text-base font-regular mb-[48px] text-gray"
+				class="custom-text-base font-regular mb-[50px] text-gray"
 			>
 				{{ $t("Login.subTitle") }}
 			</h2>
@@ -53,26 +54,9 @@
 				<div
 					class="w-full h-[25px] flex justify-between "
 				>
-					<form
-						class="flex items-center gap-[5px]"
-					>
-						<input 
-							id="remember" 
-							type="checkbox"
-							class="w-[20px] h-[20px] rounded-[4px] border-2 border-green border-solid cursor-pointer"
-						>
-						<label 
-							for="remember"
-							class="custom-text-base font-bold cursor-pointer flex items-center gap-[5px]"
-						>
-							<img 
-								src="../../assets/images/checked.svg" 
-								alt="checked"
-								class="w-[20px] h-[20px]"
-							>
-							{{ $t("Login.remember") }}
-						</label>
-					</form>
+					<CustomCheckbox>
+						{{ $t("Login.remember") }}
+					</CustomCheckbox>
 
 					<router-link 
 						to="#"
@@ -116,63 +100,14 @@
 				</div>
 				<hr class="grow text-gray">
 			</div>
-			<div 
-				class="flex justify-between"
-			>
-				<CustomButton
-					class="h-[48px] px-[68px] justify-center border-[2px] border-solid border-buttonGreen"
-				>
-					<img 
-						src="../../assets/images/facebook-login.svg" 
-						alt="facebook"
-					>
-				</CustomButton>
-
-				<CustomButton
-					class="h-[48px] px-[68px] justify-center border-[2px] border-solid border-buttonGreen"
-				>
-					<img 
-						src="../../assets/images/google-login.svg" 
-						alt="google"
-					>
-				</CustomButton> 
-
-				<CustomButton
-					class="h-[48px] px-[68px] justify-center border-[2px] border-solid border-buttonGreen"
-				>
-					<img 
-						src="../../assets/images/apple-login.svg" 
-						alt="apple"
-					>
-				</CustomButton>  
-			</div>
+			
+			<LoginWith />
 		</div>
 
-
-
 		<div
-			class="max-w-[620px] w-full relative"
+			class="max-w-[620px] w-full relative flex"
 		>
-			<Carousel 
-				:items-to-show="1"
-				pauseAutoplayOnHover="true"
-				transition="500"
-				autoplay="10000"
-				wrapAround="true"
-				class="relative"
-			>
-				<slide
-					v-for="slide in slides"
-					:key="slide"
-				>
-					<img :src="getImageUrlPng(slide)" alt="">
-				</slide>
-				<template #addons>
-					<Pagination 
-						class="absolute bottom-[24px] left-1/2 transform -translate-x-1/2"
-					/>
-                </template>
-			</Carousel>
+			<CustomCarousel :slides="slides"/>
 			
 		</div>
 	</div>
@@ -180,51 +115,13 @@
 
 <script setup lang="ts">
 
-import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Pagination } from 'vue3-carousel'
 import { ref } from 'vue'
-import { getImageUrlPng } from '../../helpers/Helpers.ts'
+import LoginWith from './LoginWith.vue'
 
 const slides = ref(["login-one", "login-two", "login-three"]);
 
-console.log(slides.value[1]);
-
-
 </script>
-
-<style>
-
-.carousel__pagination-button::after {
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	background-color: #fff;
-	transition: all .5s;
-}
-
-.carousel__pagination-button:hover::after {
-	background-color: #8DD3BB;
-}
-
-.carousel__pagination-button--active::after{
-	width: 32px;
-	height: 10px;
-	border-radius: 5px;
-	background-color: #8DD3BB;
-}
-
-</style>
 
 <style scoped>
 
-#remember {
-	display: none;
-}
-#remember:checked {
-	display: block;
-}
-#remember:checked~label img {
-	
-	display: none;
-}
 </style>

@@ -5,7 +5,7 @@
 		<router-link  
 			to="/flight"
 			class="custom-text-sm h-full flex items-center gap-[4px] whitespace-nowrap"
-			:class="route.name == 'Flight' ? 'border-b-button border-b-[4px]': ''"
+			:class="route.name == 'Flight' ? 'border-b-buttonGreen border-b-[4px]': ''"
 		>
 			<img 
 				src="../../assets/images/flight.svg" 
