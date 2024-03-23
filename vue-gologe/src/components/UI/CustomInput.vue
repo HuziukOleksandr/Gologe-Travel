@@ -11,9 +11,11 @@
 		</h1>
 
 		<input 
+			class="w-full h-full"
 			:type="props.type"
-			class="w-[100%] h-[100%]"
-			placeholder="Lahore - Karachi"
+			:placeholder="props.placeHolder"
+			v-model="inputValue"
+			@change="changeValue(inputValue)"
 		>
 		
 		<slot name="image"></slot>
@@ -22,7 +24,16 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+const props = defineProps<{type: string, placeHolder: string}>()
 
-const props = defineProps<{type: string}>()
+let inputValue= ref<string>('')
+
+const emit = defineEmits(['inputValue'])
+
+const changeValue = (value: string) => {
+	emit('inputValue', value);
+}
+
 
 </script>

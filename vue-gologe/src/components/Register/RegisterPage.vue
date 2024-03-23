@@ -35,7 +35,8 @@
 				>
 					<CustomInput
 						class="max-w-[310px] w-full h-[56px] font-serrat font-medium text-green"
-						:props="text"
+						type="text"
+						:placeHolder="$t('Register.first')"
 					>
 						<template v-slot:input>
 							{{ $t("Register.first") }}
@@ -44,7 +45,8 @@
 
 					<CustomInput
 						class="max-w-[310px] w-full h-[56px] font-serrat font-medium text-green"
-						:props="text"
+						type="text"
+						:placeHolder="$t('Register.last')"
 					>
 						<template v-slot:input>
 							{{ $t("Register.last") }}
@@ -57,7 +59,8 @@
 				>
 					<CustomInput
 						class="max-w-[310px] w-full h-[56px] font-serrat font-medium text-green"
-						:props="text"
+						type="text"
+						:placeHolder="$t('Register.email')"
 					>
 						<template v-slot:input>
 							{{ $t("Register.email") }}
@@ -66,7 +69,8 @@
 
 					<CustomInput
 						class="max-w-[310px] w-full h-[56px] font-serrat font-medium text-green"
-						:props="text"
+						type="text"
+						:placeHolder="$t('Register.phone')"
 					>
 						<template v-slot:input>
 							{{ $t("Register.phone") }}
@@ -77,10 +81,10 @@
 				<CustomInput
 					class="h-[56px] font-serrat font-medium text-green" 
 					type="password"
-					:props="password"
+					:placeHolder="$t('Register.password')"
 				>
 					<template v-slot:input>
-						{{ $t("Login.password")}}
+						{{ $t("Register.password")}}
 					</template>
 
 					<template v-slot:image>
@@ -95,10 +99,11 @@
 				<CustomInput
 					class="h-[56px] font-serrat font-medium text-green" 
 					type="password"
-					:props="password"
+					:placeHolder="$t('Register.confirm')"
+					
 				>
 					<template v-slot:input>
-						{{ $t("Login.confirm")}}
+						{{ $t("Register.confirm") }}
 					</template>
 
 					<template v-slot:image>
