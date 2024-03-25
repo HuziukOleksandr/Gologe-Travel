@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.custom-text-sm {
-	@apply font-serrat text-sm
+.custom-text-xs {
+	@apply font-serrat text-xs
 }
 
 .custom-text-base {

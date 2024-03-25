@@ -15,7 +15,7 @@
 			{{ $t("Landing.Trips.textFlight") }}
 		</h2>
 		<CustomButton
-			class="custom-text-sm font-medium h-[48px] p-[16px] bg-button"
+			class="custom-text-sm font-medium h-[48px] p-[16px] bg-buttonGreen"
 			@click="$router.push({name:'Flight'})"
 		>
 			<img 

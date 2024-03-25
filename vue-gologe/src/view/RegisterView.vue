@@ -1,14 +1,13 @@
 <template>
 	<div>
-		<LoginPage 
+		<Register 
 			class="mx-auto"
 		/>
 	</div>
 </template>
 
 <script setup lang="ts">
-
-import LoginPage from '../components/Login/LoginPage.vue'
+import Register from '../components/Register/Register.vue'
 
 </script>
 

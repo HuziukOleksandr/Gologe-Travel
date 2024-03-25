@@ -1,14 +1,13 @@
 <template>
 	<div>
-		<RegisterPage 
+		<ForgotCompotent 
 			class="mx-auto"
 		/>
 	</div>
 </template>
 
 <script setup lang="ts">
-import RegisterPage from '../components/Register/RegisterPage.vue'
-
+import ForgotCompotent from "../components/ForgotPassword/ForgotComponent.vue";
 </script>
 
 <style scoped>

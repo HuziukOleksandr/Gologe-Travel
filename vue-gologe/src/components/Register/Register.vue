@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="max-w-[1440px] w-full min-h-[900px] p-[104px] flex justify-between"
+		class="max-w-[1440px] w-full min-h-[900px] py-[50px] px-[104px] flex justify-between"
 	>
 		<div
 			class="max-w-[490px] w-full h-[816px] relative flex"
@@ -78,42 +78,26 @@
 					</CustomInput>
 				</div>
 
-				<CustomInput
+				
+				<CustomInputPassword
 					class="h-[56px] font-serrat font-medium text-green" 
-					type="password"
 					:placeHolder="$t('Register.password')"
+					
 				>
 					<template v-slot:input>
 						{{ $t("Register.password")}}
 					</template>
 
-					<template v-slot:image>
-						<img 
-							src="../../assets/images/forgot-close.svg" 
-							alt="arrowswap"
-							class="h-[24px]"
-						>
-					</template>
-				</CustomInput>
+				</CustomInputPassword>
 
-				<CustomInput
+				<CustomInputPassword
 					class="h-[56px] font-serrat font-medium text-green" 
-					type="password"
 					:placeHolder="$t('Register.confirm')"
-					
 				>
 					<template v-slot:input>
 						{{ $t("Register.confirm") }}
 					</template>
-
-					<template v-slot:image>
-						<img 
-							src="../../assets/images/forgot-close.svg" 
-							alt="arrowswap"
-							class="h-[24px]"
-						>
-					</template>
-				</CustomInput>
+				</CustomInputPassword>
 
 				<CustomCheckbox>
 					{{ $t("Register.inputStart") }}
@@ -138,6 +122,7 @@
 
 			<CustomButton
 				class="w-full h-[48px] rounded-[4px] mb-[16px] justify-center custom-text-sm font-bold bg-buttonGreen text-green "
+				@click="$router.push({name:'AddPayment'})"
 			>
 				{{ $t("Register.title") }}
 			</CustomButton>

@@ -34,34 +34,14 @@
 					</template>
 				</CustomInput>
 
-				<CustomInput
+				<CustomInputPassword
 					class="h-[56px] font-serrat font-medium text-green" 
-					:type="passwordFieldType"
 					:placeHolder="$t('Login.password')"
-					
-					@inputValue="handleInputValue"
 				>
 					<template v-slot:input>
 						{{ $t("Login.password")}}
 					</template>
-
-					<template v-slot:image>
-						<img 
-							src="../../assets/images/password-close.svg" 
-							alt="arrowswap"
-							class="h-[24px] hover:cursor-pointer"
-							@click="switchVisibility"
-							v-if="passwordFieldType === 'password'"
-						>
-						<img 
-							src="../../assets/images/password-open.svg" 
-							alt="arrowswap"
-							class="h-[24px] hover:cursor-pointer"
-							@click="switchVisibility"
-							v-else
-						>
-					</template>
-				</CustomInput>
+				</CustomInputPassword>
 
 				<div
 					class="w-full h-[25px] flex justify-between "
@@ -71,7 +51,7 @@
 					</CustomCheckbox>
 
 					<router-link 
-						to="#"
+						to="/forgotpassword"
 						class="custom-text-base font-bold text-red"
 					>
 						{{ $t("Login.forgot") }}
@@ -81,7 +61,6 @@
 
 			<CustomButton
 				class="w-full h-[48px] rounded-[4px] mb-[16px] justify-center custom-text-sm font-bold bg-buttonGreen text-green"
-				@click="switchVisibility"
 			>
 				{{ $t("Login.title") }}
 			</CustomButton> 
@@ -131,13 +110,6 @@ import { ref } from 'vue'
 import LoginWith from './LoginWith.vue'
 
 const slides = ref(["login-one", "login-two", "login-three"]);
-
-let passwordFieldType = ref<string>("password")
-
-const password = ref<string>('')
-
-const switchVisibility = () => { passwordFieldType.value = passwordFieldType.value === "password" ? "text" : "password" }
-const handleInputValue = (value: string) => { password.value = value }
 
 </script>
 

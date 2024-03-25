@@ -32,6 +32,10 @@ const CustomCheckbox = defineAsyncComponent(
 	() => import("./CustomCheckbox.vue")
 )
 
+const CustomInputPassword = defineAsyncComponent(
+	() => import("./CustomInputPassword.vue")
+)
+
 export default {
 	CustomNavigation,
 	CustomLocalization,
@@ -40,5 +44,6 @@ export default {
 	CustomButton,
 	CustomInputList,
 	CustomCarousel,
-	CustomCheckbox
+	CustomCheckbox,
+	CustomInputPassword
 }

@@ -18,6 +18,30 @@
 		"signUp": "Sign Up",
 		"orLoginWith": "Or login with"
 	},
+	"ForgotPassword": {
+		"title": "Forgot your password?",
+		"subTitle": "Don’t worry, happens to all of us. Enter your email below to recover your password",
+		"buttonBack": "Back to login",
+		"email": "Email",
+		"button": "Submit",
+		"orLoginWith": "Or login with"
+	},
+	"Verify": {
+		"title": "Verify code",
+		"subTitle": "An authentication code has been sent to your email.",
+		"buttonBack": "Back to login",
+		"code": "Enter Code",
+		"question": "Didn’t receive a code?",
+		"resend": "Resend",
+		"button": "Verify"
+	},
+	"ChangePassword": {
+		"title": "Set a password",
+		"subTitle": "Your previous password has been reseted. Please set a new password for your account.",
+		"create": "Create Password",
+		"re-enter": "Re-Enter Password",
+		"button": "Set password"
+	},
 	"Register": {
 		"title": "Register",
 		"subTitle": "Let’s get you all st up so you can access your personal account.",
@@ -36,6 +60,19 @@
 		"login": "Login",
 		"orSignUpWith": "Or Sign up With" 
 
+	},
+	"AddPayment" : {
+		"title": "Add a payment method",
+		"subTitle": "Let’s get you all st up so you can access your personal account.",
+		"back": "Back",
+		"card": "Card Number",
+		"date": "Exp. Date",
+		"CVC": "CVC",
+		"cardName": "Name on Card",
+		"from": "Country or Region",
+		"checkbox": "Securely save my information for 1-click checkout",
+		"button": "Add payment method",
+		"text": "By confirming your subscription, you allow The Outdoor Inn Crowd Limited to charge your card for this payment and future payments in accordance with their terms. You can always cancel your subscription."
 	},
 	"Landing": {
 		"Preview": {

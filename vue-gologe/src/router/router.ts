@@ -1,12 +1,17 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import Header from '../components/Header/Header.vue'
-import Landing from '../view/Landing.vue'
-import Flight from '../view/Flight.vue'
-import Hotel from '../view/Hotel.vue'
-import Account from '../view/Account.vue'
-import Login from '../view/Login.vue'
-import Register from '../view/Register.vue'
+import Landing from '../view/LandingView.vue'
+import Flight from '../view/FlightView.vue'
+import Hotel from '../view/HotelView.vue'
+import Account from '../view/AccountView.vue'
+import Login from '../view/LoginView.vue'
+import Register from '../view/RegisterView.vue'
+import ForgotPassword from '../view/ForgotPasswordView.vue'
+import Verify from '../view/VerifyView.vue'
+import ChangePassword from '../view/ChangePasswordView.vue'
+import AddPayment from '../view/AddPaymentView.vue'
 import Footer from '../components/Footer/Footer.vue'
+ 
 
 const routes = [
 	{
@@ -60,6 +65,42 @@ const routes = [
 		components: {
 			Header,
 			default: Register,
+			Footer
+		}
+	},
+	{
+		path: '/forgotpassword', 
+		name: 'ForgotPassword',
+		components: {
+			Header,
+			default: ForgotPassword,
+			Footer
+		}
+	},
+	{
+		path: '/verify',
+		name: 'Verify',
+		components: {
+			Header,
+			default: Verify,
+			Footer
+		}
+	},
+	{
+		path: '/changepassword',
+		name: 'ChangePassword',
+		components: {
+			Header,
+			default: ChangePassword,
+			Footer
+		}
+	},
+	{
+		path: '/addpayment',
+		name: 'AddPayment',
+		components: {
+			Header,
+			default: AddPayment,
 			Footer
 		}
 	}
