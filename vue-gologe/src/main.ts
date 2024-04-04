@@ -11,6 +11,7 @@ import '././assets/root/style.css'
 import '././assets/root/fonts.css'
 import '././assets/root/reset.css'
 
+
 const app = createApp(App);
 
 app.use(router)

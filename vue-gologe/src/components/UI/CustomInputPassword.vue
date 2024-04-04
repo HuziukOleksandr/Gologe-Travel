@@ -19,14 +19,14 @@
 		>
 		
 		<img 
-			src="../../assets/images/password-close.svg" 
+			src="@/assets/images/password-close.svg" 
 			alt="arrowswap"
 			class="h-[24px] hover:cursor-pointer"
 			@click="switchVisibility"
 			v-if="passwordFieldType === 'password'"
 		>
 		<img 
-			src="../../assets/images/password-open.svg" 
+			src="@/assets/images/password-open.svg" 
 			alt="arrowswap"
 			class="h-[24px] hover:cursor-pointer"
 			@click="switchVisibility"
@@ -47,7 +47,6 @@ const emit = defineEmits(['inputValue'])
 const changeValue = (value: string) => {
 	emit('inputValue', value);
 }
-
 
 let passwordFieldType = ref<string>("password")
 const switchVisibility = () => { passwordFieldType.value = passwordFieldType.value === "password" ? "text" : "password" }

@@ -52,7 +52,7 @@
 			class="hidden lg:block"
 		>
 			<img 
-				src="../../assets/images/footer.png" 
+				src="@/assets/images/footer.png" 
 				alt="footer"
 				class="h-[300px]"
 			>

@@ -1,10 +1,10 @@
 <template>
 	<Carousel 
 		:items-to-show="1"
-		pauseAutoplayOnHover="true"
-		transition="500"
-		autoplay="10000"
-		wrapAround="true"
+		:pauseAutoplayOnHover="true"
+		:transition="500"
+		:autoplay="10000"
+		:wrapAround="true"
 		class="relative h-full"
 	>
 		<slide
@@ -24,7 +24,7 @@
 <script setup lang="ts">
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination } from 'vue3-carousel'
-import { getImageUrlPng } from '../../helpers/Helpers.ts'
+import { getImageUrlPng } from '@/helpers/helpers.ts'
 
 const props = withDefaults(
   defineProps<{

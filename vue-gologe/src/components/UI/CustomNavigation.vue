@@ -8,12 +8,12 @@
 			:class="route.name == 'Flight' ? 'border-b-buttonGreen border-b-[4px]': ''"
 		>
 			<img 
-				src="../../assets/images/flight.svg" 
+				src="@/assets/images/flight.svg" 
 				alt="flight"
 				v-if="route.name == 'Landing'"
 			>
 			<img 
-				src="../../assets/images/flight-black.svg" 
+				src="@/assets/images/flight-black.svg" 
 				alt="flight"
 				class="w-[25px]"
 				v-else
@@ -31,12 +31,12 @@
 			:class="route.name == 'Hotel' ? 'border-b-buttonGreen border-b-[4px]': ''"
 		>
 			<img 
-				src="../../assets/images/hotel.svg" 
+				src="@/assets/images/hotel.svg" 
 				alt="hotel"
 				v-if="route.name == 'Landing'"
 			>
 			<img 
-				src="../../assets/images/hotel-black.svg" 
+				src="@/assets/images/hotel-black.svg" 
 				alt="hotel"
 				v-else
 			>

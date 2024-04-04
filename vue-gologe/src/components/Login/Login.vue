@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="max-w-[1440px] w-full min-h-[900px] p-[104px] flex justify-between"
+		class="max-w-[1440px] w-full min-h-[900px] py-[50px] px-[104px] flex justify-between"
 	>
 		<div
 			class="max-w-[510px] w-full"
@@ -28,6 +28,7 @@
 					class="h-[56px] font-serrat font-medium text-green"
 					type="email"
 					:placeHolder="$t('Login.email')"
+					@inputValue="loginForm"
 				>
 					<template v-slot:input>
 						{{ $t("Login.email")}}
@@ -110,6 +111,12 @@ import { ref } from 'vue'
 import LoginWith from './LoginWith.vue'
 
 const slides = ref(["login-one", "login-two", "login-three"]);
+
+let login = ref<string>()
+
+const loginForm = (value: string) => {
+	login.value = value
+}
 
 </script>
 

@@ -19,7 +19,7 @@
 					sm:flex-row sm:gap-[5px]"	
 			>
 				<img 
-					src="../../assets/images/logo-footer.svg" 
+					src="@/assets/images/logo-footer.svg" 
 					alt="logo"
 					class="logo"
 					@click="$router.push({name:'Landing'})"
@@ -29,22 +29,22 @@
 						sm:gap-[4px] sm:flex-wrap sm:h-[55px]"
 				>
 					<img 
-						src="../../assets/images/facebook.svg" 
+						src="@/assets/images/facebook.svg" 
 						alt="facebook"
 						class="w-[24px]"
 					>
 					<img 
-						src="../../assets/images/twitter.svg" 
+						src="@/assets/images/twitter.svg" 
 						alt="twitter"
 						class="w-[24px]"
 					>
 					<img 
-						src="../../assets/images/youtube.svg" 
+						src="@/assets/images/youtube.svg" 
 						alt="youtube"
 						class="w-[24px]"
 					>
 					<img 
-						src="../../assets/images/instagram.svg" 
+						src="@/assets/images/instagram.svg" 
 						alt="instagram"
 						class="w-[24px]"
 					>

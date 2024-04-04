@@ -14,7 +14,7 @@
 				@click="$router.push({name:'Login'})"
 			>
 				<img 
-					src="../../assets/images/chevron-down.svg" 
+					src="@/assets/images/chevron-down.svg" 
 					alt="hotel"
 					class="rotate-90"
 				>

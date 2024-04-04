@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import ForgotCompotent from "../components/ForgotPassword/ForgotComponent.vue";
+import ForgotCompotent from "@/components/ForgotPassword/ForgotComponent.vue";
 </script>
 
 <style scoped>

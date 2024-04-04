@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import AddPaymentComponent from '../components/AddPayment/AddPaymentComponent.vue';
+import AddPaymentComponent from '@/components/AddPayment/AddPaymentComponent.vue'
 
 </script>
 

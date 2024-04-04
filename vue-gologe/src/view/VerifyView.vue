@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import VerifyComponent from '../components/VerifyEmail/VerifyComponent.vue'
+import VerifyComponent from '@/components/VerifyEmail/VerifyComponent.vue'
 </script>
 
 <style scoped>

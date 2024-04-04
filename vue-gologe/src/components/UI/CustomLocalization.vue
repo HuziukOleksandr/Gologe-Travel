@@ -6,7 +6,7 @@
 			v-click-away="onClickAway"
 		>
 			<img 
-				src="../../assets/images/EN.svg" 
+				src="@/assets/images/EN.svg" 
 				alt="Flag uk"
 				class="w-[25px] rounded-[4px] hover:cursor-pointer hover:scale-105 transition duration-200"
 				@click="close('EN')"
@@ -14,7 +14,7 @@
 			>
 
 			<img 
-				src="../../assets/images/UA.svg" 
+				src="@/assets/images/UA.svg" 
 				alt="Flag uk" 
 				class="w-[25px] rounded-[4px] hover:cursor-pointer hover:scale-105 transition duration-200"
 				@click="close('UA')"

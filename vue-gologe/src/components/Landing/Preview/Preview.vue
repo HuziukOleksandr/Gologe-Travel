@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { getTitleStyles } from "../../../helpers/Localization.ts"
+import { getTitleStyles } from "@/helpers/localization.ts"
 import { useI18n } from 'vue-i18n'
 
 const { locale } = useI18n()

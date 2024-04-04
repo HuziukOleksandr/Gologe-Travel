@@ -12,7 +12,7 @@
 			class="custom-text-base font-bold cursor-pointer flex items-center gap-[5px]"
 		>
 			<img 
-				src="../../assets/images/checked.svg" 
+				src="@/assets/images/checked.svg" 
 				alt="checked"
 				class="w-[20px] h-[20px]"
 			>

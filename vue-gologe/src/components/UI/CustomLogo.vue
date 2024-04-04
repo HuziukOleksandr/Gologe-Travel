@@ -1,13 +1,13 @@
 <template>
 	<img 
-		src="../../assets/images/logo.svg" 
+		src="@/assets/images/logo.svg" 
 		alt="Logo"
 		@click="$router.push({name:'Landing'})"
 		v-if="route.name == 'Landing'"
 		class="logo h-[36px]"
 	>
 	<img 
-		src="../../assets/images/logo-black.svg" 
+		src="@/assets/images/logo-black.svg" 
 		alt="Logo"
 		class="logo h-[36px]"
 		@click="$router.push({name:'Landing'})"

@@ -19,7 +19,7 @@
 			@click="$router.push({name:'Flight'})"
 		>
 			<img 
-				src="../../../assets/images/show-flights.svg" 
+				src="@/assets/images/show-flights.svg" 
 				alt="hotel"
 			>
 				{{ $t("Landing.Trips.buttonFlight")}}

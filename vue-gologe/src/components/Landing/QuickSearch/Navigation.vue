@@ -3,7 +3,7 @@
 		class="custom-text-base font-bold"
 	>
 		<img 
-			src="../../../assets/images/flight-black.svg" 
+			src="@/assets/images/flight-black.svg" 
 			alt="flight"
 		>
 		{{ $t("Landing.QuickSearch.flights")}}
@@ -13,7 +13,7 @@
 		class="custom-text-base font-bold"
 	>
 		<img 
-			src="../../../assets/images/hotel-black.svg" 
+			src="@/assets/images/hotel-black.svg" 
 			alt="hotel"
 		>
 		{{ $t("Landing.QuickSearch.stays")}}

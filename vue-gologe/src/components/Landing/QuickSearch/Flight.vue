@@ -5,6 +5,8 @@
 	>
 		<CustomInput
 			class="w-full h-[56px] font-serrat font-medium text-green"
+			type="text"
+			placeHolder="Lahore - Karachi"
 		>
 			<template v-slot:input>
 				{{ $t("Landing.QuickSearch.fromTo")}}
@@ -12,7 +14,7 @@
 
 			<template v-slot:image>
 				<img 
-					src="../../../assets/images/arrowswap.svg" 
+					src="@/assets/images/arrowswap.svg" 
 					alt="arrowswap"
 					class="h-[24px]"
 				>
@@ -31,6 +33,8 @@
 	>
 		<CustomInput
 			class="h-[56px] font-serrat font-medium text-green"
+			type="text"
+			placeHolder="Return"
 		>
 			<template v-slot:input>
 				{{ $t("Landing.QuickSearch.trip")}}
@@ -38,7 +42,7 @@
 
 			<template v-slot:image>
 				<img 
-					src="../../../assets/images/chevron-down.svg" 
+					src="@/assets/images/chevron-down.svg" 
 					alt="arrowswap"
 					class="h-[24px]"
 				>
@@ -52,11 +56,14 @@
 	</div>
 
 	<div
-		class="relative max-w-[325px] w-full "
+		class="relative max-w-[325px] w-full hover:cursor-pointer"
+		@click="departVisible = !departVisible"
+
 	>
 		<CustomInput
 			class="h-[56px] font-serrat font-medium text-green"
-			@click="departVisible = !departVisible"
+			type="text"
+			placeHolder="07 Nov 22 - 13 Nov 22"
 		>
 			<template v-slot:input>
 				{{ $t("Landing.QuickSearch.departReturn")}}
@@ -71,10 +78,12 @@
 
 	<div
 		class="relative max-w-[325px] w-full"
+		@click="classVisible = !classVisible"
 	>
 		<CustomInput
 			class="max-w-[325px] w-full h-[56px] font-serrat font-medium text-green"
-			@click="classVisible = !classVisible"
+			type="text"
+			placeHolder="1 Passenger, Economy"
 		>
 			<template v-slot:input>
 				{{ $t("Landing.QuickSearch.pasengerClass")}}

@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import ChangeComponent from '../components/ChangePassword/ChangeComponent.vue';
+import ChangeComponent from '@/components/ChangePassword/ChangeComponent.vue';
 
 
 </script>

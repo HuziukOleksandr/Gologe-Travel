@@ -15,7 +15,7 @@
 			:type="props.type"
 			:placeholder="props.placeHolder"
 			v-model="inputValue"
-			@change="changeValue(inputValue)"
+			@input="changeValue(inputValue)"
 		>
 		
 		<slot name="image"></slot>
@@ -30,8 +30,11 @@ const props = defineProps<{type: string, placeHolder: string}>()
 let inputValue= ref<string>('')
 
 const emit = defineEmits(['inputValue'])
+console.log(inputValue.value);
 
 const changeValue = (value: string) => {
+	console.log(inputValue.value);
+	
 	emit('inputValue', value);
 }
 

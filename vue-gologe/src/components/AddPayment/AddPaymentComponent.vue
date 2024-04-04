@@ -21,7 +21,7 @@
 				@click="$router.push({name:'Register'})"
 			>
 				<img 
-					src="../../assets/images/chevron-down.svg" 
+					src="@/assets/images/chevron-down.svg" 
 					alt="hotel"
 					class="rotate-90"
 				>
@@ -103,7 +103,7 @@
 
 						<template v-slot:image>
 							<img 
-								src="../../assets/images/chevron-down.svg" 
+								src="@/assets/images/chevron-down.svg" 
 								alt="arrowswap"
 								class="h-[24px]"
 							>
