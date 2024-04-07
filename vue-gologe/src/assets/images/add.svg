@@ -1,0 +1,14 @@
+<svg width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip50_1149">
+			<rect id="Property 1=ion:add-circle" width="16.000000" height="16.000000" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="Property 1=ion:add-circle" width="16.000000" height="16.000000" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip50_1149)">
+		<path id="Vector" d="M8 1.5C4.41 1.5 1.5 4.41 1.5 8C1.5 11.58 4.41 14.5 8 14.5C11.58 14.5 14.5 11.58 14.5 8C14.5 4.41 11.58 1.5 8 1.5ZM10.5 8.5L8.5 8.5L8.5 10.5C8.5 10.63 8.44 10.75 8.35 10.85C8.25 10.94 8.13 11 8 11C7.86 11 7.74 10.94 7.64 10.85C7.55 10.75 7.5 10.63 7.5 10.5L7.5 8.5L5.5 8.5C5.36 8.5 5.24 8.44 5.14 8.35C5.05 8.25 5 8.13 5 8C5 7.86 5.05 7.74 5.14 7.64C5.24 7.55 5.36 7.5 5.5 7.5L7.5 7.5L7.5 5.5C7.5 5.36 7.55 5.24 7.64 5.14C7.74 5.05 7.86 5 8 5C8.13 5 8.25 5.05 8.35 5.14C8.44 5.24 8.5 5.36 8.5 5.5L8.5 7.5L10.5 7.5C10.63 7.5 10.75 7.55 10.85 7.64C10.94 7.74 11 7.86 11 8C11 8.13 10.94 8.25 10.85 8.35C10.75 8.44 10.63 8.5 10.5 8.5Z" fill="#000000" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>

@@ -58,7 +58,7 @@
 				>
 					<CustomInput
 						class="max-w-[310px] w-full h-[56px] font-serrat font-medium text-green"
-						type="text"
+						type="date"
 						:placeHolder="$t('AddPayment.date')"
 					>
 						<template v-slot:input>

@@ -58,9 +58,6 @@ const route = useRoute();
 
 <style scoped>
 
-.active-bar {
-	border-bottom: 4px solid #122112;
-	
-}
+
 
 </style>

@@ -52,7 +52,7 @@
 					</CustomCheckbox>
 
 					<router-link 
-						to="/forgotpassword"
+						to="/login/forgotpassword/"
 						class="custom-text-base font-bold text-red"
 					>
 						{{ $t("Login.forgot") }}
@@ -62,6 +62,7 @@
 
 			<CustomButton
 				class="w-full h-[48px] rounded-[4px] mb-[16px] justify-center custom-text-sm font-bold bg-buttonGreen text-green"
+				@click="$router.push({name:'Account'})"
 			>
 				{{ $t("Login.title") }}
 			</CustomButton> 

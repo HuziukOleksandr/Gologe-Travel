@@ -1,14 +1,13 @@
 <template>
 	<div>
-		<AccountComponent 
+		<Login
 			class="mx-auto"
 		/>
 	</div>
 </template>
 
 <script setup lang="ts">
-import AccountComponent from '@/components/Account/AccountComponent.vue';
-
+import Login from '@/components/Auth/Login/Login.vue'
 
 </script>
 

@@ -1,14 +1,13 @@
 <template>
 	<div>
-		<AddPaymentComponent 
+		<ForgotCompotent 
 			class="mx-auto"
 		/>
 	</div>
 </template>
 
 <script setup lang="ts">
-import AddPaymentComponent from '@/components/AddPayment/AddPaymentComponent.vue'
-
+import ForgotCompotent from "@/components/Auth/ForgotPassword/ForgotComponent.vue";
 </script>
 
 <style scoped>

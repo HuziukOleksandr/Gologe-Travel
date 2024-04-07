@@ -1,13 +1,15 @@
 <template>
 	<div>
-		<ForgotCompotent 
+		<ChangeComponent 
 			class="mx-auto"
 		/>
 	</div>
 </template>
 
 <script setup lang="ts">
-import ForgotCompotent from "@/components/ForgotPassword/ForgotComponent.vue";
+import ChangeComponent from '@/components/Auth/ChangePassword/ChangeComponent.vue';
+
+
 </script>
 
 <style scoped>

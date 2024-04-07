@@ -1,14 +1,13 @@
 <template>
 	<div>
-		<AccountComponent 
+		<AddPaymentComponent 
 			class="mx-auto"
 		/>
 	</div>
 </template>
 
 <script setup lang="ts">
-import AccountComponent from '@/components/Account/AccountComponent.vue';
-
+import AddPaymentComponent from '@/components/Auth/AddPayment/AddPaymentComponent.vue'
 
 </script>
 

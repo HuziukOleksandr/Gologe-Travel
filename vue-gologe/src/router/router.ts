@@ -1,15 +1,15 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import Header from '@/components/Header/Header.vue'
 import Landing from '@/view/LandingView.vue'
-import Flight from '@/view/FlightView.vue'
-import Hotel from '@/view/HotelView.vue'
+import Flight from '@/view/FlightViews/FlightView.vue'
+import Hotel from '@/view/HotelViews/HotelView.vue'
 import Account from '@/view/AccountView.vue'
-import Login from '@/view/LoginView.vue'
-import Register from '@/view/RegisterView.vue'
-import ForgotPassword from '@/view/ForgotPasswordView.vue'
-import Verify from '@/view/VerifyView.vue'
-import ChangePassword from '@/view/ChangePasswordView.vue'
-import AddPayment from '@/view/AddPaymentView.vue'
+import Login from '@/view/AuthViews/LoginView.vue'
+import Register from '@/view/AuthViews/RegisterView.vue'
+import ForgotPassword from '@/view/AuthViews/ForgotPasswordView.vue'
+import Verify from '@/view/AuthViews/VerifyView.vue'
+import ChangePassword from '@/view/AuthViews/ChangePasswordView.vue'
+import AddPayment from '@/view/AuthViews/AddPaymentView.vue'
 import Footer from '@/components/Footer/Footer.vue'
  
 
@@ -69,7 +69,7 @@ const routes = [
 		}
 	},
 	{
-		path: '/forgotpassword', 
+		path: '/login/forgotpassword', 
 		name: 'ForgotPassword',
 		components: {
 			Header,
@@ -78,7 +78,7 @@ const routes = [
 		}
 	},
 	{
-		path: '/verify',
+		path: '/login/forgotpassword/verify',
 		name: 'Verify',
 		components: {
 			Header,
@@ -87,7 +87,7 @@ const routes = [
 		}
 	},
 	{
-		path: '/changepassword',
+		path: '/login/forgotpassword/verify/changepassword',
 		name: 'ChangePassword',
 		components: {
 			Header,
@@ -96,7 +96,7 @@ const routes = [
 		}
 	},
 	{
-		path: '/addpayment',
+		path: '/register/addpayment',
 		name: 'AddPayment',
 		components: {
 			Header,

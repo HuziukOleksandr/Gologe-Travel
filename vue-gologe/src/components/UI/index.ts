@@ -36,6 +36,14 @@ const CustomInputPassword = defineAsyncComponent(
 	() => import("./CustomInputPassword.vue")
 )
 
+const CustomUploadFile = defineAsyncComponent(
+	() => import("./CustomUploadFile.vue")
+)
+
+const CustomCropper = defineAsyncComponent(
+	() => import("./CustomCropper.vue")
+)
+
 export default {
 	CustomNavigation,
 	CustomLocalization,
@@ -45,5 +53,7 @@ export default {
 	CustomInputList,
 	CustomCarousel,
 	CustomCheckbox,
-	CustomInputPassword
+	CustomInputPassword,
+	CustomUploadFile,
+	CustomCropper
 }

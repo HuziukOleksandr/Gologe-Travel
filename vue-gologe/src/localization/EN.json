@@ -110,6 +110,22 @@
 			"more": "View more"
 		}
 	},
+	"Account": {
+		"upload": "Upload new cover",
+		"account": "Account",
+		"history": "History",
+		"payment": "Payment methods",
+		"Account": {
+			"change": "Change",
+			"addEmail": "Add another email",
+			"name": "Name",
+			"email": "Email",
+			"password": "Password",
+			"number": "Phone number",
+			"address": "Address",
+			"birth": "Date of birth"
+		}
+	},
 	"Footer": {
 		"title": "Subscribe Newsletter",
 		"subTitle": "The Travel",
