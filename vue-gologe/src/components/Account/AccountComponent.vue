@@ -53,7 +53,7 @@
 				<CustomButton
 					class="custom-text-base relative font-bold
 						max-w-[360px] w-full h-full px-[24px]"
-						:class="{ active: selectedTab === 'Account' }"
+					:class="{ active: selectedTab === 'Account' }"
 					@click="changeTab('Account')"
 				>
 					{{ $t("Account.account") }}
@@ -78,18 +78,9 @@
 				</CustomButton>
 			</div>
 		</div>
-		<div
-			class=""
-		>
-			<h1
-				class="custom-text-3xl font-bold mb-[16px]"
-			>
-				{{ selectedTab }}
-			</h1>
-			<Info v-show="selectedTab === 'Account'" />
-			<History v-show="selectedTab === 'History'" />
-			<Payment v-show="selectedTab === 'Payment'" />
-		</div>
+		<History v-if="selectedTab === 'History'" />
+		<Payment v-else-if="selectedTab === 'Payment'" />
+		<Info v-else="selectedTab === 'Account'" />
 	</div>
 </template>
 

@@ -124,6 +124,25 @@
 			"number": "Phone number",
 			"address": "Address",
 			"birth": "Date of birth"
+		},
+		"History": {
+			"title": "Tickets/Bookings",
+			"flights": "Flights",
+			"stays": "Stays",
+			"date": "Date",
+			"gate": "Gate",
+			"time": "Flight Time",
+			"seat": "Seat no.",
+			"button": "Download Ticket",
+			"check-In-Time": "Check-In Time",
+			"check-Out-Time": "Check-Out Time",
+			"check-In": "Check-In",
+			"check-Out": "Check-Out",
+			"room": "Room no." 
+		},
+		"Payment": {
+			"title": "Payment methods",
+			"add-Button": "Add a new card"
 		}
 	},
 	"Footer": {

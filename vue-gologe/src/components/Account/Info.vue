@@ -1,7 +1,12 @@
 <template>
+	<h1
+		class="custom-text-3xl font-bold mb-[16px]"
+	>
+		{{ $t("Account.account") }}
+	</h1>
 	<div
 		class="w-full flex flex-col gap-[32px] px-[24px] py-[32px] rounded-[16px] shadow-xl"
-	>	
+	>		
 		<div
 			class="w-full h-[52px]  flex justify-between"
 		>
