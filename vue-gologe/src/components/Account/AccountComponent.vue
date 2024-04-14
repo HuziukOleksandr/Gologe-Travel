@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="max-w-[1230px] w-full min-h-[700px] pt-[50px] flex flex-col gap-[40px] mb-[120px]"
+		class="relative max-w-[1230px] w-full min-h-[700px] pt-[50px] flex flex-col gap-[40px] mb-[120px]"
 	>
 		<div
 			class="w-full h-[350px] rounded-[12px] flex relative mb-[165px]"
@@ -79,21 +79,49 @@
 			</div>
 		</div>
 		<History v-if="selectedTab === 'History'" />
-		<Payment v-else-if="selectedTab === 'Payment'" />
+		<Payment 
+			v-else-if="selectedTab === 'Payment'" 
+			@open-window="open"
+		/>
 		<Info v-else="selectedTab === 'Account'" />
+
+		
+
+		<Teleport
+			to="#main"
+		>
+			<CustomModalWindow 
+				v-if="isOpen == true"
+				@close-window="close"
+				class="absolute"
+			/>
+		</Teleport>
+	
 	</div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import Info from './Info.vue'
-import History from './History.vue'
-import Payment from './Payment.vue'
+import Info from './Info/Info.vue'
+import History from './History/History.vue'
+import Payment from './Payment/Payment.vue'
 
 const selectedTab = ref<string>("Account")
 
+let isOpen = ref<bolean>()
+
 const changeTab = (type: string) => {
 	selectedTab.value = type
+	
+}
+
+const close = () => {
+	isOpen.value = false
+}
+
+const open = () => {
+	isOpen.value = true
+	console.log(isOpen.value);
 	
 }
 </script>

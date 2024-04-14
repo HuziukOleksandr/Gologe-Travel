@@ -22,7 +22,7 @@ export default {
 			"gray": "#79747E",
 			"background": "#FAFBFC",
 			"lightGreen": "#CDEAE1",
-			"red": "#FF8682"
+			"red": "#FF8682",
 		},
 		fontFamily: {
 			'serrat': ['Montserrat','sans'],

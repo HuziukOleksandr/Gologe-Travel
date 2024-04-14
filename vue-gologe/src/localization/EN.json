@@ -142,7 +142,7 @@
 		},
 		"Payment": {
 			"title": "Payment methods",
-			"add-Button": "Add a new card"
+			"addButton": "Add a new card"
 		}
 	},
 	"Footer": {

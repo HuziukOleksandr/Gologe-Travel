@@ -1,3 +1,4 @@
+// File with imports for all UI components
 import { defineAsyncComponent } from 'vue'
 
 const CustomNavigation = defineAsyncComponent(
@@ -44,6 +45,9 @@ const CustomCropper = defineAsyncComponent(
 	() => import("./CustomCropper.vue")
 )
 
+const CustomModalWindow = defineAsyncComponent(
+	() => import("./CustomModalWindow.vue")
+)
 export default {
 	CustomNavigation,
 	CustomLocalization,
@@ -55,5 +59,6 @@ export default {
 	CustomCheckbox,
 	CustomInputPassword,
 	CustomUploadFile,
-	CustomCropper
+	CustomCropper,
+	CustomModalWindow
 }

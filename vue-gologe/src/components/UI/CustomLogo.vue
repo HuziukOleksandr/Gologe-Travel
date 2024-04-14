@@ -1,4 +1,6 @@
 <template>
+	<!-- Logo component -->
+	<!-- Logo for Landing Page -->
 	<img 
 		src="@/assets/images/logo.svg" 
 		alt="Logo"
@@ -6,6 +8,8 @@
 		v-if="route.name == 'Landing'"
 		class="logo h-[36px]"
 	>
+
+	<!-- Logo for other Pages -->
 	<img 
 		src="@/assets/images/logo-black.svg" 
 		alt="Logo"
@@ -29,4 +33,5 @@ const route = useRoute();
 	cursor: pointer;
 	transform: scale(1.02);
 }
+
 </style>
