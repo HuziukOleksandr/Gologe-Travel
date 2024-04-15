@@ -83,7 +83,7 @@ const route = useRoute();
 
 .wrapper_content {
 	@apply
-	flex items-center justify-beetwen gap-[8px]
+	flex items-center justify-between gap-[8px]
 	md:gap-[10px] 
 	sm:gap-[5px]
 }

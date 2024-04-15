@@ -35,7 +35,7 @@ import { useI18n } from 'vue-i18n';
 import { ref } from 'vue';
 
 // Props for open expected "true" or ""false
-const props = withDefault(
+const props = withDefaults(
 	defineProps<{ 
 		dialogVisible: boolean 
 	}>(),

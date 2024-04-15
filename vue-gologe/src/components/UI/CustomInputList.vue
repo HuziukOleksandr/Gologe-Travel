@@ -18,7 +18,7 @@
 <script setup lang="ts">
 
 // Props expected boolean
-const props = withDefault(
+const props = withDefaults(
 	defineProps<{ 
 		dialogVisible: boolean 
 	}>(),
