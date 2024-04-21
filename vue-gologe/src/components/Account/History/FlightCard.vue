@@ -22,16 +22,21 @@
 				<div
 					class="container__from-to"
 				>
+					<!-- Title Start -->
 					<h1
 						class="custom-text-base text-gray font-bold truncate ..."
 					>
 						Newark(EWR)
 					</h1>
+					<!-- Title End -->
+
+					<!-- Text Start -->
 					<h2
 						class="custom-text-xl font-bold truncate ..."
 					>
 						12:00 pm
 					</h2>
+					<!-- Text End -->
 				</div>
 				<!-- Container for From End -->
 				

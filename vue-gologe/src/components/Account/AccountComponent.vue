@@ -92,7 +92,7 @@
 
 				<!-- Use Custom Button "History" Start -->
 				<CustomButton
-					class="button"
+					class="button custom-text-base"
 					:class="{ active: selectedTab === 'History' }"
 					@click="changeTab('History')"
 				>
@@ -108,7 +108,7 @@
 
 				<!-- Use Custom Button "Payment" Start -->
 				<CustomButton
-					class="button"
+					class="button custom-text-base"
 					:class="{ active: selectedTab === 'Payment' }"
 					@click="changeTab('Payment')"
 				>
@@ -197,7 +197,7 @@ const open = () => {
 
 .button {
 	@apply
-	custom-text-base relative font-bold
+	 relative font-bold
 	max-w-[360px] w-full h-full px-[24px]
 }
 
