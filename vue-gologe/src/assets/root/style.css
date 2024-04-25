@@ -6,6 +6,11 @@
 	@apply font-serrat text-xs
 }
 
+.custom-text-sm {
+	@apply font-serrat text-sm
+}
+
+
 .custom-text-base {
 	@apply font-serrat text-base
 }

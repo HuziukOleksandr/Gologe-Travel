@@ -31,7 +31,7 @@
 
 			<!-- Trip Header button Start -->
 			<CustomButton 
-				class="h-[40px] border-[2px] border-buttonGreen "
+				class="h-[40px] border-[2px] border-buttonGreen px-[16px]"
 			>	
 				{{ $t("Landing.Trips.button") }}
 			</CustomButton>

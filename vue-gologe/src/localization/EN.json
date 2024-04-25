@@ -110,6 +110,28 @@
 			"more": "View more"
 		}
 	},
+	"FlightSearch": {
+		"button": "See All",
+		"Preview": {
+			"title": "Make your travel whishlist, we’ll do the rest",
+			"sub-Title": "Special offers to suit your plan"
+		},
+		"Search": {
+			"question": "Where are you flying?"
+		},
+		"Places": {
+			"title": "Let's go places together",
+			"sub-Title": "Discover the latest offers and news and start planning your next trip with us."
+		},
+		"Travel": {
+			"title": "Fall into travel",
+			"sub-Title":"Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.",
+			"button": "Book flight",
+			"card-Title": "Backpacking Sri Lanka",
+			"card-Text": "Traveling is a unique experience as it's the best way to unplug from the pushes and pulls of daily life. It helps us to forget about our problems, frustrations, and fears at home. During our journey, we experience life in different ways. We explore new places, cultures, cuisines, traditions, and ways of living.",
+			"card-Button": "From"
+		}
+	},
 	"Account": {
 		"upload": "Upload new cover",
 		"account": "Account",

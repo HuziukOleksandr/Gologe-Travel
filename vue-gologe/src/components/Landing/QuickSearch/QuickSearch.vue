@@ -11,32 +11,16 @@
 			<Navigation />
 		</div>
 		<!-- Quick Search Navigation wrapper End -->
-
-		<!-- Quick Search Flight or Hotel Start -->
-		<div 
-			class="w-full min-h-[56px] flex justify-between flex-wrap md:gap-[30px] md:justify-start"
-		>
-			<!-- Use Flight and Hotel Component -->
-			<Flight />	
-		</div>
-		<!-- Quick Search Flight or Hotel End -->
-
-		<!-- Quick Search Buttons Start -->
-		<div
-			class="h-[48px] flex self-end gap-[24px]"
-		>
-			<!-- Use Buttons Component -->
-			<Buttons />
-		</div>
-		<!-- Quick Search Buttons End -->
+		
+		<!-- Use Custom Flihgt Search Component -->
+		<CustomFlightSearch />
 	</div>
 	<!-- Quick Search wrapper End -->
 </template>
 
 <script setup lang="ts">
 import Navigation from './Navigation.vue'
-import Flight from './Flight.vue'
-import Buttons from './Buttons.vue'
+
 
 </script>
 

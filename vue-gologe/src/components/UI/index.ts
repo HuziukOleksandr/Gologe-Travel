@@ -48,6 +48,10 @@ const CustomCropper = defineAsyncComponent(
 const CustomModalWindow = defineAsyncComponent(
 	() => import("./CustomModalWindow.vue")
 )
+
+const CustomFlightSearch = defineAsyncComponent(
+	() => import("./CustomFlightSearch.vue")
+)
 export default {
 	CustomNavigation,
 	CustomLocalization,
@@ -60,5 +64,6 @@ export default {
 	CustomInputPassword,
 	CustomUploadFile,
 	CustomCropper,
-	CustomModalWindow
+	CustomModalWindow,
+	CustomFlightSearch
 }
