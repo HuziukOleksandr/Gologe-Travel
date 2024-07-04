@@ -1,6 +1,6 @@
 interface TripCard {
-	city: string,
-	country: string
+    city: string;
+    country: string;
 }
 
-export default TripCard
+export default TripCard;

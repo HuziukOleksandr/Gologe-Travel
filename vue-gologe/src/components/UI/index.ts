@@ -1,69 +1,69 @@
 // File with imports for all UI components
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent } from "vue";
 
 const CustomNavigation = defineAsyncComponent(
-	() => import("./CustomNavigation.vue")
-)
+    () => import("./CustomNavigation.vue")
+);
 
 const CustomLocalization = defineAsyncComponent(
-	() => import("./CustomLocalization.vue")
-)
+    () => import("./CustomLocalization.vue")
+);
 
-const CustomInput = defineAsyncComponent(
+const CustomInput = defineAsyncComponent( 
 	() => import("./CustomInput.vue")
-)
+);
 
 const CustomLogo = defineAsyncComponent(
 	() => import("./CustomLogo.vue")
-)
+);
 
 const CustomButton = defineAsyncComponent(
 	() => import("./CustomButton.vue")
-)
+);
 
 const CustomInputList = defineAsyncComponent(
-	() => import("./CustomInputList.vue")
-)
+    () => import("./CustomInputList.vue")
+);
 
 const CustomCarousel = defineAsyncComponent(
-	() => import("./CustomCarousel.vue")
-)
+    () => import("./CustomCarousel.vue")
+);
 
 const CustomCheckbox = defineAsyncComponent(
-	() => import("./CustomCheckbox.vue")
-)
+    () => import("./CustomCheckbox.vue")
+);
 
 const CustomInputPassword = defineAsyncComponent(
-	() => import("./CustomInputPassword.vue")
-)
+    () => import("./CustomInputPassword.vue")
+);
 
 const CustomUploadFile = defineAsyncComponent(
-	() => import("./CustomUploadFile.vue")
-)
+    () => import("./CustomUploadFile.vue")
+);
 
 const CustomCropper = defineAsyncComponent(
 	() => import("./CustomCropper.vue")
-)
+);
 
 const CustomModalWindow = defineAsyncComponent(
-	() => import("./CustomModalWindow.vue")
-)
+    () => import("./CustomModalWindow.vue")
+);
 
 const CustomFlightSearch = defineAsyncComponent(
-	() => import("./CustomFlightSearch.vue")
-)
+    () => import("./CustomFlightSearch.vue")
+);
 export default {
-	CustomNavigation,
-	CustomLocalization,
-	CustomInput,
-	CustomLogo,
-	CustomButton,
-	CustomInputList,
-	CustomCarousel,
-	CustomCheckbox,
-	CustomInputPassword,
-	CustomUploadFile,
-	CustomCropper,
-	CustomModalWindow,
-	CustomFlightSearch
-}
+    CustomNavigation,
+    CustomLocalization,
+    CustomInput,
+    CustomLogo,
+    CustomButton,
+    CustomInputList,
+    CustomCarousel,
+    CustomCheckbox,
+    CustomInputPassword,
+    CustomUploadFile,
+    CustomCropper,
+    CustomModalWindow,
+    CustomFlightSearch,
+};

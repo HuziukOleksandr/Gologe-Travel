@@ -1,16 +1,11 @@
 <template>
-	<div>
-		<Register 
-			class="mx-auto"
-		/>
-	</div>
+    <div>
+        <Register class="mx-auto" />
+    </div>
 </template>
 
 <script setup lang="ts">
-import Register from '@/components/Auth/Register/Register.vue'
-
+import Register from "@/components/Auth/Register/Register.vue";
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
