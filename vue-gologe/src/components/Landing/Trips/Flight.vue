@@ -16,7 +16,7 @@
         <!-- Use Custom Button UI Component Start -->
         <CustomButton
             class="custom-text-sm font-medium h-[48px] p-[16px] bg-buttonGreen"
-            @click="$router.push({ name: 'Flight' })"
+            @click="RedirectPage()"
         >
             <!-- Button Image -->
             <img src="@/assets/images/show-flights.svg" alt="hotel" />
@@ -27,7 +27,13 @@
     <!-- Flight Card wrapper End -->
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { router } from "vue-router"
+const RedirectPage = () => {
+	router.push({ name: 'Flight' })
+}
+
+</script>
 
 <style scoped>
 .flight_wrapper {
