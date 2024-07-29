@@ -1,9 +1,9 @@
 <template>
     <!-- Register With wrapper Start -->
-    <div class="flex justify-between">
+    <div class="flex justify-between gap-[10px]">
         <!-- Use Custom Button "Facebook" Start -->
         <CustomButton
-            class="h-[48px] px-[89px] justify-center border-[2px] border-solid border-buttonGreen"
+            class="buttons"
         >
             <!-- Button Image -->
             <img src="@/assets/images/facebook-login.svg" alt="facebook" />
@@ -12,7 +12,7 @@
 
         <!-- Use Custom Button "Google" Start -->
         <CustomButton
-            class="h-[48px] px-[89px] justify-center border-[2px] border-solid border-buttonGreen"
+            class="buttons"
         >
             <!-- Google Image -->
             <img src="@/assets/images/google-login.svg" alt="google" />
@@ -21,7 +21,7 @@
 
         <!-- Use Custom Button "Apple" Start -->
         <CustomButton
-            class="h-[48px] px-[89px] justify-center border-[2px] border-solid border-buttonGreen"
+            class="buttons"
         >
             <!-- Apple Image -->
             <img src="@/assets/images/apple-login.svg" alt="apple" />
@@ -33,4 +33,8 @@
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style scoped>
+.buttons {
+    @apply w-full h-[48px] flex justify-center border-[2px] border-solid border-buttonGreen;
+}
+</style>

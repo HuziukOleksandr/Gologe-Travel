@@ -81,11 +81,11 @@ import AboutUs from "./AboutUs.vue";
 
 <style scoped>
 .wrapper_footer {
-    @apply w-full min-h-[420px] m-auto mt-[150px] pb-[64px]
+    @apply w-full min-h-[220px] m-auto mt-[150px] pb-[64px]
 	bg-buttonGreen  
 	flex flex-col justify-between
 	md:px-[50px] 
-	sm:px-[25px];
+	sm:px-[25px] sm:pb-[30px];
 }
 
 .subscribe {
@@ -93,10 +93,10 @@ import AboutUs from "./AboutUs.vue";
 }
 
 .wrapper_container {
-    @apply max-w-[1230px] w-full min-h-[140px] mx-auto py-[50px] 
+    @apply max-w-[1230px] w-full min-h-[40px] mx-auto py-[50px] 
 	flex justify-between gap-[20px]
 	lg:gap-[100px] 
-	sm:flex-col sm:items-center;
+	sm:flex-col sm:items-center sm:p-[10px];
 }
 
 .wrapper_aside {

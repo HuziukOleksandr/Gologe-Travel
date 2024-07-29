@@ -3,7 +3,7 @@
     <div class="wrapper_input">
         <!-- Title Start -->
         <h1
-            class="absolute top-[-12px] z-55 px-[10px] bg-background font-serrat text-green"
+            class="absolute top-[-12px] z-55 px-[10px] bg-background font-serrat text-green sm:hidden"
         >
             <!-- Slot for name input -->
             <slot name="input"></slot>

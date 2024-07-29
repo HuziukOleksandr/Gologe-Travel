@@ -1,12 +1,12 @@
 <template>
     <!-- Login wrapper Start -->
     <div
-        class="max-w-[1440px] w-full min-h-[900px] py-[50px] px-[104px] flex justify-between"
+        class="max-w-[1440px] w-full min-h-[500px] py-[50px] flex gap-[20px] justify-center sm:py-[20px] sm:px-[20px]"
     >
-        <!-- Asode wrapper Start -->
+        <!-- Aside wrapper Start -->
         <div class="max-w-[510px] w-full">
             <!-- USe Custom Logo -->
-            <CustomLogo class="mb-[64px]" />
+            <CustomLogo class="mb-[64px] sm:mb-[10px]" />
 
             <!-- Title Start -->
             <h1 class="custom-text-4xl font-bold mb-[16px]">
@@ -15,16 +15,18 @@
             <!-- Title End -->
 
             <!-- Text Start -->
-            <h2 class="custom-text-base font-regular mb-[50px] text-gray">
+            <h2
+                class="custom-text-base font-regular mb-[50px] text-gray sm:mb-[15px]"
+            >
                 {{ $t("Login.subTitle") }}
             </h2>
             <!-- Text End -->
 
             <!-- Wrapper for Inputs Start -->
-            <div class="flex flex-col gap-[24px] mb-[40px]">
+            <div class="flex flex-col gap-[24px] mb-[40px] sm:mb-[20px]">
                 <!-- Use Custom Input "Email" Start -->
                 <CustomInput
-                    class="h-[56px] font-serrat font-medium text-green"
+                    class="h-[56px] font-serrat font-medium text-green sm:h-[45px]"
                     type="email"
                     :placeHolder="$t('Login.email')"
                     @inputValue="loginForm"
@@ -39,7 +41,7 @@
 
                 <!-- Use Custom Input Password "Password" Start -->
                 <CustomInputPassword
-                    class="h-[56px] font-serrat font-medium text-green"
+                    class="h-[56px] font-serrat font-medium text-green sm:h-[45px]"
                     :placeHolder="$t('Login.password')"
                 >
                     <!-- Slot for Name -->
@@ -50,7 +52,9 @@
                 <!-- Use Custom Input Password "Password" End -->
 
                 <!-- Wrapper for CheckBox and Forgot Start -->
-                <div class="w-full h-[25px] flex justify-between">
+                <div
+                    class="w-full h-[25px] flex justify-between sm:flex-wrap sm:mb-[15px] sm:gap-[5px]"
+                >
                     <!-- Use Custom CheckBox "Remember" Start  -->
                     <CustomCheckbox>
                         {{ $t("Login.remember") }}
@@ -72,7 +76,7 @@
 
             <!-- Use Custom Button "Login" Start -->
             <CustomButton
-                class="w-full h-[48px] rounded-[4px] mb-[16px] justify-center custom-text-sm font-bold bg-buttonGreen text-green"
+                class="w-full h-[48px] rounded-[4px] mb-[16px] justify-center custom-text-sm font-bold bg-buttonGreen text-green sm:h-[45px]"
                 @click="$router.push({ name: 'Account' })"
             >
                 {{ $t("Login.title") }}
@@ -81,7 +85,7 @@
 
             <!-- Wrapper for Question and Register Start -->
             <div
-                class="mb-[40px] w-full h-[20px] flex justify-center gap-[5px]"
+                class="w-full h-[20px] flex justify-center gap-[5px] mb-[40px] sm:flex-wrap sm:mb-[15px]"
             >
                 <!-- Text question Start -->
                 <span class="custom-text-base font-bold">
@@ -101,7 +105,9 @@
             <!-- Wrapper for Question and Register End -->
 
             <!-- Text "Login With" wrapper Startc -->
-            <div class="w-full h-[18px] flex items-center mb-[40px]">
+            <div
+                class="w-full h-[18px] flex items-center mb-[40px] sm:mb-[15px]"
+            >
                 <!-- Line Start -->
                 <hr class="grow text-gray" />
                 <!-- Line End -->
@@ -125,7 +131,7 @@
         </div>
 
         <!-- Wrapper for Carousel Start -->
-        <div class="max-w-[620px] w-full relative flex">
+        <div class="max-w-[620px] w-full relative hidden lg:flex">
             <!-- Use Custom Carousel Component -->
             <CustomCarousel :slides="slides" />
         </div>

@@ -1,10 +1,10 @@
 <template>
     <!-- Register wrapper Start -->
     <div
-        class="max-w-[1440px] w-full min-h-[900px] py-[50px] px-[104px] flex justify-between"
+        class="max-w-[1440px] w-full min-h-[500px] py-[50px] flex gap-[20px] justify-center sm:py-[20px] sm:px-[20px]"
     >
         <!-- Carousel wrapper Start -->
-        <div class="max-w-[490px] w-full h-[816px] relative flex">
+        <div class="max-w-[490px] w-full h-[816px] relative hidden lg:flex">
             <!-- Use Custom Carousel Component -->
             <CustomCarousel :slides="slides" />
         </div>
@@ -13,7 +13,7 @@
         <!-- Aside wrapper Start -->
         <div class="max-w-[640px] w-full min-h-[750px]">
             <!-- Use Custom Logo Component -->
-            <CustomLogo class="mb-[60px]" />
+            <CustomLogo class="mb-[60px] sm:mb-[10px] lg:hidden" />
 
             <!-- Title Start -->
             <h1 class="custom-text-4xl font-bold mb-[16px]">
@@ -21,19 +21,21 @@
             </h1>
             <!-- Title End -->
 
-            <!-- SubTitle Start -->
-            <h2 class="custom-text-base font-regular mb-[50px] text-gray">
+            <!-- Text Start -->
+            <h2
+                class="custom-text-base font-regular mb-[50px] text-gray sm:mb-[15px]"
+            >
                 {{ $t("Register.subTitle") }}
             </h2>
-            <!-- SubTitle End -->
+            <!-- Text End -->
 
             <!-- Wrapper for Inputs Start -->
-            <div class="flex flex-col gap-[24px] mb-[40px]">
+            <div class="flex flex-col gap-[24px] mb-[40px] sm:mb-[15px]">
                 <!-- Wrapper for "First Name and Lact Name Start" -->
-                <div class="flex justify-between">
+                <div class="flex justify-between sm:gap-[10px]">
                     <!-- Use Custom Input "First Name" Start -->
                     <CustomInput
-                        class="max-w-[310px] w-full h-[56px] font-serrat font-medium text-green"
+                        class="input"
                         type="text"
                         :placeHolder="$t('Register.first')"
                     >
@@ -47,7 +49,7 @@
 
                     <!-- Use Custom Input "Last Name" Start -->
                     <CustomInput
-                        class="max-w-[310px] w-full h-[56px] font-serrat font-medium text-green"
+                        class="input"
                         type="text"
                         :placeHolder="$t('Register.last')"
                     >
@@ -62,10 +64,10 @@
                 <!-- Wrapper for "First Name and Lact Name End" -->
 
                 <!-- Wrapper for Email and Phone Number Start -->
-                <div class="flex justify-between">
+                <div class="flex justify-between sm:gap-[10px]">
                     <!-- Use Custom Input "Email" Start -->
                     <CustomInput
-                        class="max-w-[310px] w-full h-[56px] font-serrat font-medium text-green"
+                        class="input"
                         type="text"
                         :placeHolder="$t('Register.email')"
                     >
@@ -79,7 +81,7 @@
 
                     <!-- Use Custom Input "Phone Number" Start -->
                     <CustomInput
-                        class="max-w-[310px] w-full h-[56px] font-serrat font-medium text-green"
+                        class="input"
                         type="text"
                         :placeHolder="$t('Register.phone')"
                     >
@@ -95,7 +97,7 @@
 
                 <!-- Use Custom Input Password "Password" Start -->
                 <CustomInputPassword
-                    class="h-[56px] font-serrat font-medium text-green"
+                    class="password_input"
                     :placeHolder="$t('Register.password')"
                 >
                     <!-- Slot for Name Start -->
@@ -108,7 +110,7 @@
 
                 <!-- Use Custom Input Password "Confirm Password" Start -->
                 <CustomInputPassword
-                    class="h-[56px] font-serrat font-medium text-green"
+                    class="password_input"
                     :placeHolder="$t('Register.confirm')"
                 >
                     <!-- Slot for Name Start -->
@@ -121,21 +123,23 @@
 
                 <!-- Use Custom CheckBox Start -->
                 <CustomCheckbox>
-                    {{ $t("Register.inputStart") }}
+                    <div class="sm:flex-wrap">
+                        {{ $t("Register.inputStart") }}
 
-                    <!-- Use Router Link Start -->
-                    <router-link to="#" class="text-red">
-                        {{ $t("Register.terms") }}
-                    </router-link>
-                    <!-- Use Router Link End -->
+                        <!-- Use Router Link Start -->
+                        <router-link to="#" class="text-red">
+                            {{ $t("Register.terms") }}
+                        </router-link>
+                        <!-- Use Router Link End -->
 
-                    {{ $t("Register.inputAnd") }}
+                        {{ $t("Register.inputAnd") }}
 
-                    <!-- Use Router Link Start -->
-                    <router-link to="#" class="text-red">
-                        {{ $t("Register.privacy") }}
-                    </router-link>
-                    <!-- Use Router Link End -->
+                        <!-- Use Router Link Start -->
+                        <router-link to="#" class="text-red">
+                            {{ $t("Register.privacy") }}
+                        </router-link>
+                        <!-- Use Router Link End -->
+                    </div>
                 </CustomCheckbox>
                 <!-- Use Custom CheckBox End -->
             </div>
@@ -152,7 +156,7 @@
 
             <!-- Wrapper for Question and Login Start -->
             <div
-                class="mb-[40px] w-full h-[20px] flex justify-center gap-[5px]"
+                class="w-full h-[20px] flex justify-center gap-[5px] sm:flex-wrap mb-[40px] sm:mb-[40px]"
             >
                 <!-- Text Question Start -->
                 <span class="custom-text-base font-bold">
@@ -172,7 +176,7 @@
             <!-- Wrapper for Question and Login Start -->
 
             <!-- Text "Register With" wrapper Start -->
-            <div class="w-full h-[18px] flex items-center mb-[40px]">
+            <div class="w-full h-[18px] flex items-center mb-[40px] sm:mb-[15px]">
                 <!-- Line Start -->
                 <hr class="grow text-gray" />
                 <!-- Line End -->
@@ -210,4 +214,14 @@ const slides = ref([
 ]);
 </script>
 
-<style scoped></style>
+<style scoped>
+.input {
+    @apply max-w-[310px] w-full h-[56px] font-serrat font-medium text-green
+	sm:h-[45px];
+}
+
+.password_input {
+    @apply h-[56px] font-serrat font-medium text-green
+	sm:h-[45px];
+}
+</style>

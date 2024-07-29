@@ -72,7 +72,7 @@ const route = useRoute();
 	flex justify-between items-center 
 	lg:px-[104px] 
 	md:px-[50px] 
-	sm:px-[25px];
+	sm:px-[25px] sm:h-[60px];
 }
 
 .wrapper_content {
