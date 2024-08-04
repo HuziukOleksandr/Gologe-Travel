@@ -37,7 +37,7 @@
         <!-- Cerds wrapper End -->
 
         <!-- Content for Large Cards wrapper Start -->
-        <div class="w-full h-[560px] flex justify-between">
+        <div class="w-full h-[560px] flex flex-wrap justify-between">
             <!-- Use Flight Component -->
             <Flight />
 

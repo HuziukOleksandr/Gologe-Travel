@@ -1,7 +1,7 @@
 <template>
 	<!-- Forgot Password wrapper Start -->
     <div
-        class="mmax-w-[1440px] w-full min-h-[500px] py-[50px] flex gap-[20px] justify-center sm:py-[20px] sm:px-[20px]"
+        class="max-w-[1440px] w-full min-h-[500px] py-[50px] flex gap-[20px] justify-center sm:py-[20px] sm:px-[20px]"
     >
         <div class="max-w-[510px] w-full">
 			<!-- USe Custom Logo -->

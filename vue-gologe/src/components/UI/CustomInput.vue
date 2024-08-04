@@ -1,27 +1,27 @@
 <template>
-    <!-- Custom input Start -->
-    <div class="wrapper_input">
-        <!-- Text Start -->
-        <h1
-            class="absolute top-[-12px] z-55 px-[10px] bg-background font-serrat text-green sm:hidden"
-        >
-            <!-- Slot for text -->
-            <slot name="input"></slot>
-        </h1>
-        <!-- Text End -->
+  <!-- Custom input Start -->
+  <div class="wrapper_input">
+    <!-- Text Start -->
+    <h1
+      class="absolute top-[-12px] z-55 px-[10px] bg-background font-serrat text-green"
+    >
+      <!-- Slot for text -->
+      <slot name="input"></slot>
+    </h1>
+    <!-- Text End -->
 
-        <!-- Input -->
-        <input
-            class="w-full h-full"
-            :type="props.type"
-            :placeholder="props.placeHolder"
-            v-model="inputValue"
-            @input="changeValue(inputValue)"
-        />
-        <!-- Slot for Image -->
-        <slot name="image"></slot>
-    </div>
-    <!-- Custom input Start -->
+    <!-- Input -->
+    <input
+      class="w-full h-full"
+      :type="props.type"
+      :placeholder="props.placeHolder"
+      v-model="inputValue"
+      @input="changeValue(inputValue)"
+    />
+    <!-- Slot for Image -->
+    <slot name="image"></slot>
+  </div>
+  <!-- Custom input Start -->
 </template>
 
 <script setup lang="ts">
@@ -29,11 +29,11 @@ import { ref } from "vue";
 
 // Props, expected type input and plaseholder
 const props = withDefaults(
-    defineProps<{
-        type: string;
-        placeHolder: string;
-    }>(),
-    {}
+  defineProps<{
+    type: string;
+    placeHolder: string;
+  }>(),
+  {}
 );
 
 // Input Value
@@ -43,13 +43,13 @@ let inputValue = ref<string>("");
 const emit = defineEmits(["inputValue"]);
 
 const changeValue = (value: string) => {
-    emit("inputValue", value);
+  emit("inputValue", value);
 };
 </script>
 
 <style scoped>
 .wrapper_input {
-    @apply flex gap-[10px] items-center 
+  @apply flex gap-[10px] items-center 
 	rounded-[4px] 
 	px-[15px] 
 	border-2 border-gray border-solid 

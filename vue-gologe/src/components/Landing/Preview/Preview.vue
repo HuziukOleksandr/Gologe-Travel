@@ -6,14 +6,14 @@
         <!-- Preview Text wrapper Start -->
         <div class="w-full flex flex-col items-center gap-[24px]">
             <!-- Preview Sub Title Start -->
-            <h2 class="custom-text-5xl font-semibold text-white">
+            <h2 class="custom-text-5xl font-semibold text-white sm:text-3xl">
                 {{ $t("Landing.Preview.headerTop") }}
             </h2>
             <!-- Preview Sub Title End -->
 
             <!-- Preview Title Start -->
             <h1
-                class="font-serrat font-semibold text-white uppercase"
+                class="font-serrat font-semibold text-white uppercase sm:text-4xl"
                 :class="getTitleStyles(locale)"
             >
                 {{ $t("Landing.Preview.header") }}
@@ -21,7 +21,7 @@
             <!-- Preview Title End -->
 
             <!-- Preview Text Start -->
-            <h3 class="custom-text-2xl text-white">
+            <h3 class="custom-text-2xl text-white sm:text-xl">
                 {{ $t("Landing.Preview.headerBottom") }}
             </h3>
             <!-- Preview Text End -->
