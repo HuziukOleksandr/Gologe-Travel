@@ -1,34 +1,40 @@
 <template>
-    <!-- Preview wrapper Start -->
+    <!-- Preview Start -->
     <div
-        class="background max-w-[1380px] w-full min-h-[600px] flex items-center"
+        class="w-full flex justify-center px-[30px] md:px-[30px] sm:px-[30px] ph:px-[20px]"
     >
-        <!-- Preview Text wrapper Start -->
-        <div class="w-full flex flex-col items-center gap-[24px]">
-            <!-- Preview Sub Title Start -->
-            <h2 class="custom-text-5xl font-semibold text-white sm:text-3xl">
-                {{ $t("Landing.Preview.headerTop") }}
-            </h2>
-            <!-- Preview Sub Title End -->
+        <!-- Preview wrapper Start -->
+        <div
+            class="background max-w-[1380px] w-full min-h-[600px] flex items-center rounded-[16px]"
+        >
+            <!-- Preview Text wrapper Start -->
+            <div class="w-full flex flex-col items-center gap-[24px]">
+                <!-- Preview Sub Title Start -->
+                <h2 class="custom-text-5xl font-semibold text-white sm:text-3xl ph:text-2xl">
+                    {{ $t("Landing.Preview.headerTop") }}
+                </h2>
+                <!-- Preview Sub Title End -->
 
-            <!-- Preview Title Start -->
-            <h1
-                class="font-serrat font-semibold text-white uppercase sm:text-4xl"
-                :class="getTitleStyles(locale)"
-            >
-                {{ $t("Landing.Preview.header") }}
-            </h1>
-            <!-- Preview Title End -->
+                <!-- Preview Title Start -->
+                <h1
+                    class="font-serrat font-semibold text-white uppercase sm:text-4xl ph:text-3xl"
+                    :class="getTitleStyles(locale)"
+                >
+                    {{ $t("Landing.Preview.header") }}
+                </h1>
+                <!-- Preview Title End -->
 
-            <!-- Preview Text Start -->
-            <h3 class="custom-text-2xl text-white sm:text-xl">
-                {{ $t("Landing.Preview.headerBottom") }}
-            </h3>
-            <!-- Preview Text End -->
+                <!-- Preview Text Start -->
+                <h3 class="custom-text-2xl text-white sm:text-xl ph:text-sm">
+                    {{ $t("Landing.Preview.headerBottom") }}
+                </h3>
+                <!-- Preview Text End -->
+            </div>
+            <!-- Preview Text wrapper Start -->
         </div>
-        <!-- Preview Text wrapper Start -->
+        <!-- Preview wrapper End -->
     </div>
-    <!-- Preview wrapper End -->
+    <!-- Preview End -->
 </template>
 
 <script setup lang="ts">

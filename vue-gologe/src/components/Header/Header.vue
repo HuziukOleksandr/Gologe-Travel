@@ -68,11 +68,11 @@ const route = useRoute();
 
 <style scoped>
 .wrapper_header {
-    @apply max-w-[1440px] w-full h-[90px] m-auto
-	flex justify-between items-center 
+    @apply  w-full h-[90px] m-auto
+	flex justify-between items-center
 	lg:px-[104px] 
-	md:px-[50px] 
-	sm:px-[25px] sm:h-[60px];
+	md:px-[90px] 
+	sm:px-[45px] sm:h-[60px];
 }
 
 .wrapper_content {

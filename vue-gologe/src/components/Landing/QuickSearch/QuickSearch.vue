@@ -1,7 +1,7 @@
 <template>
   <!-- Quick Search -->
   <div
-    class="w-[100%] flex justify-center md:px-[40px] sm:px-[40px] ph:px-[20px]"
+    class="max-w-[1440px] w-full flex justify-center px-[80px] md:px-[80px] sm:px-[80px] ph:px-[40px]"
   >
     <!-- Quick Search wrapper Start -->
     <div class="search_wrapper">
@@ -54,6 +54,6 @@ import Navigation from "./Navigation.vue";
   @apply max-w-[1230px] w-full min-h-[280px] bg-white 
 	rounded-[15px] p-[32px]
 	flex flex-col gap-[30px] shadow-2xl
-    ph:gap-[15px];
+  ph:gap-[15px];
 }
 </style>

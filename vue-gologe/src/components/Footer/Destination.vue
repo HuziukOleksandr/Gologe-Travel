@@ -1,6 +1,6 @@
 <template>
     <!-- Destination wrapper Start -->
-    <div class="flex flex-col gap-[15px]">
+    <div class="flex flex-col gap-[15px] min-h-[150px]">
         <!-- Dectination Title Start -->
         <h1 class="custom-text-base font-bold text-green">
             {{ $t("Footer.ourDestination") }}

@@ -10,8 +10,8 @@ export default {
 		screens: {
 			'ph': {'min': '360px', 'max': '480px'},
 			'sm': {'min': '360px','max': '767px'},
-			'md': {'min': '768px', 'max': '1279px'},
-			'lg': {'min': '1280px'}
+			'md': {'min': '768px', 'max': '1379px'},
+			'lg': {'min': '1380px'}
 		},
 
 		colors: {

@@ -10,11 +10,11 @@
         <!-- Card review and button Start -->
         <div class="flex flex-col">
             <!-- Review Text Start -->
-            <p
-                class="h-[22px] font-serrat font-regular text-sm text-grey truncate ..."
+            <div
+                class="truncate w-[90%]  min-h-[22px] font-serrat font-regular text-sm text-grey"
             >
                 {{ review?.text }}
-            </p>
+            </div>
             <!-- Review Text End -->
 
             <!-- Button "More" Start -->
@@ -75,7 +75,7 @@
         <!-- Google wrapper End -->
 
         <!-- Card Image -->
-        <img :src="getImageUrlPng(review?.picture)" :alt="review?.picture" />
+        <img class="h-[200px] rounded-[10px]" :src="getImageUrlPng(review?.picture)" :alt="review?.picture" />
     </div>
     <!-- Card wrapper End -->
 </template>
@@ -95,8 +95,17 @@ const props = withDefaults(
 
 <style scoped>
 .card_wrapper {
-    @apply max-w-[425px] w-full h-[585px] 
-	bg-white rounded-[20px]
-	shadow-2xl p-[24px] flex flex-col justify-between;
+    @apply min-h-[585px] bg-white rounded-[20px]
+	shadow-2xl p-[24px] flex flex-col justify-around gap-[10px]
+    lg:max-w-[425px]
+    md:max-w-[425px]
+    sm:w-full
+
+}
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 </style>
