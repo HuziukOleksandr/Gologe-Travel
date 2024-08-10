@@ -52,6 +52,10 @@ const CustomModalWindow = defineAsyncComponent(
 const CustomFlightSearch = defineAsyncComponent(
     () => import("./CustomFlightSearch.vue")
 );
+
+const CustomPlaceSearch = defineAsyncComponent(
+    () => import("./CustomPlaceSearch.vue")
+);
 export default {
     CustomNavigation,
     CustomLocalization,
@@ -66,4 +70,5 @@ export default {
     CustomCropper,
     CustomModalWindow,
     CustomFlightSearch,
+    CustomPlaceSearch,
 };

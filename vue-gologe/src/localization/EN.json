@@ -84,12 +84,17 @@
 			"flights": "Flights",
 			"stays": "Stays",
 			"buttonFlight": "Show Flight",
+			"buttonPlace": "Show Places",
 			"buttonStays": "Show Stays",
 			"addPromoCode": "Add Promo Code",
 			"fromTo": "From - To",
 			"trip": "Trip",
 			"departReturn": "Depart - Return",
-			"pasengerClass": "Passenger - Class"
+			"pasengerClass": "Passenger - Class",
+			"enterDestination": "Enter Destination",
+			"checkIn": "Check In",
+			"checkOut": "Check Out",
+			"roomsGuests": "Rooms & Guests"
 		},
 		"Trips": {
 			"title": "Plan your perfect trip",

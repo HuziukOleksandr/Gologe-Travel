@@ -10,7 +10,8 @@
       <slot name="input"></slot>
     </h1>
     <!-- Text End -->
-
+    <!-- Slot for Image -->
+    <slot name="previousImage"></slot>
     <!-- Input -->
     <input
       class="w-full h-full md:text-sm sm:text-xs"

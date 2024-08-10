@@ -58,10 +58,12 @@ import Card from "./Card.vue";
 import axios from "axios";
 import { ref } from "vue";
 
-const reviews = ref();
+const reviews = ref<array []>();
 
 // Get Cards fron json file
-axios
+
+async () => {
+  axios
   .get("/Review.json")
   .then(function (response) {
     reviews.value = response.data.Reviews ?? response.data.Reviews.lice(0, 3);
@@ -70,4 +72,6 @@ axios
     console.log(error);
   })
   .finally(function () {});
+}
+
 </script>

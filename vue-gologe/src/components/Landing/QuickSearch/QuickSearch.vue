@@ -8,12 +8,16 @@
       <!-- Quick Search Navigation wrapper Start -->
       <div class="flex gap-[65px] mb-[30px] sm:justify-center sm:mb-[10px]">
         <!-- Use Quick Search Navigation Component -->
-        <Navigation />
+        <Navigation @changeWindow="change"/>
       </div>
       <!-- Quick Search Navigation wrapper End -->
 
       <!-- Use Custom Flihgt Search Component -->
-      <CustomFlightSearch />
+      <CustomFlightSearch v-show="windowName == 'flight'"/>
+
+      <!-- Use Custom Places Search Component -->
+      <CustomPlaceSearch v-show="windowName == 'place'"/>
+      
       <!-- Buttons wrapper Start -->
       <div
         class="w-full min-h-[48px] flex justify-end self-end gap-[24px] sm:flex-wrap sm:justify-end sm:gap-[10px] ph:justify-center"
@@ -31,10 +35,11 @@
         <!-- Use Custom Button Component "Show Fkight" Start -->
         <CustomButton
           class="h-[48px] p-[16px] font-medium bg-button bg-buttonGreen ph:w-full ph:justify-center"
+          @click="$router.push({ name: 'Listing' })"
         >
           <!-- Images for Button "Show Flight" -->
           <img src="@/assets/images/show-flights.svg" alt="hotel" />
-          {{ $t("Landing.QuickSearch.buttonFlight") }}
+          {{ windowName == 'flight' ? $t("Landing.QuickSearch.buttonFlight") : $t("Landing.QuickSearch.buttonPlace")}}
         </CustomButton>
         <!-- Use Custom Button Component "Show Fkight" End -->
       </div>
@@ -47,6 +52,15 @@
 
 <script setup lang="ts">
 import Navigation from "./Navigation.vue";
+import { useRoute } from "vue-router";
+import { ref } from "vue"
+
+const route = useRoute();
+const windowName = ref<string>('flight')
+
+const change = (value: string) => {
+  windowName.value = value
+}
 </script>
 
 <style scoped>

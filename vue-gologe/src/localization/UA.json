@@ -84,12 +84,17 @@
 			"flights": "Рейси",
 			"stays": "Житло",
 			"buttonFlight": "Показати Рейс",
+			"buttonPlace": "Показати Житло",
 			"buttonStays": "Покачати Житло",
 			"addPromoCode": "Додати Промо Код",
 			"fromTo": "Звідки - Куди",
 			"trip": "Поїздка",
 			"departReturn": "Від'їзд - Повернення",
-			"pasengerClass": "Пасажир - Клас"
+			"pasengerClass": "Пасажир - Клас",
+			"enterDestination": "Місце призначення",
+			"checkIn": "Реєстрація",
+			"checkOut": "Виїзд",
+			"roomsGuests": "Кімнати та гості"
 		},
 		"Trips": {
 			"title": "Сплануйте свою ідеальну подорож",
