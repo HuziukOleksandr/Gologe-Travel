@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-[1440px] w-full my-[30px] mx-auto relative">
+  <div class="max-w-[1440px] w-full my-[30px] mx-auto relative flex flex-col">
     <Header class="absolute" />
     <Preview />
     <QuickSearch class="mt-[-100px] mb-[40px]" />

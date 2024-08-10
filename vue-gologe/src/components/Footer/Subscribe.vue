@@ -39,7 +39,7 @@
                 <!-- Button for add Email -->
                 <!-- Use button component Start -->
                 <CustomButton
-                    class="custom-text-sm font-semibold h-[45px] px-[16px] text-white bg-green lg:h-[56px]"
+                    class="custom-text-sm font-semibold h-[45px] px-[16px] text-white bg-green lg:h-[56px] sm:justify-center"
                 >
                     {{ $t("Footer.button") }}
                 </CustomButton>

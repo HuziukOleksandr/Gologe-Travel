@@ -8,11 +8,11 @@
       class="max-w-[510px] w-full flex flex-col justify-center sm:max-w-[700px]"
     >
       <!-- Use Custom Logo -->
-      <CustomLogo class="hidden sm:flex sm:mb-[10px] sm:h-[24px] sm:mx-auto" />
+      <CustomLogo class="hidden sm:flex sm:mb-[20px] sm:h-[24px] sm:mx-auto" />
 
       <!-- Use Custom Button "Back" Start -->
       <CustomButton
-        class="custom-text-xs font-bold mb-[15px] max-w-[140px]"
+        class="custom-text-xs font-bold mb-[15px] max-w-[140px] sm:mb-[35px]"
         @click="$router.push({ name: 'Login' })"
       >
         <!-- Button Image -->
@@ -32,13 +32,15 @@
       <!-- Title End -->
 
       <!-- Text Start -->
-      <h2 class="custom-text-base font-regular text-gray mb-[15px] lg:mb-[50px] sm:text-center">
+      <h2
+        class="custom-text-base font-regular text-gray mb-[15px] lg:mb-[50px] sm:mb-[30px] sm:text-center"
+      >
         {{ $t("Verify.subTitle") }}
       </h2>
       <!-- Text End -->
 
       <!-- Wrapper input Start -->
-      <div class="mb-[40px] md:mb-[20px] sm:mb-[10px] sm:gap-[20px]">
+      <div class="mb-[40px] md:mb-[20px] sm:mb-[20px] sm:gap-[20px]">
         <!-- Use Custom Input Password "Code" Start -->
         <CustomInputPassword
           class="h-[56px] font-serrat font-medium text-green"
@@ -72,7 +74,7 @@
 
       <!-- Use Custom Button "Verify Password" Start -->
       <CustomButton
-        class="custom-text-sm font-bold w-full h-[48px] rounded-[4px] mb-[16px] justify-center bg-buttonGreen text-green sm:h-[45px]"
+        class="custom-text-sm font-bold w-full h-[48px] rounded-[4px] mb-[16px] justify-center bg-buttonGreen text-green sm:mb-[25px] sm:h-[45px]"
         @click="$router.push({ name: 'ChangePassword' })"
       >
         {{ $t("Verify.button") }}

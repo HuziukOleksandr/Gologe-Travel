@@ -1,7 +1,7 @@
 <template>
   <div id="main" class="relative w-[100%] h-[100vh] flex flex-col bg-background">
     <router-view name="Header" v-if="route.name !== 'Landing'" class="shadow-md" />
-    <router-view class="flex-grow flex *:" />
+    <router-view class="flex-grow flex" />
     <router-view name="Footer" />
   </div>
 </template>

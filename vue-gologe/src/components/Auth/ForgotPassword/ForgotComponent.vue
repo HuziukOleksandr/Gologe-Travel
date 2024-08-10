@@ -8,11 +8,11 @@
       class="max-w-[510px] w-full flex flex-col justify-center sm:max-w-[700px]"
     >
       <!-- USe Custom Logo -->
-      <CustomLogo class="hidden sm:flex sm:mb-[10px] sm:h-[24px] sm:mx-auto" />
+      <CustomLogo class="hidden sm:flex sm:mb-[20px] sm:h-[24px] sm:mx-auto" />
 
       <!-- Use Custom button "Back to login" Start -->
       <CustomButton
-        class="custom-text-xs font-bold mb-[15px] max-w-[140px]"
+        class="custom-text-xs font-bold mb-[25px] max-w-[140px]"
         @click="$router.push({ name: 'Login' })"
       >
         <!-- image for button -->
@@ -33,14 +33,14 @@
 
       <!-- Text Start -->
       <h2
-        class="custom-text-base font-regular text-gray mb-[15px] lg:mb-[50px] sm:text-center"
+        class="custom-text-base font-regular text-gray mb-[15px] lg:mb-[50px] sm:mb-[30px] sm:text-center"
       >
         {{ $t("ForgotPassword.subTitle") }}
       </h2>
       <!-- Text End -->
 
       <!-- Wrapper for Inputs Start -->
-      <div class="mb-[40px] md:mb-[20px] sm:mb-[10px] sm:gap-[20px]">
+      <div class="mb-[40px] md:mb-[20px] sm:mb-[20px] sm:gap-[20px]">
         <!-- Use Custom Input "Email" Start -->
         <CustomInput
           class="font-serrat font-medium text-green"
@@ -57,7 +57,7 @@
 
       <!-- Use Custom button "Submit" Start -->
       <CustomButton
-        class="custom-text-sm font-bold w-full h-[48px] rounded-[4px] mb-[16px] justify-center bg-buttonGreen text-green sm:h-[45px]"
+        class="custom-text-sm font-bold w-full h-[48px] rounded-[4px] mb-[16px] justify-center bg-buttonGreen text-green sm:h-[45px] sm:mb-[24px]"
         @click="$router.push({ name: 'Verify' })"
       >
         {{ $t("ForgotPassword.button") }}
@@ -65,7 +65,7 @@
       <!-- Use Custom button "Submit" End -->
 
       <!-- Text "Login With" wrapper Startc -->
-      <div class="w-full flex items-center mb-[40px] md:mb-[15px] sm:mb-[15px]">
+      <div class="w-full flex items-center mb-[40px] md:mb-[15px] sm:mb-[35px]">
         <!-- Line Start -->
         <hr class="grow text-gray" />
         <!-- Line End -->
