@@ -12,7 +12,7 @@
 
 
 .custom-text-base {
-	@apply font-serrat text-base
+	@apply font-serrat text-base md:text-sm sm:text-xs
 }
 
 .custom-text-xl {
@@ -28,7 +28,7 @@
 }
 
 .custom-text-4xl {
-	@apply font-serrat text-4xl
+	@apply font-serrat text-4xl md:text-3xl sm:text-2xl
 }
 
 .custom-text-5xl {

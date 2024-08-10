@@ -6,7 +6,7 @@
         :transition="500"
         :autoplay="10000"
         :wrapAround="true"
-        class="relative h-full"
+        class="relative"
     >
         <!-- Slide Start -->
         <slide v-for="slide in props.slides" :key="slide">

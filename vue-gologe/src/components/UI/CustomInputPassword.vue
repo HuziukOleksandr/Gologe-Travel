@@ -3,7 +3,7 @@
     <div class="wrapper_input">
         <!-- Title Start -->
         <h1
-            class="absolute top-[-12px] z-55 px-[10px] bg-background font-serrat text-green sm:hidden"
+            class="absolute top-[-15px] z-55 px-[10px] bg-background font-serrat text-green md:text-sm sm:text-xs sm:top-[-10px]"
         >
             <!-- Slot for name input -->
             <slot name="input"></slot>
@@ -12,7 +12,7 @@
 
         <!-- Input password -->
         <input
-            class="w-full h-full"
+            class="w-full h-full md:text-sm sm:text-xs"
             :type="passwordFieldType"
             :placeholder="props.placeHolder"
             v-model="inputValue"
@@ -61,9 +61,10 @@ const switchVisibility = () => {
 
 <style scoped>
 .wrapper_input {
-    @apply flex gap-[10px] items-center 
-	rounded-[4px] px-[15px] 
-	border-2 border-gray border-solid 
-	relative;
+    @apply flex gap-[10px] items-center rounded-[4px] px-[15px] 
+	border-2 border-gray border-solid relative
+    h-[60px]
+    md:h-[50px]
+    sm:h-[40px]
 }
 </style>

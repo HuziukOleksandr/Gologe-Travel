@@ -3,7 +3,8 @@
   <div class="wrapper_input">
     <!-- Text Start -->
     <h1
-      class="absolute top-[-12px] z-55 px-[10px] bg-background font-serrat text-green"
+      class="absolute top-[-15px] z-55 px-[10px] bg-background font-serrat text-green
+      md:text-sm sm:text-xs sm:top-[-10px]"
     >
       <!-- Slot for text -->
       <slot name="input"></slot>
@@ -12,7 +13,7 @@
 
     <!-- Input -->
     <input
-      class="w-full h-full"
+      class="w-full h-full md:text-sm sm:text-xs"
       :type="props.type"
       :placeholder="props.placeHolder"
       v-model="inputValue"
@@ -49,10 +50,10 @@ const changeValue = (value: string) => {
 
 <style scoped>
 .wrapper_input {
-  @apply flex gap-[10px] items-center 
-	rounded-[4px] 
-	px-[15px] 
-	border-2 border-gray border-solid 
-	relative;
+  @apply flex gap-[10px] items-center rounded-[4px] px-[15px] 
+	border-2 border-gray border-solid relative
+  h-[60px]
+  md:h-[50px]
+  sm:h-[45px];
 }
 </style>
