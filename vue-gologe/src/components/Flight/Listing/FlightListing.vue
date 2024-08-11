@@ -12,7 +12,7 @@
             <CustomButton
                 class="p-[16px] rounded-[4px] bg-buttonGreen flex justify-center items-center"
             >
-                <img src="@/assets/images/Search.svg" alt="Search" />
+                <img src="@/assets/images/svg/UI/search.svg" alt="Search" />
             </CustomButton>
             <!-- Button for Search End -->
         </div>

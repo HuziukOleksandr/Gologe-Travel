@@ -10,7 +10,9 @@
         <!-- Text wrapper Start -->
         <div class="flex flex-col gap-[15px]">
           <!-- Review Title Start -->
-          <h1 class="w-[90%] min-h-[35px] font-serrat font-semibold text-[32px]">
+          <h1
+            class="w-[90%] min-h-[35px] font-serrat font-semibold text-[32px]"
+          >
             {{ $t("Landing.Review.title") }}
           </h1>
           <!-- Review Title End -->
@@ -34,7 +36,9 @@
       <!-- Review Heared wrapper Start -->
 
       <!-- Review Content wrapper Start -->
-      <div class="flex flex-wrap justify-between gap-[20px] md:justify-around sm:justify-center">
+      <div
+        class="flex flex-wrap justify-between gap-[20px] md:justify-around sm:justify-center"
+      >
         <!-- Use Review Card Component -->
         <Card :reviews="reviews" />
       </div>
@@ -58,13 +62,11 @@ import Card from "./Card.vue";
 import axios from "axios";
 import { ref } from "vue";
 
-const reviews = ref<array []>();
+const reviews = ref();
 
 // Get Cards fron json file
-
-async () => {
-  axios
-  .get("/Review.json")
+axios
+  .get("./Review.json")
   .then(function (response) {
     reviews.value = response.data.Reviews ?? response.data.Reviews.lice(0, 3);
   })
@@ -72,6 +74,4 @@ async () => {
     console.log(error);
   })
   .finally(function () {});
-}
-
 </script>

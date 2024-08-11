@@ -19,7 +19,7 @@
         <template v-slot:previousImage>
           <!-- Image for Input -->
           <img
-            src="@/assets/images/hotel-black.svg"
+            src="@/assets/images/svg/UI/hotel-black.svg"
             alt="arrowswap"
             class="h-[24px]"
           />
@@ -59,7 +59,7 @@
         <!-- Use Stol for Image Start -->
         <template v-slot:image>
           <img
-            src="@/assets/images/calendar.svg"
+            src="@/assets/images/svg/UI/calendar.svg"
             alt="arrowswap"
             class="h-[24px]"
           />
@@ -94,7 +94,7 @@
         <!-- Use Stol for Image Start -->
         <template v-slot:image>
           <img
-            src="@/assets/images/calendar.svg"
+            src="@/assets/images/svg/UI/calendar.svg"
             alt="arrowswap"
             class="h-[24px]"
           />
@@ -129,7 +129,7 @@
         <!-- Use Stol for Image Start -->
         <template v-slot:previousImage>
           <img
-            src="@/assets/images/user.svg"
+            src="@/assets/images/svg/UI/user.svg"
             alt="arrowswap"
             class="h-[24px]"
           />

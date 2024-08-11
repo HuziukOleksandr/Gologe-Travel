@@ -36,7 +36,7 @@
         <!-- Use Custom Button Component "Add Promo Code" Start -->
         <CustomButton class="h-[48px] p-[16px] font-medium">
           <!-- Images for Button "Add Promo Code" -->
-          <img src="@/assets/images/add-promo.svg" alt="hotel" />
+          <img src="@/assets/images/svg/UI/add-promo.svg" alt="hotel" />
           {{ $t("Landing.QuickSearch.addPromoCode") }}
         </CustomButton>
         <!-- Use Custom Button Component "Add Promo Code" End -->
@@ -47,7 +47,7 @@
           @click="$router.push({ name: 'Listing' })"
         >
           <!-- Images for Button "Show Flight" -->
-          <img src="@/assets/images/show-flights.svg" alt="hotel" />
+          <img src="@/assets/images/svg/UI/show-flights.svg" alt="hotel" />
           {{ $t("Landing.QuickSearch.buttonFlight") }}
         </CustomButton>
         <!-- Use Custom Button Component "Show Flight" End -->
@@ -89,7 +89,10 @@
       <!-- Places Content wrapper Start -->
       <div class="w-full h-[490px]">
         <!-- Content image -->
-        <img src="@/assets/images/Flight-Places.png" alt="Flight-Places" />
+        <img
+          src="@/assets/images/png/Flight/Flight-Places.png"
+          alt="Flight-Places"
+        />
       </div>
       <!-- Places Content wrapper End -->
     </div>
@@ -222,13 +225,25 @@
           class="max-w-[656px] w-full h-[424px] grid grid-rows-2 grid-cols-2 gap-y-[24px] gap-x-[20px]"
         >
           <!-- Image -->
-          <img src="@/assets/images/shri-Lanka-1.png" alt="shri-Lanka-1" />
+          <img
+            src="@/assets/images/png/Flight/shri-Lanka-1.png"
+            alt="shri-Lanka-1"
+          />
           <!-- Image -->
-          <img src="@/assets/images/shri-Lanka-2.png" alt="shri-Lanka-2" />
+          <img
+            src="@/assets/images/png/Flight/shri-Lanka-2.png"
+            alt="shri-Lanka-2"
+          />
           <!-- Image -->
-          <img src="@/assets/images/shri-Lanka-3.png" alt="shri-Lanka-3" />
+          <img
+            src="@/assets/images/png/Flight/shri-Lanka-3.png"
+            alt="shri-Lanka-3"
+          />
           <!-- Image -->
-          <img src="@/assets/images/shri-Lanka-4.png" alt="shri-Lanka-4" />
+          <img
+            src="@/assets/images/png/Flight/shri-Lanka-4.png"
+            alt="shri-Lanka-4"
+          />
         </div>
         <!-- Left Side wrapper End -->
       </div>
@@ -251,7 +266,7 @@ const cards = ref<array>([
     title: "Melbourne",
     subTitle: "An amazing journey",
     price: "700",
-    image: "Melbourne",
+    image: "Melbourne-image",
   },
   {
     title: "Paris",
@@ -276,7 +291,7 @@ const cards = ref<array>([
 
 <style scoped>
 .background {
-  background-image: url("../../../assets/images/Flight-search-bg.png");
+  background-image: url("../../../assets/images/png/Flight/Flight-search-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
 }

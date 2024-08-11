@@ -3,8 +3,7 @@
   <div class="wrapper_input">
     <!-- Text Start -->
     <h1
-      class="absolute top-[-15px] z-55 px-[10px] bg-background font-serrat text-green
-      md:text-sm sm:text-xs sm:top-[-10px]"
+      class="absolute top-[-15px] z-55 px-[10px] bg-background font-serrat text-green md:text-sm sm:text-xs sm:top-[-10px]"
     >
       <!-- Slot for text -->
       <slot name="input"></slot>

@@ -21,7 +21,7 @@
 
         <!-- Image for close password -->
         <img
-            src="@/assets/images/password-close.svg"
+            src="@/assets/images/svg/UI/password-close.svg"
             alt="arrowswap"
             class="h-[24px] hover:cursor-pointer"
             @click="switchVisibility"
@@ -30,7 +30,7 @@
 
         <!-- Image for open password -->
         <img
-            src="@/assets/images/password-open.svg"
+            src="@/assets/images/svg/UI/password-open.svg"
             alt="arrowswap"
             class="h-[24px] hover:cursor-pointer"
             @click="switchVisibility"

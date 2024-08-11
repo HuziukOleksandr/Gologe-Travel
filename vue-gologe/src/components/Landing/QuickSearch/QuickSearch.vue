@@ -27,7 +27,7 @@
           class="h-[48px] p-[16px] font-medium sm:text-sm ph:w-full ph:justify-center"
         >
           <!-- Images for Button "Add Promo Code" -->
-          <img src="@/assets/images/add-promo.svg" alt="hotel" />
+          <img src="@/assets/images/svg/UI/add-promo.svg" alt="hotel" />
           {{ $t("Landing.QuickSearch.addPromoCode") }}
         </CustomButton>
         <!-- Use Custom Button Component "Add Promo Code" End -->
@@ -35,10 +35,10 @@
         <!-- Use Custom Button Component "Show Fkight" Start -->
         <CustomButton
           class="h-[48px] p-[16px] font-medium bg-button bg-buttonGreen ph:w-full ph:justify-center"
-          @click="$router.push({ name: 'Listing' })"
+          @click="$router.push(windowName == 'flight' ? { name: 'Listing' } : {name: 'Hotel'})"
         >
           <!-- Images for Button "Show Flight" -->
-          <img src="@/assets/images/show-flights.svg" alt="hotel" />
+          <img src="@/assets/images/svg/UI/show-flights.svg" alt="hotel" />
           {{ windowName == 'flight' ? $t("Landing.QuickSearch.buttonFlight") : $t("Landing.QuickSearch.buttonPlace")}}
         </CustomButton>
         <!-- Use Custom Button Component "Show Fkight" End -->

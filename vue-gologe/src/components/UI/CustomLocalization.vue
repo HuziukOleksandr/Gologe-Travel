@@ -9,7 +9,7 @@
         >
             <!-- Image EN flag -->
             <img
-                src="@/assets/images/EN.svg"
+                src="@/assets/images/svg/EN.svg"
                 alt="Flag EN"
                 class="image"
                 @click="close('EN')"
@@ -18,7 +18,7 @@
 
             <!-- Image UA flag -->
             <img
-                src="@/assets/images/UA.svg"
+                src="@/assets/images/svg/UA.svg"
                 alt="Flag UA"
                 class="image"
                 @click="close('UA')"

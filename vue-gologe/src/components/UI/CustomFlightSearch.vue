@@ -25,7 +25,7 @@
         <template v-slot:image>
           <!-- Image for Input -->
           <img
-            src="@/assets/images/arrowswap.svg"
+            src="@/assets/images/svg/UI/arrowswap.svg"
             alt="arrowswap"
             class="h-[24px]"
           />
@@ -60,7 +60,7 @@
         <!-- Use Stol for Image Start -->
         <template v-slot:image>
           <img
-            src="@/assets/images/chevron-down.svg"
+            src="@/assets/images/svg/UI/chevron-down.svg"
             alt="arrowswap"
             class="h-[24px]"
           />

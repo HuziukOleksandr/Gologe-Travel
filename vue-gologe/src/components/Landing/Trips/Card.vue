@@ -57,6 +57,6 @@ const props = withDefaults(
 	flex items-center flex-grow gap-[15px] 
 	shadow-lg rounded-[15px]
   sm:gap-[5px] sm:h-[90px]
-  hover:cursor-pointer hover:scale-105 hover:duration-300
+  hover:cursor-pointer hover:scale-105 hover:duration-300;
 }
 </style>

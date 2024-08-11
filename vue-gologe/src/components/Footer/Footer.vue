@@ -10,7 +10,7 @@
       <div class="wrapper_aside">
         <!-- Use logo Component -->
         <img
-          src="@/assets/images/logo-footer.svg"
+          src="@/assets/images/svg/logo/logo-footer.svg"
           alt="logo"
           class="logo"
           @click="$router.push({ name: 'Landing' })"
@@ -20,28 +20,28 @@
         <div class="wrapper_images">
           <!-- Image Facebook -->
           <img
-            src="@/assets/images/facebook.svg"
+            src="@/assets/images/svg/messengers/facebook.svg"
             alt="facebook"
             class="w-[24px]"
           />
 
           <!-- Image Twitter -->
           <img
-            src="@/assets/images/twitter.svg"
+            src="@/assets/images/svg/messengers/twitter.svg"
             alt="twitter"
             class="w-[24px]"
           />
 
           <!-- Image YouTube -->
           <img
-            src="@/assets/images/youtube.svg"
+            src="@/assets/images/svg/messengers/youtube.svg"
             alt="youtube"
             class="w-[24px]"
           />
 
           <!-- Image Instagram -->
           <img
-            src="@/assets/images/instagram.svg"
+            src="@/assets/images/svg/messengers/instagram.svg"
             alt="instagram"
             class="w-[24px]"
           />
@@ -85,7 +85,7 @@ import AboutUs from "./AboutUs.vue";
  bg-buttonGreen  
   flex flex-col justify-between
   md:px-[50px] 
-  sm:px-[25px] sm:pb-[30px]
+  sm:px-[25px] sm:pb-[30px];
 }
 
 .subscribe {
@@ -102,7 +102,7 @@ import AboutUs from "./AboutUs.vue";
 .wrapper_aside {
   @apply min-w-[120px] 
 	flex flex-col gap-[25px] 
-	sm:flex-row sm:gap-[5px] sm:w-full sm:justify-around sm:flex-wrap
+	sm:flex-row sm:gap-[5px] sm:w-full sm:justify-around sm:flex-wrap;
 }
 
 .wrapper_images {

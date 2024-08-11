@@ -40,7 +40,7 @@
 
       <!-- Image for sm media -->
       <img
-        src="@/assets/images/login-white.svg"
+        src="@/assets/images/svg/UI/login-white.svg"
         alt="login-white"
         class="w-[25px] lg:hidden"
         :class="route.name !== 'Landing' ? 'hidden' : 'block'"
@@ -48,7 +48,7 @@
 
       <!-- Dark Image for sm media -->
       <img
-        src="@/assets/images/login-black.svg"
+        src="@/assets/images/svg/UI/login-black.svg"
         alt="login-black"
         class="w-[25px] lg:hidden"
         :class="route.name !== 'Landing' ? 'block' : 'hidden'"

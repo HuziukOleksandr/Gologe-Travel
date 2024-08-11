@@ -18,7 +18,7 @@
       class="custom-text-sm font-medium h-[48px] p-[16px] bg-buttonGreen"
     >
       <!-- Button Image -->
-      <img src="@/assets/images/show-flights.svg" alt="hotel" />
+      <img src="@/assets/images/svg/UI/show-flights.svg" alt="hotel" />
       {{ $t("Landing.Trips.buttonFlight") }}
     </CustomButton>
     <!-- Use Custom Button UI Component End -->
@@ -38,7 +38,7 @@
 }
 
 .flight {
-  background: url("../../../assets/images/Flight.png") no-repeat;
+  background: url("../../../assets/images/png/Landing/Flight.png") no-repeat;
   background-size: cover;
   background-position: center;
 }

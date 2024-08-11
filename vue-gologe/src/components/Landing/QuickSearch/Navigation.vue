@@ -6,7 +6,7 @@
     @click="changeName('flight')"
   >
     <!-- Flight Button Image -->
-    <img src="@/assets/images/flight-black.svg" alt="flight" />
+    <img src="@/assets/images/svg/UI/flight-black.svg" alt="flight" />
     {{ $t("Landing.QuickSearch.flights") }}
   </CustomButton>
   <!-- Use Custom Button Component "Flight" End -->
@@ -17,7 +17,7 @@
     @click="changeName('place')"
   >
     <!-- Hotel Button Image -->
-    <img src="@/assets/images/hotel-black.svg" alt="hotel" />
+    <img src="@/assets/images/svg/UI/hotel-black.svg" alt="hotel" />
     {{ $t("Landing.QuickSearch.stays") }}
   </CustomButton>
   <!-- Use Custom Button Component "Hotel" End -->
@@ -30,7 +30,6 @@ const windowName = ref("flight");
 const emit = defineEmits(["changeWindow"]);
 
 const changeName = ( value: string ) => {
-  
   emit("changeWindow", value)
 };
 </script>

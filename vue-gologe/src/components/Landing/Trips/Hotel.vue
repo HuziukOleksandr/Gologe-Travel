@@ -19,7 +19,7 @@
       @click="$router.push({ name: 'Hotel' })"
     >
       <!-- Button Image -->
-      <img src="@/assets/images/show-flights.svg" alt="hotel" />
+      <img src="@/assets/images/svg/UI/show-flights.svg" alt="hotel" />
       {{ $t("Landing.Trips.buttonHotel") }}
     </CustomButton>
     <!-- Use Custom Button UI Component End -->
@@ -39,7 +39,7 @@
 }
 
 .hotel {
-  background: url("../../../assets/images/Hotel.png") no-repeat;
+  background: url("../../../assets/images/png/Landing/Hotel.png") no-repeat;
   background-size: cover;
   background-position: center;
 }

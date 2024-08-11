@@ -15,7 +15,7 @@
         >
             <!-- Image for input -->
             <img
-                src="@/assets/images/upload-file.svg"
+                src="@/assets/images/svg/UIupload-file.svg"
                 alt="checked"
                 class="w-[20px] h-[20px]"
             />

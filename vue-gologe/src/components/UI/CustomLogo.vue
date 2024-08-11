@@ -2,7 +2,7 @@
     <!-- Logo component -->
     <!-- Logo for Landing Page -->
     <img
-        src="@/assets/images/logo.svg"
+        src="@/assets/images/svg/logo/logo.svg"
         alt="Logo"
         @click="$router.push({ name: 'Landing' })"
         v-if="route.name == 'Landing'"
@@ -11,7 +11,7 @@
 
     <!-- Logo for other Pages -->
     <img
-        src="@/assets/images/logo-black.svg"
+        src="@/assets/images/svg/logo/logo-black.svg"
         alt="Logo"
         class="logo h-[36px]"
         @click="$router.push({ name: 'Landing' })"

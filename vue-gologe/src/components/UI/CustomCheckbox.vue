@@ -14,7 +14,7 @@
     >
       <!-- Checkbox image -->
       <img
-        src="@/assets/images/checked.svg"
+        src="@/assets/images/svg/UI/checked.svg"
         alt="checked"
         class="w-[20px] h-[20px]"
       />

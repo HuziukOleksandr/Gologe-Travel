@@ -17,7 +17,7 @@
       >
         <!-- Button Image -->
         <img
-          src="@/assets/images/chevron-down.svg"
+          src="@/assets/images/svg/UI/chevron-down.svg"
           alt="hotel"
           class="rotate-90"
         />
