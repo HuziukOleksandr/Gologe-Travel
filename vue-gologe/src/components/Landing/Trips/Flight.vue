@@ -16,6 +16,7 @@
     <!-- Use Custom Button UI Component Start -->
     <CustomButton
       class="custom-text-sm font-medium h-[48px] p-[16px] bg-buttonGreen"
+      @click="$router.push({ name: 'Flight' })"
     >
       <!-- Button Image -->
       <img src="@/assets/images/svg/UI/show-flights.svg" alt="hotel" />

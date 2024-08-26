@@ -60,7 +60,7 @@
           class="w-full flex justify-between sm:flex-wrap sm:mb-[15px] sm:gap-[5px]"
         >
           <!-- Use Custom CheckBox "Remember" Start  -->
-          <CustomCheckbox>
+          <CustomCheckbox class="custom-text-base font-bold">
             {{ $t("Login.remember") }}
           </CustomCheckbox>
           <!-- Use Custom CheckBox "Remember" End  -->

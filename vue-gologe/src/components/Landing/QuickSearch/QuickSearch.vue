@@ -13,7 +13,13 @@
       <!-- Quick Search Navigation wrapper End -->
 
       <!-- Use Custom Flihgt Search Component -->
-      <CustomFlightSearch v-show="windowName == 'flight'"/>
+      <CustomFlightSearch 
+        v-show="windowName == 'flight'"
+        fromWidth="lg:max-w-[324px]"
+        tripWidth="lg:max-w-[140px]"
+        departWidth="lg:max-w-[324px]"
+        classWidth="lg:max-w-[324px]"
+      />
 
       <!-- Use Custom Places Search Component -->
       <CustomPlaceSearch v-show="windowName == 'place'"/>

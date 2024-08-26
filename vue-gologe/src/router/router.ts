@@ -14,110 +14,110 @@ import AddPayment from "@/view/AuthViews/AddPaymentView.vue";
 import Footer from "@/components/Footer/Footer.vue";
 
 const routes = [
-    {
-        path: "/",
-        name: "Landing",
-        components: {
-            Header,
-            default: Landing,
-            Footer,
-        },
+  {
+    path: "/",
+    name: "Landing",
+    components: {
+      Header,
+      default: Landing,
+      Footer,
     },
-    {
-        path: "/flight",
-        name: "Flight",
-        components: {
-            Header,
-            default: Flight,
-            Footer,
-        },
+  },
+  {
+    path: "/flight",
+    name: "Flight",
+    components: {
+      Header,
+      default: Flight,
+      Footer,
     },
-    {
-        path: "/flight/listing",
-        name: "Listing",
-        components: {
-            Header,
-            default: FlightListing,
-            Footer,
-        },
+  },
+  {
+    path: "/flight/listing",
+    name: "Listing",
+    components: {
+      Header,
+      default: FlightListing,
+      Footer,
     },
-    {
-        path: "/hotel",
-        name: "Hotel",
-        components: {
-            Header,
-            default: Hotel,
-            Footer,
-        },
+  },
+  {
+    path: "/hotel",
+    name: "Hotel",
+    components: {
+      Header,
+      default: Hotel,
+      Footer,
     },
-    {
-        path: "/account",
-        name: "Account",
-        components: {
-            Header,
-            default: Account,
-            Footer,
-        },
+  },
+  {
+    path: "/account",
+    name: "Account",
+    components: {
+      Header,
+      default: Account,
+      Footer,
     },
-    {
-        path: "/login",
-        name: "Login",
-        components: {
-            Header,
-            default: Login,
-            Footer,
-        },
+  },
+  {
+    path: "/login",
+    name: "Login",
+    components: {
+      Header,
+      default: Login,
+      Footer,
     },
-    {
-        path: "/register",
-        name: "Register",
-        components: {
-            Header,
-            default: Register,
-            Footer,
-        },
+  },
+  {
+    path: "/register",
+    name: "Register",
+    components: {
+      Header,
+      default: Register,
+      Footer,
     },
-    {
-        path: "/login/forgotpassword",
-        name: "ForgotPassword",
-        components: {
-            Header,
-            default: ForgotPassword,
-            Footer,
-        },
+  },
+  {
+    path: "/login/forgotpassword",
+    name: "ForgotPassword",
+    components: {
+      Header,
+      default: ForgotPassword,
+      Footer,
     },
-    {
-        path: "/login/forgotpassword/verify",
-        name: "Verify",
-        components: {
-            Header,
-            default: Verify,
-            Footer,
-        },
+  },
+  {
+    path: "/login/forgotpassword/verify",
+    name: "Verify",
+    components: {
+      Header,
+      default: Verify,
+      Footer,
     },
-    {
-        path: "/login/forgotpassword/verify/changepassword",
-        name: "ChangePassword",
-        components: {
-            Header,
-            default: ChangePassword,
-            Footer,
-        },
+  },
+  {
+    path: "/login/forgotpassword/verify/changepassword",
+    name: "ChangePassword",
+    components: {
+      Header,
+      default: ChangePassword,
+      Footer,
     },
-    {
-        path: "/register/addpayment",
-        name: "AddPayment",
-        components: {
-            Header,
-            default: AddPayment,
-            Footer,
-        },
+  },
+  {
+    path: "/register/addpayment",
+    name: "AddPayment",
+    components: {
+      Header,
+      default: AddPayment,
+      Footer,
     },
+  },
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes,
+  history: createWebHistory(),
+  routes,
 });
 
 export default router;

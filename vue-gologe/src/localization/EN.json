@@ -137,6 +137,16 @@
 			"card-Button": "From"
 		}
 	},
+	"ListingFlight": {
+		"Aside": {
+			"title": "Filters",
+			"price": "Price",
+			"departureTime": "Departure Time",
+			"rating": "Rating",
+			"airlines": "Airlines",
+			"trips": "Trips"
+		}
+	},
 	"Account": {
 		"upload": "Upload new cover",
 		"account": "Account",

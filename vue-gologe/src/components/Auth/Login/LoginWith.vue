@@ -6,7 +6,7 @@
       <!-- Button Image -->
       <img
         class="w-[24px]"
-        src="@/assets/images/svg/UI/facebook-login.svg"
+        src="@/assets/images/svg/messengers/facebook-login.svg"
         alt="facebook"
       />
     </CustomButton>
@@ -17,7 +17,7 @@
       <!-- Google Image -->
       <img
         class="w-[24px]"
-        src="@/assets/images/svg/UI/google-login.svg"
+        src="@/assets/images/svg/messengers/google-login.svg"
         alt="google"
       />
     </CustomButton>
@@ -28,7 +28,7 @@
       <!-- Apple Image -->
       <img
         class="w-[24px]"
-        src="@/assets/images/svg/UI/apple-login.svg"
+        src="@/assets/images/svg/messengers/apple-login.svg"
         alt="apple"
       />
     </CustomButton>

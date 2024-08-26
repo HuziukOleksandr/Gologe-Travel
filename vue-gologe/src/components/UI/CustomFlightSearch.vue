@@ -6,7 +6,8 @@
   >
     <!-- Inputs "From/To" wrapper Start -->
     <div
-      class="relative flex-grow lg:max-w-[324px] lg:w-full"
+      class="relative flex-grow lg:w-full"
+      :class="props.fromWidth"
       @click="fromVisible = !fromVisible"
     >
       <!-- Use Custom Input "From/To" Start -->
@@ -44,7 +45,8 @@
 
     <!-- Inputs "Trips" wrapper Start -->
     <div
-      class="relative flex-grow lg:max-w-[140px] lg:w-full"
+      class="relative flex-grow lg:w-full"
+      :class="props.tripWidth"
       @click="tripVisible = !tripVisible"
     >
       <!-- Use Custom Input "Trip" Start -->
@@ -72,6 +74,7 @@
       <!-- Use Custom Input List for input -->
       <CustomInputList
         :dialogVisible="tripVisible"
+        :list="tripList"
         @close-window="tripVisible = !tripVisible"
       />
     </div>
@@ -79,7 +82,8 @@
 
     <!-- Inputs "Depart Return" wrapper Start -->
     <div
-      class="relative flex-grow lg:max-w-[324px] lg:w-full"
+      class="relative flex-grow lg:w-full"
+      :class="props.departWidth"
       @click="departVisible = !departVisible"
     >
       <!-- Use Custom Input "Depart Return" Start -->
@@ -106,7 +110,8 @@
 
     <!-- Inputs "Pasenger Class" wrapper Start -->
     <div
-      class="relative flex-grow lg:max-w-[324px] lg:w-full"
+      class="relative flex-grow lg:w-full"
+      :class="props.classWidth"
       @click="classVisible = !classVisible"
     >
       <!-- Use Custom Input "Pasenger Class" Start -->
@@ -141,4 +146,17 @@ const fromVisible = ref<boolean>(false);
 const tripVisible = ref<boolean>(false);
 const departVisible = ref<boolean>(false);
 const classVisible = ref<boolean>(false);
+
+const tripList = ["Return", "Depart"]
+
+// Props, expected type input and plaseholder
+const props = withDefaults(
+  defineProps<{
+    fromWidth: string;
+    tripWidth: string;
+    departWidth: string;
+    classWidth: string;
+  }>(),
+  {}
+);
 </script>

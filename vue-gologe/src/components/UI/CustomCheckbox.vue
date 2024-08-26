@@ -10,7 +10,7 @@
     <!-- Label for displaying input Start  -->
     <label
       for="checkboxId"
-      class="w-full custom-text-base font-bold cursor-pointer flex items-center gap-[5px]"
+      class="w-full cursor-pointer flex items-center gap-[5px]"
     >
       <!-- Checkbox image -->
       <img

@@ -124,7 +124,7 @@
         <!-- Use Custom Input Password "Confirm" End -->
 
         <!-- Use Custom CheckBox Start -->
-        <CustomCheckbox>
+        <CustomCheckbox class="custom-text-base font-bold">
           <div class="sm:flex-wrap">
             {{ $t("Register.inputStart") }}
 

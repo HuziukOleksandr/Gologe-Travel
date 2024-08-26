@@ -1,13 +1,12 @@
 <template>
   <!-- Travel Card wrapper Start -->
-  <div
-    class="max-w-[296px] w-full h-[420px] rounded-[12px] relative"
-    v-for="card in props.cards"
-  >
+  <div class="h-[420px] rounded-[12px] relative" v-for="card in props.cards">
     <!-- Card image -->
     <img :src="getTravelCardImagePng(card.image)" :alt="card.image" />
     <!-- Card content wrapper Start -->
-    <div class="content_wrapper">
+    <div
+      class="max-w-[248px] w-full flex flex-col gap-[16px] absolute left-[50%] translate-x-[-50%] bottom-[24px]"
+    >
       <!-- Text wrapper Start -->
       <div class="w-full flex justify-between">
         <!-- Aside wrapper Start -->
@@ -37,12 +36,15 @@
       <!-- Text wrapper End -->
 
       <!-- Use Custom Button Start -->
-      <CustomButton class="custom-text-sm button">
+      <CustomButton
+        class="custom-text-sm w-full font-medium text-green bg-buttonGreen h-[48px] justify-center"
+      >
         {{ $t("FlightSearch.Travel.button") }}
       </CustomButton>
       <!-- Use Custom Button End -->
     </div>
     <!-- Card content wrapper End -->
+
   </div>
   <!-- Travel Card wrapper End -->
 </template>
@@ -60,12 +62,5 @@ const props = withDefaults(
 </script>
 
 <style scoped>
-.content_wrapper {
-  @apply max-w-[248px] w-full flex flex-col gap-[16px] 
-	absolute left-[50%] translate-x-[-50%] bottom-[24px];
-}
 
-.button {
-  @apply w-full font-medium text-green bg-buttonGreen h-[48px] justify-center;
-}
 </style>

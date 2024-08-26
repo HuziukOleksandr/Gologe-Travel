@@ -142,7 +142,7 @@
         <!-- Wrapper Custom Input "Country or Region" End -->
 
         <!-- Use Custom Check Box Component Start -->
-        <CustomCheckbox>
+        <CustomCheckbox class="custom-text-base font-bold">
           {{ $t("AddPayment.checkbox") }}
         </CustomCheckbox>
         <!-- Use Custom Check Box Component End -->

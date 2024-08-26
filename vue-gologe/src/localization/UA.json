@@ -137,6 +137,16 @@
 			"card-Button": "Від"
 		}
 	},
+	"ListingFlight": {
+		"Aside": {
+			"title": "Фільтри",
+			"price": "Ціна",
+			"departureTime": "Час відправлення",
+			"rating": "Рейтинг",
+			"airlines": "Авіакомпанії",
+			"trips": "Подорожі"
+		}
+	},
 	"Account": {
 		"upload": "Завантажити нову обкладинку",
 		"account": "Аккаунт",

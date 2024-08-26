@@ -56,6 +56,7 @@ const CustomFlightSearch = defineAsyncComponent(
 const CustomPlaceSearch = defineAsyncComponent(
     () => import("./CustomPlaceSearch.vue")
 );
+
 export default {
     CustomNavigation,
     CustomLocalization,
