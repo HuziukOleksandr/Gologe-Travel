@@ -22,15 +22,21 @@
         class="max-w-[840px] w-full min-h-[1430px] flex flex-col justify-between"
       >
         <!-- Header wrapper Start -->
-        <div class="w-full h-[80px] rounded-[12px] shadow-sm"></div>
+        <div class="w-full h-[80px] rounded-[12px] shadow-sm">
+          <Sort/>
+        </div>
         <!-- Header wrapper End -->
 
         <!-- Showing info wrapper start -->
-        <div class="w-full h-[18px]"></div>
+        <div class="w-full h-[18px]">
+          <Showing :pages="[4,265]" />
+        </div>
         <!-- Showing info wrapper End -->
 
         <!-- Results wrapper Start -->
-        <div class="w-full h-[1210px]"></div>
+        <div class="w-full h-[1210px] flex flex-col justify-between">
+          <Card :cards="cards"/>
+        </div>
         <!-- Results wrapper End -->
 
         <!-- Show button Start -->
@@ -47,6 +53,81 @@
 <script setup lang="ts">
 import Search from "./Search/Search.vue";
 import Aside from "./Aside/Aside.vue";
+import Sort from "./Sort/Sort.vue"
+import Showing from "./Showing/Showing.vue"
+import Card from "./Card/Card.vue"
+import { ref } from "vue"
+
+const cards = ref([
+  {
+    name: "Emirates",
+    image: "Emirates",
+    rate: 4.5,
+    views: 64,
+    price: "$104",
+    startTimeTo: "12:00 pm",
+    endTimeTo: "1:28 pm",
+    typeTo: "non stop",
+    flightTimeTo: "2h 28m",
+    flightTo: "EWR-BNA",
+    startTimeFrom: "12:00 pm",
+    endTimeFrom: "1:28 pm",
+    typeFrom: "non stop",
+    flightTimeFrom: "2h 28m",
+    flightFrom: "EWR-BNA"
+  },
+  {
+    name: "Emirates",
+    image: "FlyDubai",
+    rate: 4.5,
+    views: 64,
+    price: "$104",
+    startTimeTo: "12:00 pm",
+    endTimeTo: "1:28 pm",
+    typeTo: "non stop",
+    flightTimeTo: "2h 28m",
+    flightTo: "EWR-BNA",
+    startTimeFrom: "12:00 pm",
+    endTimeFrom: "1:28 pm",
+    typeFrom: "non stop",
+    flightTimeFrom: "2h 28m",
+    flightFrom: "EWR-BNA"
+  },
+  {
+    name: "Emirates",
+    image: "Qatar",
+    rate: 4.5,
+    views: 64,
+    price: "$104",
+    startTimeTo: "12:00 pm",
+    endTimeTo: "1:28 pm",
+    typeTo: "non stop",
+    flightTimeTo: "2h 28m",
+    flightTo: "EWR-BNA",
+    startTimeFrom: "12:00 pm",
+    endTimeFrom: "1:28 pm",
+    typeFrom: "non stop",
+    flightTimeFrom: "2h 28m",
+    flightFrom: "EWR-BNA"
+  },
+  {
+    name: "Emirates",
+    image: "Etihad",
+    rate: 4.5,
+    views: 64,
+    price: "$104",
+    startTimeTo: "12:00 pm",
+    endTimeTo: "1:28 pm",
+    typeTo: "non stop",
+    flightTimeTo: "2h 28m",
+    flightTo: "EWR-BNA",
+    startTimeFrom: "12:00 pm",
+    endTimeFrom: "1:28 pm",
+    typeFrom: "non stop",
+    flightTimeFrom: "2h 28m",
+    flightFrom: "EWR-BNA"
+  }
+])
 </script>
 
 <style scoped></style>

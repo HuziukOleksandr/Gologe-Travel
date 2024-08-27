@@ -49,10 +49,10 @@ const changeValues = (rangeDate) => {
 </script>
 
 <style scoped>
+
 :deep(.el-slider__button) {
   background-color: #8DD3BB;
   border-color: #8DD3BB;
-  
 }
 :deep(.el-slider__bar) {
   background-color: #112211;
@@ -60,8 +60,8 @@ const changeValues = (rangeDate) => {
 }
 :deep(.el-slider) {
   --el-slider-button-wrapper-offset: -16px
-  
 }
+
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.5s ease;

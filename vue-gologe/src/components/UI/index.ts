@@ -41,10 +41,6 @@ const CustomUploadFile = defineAsyncComponent(
     () => import("./CustomUploadFile.vue")
 );
 
-const CustomCropper = defineAsyncComponent(
-	() => import("./CustomCropper.vue")
-);
-
 const CustomModalWindow = defineAsyncComponent(
     () => import("./CustomModalWindow.vue")
 );
@@ -68,7 +64,6 @@ export default {
     CustomCheckbox,
     CustomInputPassword,
     CustomUploadFile,
-    CustomCropper,
     CustomModalWindow,
     CustomFlightSearch,
     CustomPlaceSearch,

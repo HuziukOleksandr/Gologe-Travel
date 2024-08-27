@@ -145,6 +145,26 @@
 			"rating": "Rating",
 			"airlines": "Airlines",
 			"trips": "Trips"
+			
+		},
+		"Sort": {
+			"cheapest": "Cheapest",
+			"best": "Best",
+			"quickest": "Quickest",
+			"other": "Other sort",
+			"hour": "h",
+			"minute": "m",
+			"showing": "Showing",
+			"of": "of",
+			"flight": "flights",
+			"sort": "Sort by",
+			"recommended": "Recommended"
+		},
+		"Card": {
+			"mark": "Very Good",
+			"reviews": "reviews",
+			"startingPrice": "starting from",
+			"button": "View Deals"
 		}
 	},
 	"Account": {
