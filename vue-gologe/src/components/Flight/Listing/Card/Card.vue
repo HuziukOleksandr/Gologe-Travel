@@ -10,7 +10,6 @@
       :alt="element.image"
       class="self-start"
     />
-
     <!-- Content wrapper Start -->
     <div class="max-w-[645px] w-full px-[24px] flex flex-col justify-between">
       <!-- Content Header Start -->
@@ -57,8 +56,9 @@
       <!-- Content Center Start -->
       <div class="flex flex-col ">
         <!-- First CheckBox Start -->
-        <div>
-          <CheckBox />
+        <div class="h-[100px] flex flex-col justify-between">
+          <Content :flights="element.flights[0]"/>
+          <Content :flights="element.flights[1]"/>
         </div>
       </div>
       <!-- Content Center End -->
@@ -87,8 +87,9 @@
 
 <script setup lang="ts">
 import { getFlightsImagePng } from "@/helpers/Helpers.ts";
-import CheckBox from "./CheckBox.vue"
+import Content from "./Content.vue"
 import { ref } from "vue"
+
 const props = withDefaults(
   defineProps<{
     cards: [];
@@ -96,7 +97,7 @@ const props = withDefaults(
   {}
 );
 
-const checkList = ref()
+
 </script>
 
 <style scoped></style>

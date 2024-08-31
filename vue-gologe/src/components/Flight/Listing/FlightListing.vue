@@ -14,7 +14,7 @@
       <!-- Filters wrapper End -->
 
       <!-- Line Start -->
-      <div class="w-[1px] h-[1360px] bg-gray"></div>
+      <div class="w-[1px] h-full bg-lightGray"></div>
       <!-- Line End -->
 
       <!-- Places wrapper Start -->
@@ -23,24 +23,28 @@
       >
         <!-- Header wrapper Start -->
         <div class="w-full h-[80px] rounded-[12px] shadow-sm">
-          <Sort/>
+          <Sort />
         </div>
         <!-- Header wrapper End -->
 
         <!-- Showing info wrapper start -->
         <div class="w-full h-[18px]">
-          <Showing :pages="[4,265]" />
+          <Showing :pages="[4, 265]" />
         </div>
         <!-- Showing info wrapper End -->
 
         <!-- Results wrapper Start -->
         <div class="w-full h-[1210px] flex flex-col justify-between">
-          <Card :cards="cards"/>
+          <Card :cards="cards" />
         </div>
         <!-- Results wrapper End -->
 
         <!-- Show button Start -->
-        <CustomButton class="w-full h-[48px] bg-green"> </CustomButton>
+        <CustomButton
+          class="w-full h-[48px] bg-green custom-text-sm font-semibold text-white flex justify-center"
+        >
+          {{ $t("ListingFlight.button") }}
+        </CustomButton>
         <!-- Show button End -->
       </div>
       <!-- Places wrapper End -->
@@ -53,10 +57,10 @@
 <script setup lang="ts">
 import Search from "./Search/Search.vue";
 import Aside from "./Aside/Aside.vue";
-import Sort from "./Sort/Sort.vue"
-import Showing from "./Showing/Showing.vue"
-import Card from "./Card/Card.vue"
-import { ref } from "vue"
+import Sort from "./Sort/Sort.vue";
+import Showing from "./Showing/Showing.vue";
+import Card from "./Card/Card.vue";
+import { ref } from "vue";
 
 const cards = ref([
   {
@@ -65,69 +69,109 @@ const cards = ref([
     rate: 4.5,
     views: 64,
     price: "$104",
-    startTimeTo: "12:00 pm",
-    endTimeTo: "1:28 pm",
-    typeTo: "non stop",
-    flightTimeTo: "2h 28m",
-    flightTo: "EWR-BNA",
-    startTimeFrom: "12:00 pm",
-    endTimeFrom: "1:28 pm",
-    typeFrom: "non stop",
-    flightTimeFrom: "2h 28m",
-    flightFrom: "EWR-BNA"
+    flights: [
+      {
+        id: 1,
+        name: "Emirates",
+        startTime: "12:00 pm",
+        endTime: "01:28 pm",
+        type: "non stop",
+        flightTime: "2h 28m",
+        flight: "EWR-BNA",
+      },
+      {
+        id: 2,
+        name: "Emirates",
+        startTime: "12:00 pm",
+        endTime: "01:28 pm",
+        type: "non stop",
+        flightTime: "2h 28m",
+        flight: "EWR-BNA",
+      },
+    ],
   },
   {
-    name: "Emirates",
+    name: "FlyDubai",
     image: "FlyDubai",
     rate: 4.5,
     views: 64,
     price: "$104",
-    startTimeTo: "12:00 pm",
-    endTimeTo: "1:28 pm",
-    typeTo: "non stop",
-    flightTimeTo: "2h 28m",
-    flightTo: "EWR-BNA",
-    startTimeFrom: "12:00 pm",
-    endTimeFrom: "1:28 pm",
-    typeFrom: "non stop",
-    flightTimeFrom: "2h 28m",
-    flightFrom: "EWR-BNA"
+    flights: [
+      {
+        id: 1,
+        name: "FlyDubai",
+        startTime: "14:00 pm",
+        endTime: "01:28 pm",
+        type: "non stop",
+        flightTime: "2h 28m",
+        flight: "EWR-BNA",
+      },
+      {
+        id: 2,
+        name: "FlyDubai",
+        startTime: "12:00 pm",
+        endTime: "01:28 pm",
+        type: "non stop",
+        flightTime: "2h 28m",
+        flight: "EWR-BNA",
+      },
+    ],
   },
   {
-    name: "Emirates",
+    name: "Qatar",
     image: "Qatar",
     rate: 4.5,
     views: 64,
     price: "$104",
-    startTimeTo: "12:00 pm",
-    endTimeTo: "1:28 pm",
-    typeTo: "non stop",
-    flightTimeTo: "2h 28m",
-    flightTo: "EWR-BNA",
-    startTimeFrom: "12:00 pm",
-    endTimeFrom: "1:28 pm",
-    typeFrom: "non stop",
-    flightTimeFrom: "2h 28m",
-    flightFrom: "EWR-BNA"
+    flights: [
+      {
+        id: 1,
+        name: "Qatar",
+        startTime: "12:00 pm",
+        endTime: "01:28 pm",
+        type: "non stop",
+        flightTime: "2h 28m",
+        flight: "EWR-BNA",
+      },
+      {
+        id: 2,
+        name: "Qatar",
+        startTime: "12:00 pm",
+        endTime: "01:28 pm",
+        type: "non stop",
+        flightTime: "2h 28m",
+        flight: "EWR-BNA",
+      },
+    ],
   },
   {
-    name: "Emirates",
+    name: "Etihad",
     image: "Etihad",
     rate: 4.5,
     views: 64,
     price: "$104",
-    startTimeTo: "12:00 pm",
-    endTimeTo: "1:28 pm",
-    typeTo: "non stop",
-    flightTimeTo: "2h 28m",
-    flightTo: "EWR-BNA",
-    startTimeFrom: "12:00 pm",
-    endTimeFrom: "1:28 pm",
-    typeFrom: "non stop",
-    flightTimeFrom: "2h 28m",
-    flightFrom: "EWR-BNA"
-  }
-])
+    flights: [
+      {
+        id: 1,
+        name: "Etihad",
+        startTime: "12:00 pm",
+        endTime: "01:28 pm",
+        type: "non stop",
+        flightTime: "2h 28m",
+        flight: "EWR-BNA",
+      },
+      {
+        id: 2,
+        name: "Etihad",
+        startTime: "12:00 pm",
+        endTime: "01:28 pm",
+        type: "non stop",
+        flightTime: "2h 28m",
+        flight: "EWR-BNA",
+      },
+    ],
+  },
+]);
 </script>
 
 <style scoped></style>

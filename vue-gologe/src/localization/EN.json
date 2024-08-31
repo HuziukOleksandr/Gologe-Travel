@@ -138,6 +138,7 @@
 		}
 	},
 	"ListingFlight": {
+		"button": "Show more results",
 		"Aside": {
 			"title": "Filters",
 			"price": "Price",

@@ -36,6 +36,10 @@
       </div>
       <!-- Price End -->
 
+      <!-- Line Start -->
+      <div class="w-full border-b-[0.5px] border-b-lightGray"></div>
+      <!-- Line Start -->
+
       <!-- Departure Time Start -->
       <div class="flex flex-col gap-[16px]">
         <!-- Departure Time Header Start -->
@@ -63,6 +67,10 @@
       </div>
       <!-- Departure Time End -->
 
+      <!-- Line Start -->
+      <div class="w-full border-b-[0.5px] border-b-lightGray"></div>
+      <!-- Line Start -->
+
       <!-- Rating Start -->
       <div class="flex flex-col gap-[16px]">
         <!-- Rating Header Start -->
@@ -77,7 +85,7 @@
           <!-- Rating Title End -->
           <!-- Filter image -->
           <img
-            class="transition-all duration-300 "
+            class="transition-all duration-300"
             :class="{ 'rotate-180': ratingVisible }"
             src="@/assets/images/svg/UI/chevron.svg"
             alt="chevron-down"
@@ -89,6 +97,10 @@
         <!-- Custom Filter for Rating End -->
       </div>
       <!-- Rating End -->
+
+      <!-- Line Start -->
+      <div class="w-full border-b-[0.5px] border-b-lightGray"></div>
+      <!-- Line Start -->
 
       <!-- Airlines Start -->
       <div class="flex flex-col gap-[16px]">
@@ -117,6 +129,10 @@
       </div>
       <!-- Airlines End -->
 
+      <!-- Line Start -->
+      <div class="w-full border-b-[0.5px] border-b-lightGray"></div>
+      <!-- Line Start -->
+       
       <!-- Trips Start -->
       <div class="flex flex-col gap-[16px]">
         <!-- Trips Header Start -->
@@ -184,7 +200,12 @@ function changeTripsVisibility() {
 }
 
 const airlines = ref<[]>(["Emirates", "Fly Dubai", "Qatar", "Etihad"]);
-const trips = ref<[]>(["Round trip", "On Way", "Multi-City", "My Dates Are Flexible"]);
+const trips = ref<[]>([
+  "Round trip",
+  "On Way",
+  "Multi-City",
+  "My Dates Are Flexible",
+]);
 </script>
 
 <style scoped></style>
