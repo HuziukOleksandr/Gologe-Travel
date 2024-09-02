@@ -1,0 +1,44 @@
+<template>
+  <!-- Features wrapper Start -->
+  <div class="h-[175px] flex flex-col justify-between gap-[24px]">
+    <!-- Header wrapper Start -->
+    <div class="flex justify-between">
+      <!-- Title Start -->
+      <h1 class="custom-text-2xl text-green font-semibold">
+        Basic Economy Features
+      </h1>
+      <!-- Title End -->
+      <!-- Filters Start -->
+      <Filters :filters="filters" />
+      <!-- Filters End -->
+    </div>
+    <!-- Header wrapper End -->
+    <!-- Content wrapper Start -->
+    <div class="w-full flex justify-between">
+      <img v-for="element in images" :src="getDetailsImagePng(element)" :alt="element" />
+    </div>
+    <!-- Content wrapper End -->
+  </div>
+  <!-- Features wrapper End -->
+</template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+import { getDetailsImagePng } from "@/helpers/Helpers.ts"
+import Filters from "./Filters.vue";
+
+const filters = ref(["Economy", "First Class", "Busines Class"]);
+const images = ref([
+  "emirates1",
+  "emirates2",
+  "emirates3",
+  "emirates4",
+  "emirates5",
+  "emirates6",
+  "emirates7",
+  "emirates5",
+  "emirates6",
+]);
+</script>
+
+<style scoped></style>

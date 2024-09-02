@@ -17,6 +17,7 @@ import Review from "@/components/Landing/Reviews/Reviews.vue";
 import { scrollTop } from "@/helpers/ScrollHelper.ts"
 
 scrollTop()
+
 </script>
 
 <style scoped></style>

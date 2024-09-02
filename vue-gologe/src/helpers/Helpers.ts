@@ -24,3 +24,9 @@ export function getFlightsImagePng(name: string) {
   return new URL(`../assets/images/svg/Flights/${name}.svg`, import.meta.url)
     .href;
 }
+
+export function getDetailsImagePng(name: string) {
+  return new URL(`../assets/images/png/Airlines/${name}.png`, import.meta.url)
+    .href;
+}
+

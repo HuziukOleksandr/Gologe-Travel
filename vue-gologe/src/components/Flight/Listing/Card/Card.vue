@@ -71,7 +71,10 @@
         </CustomButton>
         <!-- Favorite Button End -->
         <!-- Favorite Button Start -->
-        <CustomButton class="w-full h-[48px] flex justify-center items-center bg-buttonGreen">
+        <CustomButton 
+          class="w-full h-[48px] flex justify-center items-center bg-buttonGreen"
+          @click="$router.push({ name: 'FlightDetails' })"
+        >
           <p class="custom-text-sm text-green font-bold">
             {{ $t("ListingFlight.Card.button") }}
           </p>
