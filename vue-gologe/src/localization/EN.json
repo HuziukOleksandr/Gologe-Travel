@@ -168,6 +168,13 @@
 			"button": "View Deals"
 		}
 	},
+	"FlightDetails": {
+		"Header": {
+			"rate": "Very Good",
+			"reviews": "reviews",
+			"button": "Book now"
+		}
+	},
 	"Account": {
 		"upload": "Upload new cover",
 		"account": "Account",
