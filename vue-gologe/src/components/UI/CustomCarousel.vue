@@ -40,8 +40,8 @@ const props = withDefaults(
 );
 </script>
 
-<style>
-.carousel__pagination-button::after {
+<style scoped>
+:deep(.carousel__pagination-button::after) {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -49,16 +49,15 @@ const props = withDefaults(
   transition: all 0.5s;
 }
 
-.carousel__pagination-button:hover::after {
+:deep(.carousel__pagination-button:hover::after) {
   background-color: #8dd3bb;
 }
 
-.carousel__pagination-button--active::after {
+:deep(.carousel__pagination-button--active::after) {
   width: 32px;
   height: 10px;
   border-radius: 5px;
   background-color: #8dd3bb;
 }
-</style>
 
-<style scoped></style>
+</style>

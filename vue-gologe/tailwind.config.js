@@ -22,6 +22,7 @@ export default {
         lightGreen: "#CDEAE1",
         red: "#FF8682",
         lightGray: "#D7E2EE",
+        mintGreen: "#8DD3BB"
       },
       fontFamily: {
         serrat: ["Montserrat", "sans"],

@@ -3,7 +3,8 @@ import Header from "@/components/Header/Header.vue";
 import Landing from "@/view/LandingView.vue";
 import Flight from "@/view/FlightViews/FlightView.vue";
 import FlightListing from "@/view/FlightViews/ListingView.vue";
-import FlightDetails from "@/view/FlightViews/DetailsView.vue";
+import FlightDetails from "@/view/FlightViews/FlightDetailsView.vue";
+import BookingDetails from "@/view/FlightViews/BookingDetailsView.vue"
 import Hotel from "@/view/HotelViews/HotelView.vue";
 import Account from "@/view/AccountView.vue";
 import Login from "@/view/AuthViews/LoginView.vue";
@@ -48,6 +49,15 @@ const routes = [
     components: {
       Header,
       default: FlightDetails,
+      Footer,
+    }
+  },
+  {
+    path: "/flight/listing/details/booking",
+    name: "BookingDetails",
+    components: {
+      Header,
+      default: BookingDetails,
       Footer,
     }
   },

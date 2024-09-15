@@ -1,20 +1,21 @@
-<template>
+  <template>
+    <div class="relative w-[100%] h-[100vh] flex flex-col bg-background " >
+      <router-view
+        name="Header"
+        v-if="route.name !== 'Landing'"
+        class="shadow-md"
+      />
+      <router-view class="flex-grow flex" />
+      <router-view name="Footer" />
 
-  <div class="relative w-[100%] h-[100vh] flex flex-col bg-background " >
-    <router-view
-      name="Header"
-      v-if="route.name !== 'Landing'"
-      class="shadow-md"
-    />
-    <router-view class="flex-grow flex" />
-    <router-view name="Footer" />
-  </div>
-</template>
+      <div id="modal"></div>
+    </div>
+  </template>
 
-<script setup lang="ts">
-import { RouterView, useRoute } from "vue-router";
-import axios from "axios";
-import { ref } from "vue";
+  <script setup lang="ts">
+  import { RouterView, useRoute } from "vue-router";
+  import axios from "axios";
+  import { ref } from "vue";
 
-const route = useRoute();
-</script>
+  const route = useRoute();
+  </script>

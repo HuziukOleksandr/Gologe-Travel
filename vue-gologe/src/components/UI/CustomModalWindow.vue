@@ -1,29 +1,30 @@
 <template>
-  <!-- Custom modal component wrapper Start -->
-  <div
-    class="background fixed w-full h-screen top-0 flex justify-center owerflow-hidden"
-  >
-    <!-- Content wrapper Start-->
-    <div
-      class="sticky w-[640px] h-[740px] bg-white"
-      v-click-away="onClickAway"
-    ></div>
-    <!-- Content wrapper End-->
-  </div>
-  <!-- Custom modal component wrapper End -->
+  <Teleport to="#modal">
+    <Transition>
+      <div
+        v-show="isOpen"
+        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+        
+      >
+        <div v-click-away="() => emit('closeWindow')">
+          <slot></slot>
+        </div>
+      </div>
+    </Transition>
+  </Teleport>
 </template>
 
 <script setup lang="ts">
-// Emit for Close
-const emit = defineEmits(["closeWindow"]);
+import { ref } from "vue";
 
-const onClickAway = () => {
-  emit("closeWindow");
-};
+const props = withDefaults(
+  defineProps<{
+    isOpen: boolean;
+  }>(),
+  {}
+);
+
+const emit = defineEmits(["closeWindow"]);
 </script>
 
-<style scoped>
-.background {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-</style>
+<style scoped></style>

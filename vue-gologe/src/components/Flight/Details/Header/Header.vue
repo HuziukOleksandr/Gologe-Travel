@@ -70,6 +70,7 @@
         <!-- Button "Book" Start -->
         <CustomButton
           class="max-w-[150px] w-full h-[48px] bg-buttonGreen flex justify-center"
+          @click="$router.push({ name: 'BookingDetails' })"
         >
           <p class="custom-text-sm text-green font-semibold">
             {{ $t("FlightDetails.Header.button") }}

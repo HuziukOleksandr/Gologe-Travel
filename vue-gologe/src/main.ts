@@ -18,6 +18,7 @@ import "././assets/root/reset.css";
 const app = createApp(App);
 const pinia = createPinia();
 
+
 app.config.globalProperties.$dayjs = dayjs
 app.use(router);
 app.use(pinia);

@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-[1440px] w-full flex justify-center">
+  <div class="max-w-[1440px] w-full flex justify-center mx-auto">
     <Details />
   </div>
 </template>

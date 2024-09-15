@@ -175,6 +175,47 @@
 			"button": "Book now"
 		}
 	},
+	"FlightBooking": {
+		"Card": {
+			"title": "Your booking is protected by",
+			"economyClass": "Economy",
+			"priceDetails": "Price Details",
+			"baseFare": "Base Fare",
+			"discount": "Discount",
+			"taxes": "Taxes",
+			"serviceFree": "Service Free",
+			"total": "Total",
+			"rate": "Very Good",
+			"reviews": "reviews"
+		},
+		"Pays": {
+			"fullTitle": "Pay in full",
+			"fullText": "Pay the total and you are all set",
+			"partTitle": "Pay part now, part later",
+			"partText": "Pay $207.43 now, and the rest ($207.43) will be automatically charged to the same payment method on Nov 14, 2022.Noextrafees.",
+			"button": "More info"
+		},
+		"Login": {
+			"title": "Login or Sign up to book",
+			"placeholder": "Phone Number",
+			"text": "We’ll call or text you to confirm your number. Standard message and data rates apply. Privacy Policy",
+			"button": "Continue",
+			"or": "Or",
+			"withEmail": "Continue with email"
+		},
+		"Payment": {
+			"button": "Add new card",
+			"title": "Add a new Card",
+			"card": "Card Number",
+			"date": "Exp. Date",
+			"CVC": "CVC",
+			"cardName": "Name on Card",
+			"from": "Country or Region",
+			"checkbox": "Securely save my information for 1-click checkout",
+			"buttonAddCard": "Add Card",
+			"text": "By confirming your subscription, you allow The Outdoor Inn Crowd Limited to charge your card for this payment and future payments in accordance with their terms. You can always cancel your subscription."
+		}
+	},
 	"Account": {
 		"upload": "Upload new cover",
 		"account": "Account",

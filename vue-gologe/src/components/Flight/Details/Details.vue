@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import Navigation from "./Navigation/Navigation.vue"
+import Navigation from "@/components/Flight/UI/Navigation/Navigation.vue"
 import Header from "./Header/Header.vue"
 import Features from "./Features/Features.vue"
 import Policies from "./Policies/Policies.vue"

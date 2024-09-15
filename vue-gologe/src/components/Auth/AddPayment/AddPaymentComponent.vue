@@ -1,7 +1,7 @@
 <template>
   <!-- Add Payment wrapper Start -->
   <div
-    class="max-w-[1440px] w-full py-[50px] flex gap-[20px] justify-center md:px-[90px] sm:py-[20px] sm:px-[45px]"
+    class="max-w-[1440px] w-full py-12 flex gap-5 justify-center md:px-20 sm:py-5 sm:px-11"
   >
     <!-- Carousel wrapper Start -->
     <div class="max-w-[490px] w-full relative flex items-center sm:hidden">
@@ -13,11 +13,11 @@
     <!-- Aside wrapper Start -->
     <div class="max-w-[640px] w-full flex flex-col justify-center">
       <!-- Use Custom Logo -->
-      <CustomLogo class="hidden sm:flex sm:mb-[10px] sm:h-[24px] sm:mx-auto" />
+      <CustomLogo class="hidden sm:flex sm:mb-3 sm:h-6 sm:mx-auto" />
 
       <!-- Use Custom Buttom "Back" Start -->
       <CustomButton
-        class="custom-text-xs font-bold mb-[15px] max-w-[70px]"
+        class="max-w-[70px] mb-4"
         @click="$router.push({ name: 'Register' })"
       >
         <!-- Button Image -->
@@ -26,7 +26,7 @@
           alt="hotel"
           class="rotate-90"
         />
-        {{ $t("AddPayment.back") }}
+        <p class="custom-text-xs font-bold">{{ $t("AddPayment.back") }}</p>
       </CustomButton>
       <!-- Use Custom Buttom "Back" End -->
 
@@ -49,14 +49,14 @@
         class="flex flex-col gap-[24px] mb-[40px] md:mb-[20px] sm:mb-[10px] sm:gap-[20px]"
       >
         <!-- Use Custom Input "Card Numder" Start -->
-        <CustomInput
-          class="font-serrat font-medium text-green"
-          type="text"
-          :placeHolder="$t('AddPayment.card')"
-        >
+        <CustomInput type="text" :placeHolder="$t('AddPayment.card')">
           <!-- Use Slot for Input Name Start -->
           <template v-slot:input>
-            {{ $t("AddPayment.card") }}
+            <!-- Text Start -->
+            <p class="font-serrat font-medium text-green">
+              {{ $t("AddPayment.card") }}
+            </p>
+            <!-- Text End -->
           </template>
           <!-- Use Slot for Input Name Start -->
         </CustomInput>
@@ -66,13 +66,17 @@
         <div class="flex justify-between flex-wrap gap-[20px]">
           <!-- Use Custom Input "Exp. Date" Start -->
           <CustomInput
-            class="font-serrat font-medium text-green flex-grow"
+            class="flex-grow"
             type="date"
             :placeHolder="$t('AddPayment.date')"
           >
             <!-- Use Slot for Input Name End -->
             <template v-slot:input>
-              {{ $t("AddPayment.date") }}
+              <!-- Text Start -->
+              <p class="font-serrat font-medium text-green">
+                {{ $t("AddPayment.date") }}
+              </p>
+              <!-- Text End -->
             </template>
             <!-- Use Slot for Input Name End -->
           </CustomInput>
@@ -80,13 +84,17 @@
 
           <!-- Use Custom Input "CVC" Start -->
           <CustomInput
-            class="font-serrat font-medium text-green flex-grow"
+            class="flex-grow"
             type="text"
             :placeHolder="$t('AddPayment.CVC')"
           >
             <!-- Use Slot for Input Name Start -->
             <template v-slot:input>
-              {{ $t("AddPayment.CVC") }}
+              <!-- Text Start -->
+              <p class="font-serrat font-medium text-green">
+                {{ $t("AddPayment.CVC") }}
+              </p>
+              <!-- Text End -->
             </template>
             <!-- Use Slot for Input Name End -->
           </CustomInput>
@@ -95,13 +103,14 @@
         <!-- Wrapper for Date and CVC inputs End -->
 
         <!-- Use Custom Input "Name of Card" Start -->
-        <CustomInput
-          class="font-serrat font-medium text-green flex-grow"
-          :placeHolder="$t('AddPayment.cardName')"
-        >
+        <CustomInput class="flex-grow" :placeHolder="$t('AddPayment.cardName')">
           <!-- Use Slot for Input Name Start -->
           <template v-slot:input>
-            {{ $t("AddPayment.cardName") }}
+            <!-- Text Start -->
+            <p class="font-serrat font-medium text-green">
+              {{ $t("AddPayment.cardName") }}
+            </p>
+            <!-- Text End -->
           </template>
           <!-- Use Slot for Input Name End -->
         </CustomInput>
@@ -110,13 +119,14 @@
         <!-- Wrapper Custom Input "Country or Region" Start -->
         <div class="relative w-full" @click="tripVisible = !tripVisible">
           <!-- Use Custom Input "Country or Region" Start -->
-          <CustomInput
-            class="font-serrat font-medium text-green"
-            :placeHolder="$t('AddPayment.from')"
-          >
+          <CustomInput :placeHolder="$t('AddPayment.from')">
             <!-- Use Slot for Input Name Start -->
             <template v-slot:input>
-              {{ $t("AddPayment.from") }}
+              <!-- text Start -->
+              <p class="font-serrat font-medium text-green">
+                {{ $t("AddPayment.from") }}
+              </p>
+              <!-- text End -->
             </template>
             <!-- Use Slot for Input Name Start -->
 
@@ -135,15 +145,19 @@
 
           <!-- Use Custom Input List Component -->
           <CustomInputList
-            :dialogVisible="tripVisible"
-            @close-window="tripVisible = !tripVisible"
+            :dialogVisible="countryVisible"
+            @close-window="countryVisible = !countryVisible"
           />
         </div>
         <!-- Wrapper Custom Input "Country or Region" End -->
 
         <!-- Use Custom Check Box Component Start -->
-        <CustomCheckbox class="custom-text-base font-bold">
-          {{ $t("AddPayment.checkbox") }}
+        <CustomCheckbox>
+          <!-- Text Start -->
+          <p class="custom-text-base font-semibold">
+            {{ $t("AddPayment.checkbox") }}
+          </p>
+          <!-- Text End -->
         </CustomCheckbox>
         <!-- Use Custom Check Box Component End -->
       </div>
@@ -151,18 +165,22 @@
 
       <!-- Use Custom Button "Add Payment" Start -->
       <CustomButton
-        class="custom-text-sm font-bold w-full h-[48px] rounded-[4px] mb-[16px] justify-center bg-buttonGreen text-green sm:h-[45px]"
+        class="w-full h-16 mb-4 justify-center bg-buttonGreen sm:h-[45px]"
       >
-        {{ $t("AddPayment.button") }}
+        <!-- Text Start -->
+        <p class="custom-text-sm font-semibold text-green">
+          {{ $t("AddPayment.button") }}
+        </p>
+        <!-- Text End -->
       </CustomButton>
       <!-- Use Custom Button "Add Payment" End -->
 
       <!-- Bottom Text wrapper Start -->
       <div class="w-full flex">
         <!-- Text Start -->
-        <span class="custom-text-xs font-regular text-center text-gray">
+        <p class="custom-text-xs font-regular text-center text-gray">
           {{ $t("AddPayment.text") }}
-        </span>
+        </p>
         <!-- Text End -->
       </div>
       <!-- Bottom Text wrapper End -->
@@ -175,7 +193,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-const tripVisible = ref<boolean>(false);
+const countryVisible = ref<boolean>(false);
 
 // Slides Image Array for carousel
 const slides = ref([
