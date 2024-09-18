@@ -8,15 +8,13 @@ export const useUserStore = defineStore('user', {
   },
   getters: {
     getUser() {
-      return {
-      }
+      return {}
     }
   },
   actions: {
     addUser(value: User) {
       this.userList.push(value)
     },
-    
   }
 })
 
