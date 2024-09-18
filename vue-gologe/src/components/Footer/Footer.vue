@@ -2,12 +2,14 @@
   <!-- Footer Wrapper Start -->
   <div class="wrapper_footer">
     <!-- Use Subcribe Component -->
-    <Subscribe class="subscribe" />
+    <Subscribe class="mt-[-150px]" />
 
     <!-- Footer Container wrapper Start -->
     <div class="wrapper_container">
       <!-- Wrapper for Logo and Images Start -->
-      <div class="wrapper_aside">
+      <div
+        class="min-w-[120px] flex flex-col gap-6 sm:flex-row sm:gap sm:w-full sm:justify-around sm:flex-wrap;"
+      >
         <!-- Use logo Component -->
         <img
           src="@/assets/images/svg/logo/logo-footer.svg"
@@ -51,7 +53,9 @@
       <!-- Wrapper for Logo and Images End -->
 
       <!-- Wrapper for Content Start -->
-      <div class="wrapper_content">
+      <div
+        class="between w-full flex-wrap gap-5 sm:justify-center sm:hidden;"
+      >
         <!-- Use Destination Component  -->
         <Destination />
 
@@ -63,6 +67,9 @@
 
         <!-- Use About Us Component -->
         <AboutUs />
+
+        <!-- Use Contact Component -->
+        <Contact />
       </div>
       <!-- Wrapper for Content End -->
     </div>
@@ -77,44 +84,28 @@ import Destination from "./Destination.vue";
 import Activities from "./Activities.vue";
 import Blogs from "./Blogs.vue";
 import AboutUs from "./AboutUs.vue";
+import Contact from "./Contact.vue";
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .wrapper_footer {
-  @apply w-full m-auto mt-[150px] pb-[64px] mb-0
- bg-buttonGreen  
-  flex flex-col justify-between
-  md:px-[50px] 
-  sm:px-[25px] sm:pb-[30px];
-}
+  @apply w-full  m-auto mt-[150px] pb-16 bg-buttonGreen  flex flex-col justify-between md:px-12 sm:px-6 sm:pb-9;
 
-.subscribe {
-  @apply mt-[-150px];
-}
-
-.wrapper_container {
-  @apply max-w-[1230px] w-full  mx-auto pt-[50px] 
-	flex justify-between gap-[20px]
+  .wrapper_container {
+  @apply max-w-primary-width w-full mx-auto pt-[50px] 
+	flex justify-between gap-5
 	lg:gap-[100px] 
-	sm:flex-col sm:items-center sm:p-[10px];
+	sm:flex-col sm:items-center sm:p-2;
 }
 
-.wrapper_aside {
-  @apply min-w-[120px] 
-	flex flex-col gap-[25px] 
-	sm:flex-row sm:gap-[5px] sm:w-full sm:justify-around sm:flex-wrap;
 }
+
+
 
 .wrapper_images {
   @apply min-w-[100px] 
 	flex justify-between 
 	sm:gap-[4px] sm:flex-wrap sm:h-[55px];
-}
-
-.wrapper_content {
-  @apply w-full
-	flex justify-between flex-wrap gap-[20px]
-	sm:justify-center sm:hidden;
 }
 
 .logo:hover {

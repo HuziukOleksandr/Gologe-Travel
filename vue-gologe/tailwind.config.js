@@ -10,19 +10,30 @@ export default {
         md: { min: "768px", max: "1379px" },
         lg: { min: "1380px" },
       },
-
+      maxWidth: {
+        'large-width': '1280px',
+        'primary-width': '1230px',
+        'secondary-width': '1380px'
+      },
       colors: {
-        default: "#FFFFFF",
         buttonGreen: "#8DD3BB",
-        black: "#000",
-        green: "#112211",
-        "bg-second": "#D7E2EE",
+        green: "#112211", 
         gray: "#79747E",
         background: "#FAFBFC",
         lightGreen: "#CDEAE1",
         red: "#FF8682",
         lightGray: "#D7E2EE",
-        mintGreen: "#8DD3BB"
+        mintGreen: "#8DD3BB",
+
+        'default': '#FFFFFF',                 //default
+        'custom-lightgreen': '#8DD3BB',     //buttonGreen
+        'custom-darkgreen': '#112211',      //green
+        'custom-darkgray': '#79747E',       //gray
+        'custom-red': '#FF8682',            //red
+        'custom-lightgray': '#D7E2EE',      //lightGray
+        'custom-green': '#CDEAE1'           //mintGreen
+
+        
       },
       fontFamily: {
         serrat: ["Montserrat", "sans"],

@@ -1,0 +1,18 @@
+/* Style for Footer */
+
+.footer-component-wrapper {
+  @apply w-40 flex flex-col gap-4;
+
+  .footer-component-title {
+    @apply font-serrat text-base font-semibold text-custom-darkgreen;
+  }
+
+  .footer-main-component-wrapper {
+    @apply flex flex-col gap-3;
+
+    .footer-component-link-text {
+      @apply font-serrat text-sm font-medium text-custom-darkgray;
+    }
+  }
+}
+

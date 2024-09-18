@@ -1,0 +1,74 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.custom-text-xs {
+	@apply font-serrat text-xs
+}
+
+.custom-text-sm {
+	@apply font-serrat text-sm
+}
+
+.custom-text-base {
+	@apply font-serrat text-base md:text-sm sm:text-xs
+}
+
+.custom-text-xl {
+	@apply font-serrat text-xl
+}
+
+.custom-text-2xl {
+	@apply font-serrat text-2xl
+}
+
+.custom-text-3xl {
+	@apply font-serrat text-3xl
+}
+
+.custom-text-4xl {
+	@apply font-serrat text-4xl md:text-3xl sm:text-2xl
+}
+
+.custom-text-5xl {
+	@apply font-serrat text-5xl
+}
+
+/* Style for Component Size Start */
+.column {
+	@apply flex flex-col
+}
+
+.column-between {
+	@apply flex flex-col justify-between
+}
+
+.between {
+	@apply flex justify-between
+}
+/* Style for Component Size End */
+
+// Reset Styles
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+input {
+	appearance: none;
+	-webkit-appearance: none; 
+	-moz-appearance: none;
+	border: none;
+	background: none;
+	padding: 0;
+	margin: 0;
+	resize: none;
+	box-sizing: border-box;
+	cursor: text;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}

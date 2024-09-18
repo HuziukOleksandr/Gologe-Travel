@@ -24,8 +24,9 @@
     "@rollup/plugin-alias": "^5.1.0",
     "@vitejs/plugin-vue": "^5.0.3",
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.44",
-    "tailwindcss": "^3.4.10",
+    "postcss": "^8.4.47",
+    "sass": "^1.79.1",
+    "tailwindcss": "^3.4.12",
     "typescript": "^5.2.2",
     "vite": "^5.1.0",
     "vue-tsc": "^1.8.27"

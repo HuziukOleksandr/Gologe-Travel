@@ -1,29 +1,27 @@
 <template>
   <!-- Contacts wrapper Start -->
-  <div class="flex flex-col gap-[15px]">
+  <section class="footer-component-wrapper">
     <!-- Contact Title Start -->
-    <h1 class="customtext-base font-bold text-green">
+    <h1 class="footer-component-title">
       {{ $t("Footer.ContactUs") }}
     </h1>
     <!-- Contact Title End -->
 
     <!-- Content wrapper Start -->
-    <div class="flex flex-col gap-[10px]">
+    <main class="footer-main-component-wrapper">
       <!-- Router link "Our Story" Start -->
-      <router-link to="#" class="custom-text-sm h-[17px] text-gray">
+      <router-link to="#" class="footer-component-link-text">
         {{ $t("Footer.Contact.OurStory") }}
       </router-link>
       <!-- Router link "Our Story" End -->
 
       <!-- Router link "Work with us" Start -->
-      <router-link to="#" class="custom-text-sm h-[17px] text-gray">
+      <router-link to="#" class="footer-component-link-text">
         {{ $t("Footer.Contact.Workwithus") }}
       </router-link>
       <!-- Router link "Work with us" End -->
-    </div>
+    </main>
     <!-- Content wrapper End -->
-  </div>
+  </section>
   <!-- Contacts wrapper End -->
 </template>
-
-<script setup lang="ts"></script>

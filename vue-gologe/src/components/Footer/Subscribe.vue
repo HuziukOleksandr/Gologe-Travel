@@ -1,24 +1,24 @@
 <template>
   <!-- Subscribe wrapper Start -->
-  <div class="wrapper_subscribe">
-    <!-- Wrapper Content Start -->
-    <div class="max-w-[700px] w-full flex flex-col justify-between gap-[20px]">
+  <div class="subscribe_wrapper">
+    <!-- Content Wrapper Start -->
+    <div class="content-wrapper">
       <!-- Title Start -->
-      <h1 class="custom-text-4xl font-bold text-green sm:text-2xl">
+      <h1 class="content-title">
         {{ $t("Footer.title") }}
       </h1>
       <!-- Title End -->
 
       <!-- Text wrapper Start -->
-      <div class="flex flex-col gap-[10px]">
+      <div class="text-wrapper">
         <!-- Sub Title Start -->
-        <h2 class="custom-text-xl font-bold text-green">
+        <h2 class="content-sub-title">
           {{ $t("Footer.subTitle") }}
         </h2>
         <!-- Sub Title End -->
 
         <!-- Text Start -->
-        <p class="custom-text-base font-medium text-green">
+        <p class="text">
           {{ $t("Footer.text") }}
         </p>
         <!-- Text End -->
@@ -26,7 +26,7 @@
       <!-- Text wrapper End -->
 
       <!-- Input and Button wraper Start -->
-      <div class="flex gap-[15px] sm:flex-col">
+      <div class="flex gap-4 sm:flex-col">
         <!-- Email input  -->
         <input
           type="email"
@@ -37,37 +37,61 @@
         <!-- Button for add Email -->
         <!-- Use button component Start -->
         <CustomButton
-          class="custom-text-sm font-semibold h-[45px] px-[16px] text-white bg-green lg:h-[56px] sm:justify-center"
+          class="h-11 px-4 bg-custom-darkgreen lg:h-[56px] sm:justify-center"
         >
-          {{ $t("Footer.button") }}
+          <p class="custom-text-sm font-semibold text-white">
+            {{ $t("Footer.button") }}
+          </p>
         </CustomButton>
         <!-- Use button component End -->
       </div>
       <!-- Input and Button wraper End -->
     </div>
-    <!-- Wrapper Content End -->
+    <!-- Content Wrapper End -->
 
     <!-- Subscribe Image wrapper Start -->
     <div class="hidden lg:block">
       <!-- Subscribe Image -->
-      <img src="@/assets/images/png/Footer/footer.png" alt="footer" class="h-[300px]" />
+      <img
+        src="@/assets/images/png/Footer/footer.png"
+        alt="footer"
+        class="h-[300px]"
+      />
     </div>
     <!-- Subscribe Image wrapper End -->
   </div>
   <!-- Subscribe wrapper End -->
 </template>
 
-<style scoped>
-.wrapper_subscribe {
-  @apply max-w-[1230px] w-full min-h-[300px] 
-	m-auto p-[24px]
-	rounded-[20px] bg-lightGreen
-	flex justify-between;
-}
+<style lang="scss" scoped>
+.subscribe_wrapper {
+  @apply max-w-large-width w-full 
+  min-h-72 mx-auto p-6 rounded-3xl bg-custom-green flex justify-between;
 
-.input {
-  @apply w-full h-[45px] px-[16px] rounded-[8px]
+  .content-wrapper {
+    @apply max-w-[700px] w-full flex flex-col gap-1;
+
+    .content-title {
+      @apply font-serrat text-4xl font-semibold sm:text-2xl text-custom-darkgreen;
+    }
+
+    .text-wrapper {
+      @apply flex flex-col gap-2;
+
+      .content-sub-title {
+        @apply font-serrat text-xl font-semibold text-custom-darkgreen;
+      }
+
+      .text {
+        @apply font-serrat text-base font-medium text-custom-darkgreen;
+      }
+    }
+  }
+
+  .input {
+    @apply w-full h-[45px] px-[16px] rounded-[8px]
 	bg-white text-green 
 	placeholder:text-base placeholder:text-green lg:h-[56px];
+  }
 }
 </style>

@@ -1,39 +1,39 @@
 <template>
   <!-- Blogs wrapper Start -->
-  <div class="w-[170px] flex flex-col gap-[15px]">
+  <section class="footer-component-wrapper">
     <!-- Blogs Title Start -->
-    <h1 class="custom-text-base font-bold text-green">
+    <h1 class="footer-component-title">
       {{ $t("Footer.travelBlogs") }}
     </h1>
     <!-- Blogs Title End -->
 
     <!-- Content wrapper Start -->
-    <div class="flex flex-col gap-[10px]">
+    <main class="footer-main-component-wrapper">
       <!-- Router link "Bali" Start -->
-      <router-link to="#" class="custom-text-sm h-[17px] text-gray">
+      <router-link to="#" class="footer-component-link-text">
         {{ $t("Footer.Blogs.Bali") }}
       </router-link>
       <!-- Router link "Bali" End -->
 
       <!-- Router link "Sri Lanks" Start -->
-      <router-link to="#" class="custom-text-sm h-[17px] text-gray">
+      <router-link to="#" class="footer-component-link-text">
         {{ $t("Footer.Blogs.SriLanks") }}
       </router-link>
       <!-- Router link "Sri Lanks" End -->
 
       <!-- Router link "Peru" Start -->
-      <router-link to="#" class="custom-text-sm h-[17px] text-gray">
+      <router-link to="#" class="footer-component-link-text">
         {{ $t("Footer.Blogs.Peru") }}
       </router-link>
       <!-- Router link "Peru" End -->
 
       <!-- Router link "Dubai" Start -->
-      <router-link to="#" class="custom-text-sm h-[17px] text-gray">
+      <router-link to="#" class="footer-component-link-text">
         {{ $t("Footer.Blogs.Dubai") }}
       </router-link>
       <!-- Router link "Dubai" End -->
-    </div>
+    </main>
     <!-- Content wrapper Утв -->
-  </div>
+  </section>
   <!-- Blogs wrapper End -->
 </template>
