@@ -2,7 +2,7 @@
   <TransitionGroup>
     <div class="w-full" v-if="props.dialogVisible">
       <el-checkbox-group
-        class="flex flex-col gap-[8px]"
+        class="flex flex-col gap-2"
         @change="addTrips"
         v-model="checkList"
       >

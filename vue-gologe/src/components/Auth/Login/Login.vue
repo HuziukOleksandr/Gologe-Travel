@@ -1,66 +1,53 @@
 <template>
   <!-- Login wrapper Start -->
-  <div
-    class="max-w-[1440px] w-full py-[50px] flex gap-[20px] lg:justify-center md:px-[90px] sm:py-[20px] sm:px-[45px]"
-  >
+  <div class="auth-wrapper">
     <!-- Aside wrapper Start -->
-    <div
-      class="max-w-[510px] w-full flex flex-col justify-center sm:max-w-[700px]"
-    >
+    <div class="max-w-[510px] auth-aside-wrapper">
       <!-- USe Custom Logo -->
-      <CustomLogo class="hidden sm:flex sm:mb-[10px] sm:h-[24px] sm:mx-auto" />
+      <CustomLogo class="logo" />
 
       <!-- Title Start -->
-      <h1 class="custom-text-4xl font-bold mb-[16px] sm:text-center">
+      <h1 class="auth-aside-title">
         {{ $t("Login.title") }}
       </h1>
       <!-- Title End -->
 
       <!-- Text Start -->
-      <h2
-        class="custom-text-base font-regular text-gray mb-[15px] lg:mb-[50px]sm:text-center"
-      >
+      <h2 class="auth-aside-text">
         {{ $t("Login.subTitle") }}
       </h2>
       <!-- Text End -->
 
       <!-- Wrapper for Inputs Start -->
-      <div
-        class="flex flex-col gap-[24px] mb-[40px] md:mb-[20px] sm:mb-[10px] sm:gap-[20px]"
-      >
+      <div class="auth-inputs-wrapper">
         <!-- Use Custom Input "Email" Start -->
         <CustomInput
-          class="font-serrat font-medium text-green"
+          class="lg:h-14"
           type="email"
           :placeHolder="$t('Login.email')"
           @inputValue="loginForm"
         >
           <!-- Slot for Name Start -->
           <template v-slot:input>
-            {{ $t("Login.email") }}
+            <p class="auth-input-text">{{ $t("Login.email") }}</p>
           </template>
           <!-- Slot for Name End -->
         </CustomInput>
         <!-- Use Custom Input "Email" End -->
 
         <!-- Use Custom Input Password "Password" Start -->
-        <CustomInputPassword
-          class="h-[56px] font-serrat font-medium text-green sm:h-[45px]"
-          :placeHolder="$t('Login.password')"
-        >
+        <CustomInputPassword :placeHolder="$t('Login.password')">
           <!-- Slot for Name -->
           <template v-slot:input>
-            {{ $t("Login.password") }}
+            <p class="auth-input-text">{{ $t("Login.password") }}</p>
           </template>
         </CustomInputPassword>
         <!-- Use Custom Input Password "Password" End -->
 
         <!-- Wrapper for CheckBox and Forgot Start -->
-        <div
-          class="w-full flex justify-between sm:flex-wrap sm:mb-[15px] sm:gap-[5px]"
-        >
+        <div class="w-full flex justify-between sm:flex-wrap sm:mb-4 sm:gap-1">
           <!-- Use Custom CheckBox "Remember" Start  -->
-          <CustomCheckbox class="custom-text-base font-bold">
+          <CustomCheckbox class="custom-text-base font-semibold">
             {{ $t("Login.remember") }}
           </CustomCheckbox>
           <!-- Use Custom CheckBox "Remember" End  -->
@@ -68,7 +55,7 @@
           <!-- Use Router Link "Forgot Password" Start -->
           <router-link
             to="/login/forgotpassword/"
-            class="custom-text-base font-bold text-red"
+            class="custom-text-base text-custom-red font-semibold"
           >
             {{ $t("Login.forgot") }}
           </router-link>
@@ -80,25 +67,23 @@
 
       <!-- Use Custom Button "Login" Start -->
       <CustomButton
-        class="w-full h-[48px] rounded-[4px] mb-[16px] justify-center custom-text-sm font-bold bg-buttonGreen text-green sm:h-[45px]"
+        class="auth-button"
         @click="$router.push({ name: 'Account' })"
       >
-        {{ $t("Login.title") }}
+        <p class="auth-button-text">{{ $t("Login.title") }}</p>
       </CustomButton>
       <!-- Use Custom Button "Login" End -->
 
       <!-- Wrapper for Question and Register Start -->
-      <div
-        class="w-full flex justify-center gap-[5px] mb-[40px] md:mb-[15px] sm:flex-wrap sm:mb-[15px]"
-      >
+      <div class="w-full flex justify-center gap-1 mb-4 sm:flex-wrap lg:mb-10">
         <!-- Text question Start -->
-        <span class="custom-text-base font-bold">
+        <span class="custom-text-base font-semibold">
           {{ $t("Login.question") }}
         </span>
         <!-- Text question End -->
 
         <!-- Ise Router Link for Register Start -->
-        <router-link to="/register" class="custom-text-base font-bold text-red">
+        <router-link to="/register" class="custom-text-base text-custom-red font-bold">
           {{ $t("Login.signUp") }}
         </router-link>
         <!-- Ise Router Link for Register End -->
@@ -106,29 +91,29 @@
       <!-- Wrapper for Question and Register End -->
 
       <!-- Text "Login With" wrapper Startc -->
-      <div class="w-full flex items-center mb-[40px] md:mb-[15px] sm:mb-[15px]">
+      <div class="w-full flex items-center mb-4 lg:mb-10">
         <!-- Line Start -->
-        <hr class="grow text-gray" />
+        <hr class="grow text-custom-darkgray" />
         <!-- Line End -->
 
         <!-- Text Start -->
-        <div class="custom-text-sm px-[10px] grow-0 text-gray bg-background">
+        <div class="custom-text-sm px-3 grow-0 text-custom-darkgray bg-default">
           {{ $t("Login.orLoginWith") }}
         </div>
         <!-- Text End -->
 
         <!-- Line Start -->
-        <hr class="grow text-gray" />
+        <hr class="grow text-custom-darkgray" />
         <!-- Line End -->
       </div>
       <!-- Text "Login With" wrapper End -->
 
       <!-- Use Login With Component -->
-      <LoginWith />
+      <CustomLoginWith />
     </div>
 
     <!-- Wrapper for Carousel Start -->
-    <div class="max-w-[620px] w-full relative flex items-center sm:hidden">
+    <div class="max-w-[620px] auth-carousel-wrapper">
       <!-- Use Custom Carousel Component -->
       <CustomCarousel :slides="slides" />
     </div>
@@ -139,7 +124,6 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import LoginWith from "./LoginWith.vue";
 
 // Slides Image Array for carousel
 const slides = ref(["login-one", "login-two", "login-three"]);

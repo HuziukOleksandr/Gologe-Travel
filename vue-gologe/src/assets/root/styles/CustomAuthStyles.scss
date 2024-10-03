@@ -1,0 +1,76 @@
+
+@mixin font {
+  @apply font-serrat;
+}
+
+.auth-wrapper {
+  @apply max-w-large-width w-full py-12 flex gap-5 lg:justify-center md:px-[90px] sm:py-5 sm:px-11;
+
+  .auth-aside-wrapper {
+    @apply w-full flex flex-col justify-center sm:max-w-[700px];
+
+    .logo {
+      @apply hidden sm:flex sm:mb-5 sm:h-6 sm:mx-auto;
+    }
+
+    .back-button {
+      @apply  mb-6 max-w-[140px];
+
+      .button-image {
+        @apply rotate-90;
+      }
+      .button-text {
+        @include font();
+        @apply text-xs font-semibold;
+      }
+    }
+
+    .auth-aside-title {
+      @include font();
+      @apply text-3xl font-semibold mb-4 sm:text-center;
+    }
+
+    .auth-aside-text {
+      @include font();
+      @apply text-base font-medium text-custom-darkgray mb-6 lg:mb-12 sm:mb-7 sm:text-center
+    }
+
+    .auth-inputs-wrapper {
+      @apply flex flex-col gap-6 mb-5 lg:mb-10 sm:gap-5;
+
+      .auth-input-text {
+        @include font();
+        @apply font-medium text-custom-darkgreen;
+      }
+      .auth-inputs-line-wrapper {
+        @apply  flex justify-between flex-wrap gap-5
+      }
+    }
+
+    .auth-button {
+      @apply  w-full h-12 rounded mb-4 justify-center bg-custom-lightgreen  sm:h-10 sm:mb-6;
+
+      .auth-button-text {
+        @include font();
+        @apply text-sm text-custom-darkgreen font-semibold;
+      }
+    }
+
+    .login-with-wrapper {
+      @apply w-full flex items-center mb-10 md:mb-4 sm:mb-8;
+
+      .login-with-line {
+        @apply grow text-custom-darkgray;
+      }
+
+      .login-with-text {
+        @include font();
+        @apply text-sm px-3 grow-0 text-custom-darkgray bg-default
+      }
+    }
+  }
+
+  .auth-carousel-wrapper {
+    @apply w-full relative flex items-center sm:hidden;
+  }
+}

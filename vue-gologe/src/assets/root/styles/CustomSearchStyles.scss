@@ -1,0 +1,21 @@
+// Search Styles 
+
+.search-wrapper {
+  @apply w-full min-h-14 flex justify-between flex-wrap md:gap-6 sm:gap-4 sm:justify-around;
+
+  .search-input-wrapper {
+    @apply relative flex-grow lg:w-full;
+
+    .search-input {
+      @apply w-full h-14;
+
+      .search-input-text {
+        @apply font-serrat font-medium text-custom-darkgreen;
+      }
+
+      .search-image {
+        @apply h-6;
+      }
+    }
+  }
+}

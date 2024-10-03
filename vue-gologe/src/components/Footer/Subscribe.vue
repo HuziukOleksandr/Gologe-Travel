@@ -10,15 +10,15 @@
       <!-- Title End -->
 
       <!-- Text wrapper Start -->
-      <div class="text-wrapper">
+      <div class="flex flex-col gap-2">
         <!-- Sub Title Start -->
-        <h2 class="content-sub-title">
+        <h2 class="font-serrat text-xl font-semibold text-custom-darkgreen">
           {{ $t("Footer.subTitle") }}
         </h2>
         <!-- Sub Title End -->
 
         <!-- Text Start -->
-        <p class="text">
+        <p class="font-serrat text-base font-medium text-custom-darkgreen">
           {{ $t("Footer.text") }}
         </p>
         <!-- Text End -->
@@ -34,12 +34,11 @@
           class="custom-text-base input"
         />
 
-        <!-- Button for add Email -->
         <!-- Use button component Start -->
         <CustomButton
-          class="h-11 px-4 bg-custom-darkgreen lg:h-[56px] sm:justify-center"
+          class="h-11 px-4 bg-custom-darkgreen lg:h-14 sm:justify-center"
         >
-          <p class="custom-text-sm font-semibold text-white">
+          <p class="custom-text-sm font-semibold text-default">
             {{ $t("Footer.button") }}
           </p>
         </CustomButton>
@@ -64,34 +63,22 @@
 </template>
 
 <style lang="scss" scoped>
+
 .subscribe_wrapper {
   @apply max-w-large-width w-full 
   min-h-72 mx-auto p-6 rounded-3xl bg-custom-green flex justify-between;
 
   .content-wrapper {
-    @apply max-w-[700px] w-full flex flex-col gap-1;
+    @apply max-w-[700px] w-full flex flex-col justify-between gap-1;
 
     .content-title {
-      @apply font-serrat text-4xl font-semibold sm:text-2xl text-custom-darkgreen;
-    }
-
-    .text-wrapper {
-      @apply flex flex-col gap-2;
-
-      .content-sub-title {
-        @apply font-serrat text-xl font-semibold text-custom-darkgreen;
-      }
-
-      .text {
-        @apply font-serrat text-base font-medium text-custom-darkgreen;
-      }
+      @apply font-serrat text-5xl font-semibold sm:text-2xl text-custom-darkgreen;
     }
   }
 
   .input {
-    @apply w-full h-[45px] px-[16px] rounded-[8px]
-	bg-white text-green 
-	placeholder:text-base placeholder:text-green lg:h-[56px];
+    @apply w-full h-11 px-4 rounded-lg bg-default text-custom-darkgreen 
+    placeholder:text-base placeholder:text-custom-darkgreen lg:h-14;
   }
 }
 </style>

@@ -1,20 +1,20 @@
 <template>
   <!-- Places wrapper Start -->
   <div
-    class="max-w-[1230px] w-[100%] min-h-[280px] flex flex-col gap-[24px] mb-[80px] md:px-[10px] sm:px-[10px]"
+    class="max-w-[1230px] w-[100%] min-h-[280px] flex flex-col gap-6 mb-20 md:px-2 sm:px-2"
   >
     <!-- Places Header wrapper Start -->
     <div class="flex items-center justify-between">
       <!-- Text wrapper Start -->
       <div class="text_wrapper">
         <!-- Title Start -->
-        <h1 class="custom-text-3xl font-semibold text-black">
+        <h1 class="custom-text-3xl text-black font-semibold">
           {{ $t("FlightSearch.Places.title") }}
         </h1>
         <!-- Title End -->
 
         <!-- Sub-Title Start -->
-        <h2 class="custom-text-base font-regular text-gray">
+        <h2 class="custom-text-base text-custom-darkgray font-medium">
           {{ $t("FlightSearch.Places.sub-Title") }}
         </h2>
         <!-- Sub-Title End -->
@@ -23,9 +23,11 @@
 
       <!-- Places Header button Start -->
       <CustomButton
-        class="h-[40px] border-[2px] border-buttonGreen px-[16px] md:hidden sm:hidden"
+        class="h-10 border-2 border-custom-lightgreen px-4 lg:hidden justify-center"
       >
-        {{ $t("FlightSearch.button") }}
+        <p class="custom-text-sm text-custom-darkgreen font-medium">
+          {{ $t("FlightSearch.button") }}
+        </p>
       </CustomButton>
       <!-- Places Header button End -->
     </div>
@@ -37,9 +39,11 @@
 
     <!-- Places Header button Start -->
     <CustomButton
-      class="h-[40px] border-[2px] border-buttonGreen px-[16px] lg:hidden justify-center"
+      class="h-10 border-2 border-custom-lightgreen px-4 lg:hidden justify-center"
     >
-      {{ $t("FlightSearch.button") }}
+      <p class="custom-text-sm text-custom-darkgreen font-medium">
+        {{ $t("FlightSearch.button") }}
+      </p>
     </CustomButton>
     <!-- Places Header button End -->
   </div>

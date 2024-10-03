@@ -2,7 +2,7 @@
   <!-- Add Payment wrapper Start -->
   <div class="add_wrapper" @click="open">
     <!-- Content wrapper Start -->
-    <div class="flex flex-col gap-[18px] items-center">
+    <div class="flex flex-col gap-4 items-center">
       <!-- Add Button Start -->
       <CustomButtom class="button">
         <!-- Button Image -->
@@ -31,16 +31,15 @@ const open = () => {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .add_wrapper {
   @apply max-w-[375px] w-full h-[210px] 
-	border-dashed border-buttonGreen border-[2px] rounded-[16px] 
+	border-dashed border-custom-lightgreen border-2 rounded-2xl 
 	flex justify-center items-center cursor-pointer;
-}
 
-.button {
-  @apply w-[48px] h-[48px] 
-	border-solid border-buttonGreen border-[2px] rounded-[50%]
-	flex justify-center items-center;
+  .button {
+    @apply w-12 h-12 flex justify-center items-center
+	  border-solid border-custom-lightgreen border-2 rounded-full;
+  }
 }
 </style>

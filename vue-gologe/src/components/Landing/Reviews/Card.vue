@@ -2,7 +2,7 @@
   <!-- Card wrapper Start -->
   <div class="card_wrapper" v-for="review in props.reviews">
     <!-- Card Title Start -->
-    <h1 class="custom-text-2xl font-bold text-green">
+    <h1 class="custom-text-2xl font-semibold text-custom-darkgreen">
       {{ review?.title }}
     </h1>
     <!-- Card Title End -->
@@ -11,14 +11,16 @@
     <div class="flex flex-col">
       <!-- Review Text Start -->
       <div
-        class="truncate w-[90%] min-h-[22px] font-serrat font-regular text-sm text-grey"
+        class="truncate w-[90%] min-h-5 font-serrat font-medium text-sm text-custom-darkgray"
       >
         {{ review?.text }}
       </div>
       <!-- Review Text End -->
 
       <!-- Button "More" Start -->
-      <button class="custom-text-base font-bold text-green flex self-end">
+      <button
+        class="custom-text-base font-semibold text-custom-darkgreen flex self-end"
+      >
         {{ $t("Landing.Review.more") }}
       </button>
       <!-- Button "More" End -->
@@ -26,7 +28,7 @@
     <!-- Card review and button End -->
 
     <!-- Rates wrapper Start -->
-    <div class="w-[100%] h-[45px] flex gap-[10px]">
+    <div class="w-[100%] h-11 flex gap-3">
       <!-- Active stars wrapper Start -->
       <div v-for="index in +review.rate">
         <!-- Active Star image  -->
@@ -48,15 +50,15 @@
     <!-- Rates wrapper End -->
 
     <!-- User wrapper Start -->
-    <div class="flex flex-col gap-[5px]">
+    <div class="flex flex-col gap-1">
       <!-- User Name Title Start -->
-      <h1 class="custom-text-sm font-bold text-green">
+      <h1 class="custom-text-sm font-semibold text-custom-lightgreen">
         {{ review?.name }}
       </h1>
       <!-- User Name Title End -->
 
       <!-- User  Sub-Titte Start -->
-      <p class="custom-text-sm text-gray">
+      <p class="custom-text-sm font-medium text-custom-darkgray">
         {{ review?.subTitle }}
       </p>
       <!-- User  Sub-Titte End -->
@@ -64,19 +66,19 @@
     <!-- User wrapper Start -->
 
     <!-- Google wrapper Start -->
-    <div class="flex gap-[10px]">
+    <div class="flex gap-3">
       <!-- Google Image -->
       <img src="@/assets/images/svg/messengers/google.svg" alt="google" />
 
       <!-- Google text Start -->
-      <p class="font-serrat font-bold text-[14px] text-grey">Google</p>
+      <p class="custom-text-sm font-semibold text-custom-darkgray">Google</p>
       <!-- Google text End -->
     </div>
     <!-- Google wrapper End -->
 
     <!-- Card Image -->
     <img
-      class="h-[200px] rounded-[10px]"
+      class="h-[200px] rounded-xl"
       :src="getImageUrlPng(review?.picture)"
       :alt="review?.picture"
     />
@@ -99,8 +101,8 @@ const props = withDefaults(
 
 <style scoped>
 .card_wrapper {
-  @apply min-h-[585px] bg-white rounded-[20px]
-	shadow-2xl p-[24px] flex flex-col justify-around gap-[10px]
+  @apply min-h-[585px] bg-white rounded-3xl
+	shadow-2xl p-6 flex flex-col justify-around gap-3
     lg:max-w-[425px]
     md:max-w-[425px]
     sm:w-full;

@@ -18,7 +18,7 @@
     <!-- Paggination Start -->
     <template #addons>
       <Pagination
-        class="absolute bottom-[24px] left-1/2 transform -translate-x-1/2"
+        class="absolute bottom-6 left-1/2 transform -translate-x-1/2"
       />
     </template>
     <!-- Paggination End -->

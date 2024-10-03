@@ -1,29 +1,26 @@
 <template>
   <!-- Aside wrapper Start -->
-  <div class="flex flex-col gap-[32px]">
+  <aside class="flex flex-col gap-8">
     <!-- Aside Title Start -->
-    <p class="custom-text-xl font-[600] text-green">
+    <p class="custom-text-xl font-semibold text-custom-darkgreen">
       {{ $t("ListingFlight.Aside.title") }}
     </p>
     <!-- Aside Title End -->
 
     <!-- Filters wrapper Start -->
-    <div class="flex flex-col gap-[32px]">
+    <div class="filter-wrapper">
       <!-- Price Start -->
       <div class="flex flex-col gap-[16px]">
         <!-- Price Header Start -->
-        <div
-          class="flex justify-between hover:cursor-pointer"
-          @click="changePriceVisibility()"
-        >
+        <div class="filter-header" @click="changePriceVisibility()">
           <!-- Price Title Start -->
-          <h2 class="custom-text-base font-bold text-green">
+          <h2 class="title">
             {{ $t("ListingFlight.Aside.price") }}
           </h2>
           <!-- Price Title End -->
           <!-- Filter image -->
           <img
-            class="transition-all duration-300"
+            class="image"
             :class="{ 'rotate-180': priceVisible }"
             src="@/assets/images/svg/UI/chevron.svg"
             alt="chevron-down"
@@ -37,24 +34,21 @@
       <!-- Price End -->
 
       <!-- Line Start -->
-      <div class="w-full border-b-[0.5px] border-b-lightGray"></div>
+      <div class="line"></div>
       <!-- Line Start -->
 
       <!-- Departure Time Start -->
-      <div class="flex flex-col gap-[16px]">
+      <div class="filte">
         <!-- Departure Time Header Start -->
-        <div
-          class="flex justify-between hover:cursor-pointer"
-          @click="changeTimeVisibility()"
-        >
+        <div class="filter-header" @click="changeTimeVisibility()">
           <!-- Departure Time Title Start -->
-          <h2 class="custom-text-sm font-bold text-green">
+          <h2 class="title">
             {{ $t("ListingFlight.Aside.departureTime") }}
           </h2>
           <!-- Departure Time Title Start -->
           <!-- Filter image -->
           <img
-            class="transition-all duration-300"
+            class="image"
             :class="{ 'rotate-180': timeVisible }"
             src="@/assets/images/svg/UI/chevron.svg"
             alt="chevron-down"
@@ -68,24 +62,21 @@
       <!-- Departure Time End -->
 
       <!-- Line Start -->
-      <div class="w-full border-b-[0.5px] border-b-lightGray"></div>
+      <div class="line"></div>
       <!-- Line Start -->
 
       <!-- Rating Start -->
-      <div class="flex flex-col gap-[16px]">
+      <div class="filter-header">
         <!-- Rating Header Start -->
-        <div
-          class="flex justify-between hover:cursor-pointer"
-          @click="changeRatingVisibility()"
-        >
+        <div class="filter" @click="changeRatingVisibility()">
           <!-- Rating Title Start -->
-          <h2 class="custom-text-sm font-bold text-green">
+          <h2 class="title">
             {{ $t("ListingFlight.Aside.rating") }}
           </h2>
           <!-- Rating Title End -->
           <!-- Filter image -->
           <img
-            class="transition-all duration-300"
+            class="image"
             :class="{ 'rotate-180': ratingVisible }"
             src="@/assets/images/svg/UI/chevron.svg"
             alt="chevron-down"
@@ -99,24 +90,21 @@
       <!-- Rating End -->
 
       <!-- Line Start -->
-      <div class="w-full border-b-[0.5px] border-b-lightGray"></div>
+      <div class="line"></div>
       <!-- Line Start -->
 
       <!-- Airlines Start -->
-      <div class="flex flex-col gap-[16px]">
+      <div class="filter">
         <!-- Airlines Header Start -->
-        <div
-          class="flex justify-between hover:cursor-pointer"
-          @click="changeAirlinesVisibility()"
-        >
+        <div class="filter-header" @click="changeAirlinesVisibility()">
           <!-- Airlines Title Start -->
-          <h2 class="custom-text-base font-bold text-green">
+          <h2 class="title">
             {{ $t("ListingFlight.Aside.airlines") }}
           </h2>
           <!-- Airlines Title End -->
           <!-- Filter image -->
           <img
-            class="transition-all duration-300"
+            class="image"
             :class="{ 'rotate-180': airlinesVisible }"
             src="@/assets/images/svg/UI/chevron.svg"
             alt="chevron-down"
@@ -130,24 +118,21 @@
       <!-- Airlines End -->
 
       <!-- Line Start -->
-      <div class="w-full border-b-[0.5px] border-b-lightGray"></div>
+      <div class="line"></div>
       <!-- Line Start -->
-       
+
       <!-- Trips Start -->
-      <div class="flex flex-col gap-[16px]">
+      <div class="filter">
         <!-- Trips Header Start -->
-        <div
-          class="flex justify-between hover:cursor-pointer"
-          @click="changeTripsVisibility()"
-        >
+        <div class="filter-header" @click="changeTripsVisibility()">
           <!-- Trips Title Start -->
-          <h2 class="custom-text-base font-bold text-green">
+          <h2 class="title">
             {{ $t("ListingFlight.Aside.trips") }}
           </h2>
           <!-- Trips Title End -->
           <!-- Filter image -->
           <img
-            class="transition-all duration-300"
+            class="image"
             :class="{ 'rotate-180': tripsVisible }"
             src="@/assets/images/svg/UI/chevron.svg"
             alt="chevron-down"
@@ -161,7 +146,7 @@
       <!-- Trips End -->
     </div>
     <!-- Filters wrapper  End -->
-  </div>
+  </aside>
   <!-- Aside wrapper End -->
 </template>
 
@@ -208,4 +193,31 @@ const trips = ref<[]>([
 ]);
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.filter-wrapper {
+  @apply flex flex-col gap-8;
+
+  .filter {
+    @apply flex flex-col gap-4;
+
+    .filter-header {
+      @apply flex justify-between;
+
+      &:hover {
+        @apply cursor-pointer;
+      }
+
+      .title {
+        @apply font-serrat text-base font-semibold text-custom-darkgreen;
+      }
+      .image {
+        @apply transition-all duration-300;
+      }
+    }
+  }
+
+  .line {
+    @apply w-full border-b-[0.5px] border-b-custom-lightgray;
+  }
+}
+</style>

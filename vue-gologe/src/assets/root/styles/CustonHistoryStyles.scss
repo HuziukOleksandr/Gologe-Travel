@@ -1,0 +1,75 @@
+// History Styles
+
+@mixin fontStyle {
+  @apply font-serrat font-semibold;
+}
+
+.history-wrapper {
+  @apply w-full h-36 flex justify-between items-center 
+	px-6 rounded-2xl shadow-xl;
+
+  .history-column-wrapper {
+    @apply max-w-[800px] w-full flex gap-8 items-center;
+
+    .history-left-side-wrapper {
+      @apply flex items-center gap-6;
+
+      .history-left-content {
+        @apply max-w-[140px] w-full flex flex-col justify-between gap-2;
+
+        .history-left-content-title {
+          @include fontStyle();
+          @apply  text-base text-custom-darkgray truncate;
+        }
+
+        .history-left-content-text {
+          @include fontStyle();
+          @apply text-xl text-custom-darkgreen truncate;
+        }
+
+        .history-left-content-line {
+          @include fontStyle();
+        }
+      }
+    }
+
+    .history-right-wrapper {
+      @apply max-w-60 w-full flex flex-col justify-between;
+
+      .history-right-content {
+        @apply flex gap-0.5;
+
+        .history-right-column {
+          @apply flex flex-col;
+
+          .history-right-title {
+            @include fontStyle();
+            @apply text-xs text-custom-darkgray;
+          }
+
+          .history-right-text {
+            @include fontStyle();
+            @apply text-base text-custom-darkgreen;
+          }
+        }
+      }
+    }
+  }
+
+  .history-buttons-wrapper {
+    @apply flex gap-1;
+
+    .history-button {
+      @apply h-12 rounded px-4;
+
+      .history-button-text {
+        @include fontStyle();
+        @apply text-base text-custom-darkgreen;
+      }
+    }
+  }
+}
+
+.history-vertical-line {
+  @apply w-[1px] h-12 bg-custom-darkgray
+}

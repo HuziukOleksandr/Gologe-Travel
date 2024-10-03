@@ -1,12 +1,12 @@
 <template>
   <!-- Travel wrapper Srart -->
   <div
-    class="max-w-[1230px] w-[100%] min-h-[280px] flex flex-col gap-[24px] mb-[80px] md:px-[50px] sm:px-[25px]"
+    class="max-w-primary-width w-full min-h-[280px] flex flex-col gap-6 mb-20 md:px-12 sm:px-6"
   >
     <!-- Travel Header wrapper Start -->
-    <div class="flex items-center justify-between mb-[40px]">
+    <div class="flex items-center justify-between mb-10">
       <!-- Text wrapper Start -->
-      <div class="text_wrapper">
+      <div>
         <!-- Title Start -->
         <h1 class="custom-text-3xl font-semibold text-black">
           {{ $t("FlightSearch.Travel.title") }}
@@ -14,7 +14,9 @@
         <!-- Title End -->
 
         <!-- Sub-Title Start -->
-        <h2 class="custom-text-base font-regular text-gray max-w-[850px]">
+        <h2
+          class="custom-text-base font-medium text-custom-darkgray max-w-[850px]"
+        >
           {{ $t("FlightSearch.Travel.sub-Title") }}
         </h2>
         <!-- Sub-Title End -->
@@ -23,18 +25,18 @@
 
       <!-- Travel Header button Start -->
       <CustomButton
-        class="h-[40px] border-[2px] border-buttonGreen px-[16px] hidden lg:flex"
+        class="h-10 border-2 border-custom-lightgreen px-4hidden lg:flex"
       >
-        {{ $t("FlightSearch.button") }}
+        <p class="custom-text-sm text-custom-darkgreen font-medium">
+          {{ $t("FlightSearch.button") }}
+        </p>
       </CustomButton>
       <!-- Travel Header button End -->
     </div>
     <!-- Travel Header wrapper End -->
 
     <!-- Travel Content wrapper Start -->
-    <div
-      class="w-full flex lg:justify-between flex-wrap justify-around gap-[35px]"
-    >
+    <div class="w-full flex lg:justify-between flex-wrap justify-around gap-8">
       <!-- Use Travel Card Component -->
       <TravelCard :cards="cards" />
     </div>
@@ -45,9 +47,11 @@
 
     <!-- Travel Header button Start -->
     <CustomButton
-      class="h-[40px] border-[2px] border-buttonGreen px-[16px] lg:hidden justify-center"
+      class="h-10 border-2 border-custom-lightgreen px-4 lg:hidden justify-center"
     >
-      {{ $t("FlightSearch.button") }}
+      <p class="custom-text-sm text-custom-darkgreen font-medium">
+        {{ $t("FlightSearch.button") }}
+      </p>
     </CustomButton>
     <!-- Travel Header button End -->
   </div>
@@ -57,7 +61,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import TravelCard from "./TravelCard.vue";
-import Bottom from "./TravelBottom.vue"
+import Bottom from "./TravelBottom.vue";
 
 const cards = ref<array>([
   {

@@ -8,7 +8,7 @@
     <div class="wrapper_container">
       <!-- Wrapper for Logo and Images Start -->
       <div
-        class="min-w-[120px] flex flex-col gap-6 sm:flex-row sm:gap sm:w-full sm:justify-around sm:flex-wrap;"
+        class="min-w-32 flex flex-col gap-6 sm:flex-row sm:gap-1 sm:w-full sm:justify-around sm:flex-wrap"
       >
         <!-- Use logo Component -->
         <img
@@ -53,9 +53,7 @@
       <!-- Wrapper for Logo and Images End -->
 
       <!-- Wrapper for Content Start -->
-      <div
-        class="between w-full flex-wrap gap-5 sm:justify-center sm:hidden;"
-      >
+      <div class="between w-full flex-wrap gap-5 sm:justify-center sm:hidden;">
         <!-- Use Destination Component  -->
         <Destination />
 
@@ -89,28 +87,25 @@ import Contact from "./Contact.vue";
 
 <style lang="scss" scoped>
 .wrapper_footer {
-  @apply w-full  m-auto mt-[150px] pb-16 bg-buttonGreen  flex flex-col justify-between md:px-12 sm:px-6 sm:pb-9;
+  @apply w-full  m-auto mt-36 pb-16 bg-custom-lightgreen  flex flex-col justify-between md:px-12 sm:px-6 sm:pb-9;
 
   .wrapper_container {
-  @apply max-w-primary-width w-full mx-auto pt-[50px] 
-	flex justify-between gap-5
+    @apply max-w-primary-width w-full mx-auto pt-12 flex justify-between gap-5
 	lg:gap-[100px] 
 	sm:flex-col sm:items-center sm:p-2;
+
+    .wrapper_images {
+      @apply min-w-[100px] 
+	    flex justify-between 
+	    sm:gap-[4px] sm:flex-wrap sm:h-[55px];
+    }
+
+    .logo:hover {
+      transition-duration: 500ms;
+      cursor: pointer;
+      transform: scale(1.02);
+    }
+  }
 }
 
-}
-
-
-
-.wrapper_images {
-  @apply min-w-[100px] 
-	flex justify-between 
-	sm:gap-[4px] sm:flex-wrap sm:h-[55px];
-}
-
-.logo:hover {
-  transition-duration: 500ms;
-  cursor: pointer;
-  transform: scale(1.02);
-}
 </style>

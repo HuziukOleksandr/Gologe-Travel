@@ -1,49 +1,43 @@
 <template>
   <!-- Forgot Password wrapper Start -->
-  <div
-    class="max-w-[1440px] w-full py-[50px] flex gap-[20px] lg:justify-center md:px-[90px] sm:py-[20px] sm:px-[45px]"
-  >
+  <div class="auth-wrapper">
     <!-- Aside wrapper Start -->
-    <div
-      class="max-w-[510px] w-full flex flex-col justify-center sm:max-w-[700px]"
-    >
+    <div class="max-w-[510px] auth-aside-wrapper">
       <!-- USe Custom Logo -->
-      <CustomLogo class="hidden sm:flex sm:mb-[20px] sm:h-[24px] sm:mx-auto" />
+      <CustomLogo class="logo" />
 
       <!-- Use Custom button "Back to login" Start -->
       <CustomButton
-        class="custom-text-xs font-bold mb-[25px] max-w-[140px]"
+        class="back-button"
         @click="$router.push({ name: 'Login' })"
       >
         <!-- image for button -->
         <img
           src="@/assets/images/svg/UI/chevron-down.svg"
           alt="hotel"
-          class="rotate-90"
+          class="button-image"
         />
-        {{ $t("ForgotPassword.buttonBack") }}
+        <p class="button-text">{{ $t("ForgotPassword.buttonBack") }}</p>
       </CustomButton>
       <!-- Use Custom button "Back to login" End -->
 
       <!-- Title Start -->
-      <h1 class="custom-text-3xl font-bold mb-[16px] sm:text-center">
+      <h1 class="auth-aside-title">
         {{ $t("ForgotPassword.title") }}
       </h1>
       <!-- Title End -->
 
       <!-- Text Start -->
-      <h2
-        class="custom-text-base font-regular text-gray mb-[15px] lg:mb-[50px] sm:mb-[30px] sm:text-center"
-      >
+      <h2 class="auth-aside-text">
         {{ $t("ForgotPassword.subTitle") }}
       </h2>
       <!-- Text End -->
 
       <!-- Wrapper for Inputs Start -->
-      <div class="mb-[40px] md:mb-[20px] sm:mb-[20px] sm:gap-[20px]">
+      <div class="auth-inputs-wrapper">
         <!-- Use Custom Input "Email" Start -->
         <CustomInput
-          class="font-serrat font-medium text-green"
+          class="auth-input-text"
           type="email"
           :placeHolder="$t('ForgotPassword.email')"
         >
@@ -57,10 +51,10 @@
 
       <!-- Use Custom button "Submit" Start -->
       <CustomButton
-        class="custom-text-sm font-bold w-full h-[48px] rounded-[4px] mb-[16px] justify-center bg-buttonGreen text-green sm:h-[45px] sm:mb-[24px]"
+        class="auth-button"
         @click="$router.push({ name: 'Verify' })"
       >
-        {{ $t("ForgotPassword.button") }}
+        <p class="auth-button-text">{{ $t("ForgotPassword.button") }}</p>
       </CustomButton>
       <!-- Use Custom button "Submit" End -->
 
@@ -71,24 +65,24 @@
         <!-- Line End -->
 
         <!-- Text Start -->
-        <div class="custom-text-sm px-[10px] grow-0 text-gray bg-background">
+        <div class="login-with-tex">
           {{ $t("Login.orLoginWith") }}
         </div>
         <!-- Text End -->
 
         <!-- Line Start -->
-        <hr class="grow text-gray" />
+        <hr class="login-with-line" />
         <!-- Line End -->
       </div>
       <!-- Text "Login With" wrapper End -->
 
       <!-- Use Login With Component -->
-      <LoginWith />
+      <CustomLoginWith />
     </div>
     <!-- Aside wrapper End -->
 
     <!-- Wrapper for Carousel Start -->
-    <div class="max-w-[620px] w-full relative flex items-center sm:hidden">
+    <div class="max-w-[620px] auth-carousel-wrapper">
       <!-- Use Custom Carousel Component -->
       <CustomCarousel :slides="slides" />
     </div>
@@ -99,7 +93,6 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import LoginWith from "../Login/LoginWith.vue";
 
 const slides = ref(["login-one", "login-two", "login-three"]);
 </script>

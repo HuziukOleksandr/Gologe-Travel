@@ -1,10 +1,10 @@
 <template>
   <!-- Features wrapper Start -->
-  <div class="h-[175px] flex flex-col justify-between gap-[24px]">
+  <div class="h-[175px] flex flex-col justify-between gap-6">
     <!-- Header wrapper Start -->
     <div class="flex justify-between">
       <!-- Title Start -->
-      <h1 class="custom-text-2xl text-green font-semibold">
+      <h1 class="custom-text-2xl text-custom-darkgreen font-semibold">
         Basic Economy Features
       </h1>
       <!-- Title End -->

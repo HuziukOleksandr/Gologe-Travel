@@ -1,8 +1,7 @@
 <template>
-  <!-- Quick Search Custom Navigation -->
   <!-- Use Custom Button Component "Flight" Start -->
   <CustomButton
-    class="custom-text-base font-bold"
+    class="custom-text-base font-semibold"
     @click="changeName('flight')"
   >
     <!-- Flight Button Image -->
@@ -13,7 +12,7 @@
 
   <!-- Use Custom Button Component "Hotel" Start -->
   <CustomButton
-    class="custom-text-base font-bold"
+    class="custom-text-base font-semibold"
     @click="changeName('place')"
   >
     <!-- Hotel Button Image -->

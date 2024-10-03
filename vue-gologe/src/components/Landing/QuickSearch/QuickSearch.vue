@@ -1,19 +1,17 @@
 <template>
   <!-- Quick Search -->
-  <div
-    class="max-w-[1440px] w-full flex justify-center px-[80px] md:px-[80px] sm:px-[80px] ph:px-[40px]"
-  >
+  <div class="max-w-large-width w-full flex justify-center px-20 ph:px-10">
     <!-- Quick Search wrapper Start -->
     <div class="search_wrapper">
       <!-- Quick Search Navigation wrapper Start -->
-      <div class="flex gap-[65px] mb-[30px] sm:justify-center sm:mb-[10px]">
+      <div class="flex gap-16 mb-7 sm:justify-center sm:mb-2">
         <!-- Use Quick Search Navigation Component -->
-        <Navigation @changeWindow="change"/>
+        <Navigation @changeWindow="change" />
       </div>
       <!-- Quick Search Navigation wrapper End -->
 
       <!-- Use Custom Flihgt Search Component -->
-      <CustomFlightSearch 
+      <CustomFlightSearch
         v-show="windowName == 'flight'"
         fromWidth="lg:max-w-[324px]"
         tripWidth="lg:max-w-[140px]"
@@ -22,32 +20,46 @@
       />
 
       <!-- Use Custom Places Search Component -->
-      <CustomPlaceSearch v-show="windowName == 'place'"/>
-      
+      <CustomPlaceSearch
+        v-show="windowName == 'place'"
+        enterWidth="lg:max-w-[416px]"
+        checkInWidth="lg:max-w-[240px]"
+        checkOutWidth="lg:max-w-[240px]"
+        roomsGuestsWidth="lg:max-w-[240px]"
+      />
+
       <!-- Buttons wrapper Start -->
       <div
-        class="w-full min-h-[48px] flex justify-end self-end gap-[24px] sm:flex-wrap sm:justify-end sm:gap-[10px] ph:justify-center"
+        class="w-full min-h-12 flex justify-end self-end gap-6 sm:flex-wrap sm:justify-end sm:gap-3 ph:justify-center"
       >
         <!-- Use Custom Button Component "Add Promo Code" Start -->
-        <CustomButton
-          class="h-[48px] p-[16px] font-medium sm:text-sm ph:w-full ph:justify-center"
-        >
+        <CustomButton class="h-12 p-4 ph:w-full ph:justify-center">
           <!-- Images for Button "Add Promo Code" -->
           <img src="@/assets/images/svg/UI/add-promo.svg" alt="hotel" />
-          {{ $t("Landing.QuickSearch.addPromoCode") }}
+          <p class="custom-text-sm font-medium">
+            {{ $t("Landing.QuickSearch.addPromoCode") }}
+          </p>
         </CustomButton>
         <!-- Use Custom Button Component "Add Promo Code" End -->
 
-        <!-- Use Custom Button Component "Show Fkight" Start -->
+        <!-- Use Custom Button Component "Show Flight" Start -->
         <CustomButton
-          class="h-[48px] p-[16px] font-medium bg-button bg-buttonGreen ph:w-full ph:justify-center"
-          @click="$router.push(windowName == 'flight' ? { name: 'Listing' } : {name: 'Hotel'})"
+          class="h-12 p-4 font-medium bg-custom-lightgreen ph:w-full ph:justify-center"
+          @click="
+            $router.push(
+              windowName == 'flight' ? { name: 'Listing' } : { name: 'Hotel' }
+            )
+          "
         >
           <!-- Images for Button "Show Flight" -->
           <img src="@/assets/images/svg/UI/show-flights.svg" alt="hotel" />
-          {{ windowName == 'flight' ? $t("Landing.QuickSearch.buttonFlight") : $t("Landing.QuickSearch.buttonPlace")}}
+          {{
+            windowName == "flight"
+              ? $t("Landing.QuickSearch.buttonFlight")
+              : $t("Landing.QuickSearch.buttonPlace")
+          }}
         </CustomButton>
-        <!-- Use Custom Button Component "Show Fkight" End -->
+        <!-- Use Custom Button Component "Show Flight" End -->
       </div>
       <!-- Buttons wrapper End -->
     </div>
@@ -59,21 +71,28 @@
 <script setup lang="ts">
 import Navigation from "./Navigation.vue";
 import { useRoute } from "vue-router";
-import { ref } from "vue"
+import { ref } from "vue";
 
 const route = useRoute();
-const windowName = ref<string>('flight')
+const windowName = ref<string>("flight");
 
 const change = (value: string) => {
-  windowName.value = value
-}
+  windowName.value = value;
+};
 </script>
 
-<style scoped>
-.search_wrapper {
-  @apply max-w-[1230px] w-full min-h-[280px] bg-white 
-	rounded-[15px] p-[32px]
-	flex flex-col gap-[30px] shadow-2xl
-  ph:gap-[15px];
+<style lang="scss" scoped>
+
+@mixin font {
+  @apply font-serrat;
 }
+
+.search_wrapper {
+  @apply max-w-primary-width w-full min-h-[280px] bg-default 
+	rounded-2xl p-8
+	flex flex-col gap-7 shadow-2xl
+  ph:gap-4;
+}
+
+
 </style>

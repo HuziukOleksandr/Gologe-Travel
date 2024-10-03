@@ -1,10 +1,10 @@
 <template>
   <!-- Account Component wrapper Start -->
   <div
-    class="relative max-w-[1230px] w-full min-h-[700px] pt-[50px] flex flex-col gap-[40px] mb-[120px]"
+    class="relative max-w-primary-width w-full min-h-[700px] pt-12 flex flex-col gap-3 mb-28"
   >
     <!-- Account Preview wrapper Start -->
-    <div class="w-full h-[350px] rounded-[12px] flex relative mb-[165px]">
+    <div class="w-full h-[350px] rounded-xl flex relative mb-60">
       <!-- Preview Image -->
       <img
         class="w-full h-full"
@@ -14,7 +14,7 @@
 
       <!-- Button Upload File Start -->
       <CustomUploadFile
-        class="absolute right-[25px] bottom-[25px] h-[50px] bg-buttonGreen rounded-[8px]"
+        class="absolute right-6 bottom-6 h-12 bg-custom-lightgreen rounded-lg cursor-pointer"
       >
         {{ $t("Account.upload") }}
       </CustomUploadFile>
@@ -24,11 +24,11 @@
       <div class="user_wrapper">
         <!-- User image wrapper Start -->
         <div
-          class="w-[160px] h-[160px] rounded-[50%] mb-[24px] border-solid border-red border-[3px] flex justify-end items-end"
+          class="w-40 h-40 rounded-full mb-6 border-solid border-custom-red border-2 flex justify-end items-end"
         >
           <!-- Button Upload Ures Image Start -->
           <CustomButton
-            class="p-[10px] bg-red rounded-[50%] flex justify-center items-center"
+            class="p-2 bg-custom-red rounded-full flex justify-center items-center"
           >
             <!-- Button Image -->
             <img src="@/assets/images/svg/UI/Pen.svg" alt="Pen" />
@@ -38,11 +38,13 @@
         <!-- User image wrapper End -->
 
         <!-- User Name Start -->
-        <h1 class="custom-text-2xl font-bold mb-[8px]">John Doe.</h1>
+        <h1 class="custom-text-2xl font-semibold mb-2">John Doe.</h1>
         <!-- User Name End -->
 
         <!-- User Email Start -->
-        <h2 class="custom-text-base text-gray">john.doe@gmail.com</h2>
+        <h2 class="custom-text-base font-medium text-custom-gray">
+          john.doe@gmail.com
+        </h2>
         <!-- User Email End -->
       </div>
       <!-- User Info wrapper End -->
@@ -50,44 +52,48 @@
     <!-- Account Preview wrapper End -->
 
     <!-- Account Header Navigation Start -->
-    <div class="w-full flex flex-col gap-[40px] rounded-[16px] shadow-xl">
+    <div class="w-full flex flex-col gap-10 rounded-2xl shadow-xl">
       <!-- Buttons Navigation wrapper Start -->
-      <div class="w-full h-[80px] flex justify-between items-center">
+      <div class="w-full h-20 flex justify-between items-center">
         <!-- Use Custom Button "Account" Start -->
         <CustomButton
           class="button"
           :class="{ active: selectedTab === 'Account' }"
           @click="changeTab('Account')"
         >
-          {{ $t("Account.account") }}
+          <p class="button-text">
+            {{ $t("Account.account") }}
+          </p>
         </CustomButton>
         <!-- Use Custom Button "Account" End -->
 
         <!-- Line Start -->
-        <div class="w-[1px] h-[48px] bg-gray"></div>
+        <div class="history-vertical-line"></div>
         <!-- Line End -->
 
         <!-- Use Custom Button "History" Start -->
         <CustomButton
-          class="button custom-text-base"
+          class="button"
           :class="{ active: selectedTab === 'History' }"
           @click="changeTab('History')"
         >
-          {{ $t("Account.history") }}
+          <p class="button-text">
+            {{ $t("Account.history") }}
+          </p>
         </CustomButton>
         <!-- Use Custom Button "History" End -->
 
         <!-- Line Start -->
-        <div class="w-[1px] h-[48px] bg-gray"></div>
+        <div class="history-vertical-line"></div>
         <!-- Line End -->
 
         <!-- Use Custom Button "Payment" Start -->
         <CustomButton
-          class="button custom-text-base"
+          class="button"
           :class="{ active: selectedTab === 'Payment' }"
           @click="changeTab('Payment')"
         >
-          {{ $t("Account.payment") }}
+          <p class="button-text">{{ $t("Account.payment") }}</p>
         </CustomButton>
         <!-- Use Custom Button "Payment" End -->
       </div>
@@ -103,17 +109,6 @@
 
     <!-- Use Info Component -->
     <Info v-else="selectedTab === 'Account'" />
-
-    <!-- Teleport Custom Modal Window Start -->
-    <Teleport to="#main">
-      <!-- Use Custom Modal Window Start -->
-      <CustomModalWindow
-        v-if="isOpen == true"
-        @close-window="close"
-        class="absolute"
-      />
-    </Teleport>
-    <!-- Teleport Custom Modal Window End -->
   </div>
   <!-- Account Component wrapper End -->
 </template>
@@ -144,7 +139,7 @@ const open = () => {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .user_wrapper {
   @apply absolute left-[50%] translate-x-[-50%] top-[275px] 
 	max-w-[185px] w-full h-[240px] 
@@ -160,7 +155,10 @@ const open = () => {
 }
 
 .button {
-  @apply relative font-bold
-	max-w-[360px] w-full h-full px-[24px];
+  @apply relative max-w-[360px] w-full h-full px-6;
+
+  .button-text {
+    @apply font-serrat text-base text-custom-darkgreen font-semibold
+  }
 }
 </style>

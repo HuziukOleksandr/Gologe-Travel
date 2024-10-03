@@ -2,12 +2,12 @@
     <!-- Localization wrapper Start -->
     <div class="relative">
         <!-- Wrapper for localization Image Start -->
-        <div class="flex items-center px-[7px] py-[10px]">
+        <div class="flex items-center px-2 py-3">
             <!-- Localization Image -->
             <img
                 :src="getImageUrlSvg(locale)"
                 alt="Flag uk"
-                class="w-[25px] rounded-[4px] transition duration-200 hover:cursor-pointer hover:scale-105"
+                class="w-6 rounded transition duration-200 hover:cursor-pointer"
                 @click="toggleVisible = !toggleVisible"
             />
         </div>

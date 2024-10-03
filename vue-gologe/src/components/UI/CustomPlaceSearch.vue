@@ -1,17 +1,16 @@
 <template>
   <!-- All Inputs for Places Frame -->
   <!-- Inputs wrapper Start -->
-  <div
-    class="w-full min-h-[56px] flex justify-between flex-wrap md:gap-[25px] sm:gap-[15px] sm:justify-around"
-  >
+  <div class="search-wrapper">
     <!-- Inputs "Enter Destination" wrapper Start -->
     <div
-      class="relative flex-grow lg:max-w-[416px] lg:w-full"
+      class="search-input-wrapper"
+      :class="props.enterWidth"
       @click="enterVisible = !enterVisible"
     >
       <!-- Use Custom Input "Enter Destination" Start -->
       <CustomInput
-        class="w-full font-serrat font-medium text-green"
+        class="search-input"
         type="text"
         placeHolder="Istanbul, Turkey"
       >
@@ -21,13 +20,15 @@
           <img
             src="@/assets/images/svg/UI/hotel-black.svg"
             alt="arrowswap"
-            class="h-[24px]"
+            class="search-image"
           />
         </template>
         <!-- Use Stol for Image End -->
         <!-- Use Stol for Text Start -->
         <template v-slot:input>
-          {{ $t("Landing.QuickSearch.enterDestination") }}
+          <p class="search-input-text">
+            {{ $t("Landing.QuickSearch.enterDestination") }}
+          </p>
         </template>
         <!-- Use Stol for Text End -->
       </CustomInput>
@@ -43,17 +44,16 @@
 
     <!-- Inputs "Check In" wrapper Start -->
     <div
-      class="relative flex-grow lg:max-w-[240px] lg:w-full"
+      class="search-input-wrapper"
+      :class="props.checkInWidth"
       @click="checkInVisible = !checkInVisible"
     >
       <!-- Use Custom Input "Check In" Start -->
-      <CustomInput
-        class="font-serrat font-medium text-green"
-        type="text"
-        placeHolder="Fri 12/2"
-      >
+      <CustomInput class="search-input" type="text" placeHolder="Fri 12/2">
         <template v-slot:input>
-          {{ $t("Landing.QuickSearch.checkIn") }}
+          <p class="search-input-text">
+            {{ $t("Landing.QuickSearch.checkIn") }}
+          </p>
         </template>
 
         <!-- Use Stol for Image Start -->
@@ -61,7 +61,7 @@
           <img
             src="@/assets/images/svg/UI/calendar.svg"
             alt="arrowswap"
-            class="h-[24px]"
+            class="search-image"
           />
         </template>
         <!-- Use Stol for Image End -->
@@ -78,17 +78,16 @@
 
     <!-- Inputs "Check Out" wrapper Start -->
     <div
-      class="relative flex-grow lg:max-w-[240px] lg:w-full"
+      class="search-input-wrapper"
+      :class="props.checkOutWidth"
       @click="checkInVisible = !checkInVisible"
     >
       <!-- Use Custom Input "Check Out" Start -->
-      <CustomInput
-        class="font-serrat font-medium text-green"
-        type="text"
-        placeHolder="Sun 12/4"
-      >
+      <CustomInput class="search-input" type="text" placeHolder="Sun 12/4">
         <template v-slot:input>
-          {{ $t("Landing.QuickSearch.checkOut") }}
+          <p class="search-input-text">
+            {{ $t("Landing.QuickSearch.checkOut") }}
+          </p>
         </template>
 
         <!-- Use Stol for Image Start -->
@@ -96,7 +95,7 @@
           <img
             src="@/assets/images/svg/UI/calendar.svg"
             alt="arrowswap"
-            class="h-[24px]"
+            class="search-image"
           />
         </template>
         <!-- Use Stol for Image End -->
@@ -113,17 +112,20 @@
 
     <!-- Inputs "Rooms & Guests" wrapper Start -->
     <div
-      class="relative flex-grow lg:max-w-[240px] lg:w-full"
+      class="search-input-wrapper"
+      :class="props.roomsGuestsWidth"
       @click="checkInVisible = !checkInVisible"
     >
       <!-- Use Custom Input "Rooms & Guests" Start -->
       <CustomInput
-        class="font-serrat font-medium text-green"
+        class="search-input"
         type="text"
         placeHolder="1 room, 2 guests"
       >
         <template v-slot:input>
-          {{ $t("Landing.QuickSearch.roomsGuests") }}
+          <p class="search-input-text">
+            {{ $t("Landing.QuickSearch.roomsGuests") }}
+          </p>
         </template>
 
         <!-- Use Stol for Image Start -->
@@ -156,6 +158,18 @@ const enterVisible = ref<boolean>(false);
 const checkInVisible = ref<boolean>(false);
 const checkOutVisible = ref<boolean>(false);
 const roomsGuestsVisible = ref<boolean>(false);
+
+const tripList = ["Return", "Depart"];
+
+// Props, expected type input and plaseholder
+const props = withDefaults(
+  defineProps<{
+    enterWidth: string;
+    checkInWidth: string;
+    checkOutWidth: string;
+    roomsGuestsWidth: string;
+  }>(),
+  {}
+);
 </script>
 
-<style scoped></style>

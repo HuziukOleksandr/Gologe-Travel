@@ -1,26 +1,24 @@
 <template>
   <!-- Info Title Start -->
-  <h1 class="custom-text-3xl font-bold mb-[16px]">
+  <h1 class="custom-text-3xl font-semibold mb-4">
     {{ $t("Account.account") }}
   </h1>
   <!-- Info Title Start -->
 
   <!-- Info wrapper Start -->
-  <div
-    class="w-full flex flex-col gap-[32px] px-[24px] py-[32px] rounded-[16px] shadow-xl"
-  >
+  <div class="w-full flex flex-col gap-8 px-6 py-8 rounded-2xl shadow-xl">
     <!-- Name wrapper Start -->
-    <div class="w-full h-[52px] flex justify-between">
+    <div class="wrapper">
       <!-- Text wrapper Start -->
-      <div class="flex flex-col justify-between">
+      <div class="text-wrapper">
         <!-- Title Start -->
-        <h1 class="custom-text-base font-bold text-gray">
+        <h1 class="title">
           {{ $t("Account.Account.name") }}
         </h1>
         <!-- Title End -->
 
         <!-- Text Start -->
-        <h2 class="custom-text-xl font-bold">John Doe</h2>
+        <h2 class="text">John Doe</h2>
         <!-- Text End -->
       </div>
       <!-- Text wrapper End -->
@@ -29,37 +27,35 @@
       <CustomButton class="change_button">
         <!-- Button Image -->
         <img src="@/assets/images/svg/UI/change.svg" alt="change" />
-        {{ $t("Account.Account.change") }}
+        <p class="button-text">{{ $t("Account.Account.change") }}</p>
       </CustomButton>
       <!-- Change Button End -->
     </div>
     <!-- Name wrapper End -->
 
     <!-- Email wrapper Start -->
-    <div class="w-full h-[52px] flex justify-between">
+    <div class="wrapper">
       <!-- Text wrapper Start -->
-      <div class="flex flex-col justify-between">
+      <div class="text-wrapper">
         <!-- Title Start -->
-        <h1 class="custom-text-base font-bold text-gray">
+        <h1 class="title">
           {{ $t("Account.Account.email") }}
         </h1>
         <!-- Title End -->
 
         <!-- Text Start -->
-        <h2 class="custom-text-xl font-bold">john.doe@gmail.com</h2>
+        <h2 class="text">john.doe@gmail.com</h2>
         <!-- Text End -->
       </div>
       <!-- Text wrapper End -->
 
       <!-- Buttons wrapper Start -->
-      <div class="flex gap-[8px]">
+      <div class="flex gap-[8px] sm:justify-between">
         <!-- Button Add Email Start -->
-        <CustomButton
-          class="h-full flex gap-[5px] border-buttonGreen border-[2px] px-[16px]"
-        >
+        <CustomButton class="change_button">
           <!-- Button Image -->
           <img src="@/assets/images/svg/UI/add.svg" alt="add" />
-          {{ $t("Account.Account.addEmail") }}
+          <p class="button-text">{{ $t("Account.Account.addEmail") }}</p>
         </CustomButton>
         <!-- Button Add Email End -->
 
@@ -67,7 +63,7 @@
         <CustomButton class="change_button">
           <!-- Button Image -->
           <img src="@/assets/images/svg/UI/change.svg" alt="change" />
-          {{ $t("Account.Account.change") }}
+          <p class="button-text">{{ $t("Account.Account.change") }}</p>
         </CustomButton>
         <!-- Change Button End -->
       </div>
@@ -76,17 +72,17 @@
     <!-- Email wrapper End -->
 
     <!-- Password wrapper Start -->
-    <div class="w-full h-[52px] flex justify-between">
+    <div class="wrapper">
       <!-- Text wrapper Start -->
-      <div class="flex flex-col justify-between">
+      <div class="text-wrapper">
         <!-- Title Start -->
-        <h1 class="custom-text-base font-bold text-gray">
+        <h1 class="title">
           {{ $t("Account.Account.password") }}
         </h1>
         <!-- Title Start -->
 
         <!-- Text Start -->
-        <h2 class="custom-text-xl font-bold">************</h2>
+        <h2 class="text">************</h2>
         <!-- Text End -->
       </div>
       <!-- Text wrapper End -->
@@ -95,24 +91,24 @@
       <CustomButton class="change_button">
         <!-- Button Image -->
         <img src="@/assets/images/svg/UI/change.svg" alt="change" />
-        {{ $t("Account.Account.change") }}
+        <p class="button-text">{{ $t("Account.Account.change") }}</p>
       </CustomButton>
       <!-- Change Button End -->
     </div>
     <!-- Password wrapper End -->
 
     <!-- Phone Number wrapper Start -->
-    <div class="w-full h-[52px] flex justify-between">
+    <div class="wrapper">
       <!-- Text wrapper Start -->
-      <div class="flex flex-col justify-between">
+      <div class="text-wrapper">
         <!-- Title Start -->
-        <h1 class="custom-text-base font-bold text-gray">
+        <h1 class="title">
           {{ $t("Account.Account.number") }}
         </h1>
         <!-- Title End -->
 
         <!-- Text Start -->
-        <h2 class="custom-text-xl font-bold">+1 000-000-0000</h2>
+        <h2 class="text">+1 000-000-0000</h2>
         <!-- Text End -->
       </div>
       <!-- Text wrapper Start -->
@@ -121,26 +117,24 @@
       <CustomButton class="change_button">
         <!-- Button Image -->
         <img src="@/assets/images/svg/UI/change.svg" alt="change" />
-        {{ $t("Account.Account.change") }}
+        <p class="button-text">{{ $t("Account.Account.change") }}</p>
       </CustomButton>
       <!-- Change Button End -->
     </div>
     <!-- Phone Number wrapper End -->
 
     <!-- Address wrapper Start -->
-    <div class="w-full h-[52px] flex justify-between">
+    <div class="wrapper">
       <!-- Text wrapper Start -->
-      <div class="flex flex-col justify-between">
+      <div class="text-wrapper">
         <!-- Title Start -->
-        <h1 class="custom-text-base font-bold text-gray">
+        <h1 class="title">
           {{ $t("Account.Account.address") }}
         </h1>
         <!-- Title Start -->
 
         <!-- Text Start -->
-        <h2 class="custom-text-xl font-bold">
-          St 32 main downtown, Los Angeles, California, USA
-        </h2>
+        <h2 class="text">St 32 main downtown, Los Angeles, California, USA</h2>
         <!-- Text End -->
       </div>
       <!-- Text wrapper End -->
@@ -149,24 +143,24 @@
       <CustomButton class="change_button">
         <!-- Button Image -->
         <img src="@/assets/images/svg/UI/change.svg" alt="change" />
-        {{ $t("Account.Account.change") }}
+        <p class="button-text">{{ $t("Account.Account.change") }}</p>
       </CustomButton>
       <!-- Change Button End -->
     </div>
     <!-- Address wrapper End -->
 
     <!-- Date of Birth wrapper Start -->
-    <div class="w-full h-[52px] flex justify-between">
+    <div class="wrapper">
       <!-- Text wrapper Start -->
-      <div class="flex flex-col justify-between">
+      <div class="text-wrapper">
         <!-- Title Start -->
-        <h1 class="custom-text-base font-bold text-gray">
+        <h1 class="title">
           {{ $t("Account.Account.birth") }}
         </h1>
         <!-- Title End -->
 
         <!-- Text Start -->
-        <h2 class="custom-text-xl font-bold">01-01-1992</h2>
+        <h2 class="text">01-01-1992</h2>
         <!-- Text End -->
       </div>
       <!-- Text wrapper End -->
@@ -175,7 +169,7 @@
       <CustomButton class="change_button">
         <!-- Button Image -->
         <img src="@/assets/images/svg/UI/change.svg" alt="change" />
-        {{ $t("Account.Account.change") }}
+        <p class="button-text">{{ $t("Account.Account.change") }}</p>
       </CustomButton>
       <!-- Change Button End -->
     </div>
@@ -186,8 +180,28 @@
 
 <script setup lang="ts"></script>
 
-<style scoped>
-.change_button {
-  @apply h-full flex gap-[5px] border-buttonGreen border-[2px] px-[32px];
+<style lang="scss" scoped>
+.wrapper {
+  @apply w-full min-h-[52px] flex justify-between sm:flex-col gap-2;
+
+  .text-wrapper {
+    @apply flex flex-col justify-between;
+
+    .title {
+      @apply font-serrat text-base font-semibold text-custom-darkgray;
+    }
+
+    .text {
+      @apply font-serrat text-xl font-semibold text-black;
+    }
+  }
+
+  .change_button {
+    @apply w-fit h-12 flex justify-center self-end gap-1 border-custom-lightgreen border-2 px-8 sm:h-10 sm:px-2;
+
+    .button-text {
+      @apply font-serrat text-sm text-custom-darkgreen font-medium;
+    }
+  }
 }
 </style>

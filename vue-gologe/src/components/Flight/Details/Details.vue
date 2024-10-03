@@ -1,6 +1,6 @@
 <template>
   <!-- Details wrapper Start -->
-  <div class="max-w-[1230px] w-full flex flex-col gap-[40px] py-[48px]">
+  <div class="max-w-primary-width w-full flex flex-col gap-10 py-3">
     <!-- Use Navigation component -->
     <Navigation />
     <!-- Use Header component -->
@@ -17,10 +17,10 @@
 
 <script setup lang="ts">
 import Navigation from "@/components/Flight/UI/Navigation/Navigation.vue"
-import Header from "./Header/Header.vue"
-import Features from "./Features/Features.vue"
-import Policies from "./Policies/Policies.vue"
-import Ticket from "./Ticket/Ticket.vue"
+import Header from "@/components/Flight/Details/Header/Header.vue"
+import Features from "@/components/Flight/Details/Features/Features.vue"
+import Policies from "@/components/Flight/Details/Policies/Policies.vue"
+import Ticket from "@/components/Flight/UI/Ticket.vue"
 
 </script>
 

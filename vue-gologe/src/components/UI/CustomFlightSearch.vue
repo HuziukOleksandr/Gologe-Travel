@@ -1,24 +1,24 @@
 <template>
   <!-- All Inputs for Flight Frame -->
   <!-- Inputs wrapper Start -->
-  <div
-    class="w-full min-h-[56px] flex justify-between flex-wrap md:gap-[25px] sm:gap-[15px] sm:justify-around"
-  >
+  <div class="search-wrapper">
     <!-- Inputs "From/To" wrapper Start -->
     <div
-      class="relative flex-grow lg:w-full"
+      class="search-input-wrapper"
       :class="props.fromWidth"
       @click="fromVisible = !fromVisible"
     >
       <!-- Use Custom Input "From/To" Start -->
       <CustomInput
-        class="w-full h-[56px] font-serrat font-medium text-green"
+        class="search-input"
         type="text"
         placeHolder="Lahore - Karachi"
       >
         <!-- Use Stol for Text Start -->
         <template v-slot:input>
-          {{ $t("Landing.QuickSearch.fromTo") }}
+          <p class="search-input-text">
+            {{ $t("Landing.QuickSearch.fromTo") }}
+          </p>
         </template>
         <!-- Use Stol for Text End -->
 
@@ -28,7 +28,7 @@
           <img
             src="@/assets/images/svg/UI/arrowswap.svg"
             alt="arrowswap"
-            class="h-[24px]"
+            class="search-image"
           />
         </template>
         <!-- Use Stol for Image End -->
@@ -45,18 +45,14 @@
 
     <!-- Inputs "Trips" wrapper Start -->
     <div
-      class="relative flex-grow lg:w-full"
+      class="search-input-wrapper"
       :class="props.tripWidth"
       @click="tripVisible = !tripVisible"
     >
       <!-- Use Custom Input "Trip" Start -->
-      <CustomInput
-        class="h-[56px] font-serrat font-medium text-green"
-        type="text"
-        placeHolder="Return"
-      >
+      <CustomInput class="search-input" type="text" placeHolder="Return">
         <template v-slot:input>
-          {{ $t("Landing.QuickSearch.trip") }}
+          <p class="search-input-text">{{ $t("Landing.QuickSearch.trip") }}</p>
         </template>
 
         <!-- Use Stol for Image Start -->
@@ -64,7 +60,7 @@
           <img
             src="@/assets/images/svg/UI/chevron-down.svg"
             alt="arrowswap"
-            class="h-[24px]"
+            class="search-image"
           />
         </template>
         <!-- Use Stol for Image End -->
@@ -82,19 +78,21 @@
 
     <!-- Inputs "Depart Return" wrapper Start -->
     <div
-      class="relative flex-grow lg:w-full"
+      class="search-input-wrapper"
       :class="props.departWidth"
       @click="departVisible = !departVisible"
     >
       <!-- Use Custom Input "Depart Return" Start -->
       <CustomInput
-        class="h-[56px] font-serrat font-medium text-green"
+        class="search-input"
         type="text"
         placeHolder="07 Nov 22 - 13 Nov 22"
       >
         <!-- Use Stol for Text Start -->
         <template v-slot:input>
-          {{ $t("Landing.QuickSearch.departReturn") }}
+          <p class="search-input-text">
+            {{ $t("Landing.QuickSearch.departReturn") }}
+          </p>
         </template>
         <!-- Use Stol for Text End -->
       </CustomInput>
@@ -110,19 +108,21 @@
 
     <!-- Inputs "Pasenger Class" wrapper Start -->
     <div
-      class="relative flex-grow lg:w-full"
+      class="search-input-wrapper"
       :class="props.classWidth"
       @click="classVisible = !classVisible"
     >
       <!-- Use Custom Input "Pasenger Class" Start -->
       <CustomInput
-        class="w-full h-[56px] font-serrat font-medium text-green"
+        class="search-input"
         type="text"
         placeHolder="1 Passenger, Economy"
       >
         <!-- Use Stol for Text Start -->
         <template v-slot:input>
-          {{ $t("Landing.QuickSearch.pasengerClass") }}
+          <p class="search-input-text">
+            {{ $t("Landing.QuickSearch.pasengerClass") }}
+          </p>
         </template>
         <!-- Use Stol for Text End -->
       </CustomInput>
@@ -147,7 +147,7 @@ const tripVisible = ref<boolean>(false);
 const departVisible = ref<boolean>(false);
 const classVisible = ref<boolean>(false);
 
-const tripList = ["Return", "Depart"]
+const tripList = ["Return", "Depart"];
 
 // Props, expected type input and plaseholder
 const props = withDefaults(
@@ -160,3 +160,5 @@ const props = withDefaults(
   {}
 );
 </script>
+
+<style lang="scss" scoped></style>

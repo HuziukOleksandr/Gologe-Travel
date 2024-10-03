@@ -1,59 +1,53 @@
 <template>
   <!-- Add Payment wrapper Start -->
-  <div
-    class="max-w-[1440px] w-full py-12 flex gap-5 justify-center md:px-20 sm:py-5 sm:px-11"
-  >
+  <div class="auth-wrapper">
     <!-- Carousel wrapper Start -->
-    <div class="max-w-[490px] w-full relative flex items-center sm:hidden">
+    <div class="max-w-[490px] auth-carousel-wrapper">
       <!-- Use Custom Carousel Component -->
       <CustomCarousel :slides="slides" />
     </div>
     <!--Carousel wrapper End -->
 
     <!-- Aside wrapper Start -->
-    <div class="max-w-[640px] w-full flex flex-col justify-center">
+    <div class="max-w-[640px] auth-aside-wrapper">
       <!-- Use Custom Logo -->
-      <CustomLogo class="hidden sm:flex sm:mb-3 sm:h-6 sm:mx-auto" />
+      <CustomLogo class="logo" />
 
       <!-- Use Custom Buttom "Back" Start -->
       <CustomButton
-        class="max-w-[70px] mb-4"
+        class="back-button"
         @click="$router.push({ name: 'Register' })"
       >
         <!-- Button Image -->
         <img
           src="@/assets/images/svg/UI/chevron-down.svg"
           alt="hotel"
-          class="rotate-90"
+          class="button-image"
         />
-        <p class="custom-text-xs font-bold">{{ $t("AddPayment.back") }}</p>
+        <p class="button-text">{{ $t("AddPayment.back") }}</p>
       </CustomButton>
       <!-- Use Custom Buttom "Back" End -->
 
       <!-- Title Start -->
-      <h1 class="custom-text-4xl font-bold mb-[16px] sm:text-center">
+      <h1 class="auth-aside-title">
         {{ $t("AddPayment.title") }}
       </h1>
       <!-- Title End -->
 
       <!-- Text Start -->
-      <h2
-        class="custom-text-base font-regular text-gray mb-[15px] lg:mb-[50px] sm:text-center"
-      >
+      <h2 class="auth-aside-text">
         {{ $t("AddPayment.subTitle") }}
       </h2>
       <!-- Text End -->
 
       <!-- Wrapper for inputs Start -->
-      <div
-        class="flex flex-col gap-[24px] mb-[40px] md:mb-[20px] sm:mb-[10px] sm:gap-[20px]"
-      >
+      <div class="auth-inputs-wrapper">
         <!-- Use Custom Input "Card Numder" Start -->
         <CustomInput type="text" :placeHolder="$t('AddPayment.card')">
           <!-- Use Slot for Input Name Start -->
           <template v-slot:input>
             <!-- Text Start -->
-            <p class="font-serrat font-medium text-green">
+            <p class="auth-input-text">
               {{ $t("AddPayment.card") }}
             </p>
             <!-- Text End -->
@@ -63,7 +57,7 @@
         <!-- Use Custom Input "Card Numder" End -->
 
         <!-- Wrapper for Date and CVC inputs Start -->
-        <div class="flex justify-between flex-wrap gap-[20px]">
+        <div class="auth-inputs-line-wrapper">
           <!-- Use Custom Input "Exp. Date" Start -->
           <CustomInput
             class="flex-grow"
@@ -73,7 +67,7 @@
             <!-- Use Slot for Input Name End -->
             <template v-slot:input>
               <!-- Text Start -->
-              <p class="font-serrat font-medium text-green">
+              <p class="auth-input-text">
                 {{ $t("AddPayment.date") }}
               </p>
               <!-- Text End -->
@@ -91,7 +85,7 @@
             <!-- Use Slot for Input Name Start -->
             <template v-slot:input>
               <!-- Text Start -->
-              <p class="font-serrat font-medium text-green">
+              <p class="auth-input-text">
                 {{ $t("AddPayment.CVC") }}
               </p>
               <!-- Text End -->
@@ -107,7 +101,7 @@
           <!-- Use Slot for Input Name Start -->
           <template v-slot:input>
             <!-- Text Start -->
-            <p class="font-serrat font-medium text-green">
+            <p class="auth-input-text">
               {{ $t("AddPayment.cardName") }}
             </p>
             <!-- Text End -->
@@ -123,7 +117,7 @@
             <!-- Use Slot for Input Name Start -->
             <template v-slot:input>
               <!-- text Start -->
-              <p class="font-serrat font-medium text-green">
+              <p class="auth-input-text">
                 {{ $t("AddPayment.from") }}
               </p>
               <!-- text End -->
@@ -136,7 +130,7 @@
               <img
                 src="@/assets/images/svg/UI/chevron-down.svg"
                 alt="arrowswap"
-                class="h-[24px]"
+                class="h-6"
               />
             </template>
             <!-- Use Slot for Input Image End -->
@@ -164,11 +158,9 @@
       <!-- Wrapper for inputs End -->
 
       <!-- Use Custom Button "Add Payment" Start -->
-      <CustomButton
-        class="w-full h-16 mb-4 justify-center bg-buttonGreen sm:h-[45px]"
-      >
+      <CustomButton class="auth-button">
         <!-- Text Start -->
-        <p class="custom-text-sm font-semibold text-green">
+        <p class="auth-button-text">
           {{ $t("AddPayment.button") }}
         </p>
         <!-- Text End -->
@@ -178,7 +170,7 @@
       <!-- Bottom Text wrapper Start -->
       <div class="w-full flex">
         <!-- Text Start -->
-        <p class="custom-text-xs font-regular text-center text-gray">
+        <p class="custom-text-xs font-regular text-center text-custom-darkgray">
           {{ $t("AddPayment.text") }}
         </p>
         <!-- Text End -->
@@ -202,3 +194,5 @@ const slides = ref([
   "register-slide-one",
 ]);
 </script>
+
+<style lang="scss" scoped></style>

@@ -53,6 +53,17 @@ const CustomPlaceSearch = defineAsyncComponent(
     () => import("./CustomPlaceSearch.vue")
 );
 
+const CustomAddPayment = defineAsyncComponent(
+    () => import("./CustomAddPayment.vue")
+);
+
+const CustomLoginWith = defineAsyncComponent(
+    () => import("./CustomLoginWith.vue")
+)
+
+const CustomRegisterWith = defineAsyncComponent(
+    () => import("./CustomLoginWith.vue")
+)
 export default {
     CustomNavigation,
     CustomLocalization,
@@ -67,4 +78,7 @@ export default {
     CustomModalWindow,
     CustomFlightSearch,
     CustomPlaceSearch,
+    CustomAddPayment,
+    CustomLoginWith,
+    CustomRegisterWith,
 };

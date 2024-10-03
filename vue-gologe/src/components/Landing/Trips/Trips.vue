@@ -1,13 +1,11 @@
 <template>
   <!-- Trips Start -->
-  <div
-    class="w-full flex justify-center md:px-[40px] sm:px-[40px] ph:px-[20px]"
-  >
+  <div class="landing-component-wrapper">
     <!-- Trips wrapper Start -->
-    <div class="max-w-[1230px] w-full min-h-[280px] flex flex-col gap-[40px]">
+    <div class="max-w-[1230px] w-full min-h-[280px] flex flex-col gap-10">
       <!-- Trips Header wrapper Start -->
       <div
-        class="flex items-center justify-between sm:flex-col sm:gap-[15px] sm:items-start"
+        class="flex items-center justify-between sm:flex-col sm:gap-4 sm:items-start"
       >
         <!-- Text wrapper Start -->
         <div class="flex flex-col gap-[15px]">
@@ -18,7 +16,7 @@
           <!-- Title End -->
 
           <!-- Sub-Title Start -->
-          <h2 class="custom-text-base font-regular text-gray">
+          <h2 class="custom-text-base font-medium text-custom-darkgray">
             {{ $t("Landing.Trips.sub-title") }}
           </h2>
           <!-- Sub-Title End -->
@@ -26,10 +24,10 @@
         <!-- Text wrapper End -->
 
         <!-- Trip Header button Start -->
-        <CustomButton
-          class="h-[40px] border-[2px] border-buttonGreen px-[16px] sm:hidden"
-        >
-          {{ $t("Landing.Trips.button") }}
+        <CustomButton class="landing-component-button sm:hidden">
+          <p class="landing-component-button-text">
+            {{ $t("Landing.Trips.button") }}
+          </p>
         </CustomButton>
         <!-- Trip Header button End -->
       </div>
@@ -44,15 +42,17 @@
 
       <!-- Trip Header button Start -->
       <CustomButton
-        class="h-[40px] border-[2px] border-buttonGreen px-[16px] hidden sm:flex sm:justify-center"
+        class="landing-component-button hidden sm:flex sm:justify-center"
       >
-        {{ $t("Landing.Trips.button") }}
+      <p class="landing-component-button-text">
+            {{ $t("Landing.Trips.button") }}
+          </p>
       </CustomButton>
       <!-- Trip Header button End -->
 
       <!-- Content for Large Cards wrapper Start -->
       <div
-        class="w-full  flex flex-wrap justify-between md:justify-center md:gap-[15px] sm:gap-[10px]"
+        class="w-full flex flex-wrap justify-between md:justify-center md:gap-4 sm:gap-3"
       >
         <!-- Use Flight Component -->
         <Flight />

@@ -1,22 +1,22 @@
 <template>
-    <!-- Logo component -->
-    <!-- Logo for Landing Page -->
-    <img
-        src="@/assets/images/svg/logo/logo.svg"
-        alt="Logo"
-        @click="$router.push({ name: 'Landing' })"
-        v-if="route.name == 'Landing'"
-        class="logo h-[36px]"
-    />
+  <!-- Logo component -->
+  <!-- Logo for Landing Page -->
+  <img
+    src="@/assets/images/svg/logo/logo.svg"
+    alt="Logo"
+    class="logo"
+    @click="$router.push({ name: 'Landing' })"
+    v-if="route.name == 'Landing'"
+  />
 
-    <!-- Logo for other Pages -->
-    <img
-        src="@/assets/images/svg/logo/logo-black.svg"
-        alt="Logo"
-        class="logo h-[36px]"
-        @click="$router.push({ name: 'Landing' })"
-        v-else
-    />
+  <!-- Logo for other Pages -->
+  <img
+    src="@/assets/images/svg/logo/logo-black.svg"
+    alt="Logo"
+    class="logo"
+    @click="$router.push({ name: 'Landing' })"
+    v-else
+  />
 </template>
 
 <script setup lang="ts">
@@ -25,10 +25,12 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 </script>
 
-<style scoped>
-.logo:hover {
-    transition-duration: 500ms;
-    cursor: pointer;
-    transform: scale(1.02);
+<style lang="scss" scoped>
+.logo {
+  @apply h-8;
+
+  &:hover {
+    @apply transition duration-500 transform hover:scale-105 cursor-pointer;
+  }
 }
 </style>

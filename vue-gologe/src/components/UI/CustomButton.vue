@@ -1,6 +1,6 @@
 <template>
   <!-- Custom component for button Start  -->
-  <button class="flex items-center gap-[5px] rounded-[4px]">
+  <button class="flex items-center gap-1 rounded">
     <!-- Сontent slot -->
     <slot></slot>
   </button>

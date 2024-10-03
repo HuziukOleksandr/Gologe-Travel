@@ -2,14 +2,14 @@
   <TransitionGroup>
     <div class="w-full" v-if="props.dialogVisible">
       <!--Filter for Rating Start -->
-      <div class="flex gap-[16px]">
+      <div class="flex gap-4">
         <!-- Rating content Start -->
         <div
-          class="px-[12px] py-[8px] border-solid border-[2px] border-buttonGreen rounded-[4px]"
+          class="px-3 py-2 border-solid border-2 border-custom-lightgreen rounded-md"
           v-for="elem in 5"
         >
           <!-- Text Start -->
-          <p class="custom-text-xs font-bold text-green">{{ elem - 1 }}+</p>
+          <p class="custom-text-xs font-semibold text-custom-darkgreen">{{ elem - 1 }}+</p>
           <!-- Text End -->
         </div>
         <!-- Rating content Start -->

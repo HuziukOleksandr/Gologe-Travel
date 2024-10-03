@@ -1,6 +1,6 @@
 <template>
   <!-- Listing wrapper Start -->
-  <div class="max-w-[1230px] w-full flex flex-col py-[48px]">
+  <div class="max-w-[1230px] w-full flex flex-col py-12">
     <!-- Flight Search wrapper Start -->
     <Search />
     <!-- Flight Search wrapper End -->
@@ -14,7 +14,7 @@
       <!-- Filters wrapper End -->
 
       <!-- Line Start -->
-      <div class="w-[1px] h-full bg-lightGray"></div>
+      <div class="w-[1px] h-full bg-custom-green"></div>
       <!-- Line End -->
 
       <!-- Places wrapper Start -->
@@ -22,13 +22,13 @@
         class="max-w-[840px] w-full min-h-[1430px] flex flex-col justify-between"
       >
         <!-- Header wrapper Start -->
-        <div class="w-full h-[80px] rounded-[12px] shadow-sm">
+        <div class="w-full h-20 rounded-xl shadow-sm">
           <Sort />
         </div>
         <!-- Header wrapper End -->
 
         <!-- Showing info wrapper start -->
-        <div class="w-full h-[18px]">
+        <div class="w-full h-5">
           <Showing :pages="[4, 265]" />
         </div>
         <!-- Showing info wrapper End -->
@@ -41,9 +41,11 @@
 
         <!-- Show button Start -->
         <CustomButton
-          class="w-full h-[48px] bg-green custom-text-sm font-semibold text-white flex justify-center"
+          class="w-full h-12 bg-custom-darkgreen flex justify-center"
         >
-          {{ $t("ListingFlight.button") }}
+          <p class="custom-text-sm text-default font-semibold">
+            {{ $t("ListingFlight.button") }}
+          </p>
         </CustomButton>
         <!-- Show button End -->
       </div>

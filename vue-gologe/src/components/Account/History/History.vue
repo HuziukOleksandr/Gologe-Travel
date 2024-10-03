@@ -1,39 +1,39 @@
 <template>
   <!-- History Title Start -->
-  <h1 class="custom-text-3xl font-bold mb-[16px]">
+  <h1 class="custom-text-3xl font-semibold mb-4">
     {{ $t("Account.History.title") }}
   </h1>
   <!-- History Title End -->
 
   <!-- History wrapper Start -->
-  <div
-    class="w-full h-[80px] flex items-center shadow-xl rounded-[12px] mb-[32px]"
-  >
+  <div class="w-full h-20 flex items-center shadow-xl rounded-xl mb-8">
     <!-- Use Custom Button "Stays" Start -->
     <CustomButton
-      class="relative max-w-[624px] w-full h-full px-[24px] custom-text-base font-bold"
+      class="button"
       :class="{ active: selectedTab === 'Flight' }"
       @click="changeTab('Flight')"
     >
       <!-- Buuton Image -->
       <img src="@/assets/images/svg/UI/flight-black.svg" alt="flight-black" />
-      {{ $t("Account.History.flights") }}
+      <p class="button-text">
+        {{ $t("Account.History.flights") }}
+      </p>
     </CustomButton>
     <!-- Use Custom Button "Stays" Start -->
 
     <!-- Line Start -->
-    <div class="w-[1px] h-[48px] bg-gray"></div>
+    <div class="history-vertical-line"></div>
     <!-- Line End -->
 
     <!-- Use Custom Button "Stays" Start -->
     <CustomButton
-      class="relative max-w-[624px] w-full h-full px-[24px] custom-text-base font-bold"
+      class="button"
       :class="{ active: selectedTab === 'Stays' }"
       @click="changeTab('Stays')"
     >
       <!-- Button Image -->
       <img src="@/assets/images/svg/UI/hotel-black.svg" alt="hotel-black" />
-      {{ $t("Account.History.stays") }}
+      <p class="button-text">{{ $t("Account.History.stays") }}</p>
     </CustomButton>
     <!-- Use Custom Button "Stays" End -->
   </div>
@@ -59,7 +59,15 @@ const changeTab = (type: string) => {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.button {
+  @apply relative max-w-[624px] w-full h-full px-6;
+
+  .button-text {
+    @apply font-serrat text-base font-semibold;
+  }
+}
+
 .active::after {
   content: "";
   position: absolute;

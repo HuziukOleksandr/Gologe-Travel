@@ -3,7 +3,9 @@
   <div class="wrapper_header">
     <!-- Use Navigation UI Component -->
     <CustomNavigation
-      :class="route.name !== 'Landing' ? 'text-green' : 'text-white'"
+      :class="
+        route.name !== 'Landing' ? 'text-custom-darkgreen' : 'text-default'
+      "
     />
 
     <!-- Use Logo UI Component -->
@@ -13,11 +15,13 @@
     <div class="wrapper_content">
       <!-- Use UI Button component, Login button Start -->
       <CustomButton
-        :class="route.name !== 'Landing' ? 'text-green' : 'text-white'"
-        class="custom-text-sm font-bold hidden h-[48px] px-[24px] lg:block"
+        :class="
+          route.name !== 'Landing' ? 'text-custom-darkgreen' : 'text-default'
+        "
+        class="button"
         @click="$router.push({ name: 'Login' })"
       >
-        {{ $t("Header.login") }}
+        <p class="button-text">{{ $t("Header.login") }}</p>
       </CustomButton>
       <!-- Use UI Button component, Login button End -->
 
@@ -25,13 +29,13 @@
       <CustomButton
         :class="
           route.name !== 'Landing'
-            ? 'text-white bg-green'
-            : 'text-green bg-white'
+            ? 'text-default bg-custom-darkgreen'
+            : 'text-custom-darkgreen bg-default'
         "
-        class="custom-text-sm font-bold hidden h-[48px] px-[24px] lg:block"
+        class="button"
         @click="$router.push({ name: 'Register' })"
       >
-        {{ $t("Header.signUp") }}
+        <p class="button-text">{{ $t("Header.signUp") }}</p>
       </CustomButton>
       <!-- Use UI Button component, Register button End -->
 
@@ -66,19 +70,22 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .wrapper_header {
-  @apply w-full h-[90px] m-auto
-	flex justify-between items-center
-	lg:px-[104px] 
-	md:px-[90px] 
-	sm:px-[45px] sm:h-[60px];
-}
+  @apply w-full h-[90px] m-auto flex justify-between items-center
+	lg:px-28 md:px-24 sm:px-10 sm:h-16;
 
-.wrapper_content {
-  @apply flex items-center justify-between gap-[8px]
-	md:gap-[10px] 
-	sm:gap-[5px];
+  .wrapper_content {
+    @apply flex items-center justify-between gap-2 md:gap-2.5 sm:gap-1;
+
+    .button {
+      @apply hidden h-12 px-6 lg:block;
+
+      .button-text {
+        @apply font-serrat text-sm font-semibold;
+      }
+    }
+  }
 }
 
 .logo:hover {

@@ -2,9 +2,7 @@
   <!-- Custom input Start -->
   <div class="wrapper_input">
     <!-- Text Start -->
-    <h1
-      class="absolute top-[-15px] z-55 px-[10px] bg-background font-serrat text-green md:text-sm sm:text-xs sm:top-[-10px]"
-    >
+    <h1 class="title">
       <!-- Slot for text -->
       <slot name="input"></slot>
     </h1>
@@ -13,7 +11,7 @@
     <slot name="previousImage"></slot>
     <!-- Input -->
     <input
-      class="w-full h-full md:text-sm sm:text-xs"
+      class="input"
       :type="props.type"
       :placeholder="props.placeHolder"
       v-model="inputValue"
@@ -48,12 +46,20 @@ const changeValue = (value: string) => {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .wrapper_input {
-  @apply flex gap-[10px] items-center rounded-[4px] px-[15px] 
-	border-2 border-gray border-solid relative
-  h-[60px]
-  md:h-[50px]
-  sm:h-[45px];
+  @apply flex gap-2.5 items-center rounded px-4
+	border-2 border-custom-darkgray border-solid relative
+  h-14 md:h-12 sm:h-10 flex-grow;
+
+  .title {
+    @apply absolute top-[-15px] z-50 px-3  font-serrat 
+    bg-default text-custom-darkgreen
+    md:text-sm sm:text-xs sm:top-[-10px];
+  }
+
+  .input {
+    @apply w-full h-full md:text-sm sm:text-xs;
+  }
 }
 </style>

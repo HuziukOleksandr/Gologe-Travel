@@ -1,43 +1,41 @@
 <template>
-    <!-- Custom input for password Start -->
-    <div class="wrapper_input">
-        <!-- Title Start -->
-        <h1
-            class="absolute top-[-15px] z-55 px-[10px] bg-background font-serrat text-green md:text-sm sm:text-xs sm:top-[-10px]"
-        >
-            <!-- Slot for name input -->
-            <slot name="input"></slot>
-        </h1>
-        <!-- Title End -->
+  <!-- Custom input for password Start -->
+  <div class="wrapper_input">
+    <!-- Title Start -->
+    <h1 class="title">
+      <!-- Slot for name input -->
+      <slot name="input"></slot>
+    </h1>
+    <!-- Title End -->
 
-        <!-- Input password -->
-        <input
-            class="w-full h-full md:text-sm sm:text-xs"
-            :type="passwordFieldType"
-            :placeholder="props.placeHolder"
-            v-model="inputValue"
-            @change="changeValue(inputValue)"
-        />
+    <!-- Input password -->
+    <input
+      class="input"
+      :type="passwordFieldType"
+      :placeholder="props.placeHolder"
+      v-model="inputValue"
+      @change="changeValue(inputValue)"
+    />
 
-        <!-- Image for close password -->
-        <img
-            src="@/assets/images/svg/UI/password-close.svg"
-            alt="arrowswap"
-            class="h-[24px] hover:cursor-pointer"
-            @click="switchVisibility"
-            v-if="passwordFieldType === 'password'"
-        />
+    <!-- Image for close password -->
+    <img
+      src="@/assets/images/svg/UI/password-close.svg"
+      alt="arrowswap"
+      class="image"
+      @click="switchVisibility"
+      v-if="passwordFieldType === 'password'"
+    />
 
-        <!-- Image for open password -->
-        <img
-            src="@/assets/images/svg/UI/password-open.svg"
-            alt="arrowswap"
-            class="h-[24px] hover:cursor-pointer"
-            @click="switchVisibility"
-            v-else
-        />
-    </div>
-    <!-- Custom input for password End -->
+    <!-- Image for open password -->
+    <img
+      src="@/assets/images/svg/UI/password-open.svg"
+      alt="arrowswap"
+      class="image"
+      @click="switchVisibility"
+      v-else
+    />
+  </div>
+  <!-- Custom input for password End -->
 </template>
 
 <script setup lang="ts">
@@ -49,22 +47,37 @@ let inputValue = ref<string>("");
 const emit = defineEmits(["inputValue"]);
 
 const changeValue = (value: string) => {
-    emit("inputValue", value);
+  emit("inputValue", value);
 };
 
 let passwordFieldType = ref<string>("password");
 const switchVisibility = () => {
-    passwordFieldType.value =
-        passwordFieldType.value === "password" ? "text" : "password";
+  passwordFieldType.value =
+    passwordFieldType.value === "password" ? "text" : "password";
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .wrapper_input {
-    @apply flex gap-[10px] items-center rounded-[4px] px-[15px] 
-	border-2 border-gray border-solid relative
-    h-[60px]
-    md:h-[50px]
-    sm:h-[40px]
+  @apply relative flex gap-3 items-center justify-between rounded px-4
+    border-2 border-custom-darkgray border-solid
+    h-14 md:h-12 sm:h-10 flex-grow;
+
+  .title {
+    @apply absolute top-[-15px] z-50 px-3  font-serrat 
+    bg-default text-custom-darkgreen
+    md:text-sm sm:text-xs sm:top-[-10px];
+  }
+
+  .imput {
+    @apply w-full h-full flex-grow md:text-sm sm:text-xs ;
+  }
+  .image {
+    @apply h-6;
+
+    &:hover {
+      @apply cursor-pointer;
+    }
+  }
 }
 </style>

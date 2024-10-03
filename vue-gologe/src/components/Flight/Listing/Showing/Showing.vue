@@ -1,13 +1,13 @@
 <template>
   <!-- Showing wrapper Start -->
-  <div class="w-full flex justify-between items-center gap-[10px]">
+  <div class="w-full flex justify-between items-center gap-3">
     <!-- Text Left Start -->
-    <p class="custom-text-xs font-semibold text-green">
+    <p class="custom-text-xs text-custom-darkgreen font-semibold">
       {{ $t("ListingFlight.Sort.showing") }}
       {{ props.pages[0] }}
       {{ $t("ListingFlight.Sort.of") }}
       <!-- Link for flight Start -->
-      <a href="#" class="text-red">
+      <a href="#" class="text-custom-red">
         {{ props.pages[1] }}
         {{ $t("ListingFlight.Sort.flight") }}
       </a>
@@ -16,14 +16,14 @@
     <!-- Text Left End -->
 
     <!-- Text Right Start -->
-    <div class="flex gap-[8px] items-center">
+    <div class="flex gap-2 items-center">
       <!-- Text content Start -->
-      <p class="custom-text-xs text-green flex">
+      <p class="custom-text-xs text-custom-darkgreen font-medium">
         {{ $t("ListingFlight.Sort.sort") }}
       </p>
       <!-- Text content Start -->
       <!-- Use Custom Button Start -->
-      <CustomButton class="custom-text-xs font-bold text-green">
+      <CustomButton class="custom-text-xs text-custom-darkgreen font-semibold">
         {{ $t("ListingFlight.Sort.recommended") }}
         <!-- Images for Button -->
         <img src="@/assets/images/svg/UI/chevron-down.svg" alt="chevron-down" />

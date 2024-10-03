@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-checkbox-group
-      class="flex gap-[8px]"
+      class="flex gap-2"
       @change="addAirlines"
       v-model="checkList"
     >

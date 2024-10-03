@@ -1,41 +1,37 @@
 <template>
   <!-- Flight Card wrapper Start -->
-  <div class="wrapper" v-for="elen in 10">
+  <div class="history-wrapper" v-for="elen in 10">
     <!-- Container for all Column Start -->
-    <div class="max-w-[800px] w-full flex gap-[32px] items-center">
+    <div class="history-column-wrapper">
       <!-- Card Image -->
-      <img src="@/assets/images/emirates.png" alt="Emirates" />
+      <img src="@/assets/images/png/emirates.png" alt="Emirates" />
 
       <!-- Container for From and To Start -->
-      <div class="flex gap-[24px]">
+      <div class="history-left-side-wrapper">
         <!-- Container for From Start -->
-        <div class="container__from-to">
+        <div class="history-left-content">
           <!-- Title Start -->
-          <h1 class="custom-text-base text-gray font-bold truncate ...">
-            Newark(EWR)
-          </h1>
+          <h1 class="history-left-content-title">Newark(EWR)</h1>
           <!-- Title End -->
 
           <!-- Text Start -->
-          <h2 class="custom-text-xl font-bold truncate ...">12:00 pm</h2>
+          <h2 class="history-left-content-text">12:00 pm</h2>
           <!-- Text End -->
         </div>
         <!-- Container for From End -->
 
         <!-- Dash Symbol Start -->
-        <div class="flex items-center font-bold">&mdash;</div>
+        <div class="history-left-content-line">&mdash;</div>
         <!-- Dash Symbol End -->
 
         <!-- Container for To Start -->
-        <div class="container__from-to">
+        <div class="history-left-content">
           <!-- Title Start -->
-          <h1 class="custom-text-base text-gray font-bold truncate ...">
-            Newark(EWR)
-          </h1>
+          <h1 class="history-left-content-title">Newark(EWR)</h1>
           <!-- Title End -->
 
           <!-- Text Start -->
-          <h2 class="custom-text-xl font-bold truncate ...">12:00 pm</h2>
+          <h2 class="history-left-content-text">12:00 pm</h2>
           <!-- Text End -->
         </div>
         <!-- Container for To End -->
@@ -43,26 +39,26 @@
       <!-- Container for From and To End -->
 
       <!-- Dividing line Start -->
-      <div class="w-[1px] h-[48px] bg-gray"></div>
+      <div class="history-vertical-line"></div>
       <!-- Dividing line Start -->
 
       <!-- Container for Date and Flight Time Start -->
-      <div class="max-w-[180px] w-full flex flex-col justify-between">
+      <div class="history-right-wrapper">
         <!-- Flight Date Container Start -->
-        <div class="flex gap-[2px]">
+        <div class="history-right-content">
           <!-- Flight Date Image -->
           <img src="@/assets/images/svg/UI/date.svg" alt="date" />
 
           <!-- Container for Text Start -->
-          <div class="flex flex-col">
+          <div class="history-right-column">
             <!-- Title for Date Start -->
-            <p class="custom-text-xs text-gray font-bold">
+            <p class="history-right-title">
               {{ $t("Account.History.date") }}
             </p>
             <!-- Title for Date End -->
 
             <!-- Text for Date Start -->
-            <p class="custom-text-base font-bold">12-11-22</p>
+            <p class="history-right-text">12-11-22</p>
             <!-- Text for Date End -->
           </div>
           <!-- Container for Text End -->
@@ -70,7 +66,7 @@
         <!-- Flight Date Container End -->
 
         <!-- Flight Time Container Start -->
-        <div class="flex gap-[2px]">
+        <div class="history-right-content">
           <!-- Flight Time Image -->
           <img
             src="@/assets/images/svg/UI/history-flight.svg"
@@ -78,15 +74,15 @@
           />
 
           <!-- Container for Time Start -->
-          <div class="flex flex-col">
+          <div class="history-right-column">
             <!-- Title for Time Start -->
-            <p class="custom-text-xs text-gray font-bold">
+            <p class="history-right-title">
               {{ $t("Account.History.time") }}
             </p>
             <!-- Title for Time End -->
 
             <!-- Text for Time Start -->
-            <p class="custom-text-base font-bold">6:00</p>
+            <p class="history-right-text">6:00</p>
             <!-- Text for Time End -->
           </div>
           <!-- Container for Time End -->
@@ -95,10 +91,10 @@
       </div>
       <!-- Container for Date and Flight Time End -->
 
-      <!-- Container for Gate and Seat Start -->
-      <div class="max-w-[280px] w-full flex flex-col justify-between">
+      <!-- Container for Gate and Seat Start max-w-[280px]  -->
+      <div class="history-right-wrapper">
         <!-- Flight Gate Container Start -->
-        <div class="flex gap-[2px]">
+        <div class="history-right-content">
           <!-- Flight Gate Image -->
           <img
             src="@/assets/images/svg/UI/history-gate.svg"
@@ -106,15 +102,15 @@
           />
 
           <!-- Containet for text Start -->
-          <div class="flex flex-col">
+          <div class="history-right-column">
             <!-- Title for Gate Start -->
-            <p class="custom-text-xs text-gray font-bold">
+            <p class="history-right-title">
               {{ $t("Account.History.gate") }}
             </p>
             <!-- Title for Gate End -->
 
             <!-- Text for Gate Start -->
-            <p class="custom-text-base font-bold">A12</p>
+            <p class="history-right-text">A12</p>
             <!-- Text for Gate End -->
           </div>
           <!-- Containet for text End -->
@@ -122,7 +118,7 @@
         <!-- Flight Gate Container End -->
 
         <!-- Flight Seat Number Container Start -->
-        <div class="flex gap-[2px]">
+        <div class="history-right-content">
           <!-- Flight Seat Image -->
           <img
             src="@/assets/images/svg/UI/history-seat.svg"
@@ -130,15 +126,15 @@
           />
 
           <!-- Containet for text Start -->
-          <div class="flex flex-col">
+          <div class="history-right-column">
             <!-- Title for Seat Start -->
-            <p class="custom-text-xs text-gray font-bold">
+            <p class="history-right-title">
               {{ $t("Account.History.seat") }}
             </p>
             <!-- Title for Seat End -->
 
             <!-- Text for Seat Start -->
-            <p class="custom-text-base font-bold">125</p>
+            <p class="history-right-text">125</p>
             <!-- Text for Seat End -->
           </div>
           <!-- Containet for text End -->
@@ -150,20 +146,20 @@
     <!-- Container for all Column End -->
 
     <!-- Containers for placing buttons Start -->
-    <div class="flex gap-[5px]">
+    <div class="history-buttons-wrapper">
       <!-- Cover download button Start -->
-      <CustomButton class="custom-text-base buttons bg-buttonGreen font-bold">
-        {{ $t("Account.upload") }}
+      <CustomButton class="history-button bg-custom-lightgreen">
+        <p class="history-button-text">{{ $t("Account.upload") }}</p>
       </CustomButton>
       <!-- Cover download End -->
 
       <!-- Button 'Go to' Start -->
-      <CustomButton class="buttons border-buttonGreen border-[2px]">
+      <CustomButton class="history-button border-custom-lightgreen border-2">
         <!-- Button Image -->
         <img
-          src="@/assets/images/svg/UI/chevron-down.svg"
-          alt="chevron-down"
-          class="-rotate-90 w-[16px]"
+          src="@/assets/images/svg/UI/chevron-forward.svg"
+          alt="chevron-forward"
+          class=" w-[16px]"
         />
       </CustomButton>
       <!-- Button 'Go to' End -->
@@ -175,22 +171,4 @@
 
 <script setup lang="ts"></script>
 
-<style scoped>
-.wrapper {
-  @apply w-full h-[144px] 
-	flex justify-between items-center 
-	px-[24px] rounded-[16px] 
-	shadow-xl;
-}
-
-.container__from-to {
-  @apply max-w-[140px] w-full 
-	flex flex-col justify-between gap-[8px];
-}
-
-.buttons {
-  @apply h-[50px] 
-	rounded-[4px]
-	px-[16px];
-}
-</style>
+<style lang="scss" scoped></style>

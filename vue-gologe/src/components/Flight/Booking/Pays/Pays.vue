@@ -1,23 +1,21 @@
 <template>
   <!-- Pays wrapper Start -->
-  <div
-    class="max-w-[790px] w-full min-h-[240px] shadow-xl rounded-[12px] p-[16px] flex flex-col justify-between gap-[16px]"
-  >
+  <section class="booking-section-wrapper min-h-[240px]">
     <!-- Pay in Full wrapper Start -->
     <div
-      class="h-[80px] rounded-[12px] p-[16px] flex justify-between"
-      :class="{ 'bg-mintGreen': activeValue }"
+      class="content-wrapper h-20"
+      :class="{ 'bg-custom-green': activeValue }"
       @click="selectBar(true)"
     >
       <!-- Text wrapper Start -->
-      <div class="fle flex-col flex-grow justify-between">
+      <div class="content-text-wrapper">
         <!-- Title Start -->
-        <p class="custom-text-base text-green font-semibold">
+        <p class="content-title">
           {{ $t("FlightBooking.Pays.fullTitle") }}
         </p>
         <!-- Title End -->
         <!-- Text Start -->
-        <p class="custom-text-sm text-green font-medium">
+        <p class="content-text">
           {{ $t("FlightBooking.Pays.fullText") }}
         </p>
         <!-- Text End -->
@@ -25,7 +23,7 @@
       <!-- Text wrapper End -->
 
       <!-- Image wrapper Start -->
-      <div class="w-[48px] h-[48px] flex justify-center items-center">
+      <div class="image-wrapper">
         <img
           src="@/assets/images/svg/UI/iconActive.svg"
           alt="iconActive"
@@ -43,31 +41,33 @@
 
     <!-- Pay part wrapper Start -->
     <div
-      class=" rounded-[12px] p-[16px] flex justify-between items-center"
-      :class="{ 'bg-mintGreen': !activeValue }"
+      class="content-wrapper"
+      :class="{ 'bg-custom-green': !activeValue }"
       @click="selectBar(false)"
     >
       <!-- Text wrapper Start -->
-      <div class="flex flex-col flex-grow gap-[12px]">
+      <div class="content-text-wrapper max-w-[630px]">
         <!-- Title Start -->
-        <p class="custom-text-base text-green font-semibold">
+        <p class="content-title">
           {{ $t("FlightBooking.Pays.partTitle") }}
         </p>
         <!-- Title End -->
         <!-- Text Start -->
-        <p class="custom-text-sm text-green font-medium">
+        <p class="content-text">
           {{ $t("FlightBooking.Pays.partText") }}
         </p>
         <!-- Text End -->
         <!-- Button Start -->
         <CustomButton>
-          <p class="custom-text-xs text-green font-medium underline">{{ $t("FlightBooking.Pays.button") }}</p>
+          <p class="custom-text-xs text-custom-darkgreen font-medium underline">
+            {{ $t("FlightBooking.Pays.button") }}
+          </p>
         </CustomButton>
         <!-- Button End -->
       </div>
       <!-- Text wrapper End -->
       <!-- Image wrapper Start -->
-      <div class="w-[48px] h-[48px] flex justify-center items-center">
+      <div class="image-wrapper">
         <img
           src="@/assets/images/svg/UI/iconActive.svg"
           alt="iconActive"
@@ -82,7 +82,7 @@
       <!-- Image wrapper End -->
     </div>
     <!-- Pay part wrapper End -->
-  </div>
+  </section>
   <!-- Pays wrapper End -->
 </template>
 
@@ -96,4 +96,23 @@ const selectBar = (value: boolean) => {
 };
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.content-wrapper {
+  @apply rounded-xl p-4 flex justify-between hover:cursor-pointer;
+
+  .content-text-wrapper {
+    @apply flex flex-col flex-grow justify-between;
+
+    .content-title {
+      @apply font-serrat text-base text-custom-darkgreen font-semibold;
+    }
+    .content-text {
+      @apply font-serrat text-sm text-custom-darkgreen font-medium;
+    }
+  }
+
+  .image-wrapper {
+    @apply w-12  flex justify-center items-center;
+  }
+}
+</style>

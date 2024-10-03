@@ -12,8 +12,8 @@
         />
       </div>
       <div class="flex justify-between">
-        <div class="custom-text-xs font-bold text-green">${{ value[0] }}</div>
-        <div class="custom-text-xs font-bold text-green">${{ value[1] }}</div>
+        <div class="custom-text-xs font-semibold text-custom-darkgreen">${{ value[0] }}</div>
+        <div class="custom-text-xs font-semibold text-custom-darkgreen">${{ value[1] }}</div>
       </div>
     </div>
   </TransitionGroup>

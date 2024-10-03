@@ -7,15 +7,13 @@
       v-if="props.dialogVisible"
       v-click-away="onClickAway"
     >
-      <div
-        class="w-full flex flex-col gap-[5px] hover:cursor-pointer text-gray"
-      >
+      <div class="list">
         <div
-          class="w-full h-[60px] flex items-center px-[15px] border-b-gray border-b-[2px] hover:text-buttonGreen"
+          class="list-element"
           v-for="(element, index) in props.list"
           :class="{ 'border-none': index === props.list.length - 1 }"
         >
-          <p class="font-serrat font-bold text-sm md:text-sm sm:text-xs">
+          <p class="element-text">
             {{ element }}
           </p>
         </div>
@@ -37,19 +35,40 @@ const props = withDefaults(
 );
 
 // Emit for close
-const emit = defineEmits(["closeWindow"]);
+const emit = defineEmits(["closeWindow", "selectValue"]);
 const onClickAway = () => {
   emit("closeWindow");
 };
 
-const style = "border-none";
+const selectValue = (value: string) => {
+  emit("selectValue", value);
+};
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .wrapper_list {
-  @apply absolute 
-	mt-[10px] bg-white w-full
-	border-2 border-gray border-solid
-	rounded-[4px] opacity-100 z-[99];
+  @apply absolute w-full mt-3 bg-default
+	border-2 border-custom-darkgray border-solid
+	rounded opacity-100 z-50;
+
+  .list {
+    @apply w-full flex flex-col gap-1  text-custom-darkgray;
+
+    &:hover {
+      @apply cursor-pointer;
+    }
+
+    .list-element {
+      @apply w-full h-14 flex items-center px-4
+        border-b-2 border-b-custom-darkgray;
+
+      &:hover {
+        @apply text-custom-darkgreen;
+      }
+      .element-text {
+        @apply font-serrat font-semibold text-sm sm:text-xs;
+      }
+    }
+  }
 }
 </style>

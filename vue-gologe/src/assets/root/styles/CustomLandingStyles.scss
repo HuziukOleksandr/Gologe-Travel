@@ -1,0 +1,42 @@
+//  Landing Styles
+
+
+.landing-component-wrapper {
+  @apply w-full flex justify-center px-7 ph:px-5;
+
+  .landing-component-button {
+    @apply h-10 px-4 border-2 border-custom-lightgreen;
+  
+    .landing-component-button-text {
+      @apply font-serrat text-sm font-medium text-custom-darkgreen;
+    }
+  }
+}
+
+// Landind Trips Component Style
+
+.landing-trips-wrapper {
+  @apply max-w-[605px] w-full h-[560px] 
+	flex flex-col items-center justify-end gap-3 
+	px-[100px] py-6 rounded-3xl
+  md:w-[500px] md:h-[460px] md:px-12 md:py-5 md:flex-grow
+  sm:px-5 sm:max-w-[800px];
+
+  .landing-trips-title {
+    @apply font-serrat text-4xl font-semibold text-default;
+  }
+
+  .landing-trips-text {
+    @apply font-serrat text-base font-medium text-center text-default
+  }
+
+  .landing-trips-button {
+    @apply h-12 p-4 bg-custom-lightgreen;
+
+    .landing-trips-button-text {
+      @apply font-serrat text-sm font-medium text-custom-darkgreen
+    }
+  }
+}
+
+

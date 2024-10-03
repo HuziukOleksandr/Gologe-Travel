@@ -2,7 +2,7 @@
   <TransitionGroup>
     <div class="w-full" v-if="props.dialogVisible">
       <el-checkbox-group
-        class="flex flex-col gap-[8px]"
+        class="flex flex-col gap-2"
         @change="addAirlines"
         v-model="checkList"
       >
@@ -33,11 +33,10 @@ const props = withDefaults(
 </script>
 
 <style scoped>
-
 :deep(.el-checkbox__inner) {
   width: 18px;
   height: 18px;
-  border-color: #79747E;
+  border-color: #79747e;
   border-width: 2px;
 }
 
@@ -51,7 +50,7 @@ const props = withDefaults(
   height: 9px;
 }
 
-:deep(.el-checkbox__input.is-checked+.el-checkbox__label) {
+:deep(.el-checkbox__input.is-checked + .el-checkbox__label) {
   color: #112211;
 }
 
@@ -59,7 +58,7 @@ const props = withDefaults(
   font-family: "Montserrat";
   font-size: 14px;
   font-weight: 500;
-  color: #79747E;
+  color: #79747e;
 }
 
 .v-enter-active,
@@ -75,6 +74,6 @@ const props = withDefaults(
 
 <style>
 :root {
-  --el-color-primary: #112211
+  --el-color-primary: #112211;
 }
 </style>

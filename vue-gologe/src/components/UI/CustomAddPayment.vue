@@ -1,6 +1,6 @@
 <template>
   <div
-      class="w-[640px] h-[740px] bg-white rounded-xl p-16 flex flex-col justify-between"
+      class="w-[640px] h-[740px] bg-default rounded-xl p-16 flex flex-col justify-between"
     >
       <!-- Button wrapper Start -->
       <div class="w-full flex justify-end">
@@ -20,7 +20,7 @@
       <div class="w-full flex flex-col gap-6">
         <!-- Use Custom Input "Card Numder" Start -->
         <CustomInput
-          class="font-serrat font-medium text-green"
+          class="font-serrat font-medium text-custom-darkgreen"
           type="text"
           :placeHolder="$t('FlightBooking.Payment.card')"
         >
@@ -33,10 +33,10 @@
         <!-- Use Custom Input "Card Numder" End -->
 
         <!-- Wrapper for Date and CVC inputs Start -->
-        <div class="flex justify-between flex-wrap gap-[20px]">
+        <div class="flex justify-between flex-wrap gap-5">
           <!-- Use Custom Input "Exp. Date" Start -->
           <CustomInput
-            class="font-serrat font-medium text-green flex-grow"
+            class="font-serrat font-medium text-custom-darkgreen flex-grow"
             type="date"
             :placeHolder="$t('FlightBooking.Payment.date')"
           >
@@ -50,7 +50,7 @@
 
           <!-- Use Custom Input "CVC" Start -->
           <CustomInput
-            class="font-serrat font-medium text-green flex-grow"
+            class="font-serrat font-medium text-custom-darkgreen flex-grow"
             type="text"
             :placeHolder="$t('FlightBooking.Payment.CVC')"
           >
@@ -66,7 +66,7 @@
 
         <!-- Use Custom Input "Name of Card" Start -->
         <CustomInput
-          class="font-serrat font-medium text-green flex-grow"
+          class="font-serrat font-medium text-custom-darkgreen flex-grow"
           :placeHolder="$t('FlightBooking.Payment.cardName')"
         >
           <!-- Use Slot for Input Name Start -->
@@ -81,7 +81,7 @@
         <div class="relative w-full" @click="tripVisible = !tripVisible">
           <!-- Use Custom Input "Country or Region" Start -->
           <CustomInput
-            class="font-serrat font-medium text-green"
+            class="font-serrat font-medium text-custom-darkgreen"
             :placeHolder="$t('FlightBooking.Payment.from')"
           >
             <!-- Use Slot for Input Name Start -->
@@ -96,7 +96,7 @@
               <img
                 src="@/assets/images/svg/UI/chevron-down.svg"
                 alt="arrowswap"
-                class="h-[24px]"
+                class="h-6"
               />
             </template>
             <!-- Use Slot for Input Image End -->
@@ -124,15 +124,15 @@
       <!-- Use Custom Check Box Component End -->
 
       <!-- Buttom "Add Card" Start -->
-      <CustomButton class="w-full h-12 justify-center bg-buttonGreen mb-4">
-        <p class="custom-text-sm text-green font-semibold">
+      <CustomButton class="w-full h-12 justify-center bg-custom-lightgreen mb-4">
+        <p class="custom-text-sm text-custom-darkgreen font-semibold">
           {{ $t("FlightBooking.Payment.buttonAddCard") }}
         </p>
       </CustomButton>
       <!-- Buttom "Add Card" End -->
 
       <!-- Text Start -->
-      <p class="custom-text-xs text-gray font-semibold text-center">
+      <p class="custom-text-xs text-custom-darkgray font-semibold text-center">
         {{ $t("FlightBooking.Payment.text") }}
       </p>
       <!-- Text End -->

@@ -1,45 +1,49 @@
 <template>
   <!-- Stays Card wrapper Start -->
-  <div class="wrapper" v-for="elem in 10">
+  <div class="history-wrapper" v-for="elem in 10">
     <!-- Container for all Column Start -->
-    <div class="max-w-[800px] w-full flex gap-[32px] items-center">
+    <div class="history-column-wrapper">
       <!-- Card Image -->
-      <img src="@/assets/images/CVK.png" alt="Emirates" />
+      <img src="@/assets/images/png/CVK.png" alt="CVK" />
 
       <!-- Container for In and Out Start -->
-      <div class="h-[52px] flex gap-[24px] items-center">
+      <div class="history-left-side-wrapper">
         <!-- Container for Check-In Start -->
         <div
-          class="max-w-[120px] w-full flex flex-col justify-between gap-[8px]"
+          class="history-left-content"
         >
           <!-- Title Start -->
-          <h1 class="custom-text-base text-gray font-bold truncate ...">
+          <h1 class="history-left-content-title">
             {{ $t("Account.History.check-In") }}
           </h1>
           <!-- Title End -->
 
           <!-- Text Start -->
-          <h2 class="custom-text-xl font-bold truncate ...">Thur, Dec 8</h2>
+          <h2 class="history-left-content-text">
+            Thur, Dec 8
+          </h2>
           <!-- Text End -->
         </div>
         <!-- Container for Check-In End -->
 
         <!-- Dash Symbol Start -->
-        <div class="flex font-bold items-center">&mdash;</div>
+        <div class="history-left-content-line">&mdash;</div>
         <!-- Dash Symbol End -->
 
         <!-- Container for Check-Out Start -->
         <div
-          class="max-w-[120px] w-full flex flex-col justify-between gap-[8px]"
+          class="history-left-content"
         >
           <!-- Title Start -->
-          <h1 class="custom-text-base text-gray font-bold truncate ...">
+          <h1 class="history-left-content-title">
             {{ $t("Account.History.check-Out") }}
           </h1>
           <!-- Title End -->
 
           <!-- Text Start -->
-          <h2 class="custom-text-xl font-bold truncate ...">Fri, Dec 10</h2>
+          <h2 class="history-left-content-text">
+            Fri, Dec 10
+          </h2>
           <!-- Text End -->
         </div>
         <!-- Container for Check-Out End -->
@@ -47,13 +51,13 @@
       <!-- Container for In and Out End -->
 
       <!-- Dividing line Start -->
-      <div class="w-[1px] h-[48px] bg-gray"></div>
+      <div class="history-vertical-line"></div>
       <!-- Dividing line Start -->
 
       <!-- Container for Check-In-Time and Check-Out-Time Time Start -->
-      <div class="max-w-[150px] w-full flex flex-col">
+      <div class="history-right-wrapper">
         <!-- Container for Check-In-Time Start -->
-        <div class="flex gap-[2px]">
+        <div class="history-right-content">
           <!-- Stays Check-In-Time Image -->
           <img
             src="@/assets/images/svg/UI/history-flight.svg"
@@ -61,15 +65,15 @@
           />
 
           <!-- Container for Text Start -->
-          <div class="flex flex-col">
+          <div class="history-right-column">
             <!-- Title Start -->
-            <p class="custom-text-xs text-gray font-bold">
+            <p class="history-right-title">
               {{ $t("Account.History.check-In-Time") }}
             </p>
             <!-- Title End -->
 
             <!-- Text Start -->
-            <p class="custom-text-base font-bold">12:00pm</p>
+            <p class="history-right-text">12:00pm</p>
             <!-- Text Start -->
           </div>
           <!-- Container for Text End -->
@@ -77,22 +81,22 @@
         <!-- Container for Сheck-In-Time End -->
 
         <!-- Container for Сheck-Out-Time Start -->
-        <div class="max-w-[120px] w-full flex gap-[2px]">
+        <div class="history-right-content">
           <!-- Stays Сheck-Out-Time Image -->
           <img
             src="@/assets/images/svg/UI/history-flight.svg"
             alt="history-flight"
           />
           <!-- Container for Text Start -->
-          <div class="flex flex-col">
+          <div class="history-right-column">
             <!-- Title Start -->
-            <p class="custom-text-xs text-gray font-bold whitespace-nowrap ...">
+            <p class="history-right-title">
               {{ $t("Account.History.check-Out-Time") }}
             </p>
             <!-- Title Start -->
 
             <!-- Text Start -->
-            <p class="custom-text-base font-bold">6:00pm</p>
+            <p class="history-right-text">6:00pm</p>
             <!-- Text End -->
           </div>
           <!-- Container for Text End -->
@@ -102,16 +106,16 @@
       <!-- Container for Check-In-Time and Check-Out-Time Time End -->
 
       <!-- Container for Room Time Start -->
-      <div class="max-w-[128px] w-full flex flex-col self-start">
+      <div class="history-right-wrapper">
         <!-- Container for Room Time Start -->
-        <div class="flex gap-[2px]">
+        <div class="history-right-content">
           <!-- Stays Room Image -->
           <img
             src="@/assets/images/svg/UI/history-gate.svg"
             alt="history-gate"
           />
           <!-- Container for Room Start -->
-          <div class="flex flex-col">
+          <div class="history-right-column">
             <!-- Title Start -->
             <p class="custom-text-xs text-gray font-bold">
               {{ $t("Account.History.room") }}
@@ -119,7 +123,7 @@
             <!-- Title End -->
 
             <!-- Text Start -->
-            <p class="custom-text-base font-bold">On arrival</p>
+            <p class="history-right-text">On arrival</p>
             <!-- Text End -->
           </div>
           <!-- Container for Room End -->
@@ -131,20 +135,21 @@
     <!-- Container for all Column End -->
 
     <!-- Containers for placing buttons Start -->
-    <div class="flex gap-[5px]">
+    <div class="history-buttons-wrapper">
       <!-- Cover download button Start -->
-      <CustomButton class="buttons custom-text-base bg-buttonGreen font-bold">
-        {{ $t("Account.upload") }}
+      <CustomButton class="history-button bg-custom-lightgreen">
+        <p class="history-button-text">
+          {{ $t("Account.upload") }}</p>
       </CustomButton>
       <!-- Cover download End -->
 
       <!-- Button 'Go to' Start -->
-      <CustomButton class="buttons border-buttonGreen border-[2px]">
+      <CustomButton class="history-button border-custom-lightgreen border-2">
         <!-- Button Image -->
         <img
-          src="@/assets/images/svg/UI/chevron-down.svg"
-          alt="hotel"
-          class="-rotate-90 w-[16px]"
+          src="@/assets/images/svg/UI/chevron-forward.svg"
+          alt="chevron-forward"
+          class="w-[16px]"
         />
       </CustomButton>
       <!-- Button 'Go to' End -->
@@ -157,16 +162,5 @@
 <script setup lang="ts"></script>
 
 <style scoped>
-.wrapper {
-  @apply w-full h-[144px] 
-	flex justify-between items-center 
-	px-[24px] rounded-[16px] 
-	shadow-xl;
-}
 
-.buttons {
-  @apply h-[50px] 
-	rounded-[4px]
-	px-[16px];
-}
 </style>

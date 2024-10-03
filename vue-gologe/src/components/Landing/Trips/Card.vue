@@ -9,28 +9,26 @@
     />
 
     <!-- Content wrapper Start -->
-    <div class="flex flex-col gap-[5px]">
+    <div class="flex flex-col gap-1">
       <!-- Card Title Start -->
-      <h2 class="custom-text-base font-bold text-gray">
+      <h2 class="custom-text-base font-semibold text-custom-darkgray">
         {{ card?.city }}, {{ card?.country }}
       </h2>
       <!-- Card Title End -->
 
       <!-- Card text Start -->
-      <div
-        class="custom-text-sm font-medium flex items-center gap-[10px] text-green"
-      >
-        {{ $t("Landing.Trips.flights") }}
+      <div class="flex items-center gap-2">
+        <p class="card-text">{{ $t("Landing.Trips.flights") }}</p>
+
+        <!-- Point -->
+        <hr class="w-1 h-1 rounded-full bg-custom-darkgreen" />
+
+        <p class="card-text">{{ $t("Landing.Trips.hotels") }}</p>
 
         <!-- Point -->
         <hr class="w-[4px] h-[4px] rounded-[50%] bg-green" />
 
-        {{ $t("Landing.Trips.hotels") }}
-
-        <!-- Point -->
-        <hr class="w-[4px] h-[4px] rounded-[50%] bg-green" />
-
-        {{ $t("Landing.Trips.resorts") }}
+        <p class="card-text">{{ $t("Landing.Trips.resorts") }}</p>
       </div>
       <!-- Card text End -->
     </div>
@@ -51,12 +49,17 @@ const props = withDefaults(
 );
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .card_wrapper {
-  @apply h-[120px] p-[15px] bg-white
-	flex items-center flex-grow gap-[15px] 
-	shadow-lg rounded-[15px]
-  sm:gap-[5px] sm:h-[90px]
-  hover:cursor-pointer hover:scale-105 hover:duration-300;
+  @apply h-[120px] p-4 bg-default flex items-center flex-grow gap-4 
+  shadow-lg rounded-2xl sm:gap-1 sm:h-[90px];
+
+  &:hover {
+    @apply cursor-pointer scale-105 duration-300;
+  }
+
+  .card-text {
+    @apply font-serrat text-sm font-medium text-custom-darkgreen;
+  }
 }
 </style>

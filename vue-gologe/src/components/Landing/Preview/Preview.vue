@@ -1,17 +1,17 @@
 <template>
   <!-- Preview Start -->
   <div
-    class="w-full flex justify-center px-[30px] md:px-[30px] sm:px-[30px] ph:px-[20px]"
+    class="landing-component-wrapper"
   >
     <!-- Preview wrapper Start -->
     <div
-      class="background max-w-[1380px] w-full min-h-[600px] flex items-center rounded-[16px]"
+      class="background max-w-secondary-width w-full min-h-[600px] flex items-center rounded-2xl"
     >
       <!-- Preview Text wrapper Start -->
-      <div class="w-full flex flex-col items-center gap-[24px]">
+      <div class="w-full flex flex-col items-center gap-6">
         <!-- Preview Sub Title Start -->
         <h2
-          class="custom-text-5xl font-semibold text-white sm:text-3xl ph:text-2xl"
+          class="custom-text-5xl font-semibold text-default sm:text-3xl ph:text-2xl"
         >
           {{ $t("Landing.Preview.headerTop") }}
         </h2>
@@ -19,7 +19,7 @@
 
         <!-- Preview Title Start -->
         <h1
-          class="font-serrat font-semibold text-white uppercase sm:text-4xl ph:text-3xl"
+          class="font-serrat font-semibold text-default uppercase sm:text-4xl ph:text-3xl"
           :class="getTitleStyles(locale)"
         >
           {{ $t("Landing.Preview.header") }}
@@ -27,7 +27,7 @@
         <!-- Preview Title End -->
 
         <!-- Preview Text Start -->
-        <h3 class="custom-text-2xl text-white sm:text-xl ph:text-sm">
+        <h3 class="custom-text-2xl text-default sm:text-xl ph:text-sm">
           {{ $t("Landing.Preview.headerBottom") }}
         </h3>
         <!-- Preview Text End -->
