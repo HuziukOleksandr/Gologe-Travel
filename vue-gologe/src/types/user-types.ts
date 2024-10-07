@@ -1,9 +1,9 @@
 const UserType = {
-  firstName: FirstName,
-  lastName: LastName,
-  email: Email,
-  phone: Phone,
-  password: Password
-}
+  firstName: string,
+  lastName: string,
+  email: string,
+  phone: string,
+  password: string,
+};
 
-export default UserType
+export default UserType;
