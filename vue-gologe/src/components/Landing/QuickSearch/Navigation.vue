@@ -25,7 +25,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-const windowName = ref("flight");
+// const windowName = ref("flight");
 const emit = defineEmits(["changeWindow"]);
 
 const changeName = ( value: string ) => {

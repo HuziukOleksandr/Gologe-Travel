@@ -40,9 +40,9 @@ const onClickAway = () => {
   emit("closeWindow");
 };
 
-const selectValue = (value: string) => {
-  emit("selectValue", value);
-};
+// const selectValue = (value: string) => {
+//   emit("selectValue", value);
+// };
 </script>
 
 <style lang="scss" scoped>

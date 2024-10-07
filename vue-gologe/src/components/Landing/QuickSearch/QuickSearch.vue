@@ -70,10 +70,10 @@
 
 <script setup lang="ts">
 import Navigation from "./Navigation.vue";
-import { useRoute } from "vue-router";
+// import { useRoute } from "vue-router";
 import { ref } from "vue";
 
-const route = useRoute();
+// const route = useRoute();
 const windowName = ref<string>("flight");
 
 const change = (value: string) => {

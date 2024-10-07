@@ -111,7 +111,7 @@
         <!-- Use Custom Input "Name of Card" End -->
 
         <!-- Wrapper Custom Input "Country or Region" Start -->
-        <div class="relative w-full" @click="tripVisible = !tripVisible">
+        <div class="relative w-full" @click="countryVisible = !countryVisible">
           <!-- Use Custom Input "Country or Region" Start -->
           <CustomInput :placeHolder="$t('AddPayment.from')">
             <!-- Use Slot for Input Name Start -->

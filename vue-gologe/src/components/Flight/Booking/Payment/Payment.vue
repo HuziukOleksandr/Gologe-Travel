@@ -5,7 +5,7 @@
     <div
       class="h-20 rounded-xl px-4 flex items-center justify-between hover:cursor-pointer"
       :class="{ 'bg-custom-green': activeValue }"
-      @click="selectBar(true)"
+      @click="selectBar"
     >
       <!-- Aside wrapper Start -->
       <div class="flex gap-8">
@@ -79,7 +79,7 @@ const closeModalWindow = () => {
   openWindow.value = false;
 };
 
-const selectBar = (value: boolean) => {
+const selectBar = () => {
   activeValue.value = !activeValue.value;
 };
 </script>
