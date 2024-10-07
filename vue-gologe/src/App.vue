@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import { RouterView, useRoute } from "vue-router";
-import { onMounted } from "vue";
+import { onMounted,ref } from "vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useAuthStore } from "@/stores/authStore.ts";
 

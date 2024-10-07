@@ -25,7 +25,7 @@
           class="lg:h-14"
           type="email"
           :placeHolder="$t('Login.email')"
-          @inputValue="InputEmail"
+          v-model="Email"
         >
           <!-- Slot for Name Start -->
           <template v-slot:input>
@@ -38,7 +38,7 @@
         <!-- Use Custom Input Password "Password" Start -->
         <CustomInputPassword
           :placeHolder="$t('Login.password')"
-          @inputValue="InputPassword"
+          v-model="Password"
         >
           <!-- Slot for Name -->
           <template v-slot:input>
@@ -131,42 +131,11 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { useRouter } from "vue-router";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-// Slides Image Array for carousel
+
 const slides = ref(["login-one", "login-two", "login-three"]);
 
 const router = useRouter();
 const errorMsg = ref();
 const Email = ref<string>();
 const Password = ref<string>();
-
-// Method Login Form
-const InputEmail = (value: string) => {
-  Email.value = value;
-};
-
-const InputPassword = (value: string) => {
-  Password.value = value;
-};
-
-const Login = () => {
-  const auth = getAuth();
-  signInWithEmailAndPassword(auth, Email.value, Password.value)
-    .then((data) => {
-      router.push("/account");
-    })
-    .catch((error) => {
-      switch (error.code) {
-        case "auth/invalid-email":
-          break;
-        case "auth/user-not-found":
-          break;
-        case "auth/wrong-password":
-          break;
-        default:
-          break;
-      }
-    });
-};
 </script>

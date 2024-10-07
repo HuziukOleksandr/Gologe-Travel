@@ -1,6 +1,6 @@
 <template>
   <!-- Flight Card wrapper Start -->
-  <div class="history-wrapper" v-for="elem in 10">
+  <div class="history-wrapper">
     <!-- Container for all Column Start -->
     <div class="history-column-wrapper">
       <!-- Card Image -->
