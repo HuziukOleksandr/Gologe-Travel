@@ -25,7 +25,7 @@
           class="lg:h-14"
           type="email"
           :placeHolder="$t('Login.email')"
-          @inputValue="loginForm"
+          @inputValue="InputEmail"
         >
           <!-- Slot for Name Start -->
           <template v-slot:input>
@@ -36,7 +36,10 @@
         <!-- Use Custom Input "Email" End -->
 
         <!-- Use Custom Input Password "Password" Start -->
-        <CustomInputPassword :placeHolder="$t('Login.password')">
+        <CustomInputPassword
+          :placeHolder="$t('Login.password')"
+          @inputValue="InputPassword"
+        >
           <!-- Slot for Name -->
           <template v-slot:input>
             <p class="auth-input-text">{{ $t("Login.password") }}</p>
@@ -65,11 +68,12 @@
       </div>
       <!-- Wrapper for Inputs End -->
 
+      <!-- Error mesage Start -->
+      <div v-if="errorMsg">{{ errorMsg }}</div>
+      <!-- Error mesage Start -->
+
       <!-- Use Custom Button "Login" Start -->
-      <CustomButton
-        class="auth-button"
-        @click="$router.push({ name: 'Account' })"
-      >
+      <CustomButton class="auth-button" @click="Login">
         <p class="auth-button-text">{{ $t("Login.title") }}</p>
       </CustomButton>
       <!-- Use Custom Button "Login" End -->
@@ -83,7 +87,10 @@
         <!-- Text question End -->
 
         <!-- Ise Router Link for Register Start -->
-        <router-link to="/register" class="custom-text-base text-custom-red font-bold">
+        <router-link
+          to="/register"
+          class="custom-text-base text-custom-red font-semibold"
+        >
           {{ $t("Login.signUp") }}
         </router-link>
         <!-- Ise Router Link for Register End -->
@@ -124,14 +131,42 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-
+import { useRouter } from "vue-router";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 // Slides Image Array for carousel
 const slides = ref(["login-one", "login-two", "login-three"]);
 
-let login = ref<string>();
+const router = useRouter();
+const errorMsg = ref();
+const Email = ref<string>();
+const Password = ref<string>();
 
 // Method Login Form
-const loginForm = (value: string) => {
-  login.value = value;
+const InputEmail = (value: string) => {
+  Email.value = value;
+};
+
+const InputPassword = (value: string) => {
+  Password.value = value;
+};
+
+const Login = () => {
+  const auth = getAuth();
+  signInWithEmailAndPassword(auth, Email.value, Password.value)
+    .then((data) => {
+      router.push("/account");
+    })
+    .catch((error) => {
+      switch (error.code) {
+        case "auth/invalid-email":
+          break;
+        case "auth/user-not-found":
+          break;
+        case "auth/wrong-password":
+          break;
+        default:
+          break;
+      }
+    });
 };
 </script>

@@ -9,11 +9,12 @@
     >
       <div class="list">
         <div
-          class="list-element h-16"
+          class="list-element"
           v-for="(element, index) in props.list"
           :class="{ 'border-none': index === props.list.length - 1 }"
+          @click="signOut(element)"
         >
-          <p class="element-text">
+          <p class="element-text" >
             {{ element }}
           </p>
         </div>
@@ -25,6 +26,8 @@
 </template>
 
 <script setup lang="ts">
+import { useAuthStore } from "@/stores/authStore.ts"
+
 // Props expected boolean
 const props = withDefaults(
   defineProps<{
@@ -34,7 +37,6 @@ const props = withDefaults(
   {}
 );
 
-// Emit for close
 const emit = defineEmits(["closeWindow", "selectValue"]);
 const onClickAway = () => {
   emit("closeWindow");
@@ -43,23 +45,31 @@ const onClickAway = () => {
 const selectValue = (value: string) => {
   emit("selectValue", value);
 };
+const authUser = useAuthStore()
+
+async function signOut(value: string) {
+  console.log(authUser.getUser);
+  
+  await authUser.handlerSignOut()
+}
+
 </script>
 
 <style lang="scss" scoped>
 .wrapper_list {
-  @apply absolute w-full mt-3 bg-default
-	border-2 border-custom-darkgray border-solid
+  @apply absolute w-28 mt-3 bg-default
+	border-2 border-custom-darkgreen border-solid
 	rounded opacity-100 z-50;
 
   .list {
-    @apply w-full flex flex-col gap-1  text-custom-darkgray;
+    @apply w-full flex flex-col gap-1  text-custom-darkgreen;
 
     &:hover {
       @apply cursor-pointer;
     }
 
     .list-element {
-      @apply w-full h-14 flex items-center px-4
+      @apply w-full h-10 flex items-center px-4
         border-b-2 border-b-custom-darkgray;
 
       &:hover {

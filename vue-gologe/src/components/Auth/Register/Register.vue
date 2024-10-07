@@ -30,7 +30,11 @@
         <!-- Wrapper for "First Name and Lact Name Start" -->
         <div class="auth-inputs-line-wrapper">
           <!-- Use Custom Input "First Name" Start -->
-          <CustomInput type="text" :placeHolder="$t('Register.first')">
+          <CustomInput
+            type="text"
+            :placeHolder="$t('Register.first')"
+            v-model="user.firstName"
+          >
             <!-- Slot for Name Start -->
             <template v-slot:input>
               <p class="auth-input-text">{{ $t("Register.first") }}</p>
@@ -40,7 +44,11 @@
           <!-- Use Custom Input "First Name" End -->
 
           <!-- Use Custom Input "Last Name" Start -->
-          <CustomInput type="text" :placeHolder="$t('Register.last')">
+          <CustomInput
+            type="text"
+            :placeHolder="$t('Register.last')"
+            v-model="user.lastName"
+          >
             <!-- Slot for Name Start-->
             <template v-slot:input>
               <p class="auth-input-text">{{ $t("Register.last") }}</p>
@@ -54,7 +62,11 @@
         <!-- Wrapper for Email and Phone Number Start -->
         <div class="auth-inputs-line-wrapper">
           <!-- Use Custom Input "Email" Start -->
-          <CustomInput type="text" :placeHolder="$t('Register.email')">
+          <CustomInput
+            type="text"
+            :placeHolder="$t('Register.email')"
+            v-model="user.email"
+          >
             <!-- Slot for Name Start -->
             <template v-slot:input>
               <p class="auth-input-text">{{ $t("Register.email") }}</p>
@@ -64,7 +76,11 @@
           <!-- Use Custom Input "Email" End -->
 
           <!-- Use Custom Input "Phone Number" Start -->
-          <CustomInput type="text" :placeHolder="$t('Register.phone')">
+          <CustomInput
+            type="text"
+            :placeHolder="$t('Register.phone')"
+            v-model="user.phone"
+          >
             <!-- Slot for Name Start -->
             <template v-slot:input>
               <p class="auth-input-text">{{ $t("Register.phone") }}</p>
@@ -76,7 +92,10 @@
         <!-- Wrapper for Email and Phone Number End -->
 
         <!-- Use Custom Input Password "Password" Start -->
-        <CustomInputPassword class="" :placeHolder="$t('Register.password')">
+        <CustomInputPassword
+          :placeHolder="$t('Register.password')"
+          v-model="user.password"
+        >
           <!-- Slot for Name Start -->
           <template v-slot:input>
             <p class="auth-input-text">{{ $t("Register.password") }}</p>
@@ -86,7 +105,10 @@
         <!-- Use Custom Input Password "Password" End -->
 
         <!-- Use Custom Input Password "Confirm Password" Start -->
-        <CustomInputPassword :placeHolder="$t('Register.confirm')">
+        <CustomInputPassword
+          :placeHolder="$t('Register.confirm')"
+          v-model="ConfirmPassword"
+        >
           <!-- Slot for Name Start -->
           <template v-slot:input>
             <p class="auth-input-text">{{ $t("Register.confirm") }}</p>
@@ -120,10 +142,7 @@
       <!-- Wrapper for Inputs End -->
 
       <!-- Use Custom Button "Login" Start -->
-      <CustomButton
-        class="auth-button"
-        @click="$router.push({ name: 'AddPayment' })"
-      >
+      <CustomButton class="auth-button" @click="Register">
         <p class="auth-button-text">{{ $t("Register.title") }}</p>
       </CustomButton>
       <!-- Use Custom Button "Login" End -->
@@ -154,9 +173,7 @@
         <!-- Line End -->
 
         <!-- Text Start -->
-        <p
-          class="custom-text-sm px-3 grow-0 text-custom-darkgray bg-default"
-        >
+        <p class="custom-text-sm px-3 grow-0 text-custom-darkgray bg-default">
           {{ $t("Register.orSignUpWith") }}
         </p>
         <!-- Text End -->
@@ -177,14 +194,22 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { useAuthStore } from "@/stores/authStore.ts";
+import type UserType from "@/types/user-types/ts";
+
+const authStore = useAuthStore();
+const user = ref<UserType>({});
+const ConfirmPassword = ref<string>();
+
+
+async function Register() {
+  authStore.setUser(user);
+  await authStore.register();
+}
 
 const slides = ref([
   "register-slide-one",
   "register-slide-two",
   "register-slide-one",
 ]);
-
-
-
-
 </script>

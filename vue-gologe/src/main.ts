@@ -27,11 +27,12 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
+
 
 const app = createApp(App);
 const pinia = createPinia();
 
+initializeApp(firebaseConfig);
 app.config.globalProperties.$dayjs = dayjs;
 app.use(router);
 app.use(pinia);

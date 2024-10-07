@@ -10,7 +10,7 @@
     <!-- Filters wrapper Start -->
     <div class="filter-wrapper">
       <!-- Price Start -->
-      <div class="flex flex-col gap-[16px]">
+      <div class="filter">
         <!-- Price Header Start -->
         <div class="filter-header" @click="changePriceVisibility()">
           <!-- Price Title Start -->
@@ -38,7 +38,7 @@
       <!-- Line Start -->
 
       <!-- Departure Time Start -->
-      <div class="filte">
+      <div class="filter">
         <!-- Departure Time Header Start -->
         <div class="filter-header" @click="changeTimeVisibility()">
           <!-- Departure Time Title Start -->
@@ -66,9 +66,9 @@
       <!-- Line Start -->
 
       <!-- Rating Start -->
-      <div class="filter-header">
+      <div class="filter">
         <!-- Rating Header Start -->
-        <div class="filter" @click="changeRatingVisibility()">
+        <div class="filter-header" @click="changeRatingVisibility()">
           <!-- Rating Title Start -->
           <h2 class="title">
             {{ $t("ListingFlight.Aside.rating") }}

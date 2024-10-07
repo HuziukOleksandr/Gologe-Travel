@@ -13,8 +13,7 @@
       class="input"
       :type="passwordFieldType"
       :placeholder="props.placeHolder"
-      v-model="inputValue"
-      @change="changeValue(inputValue)"
+      v-model="internalValue"
     />
 
     <!-- Image for close password -->
@@ -39,16 +38,22 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-const props = defineProps<{ placeHolder: string }>();
+import { ref, watch } from "vue";
 
-let inputValue = ref<string>("");
+const props = withDefaults(
+  defineProps<{
+    placeHolder: string;
+    modelValue: string;
+  }>(),
+  {}
+);
 
-const emit = defineEmits(["inputValue"]);
+const emit = defineEmits(["update:modelValue"]);
+const internalValue = ref(props.internalValue);
 
-const changeValue = (value: string) => {
-  emit("inputValue", value);
-};
+watch(internalValue, (newValue) => {
+  emit("update:modelValue", newValue);
+});
 
 let passwordFieldType = ref<string>("password");
 const switchVisibility = () => {
@@ -70,7 +75,7 @@ const switchVisibility = () => {
   }
 
   .imput {
-    @apply w-full h-full flex-grow md:text-sm sm:text-xs ;
+    @apply w-full h-full flex-grow md:text-sm sm:text-xs;
   }
   .image {
     @apply h-6;

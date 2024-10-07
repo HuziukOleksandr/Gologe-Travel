@@ -14,8 +14,7 @@
       class="input"
       :type="props.type"
       :placeholder="props.placeHolder"
-      v-model="inputValue"
-      @input="changeValue(inputValue)"
+      v-model="internalValue"
     />
     <!-- Slot for Image -->
     <slot name="image"></slot>
@@ -24,26 +23,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch } from "vue";
 
 // Props, expected type input and plaseholder
 const props = withDefaults(
   defineProps<{
     type: string;
     placeHolder: string;
+    modelValue: string;
   }>(),
   {}
 );
 
-// Input Value
-let inputValue = ref<string>("");
-
 // Emit passes the entered value
-const emit = defineEmits(["inputValue"]);
+const emit = defineEmits(["update:modelValue"]);
+const internalValue = ref(props.internalValue)
 
-const changeValue = (value: string) => {
-  emit("inputValue", value);
-};
+watch(internalValue, (newValue) => {
+  emit("update:modelValue", newValue)
+})
+
 </script>
 
 <style lang="scss" scoped>

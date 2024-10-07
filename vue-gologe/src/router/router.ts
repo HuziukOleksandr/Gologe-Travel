@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
+import { getAuth } from "firebase/auth";
 import Header from "@/components/Header/Header.vue";
 import Landing from "@/view/LandingView.vue";
 import Flight from "@/view/FlightViews/FlightView.vue";
 import FlightListing from "@/view/FlightViews/ListingView.vue";
 import FlightDetails from "@/view/FlightViews/FlightDetailsView.vue";
-import BookingDetails from "@/view/FlightViews/BookingDetailsView.vue"
+import BookingDetails from "@/view/FlightViews/BookingDetailsView.vue";
 import Hotel from "@/view/HotelViews/HotelView.vue";
 import Account from "@/view/AccountView.vue";
 import Login from "@/view/AuthViews/LoginView.vue";
@@ -50,7 +51,7 @@ const routes = [
       Header,
       default: FlightDetails,
       Footer,
-    }
+    },
   },
   {
     path: "/flight/listing/details/booking",
@@ -59,7 +60,7 @@ const routes = [
       Header,
       default: BookingDetails,
       Footer,
-    }
+    },
   },
   {
     path: "/hotel",
@@ -77,6 +78,9 @@ const routes = [
       Header,
       default: Account,
       Footer,
+    },
+    meta: {
+      requiresAuth: true,
     },
   },
   {
@@ -139,5 +143,18 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+
+router.beforeEach((to, from, next) => {
+  if(to.matched.some((record) => record.meta.requiresAuth)) {
+    if(getAuth().currentUser) {
+      next();
+    } else {
+      alert("vvvovoovo")
+      next("/register")
+    }
+  } else {
+    next();
+  }
+}) 
 
 export default router;

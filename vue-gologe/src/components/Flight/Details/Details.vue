@@ -1,6 +1,6 @@
 <template>
   <!-- Details wrapper Start -->
-  <div class="max-w-primary-width w-full flex flex-col gap-10 py-3">
+  <div class="max-w-primary-width w-full flex flex-col gap-10 py-3 mb-10">
     <!-- Use Navigation component -->
     <Navigation />
     <!-- Use Header component -->

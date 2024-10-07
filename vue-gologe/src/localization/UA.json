@@ -1,7 +1,10 @@
 {
 	"Header": {
 		"login": "Вхід",
-		"signUp": "Реєстрація"
+		"signUp": "Реєстрація",
+		"favourites": "Улюблені",
+		"setting": "Налаштування",
+		"signOut": "Вийти"
 	},
 	"Navigation": {
 		"flight": "Знайти Рейс",

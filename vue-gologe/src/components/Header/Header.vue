@@ -7,56 +7,113 @@
         route.name !== 'Landing' ? 'text-custom-darkgreen' : 'text-default'
       "
     />
-
     <!-- Use Logo UI Component -->
     <CustomLogo class="sm:hidden" />
 
     <!-- Header-Content wrapper Start -->
     <div class="wrapper_content">
-      <!-- Use UI Button component, Login button Start -->
-      <CustomButton
-        :class="
-          route.name !== 'Landing' ? 'text-custom-darkgreen' : 'text-default'
-        "
-        class="button"
-        @click="$router.push({ name: 'Login' })"
-      >
-        <p class="button-text">{{ $t("Header.login") }}</p>
-      </CustomButton>
-      <!-- Use UI Button component, Login button End -->
+      <!-- Wrapper for Buttons Start -->
+      <div class="flex gap-2" v-if="isLoggedIn == false">
+        <!-- Use UI Button component, Login button Start -->
+        <CustomButton
+          :class="
+            route.name !== 'Landing' ? 'text-custom-darkgreen' : 'text-default'
+          "
+          class="button"
+          @click="$router.push({ name: 'Login' })"
+        >
+          <p class="button-text">{{ $t("Header.login") }}</p>
+        </CustomButton>
+        <!-- Use UI Button component, Login button End -->
 
-      <!-- Use UI Button component, Register button Start -->
-      <CustomButton
-        :class="
-          route.name !== 'Landing'
-            ? 'text-default bg-custom-darkgreen'
-            : 'text-custom-darkgreen bg-default'
-        "
-        class="button"
-        @click="$router.push({ name: 'Register' })"
-      >
-        <p class="button-text">{{ $t("Header.signUp") }}</p>
-      </CustomButton>
-      <!-- Use UI Button component, Register button End -->
+        <!-- Use UI Button component, Register button Start -->
+        <CustomButton
+          :class="
+            route.name !== 'Landing'
+              ? 'text-default bg-custom-darkgreen'
+              : 'text-custom-darkgreen bg-default'
+          "
+          class="button"
+          @click="$router.push({ name: 'Register' })"
+        >
+          <p class="button-text">{{ $t("Header.signUp") }}</p>
+        </CustomButton>
+        <!-- Use UI Button component, Register button End -->
+      </div>
+      <!-- Wrapper for Buttons End -->
+
+      <!-- Header content for User wrapper Start -->
+      <div class="flex gap-2 items-center" v-if="isLoggedIn == true">
+        <!-- Favourites Start -->
+        <CustomButton class="flex gap-1 items-center mr-2">
+          <img
+            src="@/assets/images/svg/UI/favourites-light.svg"
+            alt="favourites"
+            v-if="route.name == 'Landing'"
+          />
+          <img
+            src="@/assets/images/svg/UI/favourites-dark.svg"
+            alt="favourites"
+            v-else
+          />
+          <p
+            class="custom-text-sm text-custom-darkgreen font-semibold"
+            :class="
+              route.name !== 'Landing'
+                ? 'text-custom-darkgreen '
+                : 'text-default'
+            "
+          >
+            {{ $t("Header.favourites") }}
+          </p>
+        </CustomButton>
+        <!-- Favourites End -->
+
+        <!-- Line Start -->
+        <div class="w-0.5 h-4 bg-custom-darkgreen"></div>
+        <!-- Line End -->
+
+        <div class="relative ml-6 hover:cursor-pointer">
+          <!-- User Start -->
+          <div class="flex h-11 gap-1 items-center" @click="openWindow">
+            <!-- Image Start -->
+            <div class="w-11 h-11 rounded-full relative">
+              <img
+                src="@/assets/images/png/Account/avatar.svg"
+                alt="avatar"
+                class="w-11 h-11"
+              />
+              <CustomButton
+                class="w-3 h-3 rounded-full absolute bg-custom-red right-0 top-8 flex justify-center items-center"
+              >
+                <img
+                  src="@/assets/images/svg/UI/chevron-down-user.svg"
+                  alt="chevron-down-user"
+                  class="rotate-180"
+                  :class="{ 'rotate-0': settingsVisible }"
+                />
+              </CustomButton>
+            </div>
+            <!-- Image End -->
+            <!-- User Name Start -->
+            <p class="custom-text-sm text-custom-darkgreen font-semibold">
+              {{ firstName }} {{ lastName }}
+            </p>
+            <!-- User Name End -->
+          </div>
+          <!-- User Name End -->
+          <HeaderList
+            :dialogVisible="settingsVisible"
+            :list="List"
+            @close-window="settingsVisible = !settingsVisible"
+          />
+          <!-- User End -->
+        </div>
+      </div>
+      <!-- Header content for User wrapper End -->
 
       <!-- Use Localization Component -->
       <Localization />
-
-      <!-- Image for sm media -->
-      <img
-        src="@/assets/images/svg/UI/login-white.svg"
-        alt="login-white"
-        class="w-[25px] lg:hidden"
-        :class="route.name !== 'Landing' ? 'hidden' : 'block'"
-      />
-
-      <!-- Dark Image for sm media -->
-      <img
-        src="@/assets/images/svg/UI/login-black.svg"
-        alt="login-black"
-        class="w-[25px] lg:hidden"
-        :class="route.name !== 'Landing' ? 'block' : 'hidden'"
-      />
     </div>
     <!-- Header-Content wrapper End -->
   </div>
@@ -65,9 +122,32 @@
 
 <script setup lang="ts">
 import Localization from "./Localization.vue";
+import HeaderList from "./HeaderList.vue";
 import { useRoute } from "vue-router";
+import { ref, onMounted, computed } from "vue";
+import { useI18n } from "vue-i18n";
+import { useAuthStore } from "@/stores/authStore.ts";
 
+const { t } = useI18n();
 const route = useRoute();
+
+const isLoggedIn = ref<boolean>(computed(() => authStore.getAuthState));
+const settingsVisible = ref<boolean>(false);
+const List = [t("Header.setting"), t("Header.signOut")];
+
+const authStore = useAuthStore();
+
+const firstName = computed(() => authStore.getUserField("firstName"));
+const lastName = computed(
+  () => authStore.getUserField("lastName").charAt(0) + "."
+);
+const authState = computed(() => authStore.getAuthState);
+
+console.log(isLoggedIn.value);
+
+const openWindow = () => {
+  settingsVisible.value = true;
+};
 </script>
 
 <style lang="scss" scoped>
@@ -79,7 +159,7 @@ const route = useRoute();
     @apply flex items-center justify-between gap-2 md:gap-2.5 sm:gap-1;
 
     .button {
-      @apply hidden h-12 px-6 lg:block;
+      @apply h-12 px-6 block;
 
       .button-text {
         @apply font-serrat text-sm font-semibold;

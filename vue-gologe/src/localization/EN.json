@@ -1,7 +1,10 @@
 {
 	"Header": {
 		"login": "Login",
-		"signUp": "Sign Up"
+		"signUp": "Sign Up",
+		"favourites": "Favourites",
+		"setting": "Settings",
+		"signOut": "Sign Out"
 	},
 	"Navigation": {
 		"flight": "Find Flight",
