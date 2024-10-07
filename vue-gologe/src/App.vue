@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import { RouterView, useRoute } from "vue-router";
-import { onMounted,ref } from "vue";
+import { onMounted, ref } from "vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useAuthStore } from "@/stores/authStore.ts";
 
@@ -28,13 +28,13 @@ onMounted(() => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       isLoggedIn.value = true;
+      localStorage.setItem("isLoggedIn", isLoggedIn.value ? "true" : "false");
+      authStore.setAuthState(isLoggedIn.value);
+      authStore.setUserField("firstName", localStorage.getItem("name"));
+      authStore.setUserField("lastName", localStorage.getItem("lastName"));
     } else {
       isLoggedIn.value = false;
     }
-    localStorage.setItem("isLoggedIn", isLoggedIn.value);
-    authStore.setAuthState(isLoggedIn.value);
-    authStore.setUserField("firstName", localStorage.getItem("name"));
-    authStore.setUserField("lastName", localStorage.getItem("lastName"));
   });
 });
 </script>
