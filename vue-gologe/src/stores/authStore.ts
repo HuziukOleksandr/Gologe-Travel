@@ -53,25 +53,15 @@ export const useAuthStore = defineStore("user", {
       }
     },
     async login() {
-
       try {
         const auth = getAuth();
-        return await signInWithEmailAndPassword(auth, this.user.email, this.user.password)
-      } catch((error) => {
-        switch (error.code) {
-          case "auth/invalid-email":
-            errorMsg.value = "Inalid Email";
-            break;
-          case "auth/user-not-found":
-            errorMsg.value = "No account with that Email";
-            break;
-          case "auth/wrong-password":
-            errorMsg.value = "Incorrect passwor";
-            break;
-          default:
-            errorMsg.value = "Email or Passwor was incorrect";
-           
-        }
+        return await signInWithEmailAndPassword(
+          auth,
+          this.user.email,
+          this.user.password
+        );
+      } catch (error) {
+        alert(error);
       }
     },
     async handlerSignOut() {
