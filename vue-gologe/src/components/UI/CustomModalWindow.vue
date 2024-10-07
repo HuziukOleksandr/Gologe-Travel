@@ -2,7 +2,7 @@
   <Teleport to="#modal">
     <Transition>
       <div
-        v-show="isOpen"
+        v-show="props.isOpen"
         class="fixed inset-0 flex items-center justify-center bg-custom-darkgreen bg-opacity-50"
       >
         <div v-click-away="() => emit('closeWindow')">
@@ -14,8 +14,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-
 const props = withDefaults(
   defineProps<{
     isOpen: boolean;

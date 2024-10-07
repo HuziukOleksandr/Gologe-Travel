@@ -14,10 +14,9 @@
 
 <script setup lang="ts">
 import { RouterView, useRoute } from "vue-router";
-import axios from "axios";
-import { onMounted, ref } from "vue";
+import { onMounted } from "vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useAuthStore } from "@/stores/authStore.ts"
+import { useAuthStore } from "@/stores/authStore.ts";
 
 const route = useRoute();
 const isLoggedIn = ref(false);
@@ -34,8 +33,8 @@ onMounted(() => {
     }
     localStorage.setItem("isLoggedIn", isLoggedIn.value);
     authStore.setAuthState(isLoggedIn.value);
-    authStore.setUserField("firstName", localStorage.getItem("name"))
-    authStore.setUserField("lastName", localStorage.getItem("lastName"))
+    authStore.setUserField("firstName", localStorage.getItem("name"));
+    authStore.setUserField("lastName", localStorage.getItem("lastName"));
   });
 });
 </script>

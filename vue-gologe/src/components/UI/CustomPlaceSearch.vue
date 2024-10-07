@@ -159,8 +159,6 @@ const checkInVisible = ref<boolean>(false);
 const checkOutVisible = ref<boolean>(false);
 const roomsGuestsVisible = ref<boolean>(false);
 
-const tripList = ["Return", "Depart"];
-
 // Props, expected type input and plaseholder
 const props = withDefaults(
   defineProps<{
@@ -172,4 +170,3 @@ const props = withDefaults(
   {}
 );
 </script>
-

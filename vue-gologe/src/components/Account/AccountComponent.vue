@@ -129,9 +129,9 @@ const changeTab = (type: string) => {
 };
 
 // Method Close
-const close = () => {
-  isOpen.value = false;
-};
+// const close = () => {
+//   isOpen.value = false;
+// };
 
 // Method Open
 const open = () => {
