@@ -35,10 +35,7 @@ const props = withDefaults(
     dialogVisible: boolean;
     list: string[];
   }>(),
-  {
-    dialogVisible: false,
-    list: ["Setting", "SignOut"],
-  }
+  {}
 );
 
 const emit = defineEmits(["closeWindow", "selectValue"]);
