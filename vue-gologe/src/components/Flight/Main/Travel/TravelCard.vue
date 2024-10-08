@@ -51,7 +51,7 @@
 </template>
 
 <script setup lang="ts">
-import { getTravelCardImagePng } from "@/helpers/helpers.ts";
+import { getTravelCardImagePng } from "@/helpers/Helpers.ts";
 
 interface Card {
   title: string,

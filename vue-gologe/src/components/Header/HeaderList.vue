@@ -47,7 +47,7 @@ const selectValue = (value: string) => {
 };
 const authUser = useAuthStore()
 
-async function signOut(value: string) {
+async function signOut() {
   console.log(authUser.getUser);
   
   await authUser.handlerSignOut()

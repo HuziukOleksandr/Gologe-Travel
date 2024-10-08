@@ -71,7 +71,7 @@ export const useAuthStore = defineStore("user", {
         await signOut(auth);
         //router.push({ name: "Landing" });
       } catch (error) {
-        alert("Error signing out: ", error);
+        alert(error);
       }
     },
   },

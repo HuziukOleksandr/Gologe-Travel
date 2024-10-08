@@ -25,7 +25,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
-import { getImageUrlSvg } from "@/helpers/helpers.ts";
+import { getImageUrlSvg } from "@/helpers/Helpers.ts";
 
 const { locale } = useI18n();
 const toggleVisible = ref<boolean>(false);

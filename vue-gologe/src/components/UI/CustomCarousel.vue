@@ -29,7 +29,7 @@
 <script setup lang="ts">
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Pagination } from "vue3-carousel";
-import { getCarouselImagePng } from "@/helpers/helpers.ts";
+import { getCarouselImagePng } from "@/helpers/Helpers.ts";
 
 // Props, array with name of images
 const props = withDefaults(

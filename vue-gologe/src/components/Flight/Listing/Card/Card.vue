@@ -94,16 +94,28 @@ import Content from "./Content.vue"
 import { ref } from "vue"
 
 interface Flight {
+  id: number;
+  name: string;
+  startTime: string;
+  endTime: string;
+  type: string;
+  flightTime: string;
+  flight: string;
+}
+
+interface Card {
+  name: string;
   image: string;
   rate: number;
   views: number;
-  price: number;
-  flights: Array<{ id: number; name: string }>;
+  price: string;
+  flights: Flight[];
 }
+
 
 const props = withDefaults(
   defineProps<{
-    cards: Flight[];
+    cards: Card[];
   }>(),
   {}
 );

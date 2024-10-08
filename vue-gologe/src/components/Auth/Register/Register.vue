@@ -194,18 +194,21 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { useAuthStore } from "@/stores/authStore.ts";
-import type UserType from "@/types/user-types.ts";
+import { useAuthStore } from "@/stores/authStore";
+import type UserType from "@/types/user-types";
 
 const authStore = useAuthStore();
-const user = ref<UserType>({});
-const ConfirmPassword = ref<string>();
+const user = ref<UserType | null>(null);
+const ConfirmPassword = ref<string>("");
 
 
 async function Register() {
-  authStore.setUser(user);
-  await authStore.register();
-}
+  if (user.value) { 
+    authStore.setUser(user.value);
+    await authStore.register();
+  } else {
+    console.error("User data is missing.");
+  }
 
 const slides = ref([
   "register-slide-one",

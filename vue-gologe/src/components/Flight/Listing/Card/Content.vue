@@ -60,12 +60,20 @@
 </template>
 
 <script setup lang="ts">
-const props = withDefaults(
-  defineProps<{
-    flights: {};
-  }>(),
-  {}
-);
+
+interface Flight {
+  id: number;
+  name: string;
+  startTime: string;
+  endTime: string;
+  type: string;
+  flightTime: string;
+  flight: string;
+}
+
+const props = defineProps<{
+  flights: Flight;
+}>();
 </script>
 
 <style scoped></style>

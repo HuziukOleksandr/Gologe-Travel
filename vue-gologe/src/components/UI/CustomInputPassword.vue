@@ -49,7 +49,7 @@ const props = withDefaults(
 );
 
 const emit = defineEmits(["update:modelValue"]);
-const internalValue = ref(props.internalValue);
+const internalValue = ref(props.modelValue);
 
 watch(internalValue, (newValue) => {
   emit("update:modelValue", newValue);

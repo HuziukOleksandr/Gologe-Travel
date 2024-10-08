@@ -144,12 +144,12 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _from: any, next) => {
   if(to.matched.some((record) => record.meta.requiresAuth)) {
     if(getAuth().currentUser) {
       next();
     } else {
-      alert("vvvovoovo")
+      alert("Need Register")
       next("/register")
     }
   } else {

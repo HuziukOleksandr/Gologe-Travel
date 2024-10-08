@@ -27,8 +27,9 @@ import { ref } from "vue";
 import { getDetailsImagePng } from "@/helpers/Helpers.ts"
 import Filters from "./Filters.vue";
 
-const filters = ref(["Economy", "First Class", "Busines Class"]);
-const images = ref([
+const filters = ref<string[]>(["Economy", "First Class", "Busines Class"]);
+
+const images = ref<string[]>([
   "emirates1",
   "emirates2",
   "emirates3",

@@ -133,7 +133,7 @@ const route = useRoute();
 
 const isLoggedIn = computed(() => authStore.getAuthState);
 const settingsVisible = ref<boolean>(false);
-const List = ref<[string, string]>([t("Header.setting"), t("Header.signOut")]);
+const List = ref<string[]>([t("Header.setting"), t("Header.signOut")]);
 
 const authStore = useAuthStore();
 

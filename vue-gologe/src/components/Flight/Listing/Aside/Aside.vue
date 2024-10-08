@@ -184,8 +184,8 @@ function changeTripsVisibility() {
   return (tripsVisible.value = !tripsVisible.value);
 }
 
-const airlines = ref(["Emirates", "Fly Dubai", "Qatar", "Etihad"]);
-const trips = ref([
+const airlines = ref<string[]>(["Emirates", "Fly Dubai", "Qatar", "Etihad"]);
+const trips = ref<string[]>([
   "Round trip",
   "On Way",
   "Multi-City",
