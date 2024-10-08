@@ -220,6 +220,6 @@ async function Register() {
   } else {
     console.error("User data is missing.");
   }
-
+}
 
 </script>
