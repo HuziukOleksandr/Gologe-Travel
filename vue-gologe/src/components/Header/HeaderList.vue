@@ -35,8 +35,8 @@ const props = withDefaults(
     list: string[];
   }>(),
   {
-    dialogVisible: false;
-    list: [];
+    dialogVisible: false,
+    list: [],
   }
 );
 
