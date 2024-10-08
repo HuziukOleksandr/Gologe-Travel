@@ -36,7 +36,7 @@ const props = withDefaults(
   }>(),
   {
     dialogVisible: false,
-    list: [],
+    list: ["Setting", "SignOut"],
   }
 );
 
