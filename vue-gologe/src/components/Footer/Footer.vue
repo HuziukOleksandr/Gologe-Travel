@@ -12,7 +12,7 @@
       >
         <!-- Use logo Component -->
         <img
-          src="@/assets/images/svg/logo/logo-footer.svg"
+          src="@/assets/images/svg/logo/logo-black.svg"
           alt="logo"
           class="logo"
         />
