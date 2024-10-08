@@ -103,8 +103,8 @@
           </div>
           <!-- User Name End -->
           <HeaderList
-            :dialogVisible="settingsVisible"
-            :list="List"
+            :props.dialogVisible="settingsVisible"
+            :props.list="List"
             @close-window="settingsVisible = !settingsVisible"
           />
           <!-- User End -->
@@ -133,7 +133,7 @@ const route = useRoute();
 
 const isLoggedIn = computed(() => authStore.getAuthState);
 const settingsVisible = ref<boolean>(false);
-const List = ref<string[]>("Setting", "SignOut");
+const List = ref<string[]>(["Setting", "SignOut"]);
 // const List = ref<string[]>([t("Header.setting"), t("Header.signOut")]);
 
 const authStore = useAuthStore();
