@@ -53,10 +53,17 @@
 <script setup lang="ts">
 import { getTravelCardImagePng } from "@/helpers/helpers.ts";
 
+interface Card {
+  title: string,
+  subTitle: string,
+  price: string,
+  image: string
+}
+
 // Props, array with card
 const props = withDefaults(
   defineProps<{
-    cards: [];
+    cards: Card[];
   }>(),
   {}
 );

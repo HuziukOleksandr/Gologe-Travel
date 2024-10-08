@@ -38,7 +38,7 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    pages: [];
+    pages: [number, number];
   }>(),
   {}
 );

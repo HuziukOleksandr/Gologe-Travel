@@ -63,7 +63,14 @@ import { ref } from "vue";
 import TravelCard from "./TravelCard.vue";
 import Bottom from "./TravelBottom.vue";
 
-const cards = ref([
+interface Card {
+  title: string,
+  subTitle: string,
+  price: string,
+  image: string
+}
+
+const cards = ref<Card[]>([
   {
     title: "Melbourne",
     subTitle: "An amazing journey",

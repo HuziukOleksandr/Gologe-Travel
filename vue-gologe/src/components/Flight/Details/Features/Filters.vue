@@ -2,7 +2,7 @@
   <div>
     <el-checkbox-group
       class="flex gap-2"
-      @change="addAirlines"
+      @change="addFilters"
       v-model="checkList"
     >
       <el-checkbox
@@ -33,13 +33,13 @@ const props = withDefaults(
 :deep(.el-checkbox__inner) {
   width: 18px;
   height: 18px;
-  border-color: #79747E;
+  border-color: #79747e;
   border-width: 2px;
 }
 
 :deep(.el-checkbox__input.is-checked .el-checkbox__inner) {
-  background-color: #8DD3BB;
-  border-color: #8DD3BB
+  background-color: #8dd3bb;
+  border-color: #8dd3bb;
 }
 
 :deep(.el-checkbox__inner:after) {
@@ -47,7 +47,7 @@ const props = withDefaults(
   height: 9px;
 }
 
-:deep(.el-checkbox__input.is-checked+.el-checkbox__label) {
+:deep(.el-checkbox__input.is-checked + .el-checkbox__label) {
   color: #112211;
 }
 

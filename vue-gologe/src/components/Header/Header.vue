@@ -131,9 +131,9 @@ import { useAuthStore } from "@/stores/authStore.ts";
 const { t } = useI18n();
 const route = useRoute();
 
-const isLoggedIn = ref<boolean>(computed(() => authStore.getAuthState));
+const isLoggedIn = computed(() => authStore.getAuthState);
 const settingsVisible = ref<boolean>(false);
-const List = [t("Header.setting"), t("Header.signOut")];
+const List = ref<[string, string]>([t("Header.setting"), t("Header.signOut")]);
 
 const authStore = useAuthStore();
 

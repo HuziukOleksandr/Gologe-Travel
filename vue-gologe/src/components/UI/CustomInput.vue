@@ -37,12 +37,11 @@ const props = withDefaults(
 
 // Emit passes the entered value
 const emit = defineEmits(["update:modelValue"]);
-const internalValue = ref(props.internalValue)
+const internalValue = ref(props.modelValue);
 
 watch(internalValue, (newValue) => {
-  emit("update:modelValue", newValue)
-})
-
+  emit("update:modelValue", newValue);
+});
 </script>
 
 <style lang="scss" scoped>

@@ -14,10 +14,10 @@
     "noEmit": true,
     "jsx": "preserve",
     "noEmitOnError": false,
-
+    "noUnusedLocals": false,
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
+    
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 

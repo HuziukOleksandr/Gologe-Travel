@@ -93,9 +93,17 @@ import { getFlightsImagePng } from "@/helpers/Helpers.ts";
 import Content from "./Content.vue"
 import { ref } from "vue"
 
+interface Flight {
+  image: string;
+  rate: number;
+  views: number;
+  price: number;
+  flights: Array<{ id: number; name: string }>;
+}
+
 const props = withDefaults(
   defineProps<{
-    cards: [];
+    cards: Flight[];
   }>(),
   {}
 );

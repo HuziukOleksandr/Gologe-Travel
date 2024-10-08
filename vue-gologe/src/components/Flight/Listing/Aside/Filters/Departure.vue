@@ -44,9 +44,9 @@ const dateEnd = ref(dayjs.utc("2024-08-25T23:59:59.000Z").format("h:mm A"));
 const dateStartMls = dayjs.utc("2024-08-25T00:01:00.000Z").valueOf();
 const dateEndMls = dayjs.utc("2024-08-25T23:59:59.000Z").valueOf();
 
-const modelValue = ref([dateStartMls, dateEndMls]);
+const modelValue = ref<[number, number]>([dateStartMls, dateEndMls]);
 
-const changeValues = (rangeDate) => {
+const changeValues = (rangeDate: [number, number]) => {
   dateStart.value = dayjs.utc(rangeDate[0]).format("h:mm A");
   dateEnd.value = dayjs.utc(rangeDate[1]).format("h:mm A");
 };

@@ -10,7 +10,7 @@
     <!-- Use Policies component -->
     <Policies />
     <!-- Use Ticket component -->
-    <Ticket v-for="element in 2" />
+    <Ticket />
   </div>
   <!-- Details wrapper End -->
 </template>

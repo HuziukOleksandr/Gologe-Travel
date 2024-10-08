@@ -29,7 +29,7 @@
 
         <!-- Showing info wrapper start -->
         <div class="w-full h-5">
-          <Showing :pages="[4, 265]" />
+          <Showing :pages="page" />
         </div>
         <!-- Showing info wrapper End -->
 
@@ -64,7 +64,29 @@ import Showing from "./Showing/Showing.vue";
 import Card from "./Card/Card.vue";
 import { ref } from "vue";
 
-const cards = ref([
+const page = ref<[number, number]>([4,265])
+
+interface Flight {
+  id: number;
+  name: string;
+  startTime: string;
+  endTime: string;
+  type: string;
+  flightTime: string;
+  flight: string;
+}
+
+interface Card {
+  name: string;
+  image: string;
+  rate: number;
+  views: number;
+  price: string;
+  flights: Flight[];
+}
+
+
+const cards = ref<Card[]>([
   {
     name: "Emirates",
     image: "Emirates",

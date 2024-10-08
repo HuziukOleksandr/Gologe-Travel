@@ -68,10 +68,6 @@
       </div>
       <!-- Wrapper for Inputs End -->
 
-      <!-- Error mesage Start -->
-      <div v-if="errorMsg">{{ errorMsg }}</div>
-      <!-- Error mesage Start -->
-
       <!-- Use Custom Button "Login" Start -->
       <CustomButton class="auth-button" @click="Login">
         <p class="auth-button-text">{{ $t("Login.title") }}</p>
@@ -131,11 +127,15 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-
+import { useRouter } from "vue-router"
 const slides = ref(["login-one", "login-two", "login-three"]);
 
 const router = useRouter();
-const errorMsg = ref();
 const Email = ref<string>();
 const Password = ref<string>();
+
+const Login = () => {
+  console.log("Login");
+  router.push({ name: "Account"})
+}
 </script>

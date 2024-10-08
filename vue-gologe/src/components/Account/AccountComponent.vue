@@ -121,7 +121,7 @@ import Payment from "./Payment/Payment.vue";
 
 const selectedTab = ref<string>("Account");
 
-let isOpen = ref<bolean>();
+let isOpen = ref<boolean>();
 
 // Method Change Tab
 const changeTab = (type: string) => {

@@ -195,7 +195,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useAuthStore } from "@/stores/authStore.ts";
-import type UserType from "@/types/user-types/ts";
+import type UserType from "@/types/user-types.ts";
 
 const authStore = useAuthStore();
 const user = ref<UserType>({});
