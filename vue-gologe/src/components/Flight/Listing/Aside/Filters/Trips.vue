@@ -22,7 +22,7 @@ import { ref } from "vue";
 const props = withDefaults(
   defineProps<{
     dialogVisible: boolean;
-    trips: [];
+    trips: string[];
   }>(),
   {}
 );

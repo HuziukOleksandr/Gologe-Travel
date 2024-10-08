@@ -32,7 +32,7 @@ import { useAuthStore } from "@/stores/authStore.ts"
 const props = withDefaults(
   defineProps<{
     dialogVisible: boolean;
-    list: [];
+    list: string[];
   }>(),
   {}
 );

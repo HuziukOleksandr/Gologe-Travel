@@ -23,7 +23,7 @@ const addFilters = () => {};
 
 const props = withDefaults(
   defineProps<{
-    filters: [];
+    filters: string[];
   }>(),
   {}
 );

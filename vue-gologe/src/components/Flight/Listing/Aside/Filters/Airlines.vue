@@ -26,7 +26,7 @@ const addAirlines = () => {};
 const props = withDefaults(
   defineProps<{
     dialogVisible: boolean;
-    airlines: [];
+    airlines: string[];
   }>(),
   {}
 );
