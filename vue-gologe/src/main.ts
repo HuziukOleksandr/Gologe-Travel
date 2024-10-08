@@ -13,8 +13,8 @@ import ElementPlus from "element-plus";
 import App from "./App.vue";
 
 import "element-plus/dist/index.css";
-import "././assets/root/style.scss";
-import "././assets/root/fonts.scss";
+import "./assets/root/style.scss";
+import "./assets/root/fonts.scss";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -40,9 +40,8 @@ app.use(i18n);
 app.use(VueClickAway);
 app.use(ElementPlus);
 
-for (let index = 0; index < Object.keys(components).length; index++) {
-  const element = Object.keys(components)[index];
-  app.component(element, components[element]);
+for (const [name, component] of Object.entries(components)) {
+  app.component(name, component);
 }
 
 loadStyles().then(() => {

@@ -12,7 +12,7 @@
           class="list-element"
           v-for="(element, index) in props.list"
           :class="{ 'border-none': index === props.list.length - 1 }"
-          @click="signOut(element)"
+          @click="signOut"
         >
           <p class="element-text" >
             {{ element }}
@@ -34,7 +34,10 @@ const props = withDefaults(
     dialogVisible: boolean;
     list: string[];
   }>(),
-  {}
+  {
+    dialogVisible: false;
+    list: [];
+  }
 );
 
 const emit = defineEmits(["closeWindow", "selectValue"]);
@@ -49,7 +52,6 @@ const authUser = useAuthStore()
 
 async function signOut() {
   console.log(authUser.getUser);
-  
   await authUser.handlerSignOut()
 }
 
