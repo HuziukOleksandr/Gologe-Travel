@@ -103,8 +103,8 @@
           </div>
           <!-- User Name End -->
           <HeaderList
-            :props.dialogVisible="settingsVisible"
-            :props.list="List"
+            :dialogVisible="settingsVisible"
+            :list="List"
             @close-window="settingsVisible = !settingsVisible"
           />
           <!-- User End -->
