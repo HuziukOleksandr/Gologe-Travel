@@ -34,7 +34,7 @@ import { getCarouselImagePng } from "@/helpers/Helpers.ts";
 // Props, array with name of images
 const props = withDefaults(
   defineProps<{
-    slides: [];
+    slides: string[];
   }>(),
   {}
 );

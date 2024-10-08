@@ -198,9 +198,20 @@ import { useAuthStore } from "@/stores/authStore";
 import type UserType from "@/types/user-types";
 
 const authStore = useAuthStore();
-const user = ref<UserType | null>(null);
+const user = ref<UserType>({
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  password: "",
+});
 const ConfirmPassword = ref<string>("");
 
+const slides = ref<string[]>([
+  "register-slide-one",
+  "register-slide-two",
+  "register-slide-one",
+]);
 
 async function Register() {
   if (user.value) { 
@@ -210,9 +221,5 @@ async function Register() {
     console.error("User data is missing.");
   }
 
-const slides = ref([
-  "register-slide-one",
-  "register-slide-two",
-  "register-slide-one",
-]);
+
 </script>
