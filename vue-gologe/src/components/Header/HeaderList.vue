@@ -11,10 +11,11 @@
         <div
           class="list-element"
           v-for="(element, index) in props.list"
+          :key="index"
           :class="{ 'border-none': index === props.list.length - 1 }"
-          @click="signOut"
+          @click="element === 'SignOut' ? signOut() : selectValue(element)"
         >
-          <p class="element-text" >
+          <p class="element-text">
             {{ element }}
           </p>
         </div>
@@ -26,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { useAuthStore } from "@/stores/authStore.ts"
+import { useAuthStore } from "@/stores/authStore.ts";
 
 // Props expected boolean
 const props = withDefaults(
@@ -48,13 +49,12 @@ const onClickAway = () => {
 const selectValue = (value: string) => {
   emit("selectValue", value);
 };
-const authUser = useAuthStore()
+const authUser = useAuthStore();
 
 async function signOut() {
   console.log(authUser.getUser);
-  await authUser.handlerSignOut()
+  await authUser.handlerSignOut();
 }
-
 </script>
 
 <style lang="scss" scoped>
