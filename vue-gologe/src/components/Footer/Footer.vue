@@ -15,7 +15,6 @@
           src="@/assets/images/svg/logo/logo-footer.svg"
           alt="logo"
           class="logo"
-          @click="$router.push({ name: 'Landing' })"
         />
 
         <!-- Images wrapper Start -->
