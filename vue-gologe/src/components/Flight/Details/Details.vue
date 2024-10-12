@@ -16,12 +16,11 @@
 </template>
 
 <script setup lang="ts">
-import Navigation from "@/components/Flight/UI/Navigation/Navigation.vue"
-import Header from "@/components/Flight/Details/Header/Header.vue"
-import Features from "@/components/Flight/Details/Features/Features.vue"
-import Policies from "@/components/Flight/Details/Policies/Policies.vue"
-import Ticket from "@/components/Flight/UI/Ticket.vue"
-
+import Navigation from "@/components/Flight/UI/Navigation.vue";
+import Header from "@/components/Flight/Details/Header.vue";
+import Features from "@/components/Flight/Details/Features.vue";
+import Policies from "@/components/Flight/Details/Policies.vue";
+import Ticket from "@/components/Flight/UI/Ticket.vue";
 </script>
 
 <style scoped></style>

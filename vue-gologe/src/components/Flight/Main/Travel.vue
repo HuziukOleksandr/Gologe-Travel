@@ -60,8 +60,8 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import TravelCard from "./TravelCard.vue";
-import Bottom from "./TravelBottom.vue";
+import TravelCard from "./Cards/TravelCard.vue";
+import Bottom from "./Travel/TravelBottom.vue";
 
 interface Card {
   title: string,

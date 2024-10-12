@@ -69,7 +69,7 @@
 </template>
 
 <script setup lang="ts">
-import Navigation from "./Navigation.vue";
+import Navigation from "./UI/Navigation.vue";
 // import { useRoute } from "vue-router";
 import { ref } from "vue";
 

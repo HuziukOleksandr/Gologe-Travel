@@ -68,9 +68,9 @@
 </template>
 
 <script setup lang="ts">
-import Card from "./Card.vue";
-import Hotel from "./Hotel.vue";
-import Flight from "./Flight.vue";
+import Card from "./Cards/TripCard.vue";
+import Hotel from "./Cards/TripHotelCard.vue";
+import Flight from "./Cards/TripFlightCard.vue";
 import { ref } from "vue";
 
 // Array of card

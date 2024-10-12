@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import Login from "@/components/Auth/Login/Login.vue";
+import Login from "@/components/Auth/Login.vue";
 import { scrollTop } from "@/helpers/ScrollHelper.ts"
 
 scrollTop()

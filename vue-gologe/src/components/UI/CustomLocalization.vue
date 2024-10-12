@@ -46,7 +46,7 @@ let language = ref("EN");
 const { locale } = useI18n();
 
 // Set language value in storage
-localStorage.setItem("language", language.value);
+// localStorage.setItem("language", language.value);
 
 const emit = defineEmits(["closeWindow"]);
 

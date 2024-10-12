@@ -57,11 +57,11 @@
 </template>
 
 <script setup lang="ts">
-import Search from "./Search/Search.vue";
-import Aside from "./Aside/Aside.vue";
-import Sort from "./Sort/Sort.vue";
-import Showing from "./Showing/Showing.vue";
-import Card from "./Card/Card.vue";
+import Search from "./Search.vue";
+import Aside from "./Aside.vue";
+import Sort from "./Sort.vue";
+import Showing from "./Showing.vue";
+import Card from "./Ticket.vue";
 import { ref } from "vue";
 
 const page = ref<[number, number]>([4,265])

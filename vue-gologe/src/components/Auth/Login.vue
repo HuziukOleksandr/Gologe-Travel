@@ -127,15 +127,23 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { useRouter } from "vue-router"
+import { useRouter } from "vue-router";
+import { useAuthStore } from "@/stores/authStore";
 const slides = ref(["login-one", "login-two", "login-three"]);
 
 const router = useRouter();
-const Email = ref<string>();
-const Password = ref<string>();
+const authStore = useAuthStore();
+const Email = ref<any>();
+const Password = ref<any>();
 
-const Login = () => {
-  console.log("Login");
-  router.push({ name: "Account"})
+async function Login() {
+  try {
+    authStore.setUserField("email", Email.value);
+    authStore.setUserField("password", Password.value);
+    console.log(authStore.getUserField("email"));
+    await authStore.login();
+  } catch (error) {
+    alert(error);
+  }
 }
 </script>

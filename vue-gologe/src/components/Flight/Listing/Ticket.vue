@@ -90,8 +90,7 @@
 
 <script setup lang="ts">
 import { getFlightsImagePng } from "@/helpers/Helpers.ts";
-import Content from "./Content.vue"
-import { ref } from "vue"
+import Content from "./Cards/TicketCard.vue"
 
 interface Flight {
   id: number;

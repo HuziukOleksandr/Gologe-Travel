@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import ChangeComponent from "@/components/Auth/ChangePassword/ChangeComponent.vue";
+import ChangeComponent from "@/components/Auth/ChangeComponent.vue";
 import { scrollTop } from "@/helpers/ScrollHelper.ts"
 
 scrollTop()

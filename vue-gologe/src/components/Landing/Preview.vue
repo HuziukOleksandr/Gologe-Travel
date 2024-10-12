@@ -11,7 +11,7 @@
       <div class="w-full flex flex-col items-center gap-6">
         <!-- Preview Sub Title Start -->
         <h2
-          class="custom-text-5xl font-semibold text-default sm:text-3xl ph:text-2xl"
+          class="custom-text-5xl text-default font-semibold sm:text-3xl ph:text-2xl"
         >
           {{ $t("Landing.Preview.headerTop") }}
         </h2>
@@ -19,7 +19,8 @@
 
         <!-- Preview Title Start -->
         <h1
-          class="font-serrat font-semibold text-default uppercase sm:text-4xl ph:text-3xl"
+          class="font-serrat font-semibold text-default uppercase text-center
+          "
           :class="getTitleStyles(locale)"
         >
           {{ $t("Landing.Preview.header") }}
@@ -27,7 +28,7 @@
         <!-- Preview Title End -->
 
         <!-- Preview Text Start -->
-        <h3 class="custom-text-2xl text-default sm:text-xl ph:text-sm">
+        <h3 class="custom-text-2xl text-default sm:text-xl ph:text-sm text-center">
           {{ $t("Landing.Preview.headerBottom") }}
         </h3>
         <!-- Preview Text End -->
@@ -48,8 +49,8 @@ const { locale } = useI18n();
 
 <style scoped>
 .background {
-  background: url("../../../assets/images/png/Landing/background.png") no-repeat;
+  background: url("../../assets/images/png/Landing/background.png");
   background-position: center;
-  background-size: cower;
+  background-size: cover;
 }
 </style>

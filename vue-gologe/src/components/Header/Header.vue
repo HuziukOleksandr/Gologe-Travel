@@ -57,7 +57,7 @@
             v-else
           />
           <p
-            class="custom-text-sm text-custom-darkgreen font-semibold"
+            class="custom-text-sm text-custom-darkgreen font-semibold sm:hidden"
             :class="
               route.name !== 'Landing'
                 ? 'text-custom-darkgreen '
@@ -70,18 +70,30 @@
         <!-- Favourites End -->
 
         <!-- Line Start -->
-        <div class="w-0.5 h-4 bg-custom-darkgreen"></div>
+        <div
+          class="w-0.5 h-4 bg-custom-darkgreen"
+          :class="
+            route.name !== 'Landing' ? 'bg-custom-darkgreen ' : 'bg-default'
+          "
+        ></div>
         <!-- Line End -->
 
-        <div class="relative ml-6 hover:cursor-pointer">
+        <div class="relative hover:cursor-pointer">
           <!-- User Start -->
           <div class="flex h-11 gap-1 items-center" @click="openWindow">
             <!-- Image Start -->
             <div class="w-11 h-11 rounded-full relative">
               <img
+                src="@/assets/images/png/Account/avatar-light.svg"
+                alt="avatar"
+                class="w-11 h-11"
+                v-if="route.name == 'Landing'"
+              />
+              <img
                 src="@/assets/images/png/Account/avatar.svg"
                 alt="avatar"
                 class="w-11 h-11"
+                v-else
               />
               <CustomButton
                 class="w-3 h-3 rounded-full absolute bg-custom-red right-0 top-8 flex justify-center items-center"
@@ -96,7 +108,14 @@
             </div>
             <!-- Image End -->
             <!-- User Name Start -->
-            <p class="custom-text-sm text-custom-darkgreen font-semibold">
+            <p
+              class="custom-text-sm text-custom-darkgreen font-semibold sm:hidden"
+              :class="
+                route.name !== 'Landing'
+                  ? 'text-custom-darkgreen '
+                  : 'text-default'
+              "
+            >
               {{ firstName }} {{ lastName }}
             </p>
             <!-- User Name End -->

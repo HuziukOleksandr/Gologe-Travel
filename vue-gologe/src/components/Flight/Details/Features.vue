@@ -25,7 +25,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { getDetailsImagePng } from "@/helpers/Helpers.ts"
-import Filters from "./Filters.vue";
+import Filters from "./Features/Filters.vue";
 
 const filters = ref<string[]>(["Economy", "First Class", "Busines Class"]);
 

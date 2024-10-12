@@ -9,7 +9,7 @@ import.meta.glob("../localization/*.json");
 export default createI18n({
     legacy: false,
     globalInjection: true,
-    locale: "EN",
+    locale: localStorage.getItem("language")?.toString(),
     availableLocales: ["EN", "UA"],
     messages: {
         EN,

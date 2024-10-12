@@ -60,7 +60,7 @@
 </template>
 
 <script setup lang="ts">
-import Card from "./Card.vue";
+import Card from "./Cards/ReviewCard.vue";
 import axios from "axios";
 import { ref } from "vue";
 

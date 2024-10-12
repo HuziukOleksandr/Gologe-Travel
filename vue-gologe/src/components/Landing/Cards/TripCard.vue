@@ -26,7 +26,7 @@
         <p class="card-text">{{ $t("Landing.Trips.hotels") }}</p>
 
         <!-- Point -->
-        <hr class="w-[4px] h-[4px] rounded-[50%] bg-green" />
+        <hr class="w-1 h-1 rounded-full bg-custom-darkgreen" />
 
         <p class="card-text">{{ $t("Landing.Trips.resorts") }}</p>
       </div>

@@ -14,23 +14,20 @@
         <Payment />
       </div>
       <!-- Aside wrapper End -->
-      <Card/>
+      <Card />
     </div>
     <!-- Content wrapper End -->
-    
   </div>
   <!-- Booking wrapper End -->
 </template>
 
 <script setup lang="ts">
-import Navigation from "@/components/Flight/UI/Navigation/Navigation.vue"
-import Ticket from "@/components/Flight/UI/Ticket.vue"
-import Card from "@/components/Flight/Booking/Card/Card.vue"
-import Pays from "@/components/Flight/Booking/Pays/Pays.vue"
-import Login from "@/components/Flight/Booking/Login/Login.vue"
-import Payment from "@/components/Flight/Booking/Payment/Payment.vue"
+import Navigation from "@/components/Flight/UI/Navigation.vue";
+import Ticket from "@/components/Flight/UI/Ticket.vue";
+import Card from "@/components/Flight/Booking/Card.vue";
+import Pays from "@/components/Flight/Booking/Pays.vue";
+import Login from "@/components/Flight/Booking/Login.vue";
+import Payment from "@/components/Flight/Booking/Payment.vue";
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
