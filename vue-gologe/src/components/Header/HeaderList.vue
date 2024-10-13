@@ -13,7 +13,7 @@
           v-for="(element, index) in props.list"
           :key="index"
           :class="{ 'border-none': index === props.list.length - 1 }"
-          @click="element === 'SignOut' ? signOut() : selectValue(element)"
+          @click="selectValue(index)"
         >
           <p class="element-text">
             {{ element }}
@@ -28,8 +28,8 @@
 
 <script setup lang="ts">
 import { useAuthStore } from "@/stores/authStore.ts";
+import { useRouter } from "vue-router";
 
-// Props expected boolean
 const props = withDefaults(
   defineProps<{
     dialogVisible: boolean;
@@ -38,25 +38,39 @@ const props = withDefaults(
   {}
 );
 
-const emit = defineEmits(["closeWindow", "selectValue"]);
+const router = useRouter();
+const authUser = useAuthStore();
+const emit = defineEmits(["closeWindow"]);
+
 const onClickAway = () => {
   emit("closeWindow");
 };
 
-const selectValue = (value: string) => {
-  emit("selectValue", value);
+const selectValue = (value: number) => {
+  switch (value) {
+    case 0:
+      router.push({ name: "Account" });
+      break;
+    case 1:
+      signOut();
+      break;
+  }
 };
-const authUser = useAuthStore();
+
 
 async function signOut() {
-  console.log(authUser.getUser);
-  await authUser.handlerSignOut();
+  try {
+    await authUser.handlerSignOut();
+    router.push({ name: "Landing" });
+  } catch (error) {
+    alert(error);
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .wrapper_list {
-  @apply absolute w-28 mt-3 bg-default
+  @apply absolute w-fit mt-3 bg-default
 	border-2 border-custom-darkgreen border-solid
 	rounded opacity-100 z-50;
 

@@ -3,7 +3,7 @@
     <router-view
       name="Header"
       v-if="route.name !== 'Landing'"
-      class="shadow-md"
+      class="shadow-md bg-default sticky top-0 z-[999]"
     />
     <router-view class="flex-grow flex" />
     <router-view name="Footer" />

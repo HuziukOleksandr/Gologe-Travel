@@ -32,7 +32,10 @@ const props = withDefaults(
     placeHolder: string;
     modelValue: string;
   }>(),
-  {}
+  { 
+    type: "text",
+    modelValue: "",
+  }
 );
 
 // Emit passes the entered value

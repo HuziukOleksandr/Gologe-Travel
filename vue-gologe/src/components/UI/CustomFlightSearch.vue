@@ -13,6 +13,7 @@
         class="search-input"
         type="text"
         placeHolder="Lahore - Karachi"
+        v-model="fromValue"
       >
         <!-- Use Stol for Text Start -->
         <template v-slot:input>
@@ -38,6 +39,7 @@
       <!-- Use Custom Input List for input -->
       <CustomInputList
         :dialogVisible="fromVisible"
+        :list="['Lahore - Karachi', 'Lahore - Karachi', 'Lahore - Karachi']"
         @close-window="fromVisible = !fromVisible"
       />
     </div>
@@ -50,7 +52,12 @@
       @click="tripVisible = !tripVisible"
     >
       <!-- Use Custom Input "Trip" Start -->
-      <CustomInput class="search-input" type="text" placeHolder="Return">
+      <CustomInput
+        class="search-input"
+        type="text"
+        placeHolder="Return"
+        v-model="tripValue"
+      >
         <template v-slot:input>
           <p class="search-input-text">{{ $t("Landing.QuickSearch.trip") }}</p>
         </template>
@@ -87,6 +94,7 @@
         class="search-input"
         type="text"
         placeHolder="07 Nov 22 - 13 Nov 22"
+        v-model="departValue"
       >
         <!-- Use Stol for Text Start -->
         <template v-slot:input>
@@ -101,6 +109,7 @@
       <!-- Use Custom Input List for input -->
       <CustomInputList
         :dialogVisible="departVisible"
+        :list="['17 Nov 22 - 23 Nov 22', '24 Nov 22 - 25 Nov 22', '07 Nov 22 - 13 Nov 22']"
         @close-window="departVisible = !departVisible"
       />
     </div>
@@ -117,6 +126,7 @@
         class="search-input"
         type="text"
         placeHolder="1 Passenger, Economy"
+        v-model="classValue"
       >
         <!-- Use Stol for Text Start -->
         <template v-slot:input>
@@ -131,6 +141,7 @@
       <!-- Use Custom Input List for input -->
       <CustomInputList
         :dialogVisible="classVisible"
+        :list="['1 Passenger, Economy', '2 Passenger, Economy', '2 Passenger, 1 Class']"
         @close-window="classVisible = !classVisible"
       />
     </div>
@@ -147,9 +158,15 @@ const tripVisible = ref<boolean>(false);
 const departVisible = ref<boolean>(false);
 const classVisible = ref<boolean>(false);
 
+const fromValue = ref<any>();
+const tripValue = ref<any>();
+const departValue = ref<any>();
+const classValue = ref<any>();
+
+
+
 const tripList = ["Return", "Depart"];
 
-// Props, expected type input and plaseholder
 const props = withDefaults(
   defineProps<{
     fromWidth: string;

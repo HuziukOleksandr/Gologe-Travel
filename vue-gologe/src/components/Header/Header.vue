@@ -116,7 +116,7 @@
                   : 'text-default'
               "
             >
-              {{ firstName }} {{ lastName }}
+              {{ firstName }} {{ isLoggedIn }}
             </p>
             <!-- User Name End -->
           </div>
@@ -143,27 +143,21 @@
 import Localization from "./Localization.vue";
 import HeaderList from "./HeaderList.vue";
 import { useRoute } from "vue-router";
-import { ref, onMounted, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { useAuthStore } from "@/stores/authStore.ts";
+import { storeToRefs } from "pinia";
 
 const { t } = useI18n();
 const route = useRoute();
-
-const isLoggedIn = computed(() => authStore.getAuthState);
-const settingsVisible = ref<boolean>(false);
-const List = ref<string[]>(["Setting", "SignOut"]);
-// const List = ref<string[]>([t("Header.setting"), t("Header.signOut")]);
-
 const authStore = useAuthStore();
+const { isLoggedIn } = storeToRefs(authStore);
+
+// const isLoggedIn = computed(() => authStore.getAuthState);
+const settingsVisible = ref<boolean>(false);
+const List = ref<string[]>([t("Header.setting"), t("Header.signOut")]);
 
 const firstName = computed(() => authStore.getUserField("firstName"));
-const lastName = computed(
-  () => authStore.getUserField("lastName").charAt(0) + "."
-);
-const authState = computed(() => authStore.getAuthState);
-
-console.log(isLoggedIn.value);
 
 const openWindow = () => {
   settingsVisible.value = true;
@@ -173,7 +167,7 @@ const openWindow = () => {
 <style lang="scss" scoped>
 .wrapper_header {
   @apply w-full h-[90px] m-auto flex justify-between items-center
-	lg:px-28 md:px-24 sm:px-10 sm:h-16;
+	lg:px-28 md:px-24 sm:px-10 sm:h-16 ;
 
   .wrapper_content {
     @apply flex items-center justify-between gap-2 md:gap-2.5 sm:gap-1;

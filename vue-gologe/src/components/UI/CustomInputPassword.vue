@@ -45,7 +45,9 @@ const props = withDefaults(
     placeHolder: string;
     modelValue: string;
   }>(),
-  {}
+  {
+    modelValue: "",
+  }
 );
 
 const emit = defineEmits(["update:modelValue"]);
@@ -64,7 +66,7 @@ const switchVisibility = () => {
 
 <style lang="scss" scoped>
 .wrapper_input {
-  @apply relative flex gap-3 items-center justify-between rounded px-4
+  @apply relative flex gap-3 items-center rounded px-4
     border-2 border-custom-darkgray border-solid
     h-14 md:h-12 sm:h-10 flex-grow;
 
@@ -74,8 +76,8 @@ const switchVisibility = () => {
     md:text-sm sm:text-xs sm:top-[-10px];
   }
 
-  .imput {
-    @apply w-full h-full flex-grow md:text-sm sm:text-xs;
+  .input {
+    @apply w-full h-full md:text-sm sm:text-xs;
   }
   .image {
     @apply h-6;

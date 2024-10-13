@@ -29,7 +29,7 @@
 
 <style scoped>
 .background {
-  background-image: url("../../../../assets/images/png/Flight/Flight-search-bg.png");
+  background-image: url("../../../assets/images/png/Flight/Flight-search-bg.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

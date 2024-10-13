@@ -2,10 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 import { getAuth } from "firebase/auth";
 import Header from "@/components/Header/Header.vue";
 import Landing from "@/view/LandingView.vue";
-import Flight from "@/view/FlightViews/FlightView.vue";
-import FlightListing from "@/view/FlightViews/ListingView.vue";
-import FlightDetails from "@/view/FlightViews/FlightDetailsView.vue";
-import BookingDetails from "@/view/FlightViews/BookingDetailsView.vue";
+import FlightView from "@/view/FlightViews/FlightView.vue";
+import ListingView from "@/view/FlightViews/ListingView.vue";
+import DetailsView from "@/view/FlightViews/DetailsView.vue";
+import BookingView from "@/view/FlightViews/BookingView.vue";
 import Hotel from "@/view/HotelViews/HotelView.vue";
 import Account from "@/view/AccountView.vue";
 import Login from "@/view/AuthViews/LoginView.vue";
@@ -31,7 +31,7 @@ const routes = [
     name: "Flight",
     components: {
       Header,
-      default: Flight,
+      default: FlightView,
       Footer,
     },
   },
@@ -40,7 +40,7 @@ const routes = [
     name: "Listing",
     components: {
       Header,
-      default: FlightListing,
+      default: ListingView,
       Footer,
     },
   },
@@ -49,7 +49,7 @@ const routes = [
     name: "FlightDetails",
     components: {
       Header,
-      default: FlightDetails,
+      default: DetailsView,
       Footer,
     },
   },
@@ -58,7 +58,7 @@ const routes = [
     name: "BookingDetails",
     components: {
       Header,
-      default: BookingDetails,
+      default: BookingView,
       Footer,
     },
   },

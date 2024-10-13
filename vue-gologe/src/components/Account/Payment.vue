@@ -22,14 +22,15 @@
 </template>
 
 <script setup lang="ts">
-import Card from "./Card.vue";
-import Add from "./AddCard.vue";
+import Card from "./Cards/Card.vue";
+import Add from "./Cards/AddCard.vue";
 
 import { ref } from "vue";
 
 const emit = defineEmits(["openWindow"]);
 
 const openWindow = ref<boolean>(false);
+
 const openModalWindow = () => {
   openWindow.value = true;
 };
@@ -38,7 +39,6 @@ const closeModalWindow = () => {
   openWindow.value = false;
 };
 
-// Method Open
 const open = () => {
   emit("openWindow");
 };

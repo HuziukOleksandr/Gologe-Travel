@@ -54,7 +54,7 @@
 
 <style scoped>
 .places_background {
-  background-image: url("../../../../assets/images/png/Flight/Flight-Places.png");
+  background-image: url("../../../assets/images/png/Flight/Flight-Places.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -29,9 +29,12 @@
 const props = withDefaults(
   defineProps<{
     dialogVisible: boolean;
-    list: [];
+    list: string[];
   }>(),
-  {}
+  {
+    dialogVisible: false,
+    
+  }
 );
 
 // Emit for close
@@ -47,9 +50,9 @@ const onClickAway = () => {
 
 <style lang="scss" scoped>
 .wrapper_list {
-  @apply absolute w-full mt-3 bg-default
+  @apply absolute w-full mt-2 bg-default
 	border-2 border-custom-darkgray border-solid
-	rounded opacity-100 z-50;
+	rounded opacity-100 z-[990];
 
   .list {
     @apply w-full flex flex-col gap-1  text-custom-darkgray;

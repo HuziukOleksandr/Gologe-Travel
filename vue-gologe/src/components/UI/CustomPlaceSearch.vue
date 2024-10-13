@@ -1,5 +1,4 @@
 <template>
-  <!-- All Inputs for Places Frame -->
   <!-- Inputs wrapper Start -->
   <div class="search-wrapper">
     <!-- Inputs "Enter Destination" wrapper Start -->
@@ -13,6 +12,7 @@
         class="search-input"
         type="text"
         placeHolder="Istanbul, Turkey"
+        v-model="enterValue"
       >
         <!-- Use Stol for Image Start -->
         <template v-slot:previousImage>
@@ -37,6 +37,7 @@
       <!-- Use Custom Input List for input -->
       <CustomInputList
         :dialogVisible="enterVisible"
+        :list="['Istanbul, Turkey','New York, USA','Kyyv, Ukraine','Paris, France']"
         @close-window="enterVisible = !enterVisible"
       />
     </div>
@@ -49,7 +50,12 @@
       @click="checkInVisible = !checkInVisible"
     >
       <!-- Use Custom Input "Check In" Start -->
-      <CustomInput class="search-input" type="text" placeHolder="Fri 12/2">
+      <CustomInput
+        class="search-input"
+        type="text"
+        placeHolder="Fri 12/2"
+        v-model="checkInValue"
+      >
         <template v-slot:input>
           <p class="search-input-text">
             {{ $t("Landing.QuickSearch.checkIn") }}
@@ -71,6 +77,7 @@
       <!-- Use Custom Input List for input -->
       <CustomInputList
         :dialogVisible="checkInVisible"
+        :list="['Fri 12/2',' Sun 12/4','Mon 12/5','Fri 13/5']"
         @close-window="checkInVisible = !checkInVisible"
       />
     </div>
@@ -80,10 +87,15 @@
     <div
       class="search-input-wrapper"
       :class="props.checkOutWidth"
-      @click="checkInVisible = !checkInVisible"
+      @click="checkOutVisible = !checkOutVisible"
     >
       <!-- Use Custom Input "Check Out" Start -->
-      <CustomInput class="search-input" type="text" placeHolder="Sun 12/4">
+      <CustomInput
+        class="search-input"
+        type="text"
+        placeHolder="Sun 12/4"
+        v-model="checkOutValue"
+      >
         <template v-slot:input>
           <p class="search-input-text">
             {{ $t("Landing.QuickSearch.checkOut") }}
@@ -105,6 +117,7 @@
       <!-- Use Custom Input List for input -->
       <CustomInputList
         :dialogVisible="checkOutVisible"
+        :list="['Fri 12/2',' Sun 12/4','Mon 12/5','Fri 13/5']"
         @close-window="checkOutVisible = !checkOutVisible"
       />
     </div>
@@ -114,13 +127,14 @@
     <div
       class="search-input-wrapper"
       :class="props.roomsGuestsWidth"
-      @click="checkInVisible = !checkInVisible"
+      @click="roomsGuestsVisible = !roomsGuestsVisible"
     >
       <!-- Use Custom Input "Rooms & Guests" Start -->
       <CustomInput
         class="search-input"
         type="text"
         placeHolder="1 room, 2 guests"
+        v-model="roomsGuestsValue"
       >
         <template v-slot:input>
           <p class="search-input-text">
@@ -143,6 +157,7 @@
       <!-- Use Custom Input List for input -->
       <CustomInputList
         :dialogVisible="roomsGuestsVisible"
+        :list="['1 Room, 2 Guests','2 Rooms, 4 Guests','1 Room, 1 Guest','4 Rooms, 4 Guests']"
         @close-window="roomsGuestsVisible = !roomsGuestsVisible"
       />
     </div>
@@ -159,6 +174,10 @@ const checkInVisible = ref<boolean>(false);
 const checkOutVisible = ref<boolean>(false);
 const roomsGuestsVisible = ref<boolean>(false);
 
+const enterValue = ref<any>();
+const checkInValue = ref<any>();
+const checkOutValue = ref<any>();
+const roomsGuestsValue = ref<any>();
 // Props, expected type input and plaseholder
 const props = withDefaults(
   defineProps<{

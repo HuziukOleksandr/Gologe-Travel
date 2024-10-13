@@ -47,8 +47,8 @@
 </template>
 
 <script setup lang="ts">
-import Flight from "./FlightCard.vue";
-import Stays from "./StaysCard.vue";
+import Flight from "./Cards/FlightCard.vue";
+import Stays from "./Cards/StaysCard.vue";
 import { ref } from "vue";
 
 const selectedTab = ref<string>("Flight");

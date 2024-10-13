@@ -15,15 +15,11 @@ export const useAuthStore = defineStore("user", {
     };
   },
   getters: {
-    getUser: (state) => {
-      return JSON.stringify(state.user, null, 2);
-    },
-    getUserName: (state) => {
-      return state.user.firstName;
-    },
-    getAuthState: (state) => {
-      return state.isLoggedIn;
-    },
+    getUser: (state) => JSON.stringify(state.user, null, 2),
+    
+    getUserName: (state) => state.user.firstName,
+
+    getAuthState: (state) => state.isLoggedIn,
   },
   actions: {
     setUser(value: User) {
@@ -69,7 +65,6 @@ export const useAuthStore = defineStore("user", {
       try {
         let auth = getAuth();
         await signOut(auth);
-        //router.push({ name: "Landing" });
       } catch (error) {
         alert(error);
       }

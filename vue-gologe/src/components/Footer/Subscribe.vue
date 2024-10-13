@@ -29,6 +29,7 @@
       <div class="flex gap-4 sm:flex-col">
         <!-- Email input  -->
         <input
+          id="subscribe"
           type="email"
           :placeholder="$t('Footer.placeholder')"
           class="custom-text-base input"

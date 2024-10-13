@@ -64,13 +64,13 @@ import Card from "./Cards/ReviewCard.vue";
 import axios from "axios";
 import { ref } from "vue";
 
-const reviews = ref();
+const reviews = ref<any>();
 
 // Get Cards fron json file
 axios
   .get("./Review.json")
   .then(function (response) {
-    reviews.value = response.data.Reviews ?? response.data.Reviews.lice(0, 3);
+    reviews.value = response.data.Reviews ?? response.data.Reviews.slice(0, 3);
   })
   .catch(function (error) {
     console.log(error);

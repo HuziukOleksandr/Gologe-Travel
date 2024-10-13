@@ -52,7 +52,7 @@
       <!-- Wrapper for Logo and Images End -->
 
       <!-- Wrapper for Content Start -->
-      <div class="between w-full flex-wrap gap-5 sm:justify-center sm:hidden;">
+      <div class="between w-full flex-wrap gap-5 sm:hidden">
         <!-- Use Destination Component  -->
         <Destination />
 

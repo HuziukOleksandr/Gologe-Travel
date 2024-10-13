@@ -140,8 +140,9 @@ async function Login() {
   try {
     authStore.setUserField("email", Email.value);
     authStore.setUserField("password", Password.value);
-    console.log(authStore.getUserField("email"));
+    
     await authStore.login();
+    router.push({name: "Account"})
   } catch (error) {
     alert(error);
   }
