@@ -15,9 +15,14 @@ export const useAuthStore = defineStore("user", {
     };
   },
   getters: {
-    getUser: (state) => JSON.stringify(state.user, null, 2),
+    getUserFormated: (state) => JSON.stringify(state.user, null, 2),
+    getUser: (state) => state.user,
     
     getUserName: (state) => state.user.firstName,
+
+    getUserLastName: (state) => state.user.lastName,
+
+    getUserEmail: (state) => state.user.email,
 
     getAuthState: (state) => state.isLoggedIn,
   },
@@ -65,6 +70,7 @@ export const useAuthStore = defineStore("user", {
       try {
         let auth = getAuth();
         await signOut(auth);
+        this.isLoggedIn = false;
       } catch (error) {
         alert(error);
       }

@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import { createPinia } from "pinia";
 import { loadStyles } from "./assets/root/styles/index.ts";
 import { initializeApp } from "firebase/app";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 import router from "./router/router.ts";
 import i18n from "./localization/i18n.ts";
@@ -27,23 +28,36 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-
-
-const app = createApp(App);
-const pinia = createPinia();
-
 initializeApp(firebaseConfig);
-app.config.globalProperties.$dayjs = dayjs;
-app.use(router);
-app.use(pinia);
-app.use(i18n);
-app.use(VueClickAway);
-app.use(ElementPlus);
 
-for (const [name, component] of Object.entries(components)) {
-  app.component(name, component);
-}
+let app: any;
+const pinia = createPinia();
+const auth = getAuth();
 
-loadStyles().then(() => {
-  app.mount("#app");
+onAuthStateChanged(auth, () => {
+  if(!app) {
+    app = createApp(App);
+    app.config.globalProperties.$dayjs = dayjs;
+
+    app.use(router)
+      .use(pinia)
+      .use(i18n)
+      .use(VueClickAway)
+      .use(ElementPlus);
+
+    for (const [name, component] of Object.entries(components)) {
+      app.component(name, component);
+    }
+    
+    loadStyles().then(() => {
+      app.mount("#app");
+    });
+  }
+  
+  
+  
+  
 });
+
+
+

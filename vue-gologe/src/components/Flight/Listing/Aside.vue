@@ -1,6 +1,6 @@
 <template>
   <!-- Aside wrapper Start -->
-  <aside class="flex flex-col gap-8">
+  <div class="w-full h-full flex flex-col gap-8 bg-default p-4 ">
     <!-- Aside Title Start -->
     <p class="custom-text-xl font-semibold text-custom-darkgreen">
       {{ $t("ListingFlight.Aside.title") }}
@@ -55,6 +55,7 @@
           />
         </div>
         <!-- Departure Time Header End -->
+
         <!-- Custom Filter for Departure Time Start -->
         <Departure :dialogVisible="timeVisible" />
         <!-- Custom Filter for Departure Time End -->
@@ -146,7 +147,7 @@
       <!-- Trips End -->
     </div>
     <!-- Filters wrapper  End -->
-  </aside>
+  </div>
   <!-- Aside wrapper End -->
 </template>
 

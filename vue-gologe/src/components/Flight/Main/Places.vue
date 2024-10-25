@@ -23,7 +23,7 @@
 
       <!-- Places Header button Start -->
       <CustomButton
-        class="h-10 border-2 border-custom-lightgreen px-4 lg:hidden justify-center"
+        class="h-10 border-2 border-custom-lightgreen px-4  justify-center hidden lg:flex"
       >
         <p class="custom-text-sm text-custom-darkgreen font-medium">
           {{ $t("FlightSearch.button") }}

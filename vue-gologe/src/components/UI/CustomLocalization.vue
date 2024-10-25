@@ -1,11 +1,12 @@
 <template>
   <!-- Drop-dawn localization Start -->
-  <TransitionGroup>
+  <Transition>
     <!-- Localization wraper Start -->
     <div
       class="w-10 p-2 flex flex-col gap-2.5 rounded absolute"
       v-if="props.dialogVisible"
       v-click-away="onClickAway"
+
     >
       <!-- Image EN flag -->
       <img
@@ -26,7 +27,7 @@
       />
     </div>
     <!-- Localization wraper End -->
-  </TransitionGroup>
+  </Transition>
   <!-- Drop-dawn localization End -->
 </template>
 

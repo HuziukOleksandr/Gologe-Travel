@@ -25,7 +25,7 @@
 
       <!-- Travel Header button Start -->
       <CustomButton
-        class="h-10 border-2 border-custom-lightgreen px-4hidden lg:flex"
+        class="h-10 border-2 border-custom-lightgreen px-4 hidden lg:flex"
       >
         <p class="custom-text-sm text-custom-darkgreen font-medium">
           {{ $t("FlightSearch.button") }}
@@ -36,7 +36,7 @@
     <!-- Travel Header wrapper End -->
 
     <!-- Travel Content wrapper Start -->
-    <div class="w-full flex lg:justify-between flex-wrap justify-around gap-8">
+    <div class="w-full flex lg:justify-between lg:gap-0 flex-wrap justify-around gap-4">
       <!-- Use Travel Card Component -->
       <TravelCard :cards="cards" />
     </div>

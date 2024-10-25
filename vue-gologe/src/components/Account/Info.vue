@@ -6,7 +6,7 @@
   <!-- Info Title Start -->
 
   <!-- Info wrapper Start -->
-  <div class="w-full flex flex-col gap-8 px-6 py-8 rounded-2xl shadow-xl">
+  <div class="w-full flex flex-col gap-8 px-6 py-8 rounded-2xl shadow-xl border-[1px] border-custom-lightgreen">
     <!-- Name wrapper Start -->
     <div class="wrapper">
       <!-- Text wrapper Start -->
@@ -182,7 +182,7 @@
 
 <style lang="scss" scoped>
 .wrapper {
-  @apply w-full min-h-[52px] flex justify-between sm:flex-col gap-2;
+  @apply w-full min-h-[52px] flex justify-between gap-2;
 
   .text-wrapper {
     @apply flex flex-col justify-between;
@@ -192,15 +192,20 @@
     }
 
     .text {
-      @apply font-serrat text-xl font-semibold text-black;
+      @apply font-serrat text-xl font-semibold text-black overflow-hidden text-ellipsis text-nowrap;
+
+      @screen sm {
+        @apply max-w-[200px]
+      }
     }
   }
 
   .change_button {
-    @apply w-fit h-12 flex justify-center self-end gap-1 border-custom-lightgreen border-2 px-8 sm:h-10 sm:px-2;
+    @apply w-fit h-12 flex justify-center self-end gap-1 border-custom-lightgreen border-2 px-8 
+    sm:h-10 sm:px-2 sm:w-10;
 
     .button-text {
-      @apply font-serrat text-sm text-custom-darkgreen font-medium;
+      @apply font-serrat text-sm text-custom-darkgreen font-medium sm:hidden;
     }
   }
 }

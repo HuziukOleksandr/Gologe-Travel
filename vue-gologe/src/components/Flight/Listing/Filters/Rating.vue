@@ -1,8 +1,8 @@
 <template>
   <TransitionGroup>
-    <div class="w-full" v-if="props.dialogVisible">
+    <div class="w-full max-w-[340px]" v-if="props.dialogVisible">
       <!--Filter for Rating Start -->
-      <div class="flex gap-4">
+      <div class="flex gap-4 flex-wrap">
         <!-- Rating content Start -->
         <div
           class="px-3 py-2 border-solid border-2 border-custom-lightgreen rounded-md"

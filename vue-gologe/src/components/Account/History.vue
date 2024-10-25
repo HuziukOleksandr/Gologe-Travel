@@ -6,7 +6,7 @@
   <!-- History Title End -->
 
   <!-- History wrapper Start -->
-  <div class="w-full h-20 flex items-center shadow-xl rounded-xl mb-8">
+  <div class="w-full min-h-20 flex justify-around items-center shadow-xl rounded-xl mb-8 px-8">
     <!-- Use Custom Button "Stays" Start -->
     <CustomButton
       class="button"
@@ -22,7 +22,7 @@
     <!-- Use Custom Button "Stays" Start -->
 
     <!-- Line Start -->
-    <div class="history-vertical-line"></div>
+    <div class="line"></div>
     <!-- Line End -->
 
     <!-- Use Custom Button "Stays" Start -->
@@ -68,11 +68,17 @@ const changeTab = (type: string) => {
   }
 }
 
+.line {
+  @apply w-[1px] h-12 bg-custom-darkgray mx-2;
+}
+
 .active::after {
   content: "";
   position: absolute;
+  display: block;
   bottom: 0;
-  width: 560px;
+  left: 0;
+  width: 100%;
   border-bottom: solid 3px #8dd3bb;
 }
 </style>

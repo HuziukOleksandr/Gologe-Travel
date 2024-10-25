@@ -18,7 +18,7 @@
           <!-- Title End -->
           <!-- Button with Price Start -->
           <CustomButton
-            class="h-[62px] px-2 flex gap-1 flex-col justify-center flex-grow bg-default"
+            class="h-13 px-4 py-2 flex gap-1 flex-col justify-center bg-default "
           >
             <!-- Button text Start -->
             <p class="custom-text-sm text-custom-darkgreen fort-medium">
@@ -58,30 +58,30 @@
     </div>
     <!-- Aside wrapper End -->
     <!-- Left Side wrapper Start -->
-    <div class="max-w-[656px] flex flex-wrap justify-between">
+    <div class="max-w-[656px] flex flex-wrap justify-between gap-2">
       <!-- Image -->
       <img
-        src="@/assets/images/png/Flight/shri-Lanka-1.png"
+        src="@/assets/images/png/Flight/shri-Lanka-1.jpg"
         alt="shri-Lanka-1"
-        class="flex-grow"
+        class="image"
       />
       <!-- Image -->
       <img
-        src="@/assets/images/png/Flight/shri-Lanka-2.png"
+        src="@/assets/images/png/Flight/shri-Lanka-2.jpg"
         alt="shri-Lanka-2"
-        class="flex-grow"
+        class="image"
       />
       <!-- Image -->
       <img
-        src="@/assets/images/png/Flight/shri-Lanka-3.png"
+        src="@/assets/images/png/Flight/shri-Lanka-3.jpg"
         alt="shri-Lanka-3"
-        class="flex-grow"
+        class="image"
       />
       <!-- Image -->
       <img
-        src="@/assets/images/png/Flight/shri-Lanka-4.png"
+        src="@/assets/images/png/Flight/shri-Lanka-4.jpg"
         alt="shri-Lanka-4"
-        class="flex-grow"
+        class="image"
       />
     </div>
     <!-- Left Side wrapper End -->
@@ -91,4 +91,9 @@
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style scoped lang="scss">
+
+.image {
+  @apply max-w-[320px] flex-grow rounded-3xl sm:max-w-full;
+}
+</style>

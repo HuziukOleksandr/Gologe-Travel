@@ -150,7 +150,6 @@ router.beforeEach((to, _from: any, next) => {
       next();
     } else {
       alert("Need Register")
-      next("/register")
     }
   } else {
     next();

@@ -116,7 +116,7 @@
                   : 'text-default'
               "
             >
-              {{ firstName }} {{ isLoggedIn }}
+              {{ firstName }}
             </p>
             <!-- User Name End -->
           </div>

@@ -1,36 +1,55 @@
 <template>
   <!-- Listing wrapper Start -->
-  <div class="max-w-[1230px] w-full flex flex-col py-12">
+  <div class="max-w-[1230px] w-full flex flex-col py-12 lg:px-0 px-10">
     <!-- Flight Search wrapper Start -->
     <Search />
     <!-- Flight Search wrapper End -->
 
     <!-- Content wrapper Start -->
-    <div class="w-full flex justify-between mb-[120px]">
+    <div class="w-full flex gap-2 mb-[120px] relative justify-between">
       <!-- Filters wrapper Start -->
-      <div class="max-w-[345px] w-full min-h-[880px]">
+      <Transition name="slide-fade">
+        <div
+          class="max-w-[300px] w-full min-h-[880px] h-full absolute shadow-xl rounded-xl"
+          v-if="filterVisible"
+          v-click-away="onClickAway"
+        >
+          <Aside />
+        </div>
+      </Transition>
+      <div class="max-w-[375px] w-full min-h-[880px] lg:flex hidden">
         <Aside />
       </div>
       <!-- Filters wrapper End -->
 
       <!-- Line Start -->
-      <div class="w-[1px] h-full bg-custom-green"></div>
+      <div class="w-[1px] h-full bg-custom-green lg:block hidden"></div>
       <!-- Line End -->
 
       <!-- Places wrapper Start -->
-      <div
-        class="max-w-[840px] w-full min-h-[1430px] flex flex-col justify-between"
-      >
+      <div class="w-full flex flex-col justify-between gap-4">
+        <!-- Filter Menu Start -->
+        <div class="w-fit flex gap-2 px-2 lg:hidden">
+          <CustomButton class="" @click="showFilters()">
+            <p class="custom-text-base text-custom-darkgreen font-semibold">Filter</p>
+            <img
+              src="@/assets/images/svg/UI/chevron-forward.svg"
+              alt=""
+              class="w-5"
+            />
+          </CustomButton>
+        </div>
+        <!-- Filter Menu End -->
         <!-- Header wrapper Start -->
-        <div class="w-full h-20 rounded-xl shadow-sm">
+        <div class="w-full rounded-xl shadow-sm">
           <Sort />
         </div>
         <!-- Header wrapper End -->
 
         <!-- Showing info wrapper start -->
-        <div class="w-full h-5">
+        <!-- <div class="w-full h-5">
           <Showing :pages="page" />
-        </div>
+        </div> -->
         <!-- Showing info wrapper End -->
 
         <!-- Results wrapper Start -->
@@ -60,11 +79,18 @@
 import Search from "./Search.vue";
 import Aside from "./Aside.vue";
 import Sort from "./Sort.vue";
-import Showing from "./Showing.vue";
 import Card from "./Ticket.vue";
 import { ref } from "vue";
 
-const page = ref<[number, number]>([4,265])
+const page = ref<[number, number]>([4, 265]);
+const filterVisible = ref<boolean>(false);
+const showFilters = () => {
+  filterVisible.value = !filterVisible.value;
+};
+
+const onClickAway = () => {
+  filterVisible.value = false;
+};
 
 interface Flight {
   id: number;
@@ -84,7 +110,6 @@ interface Card {
   price: string;
   flights: Flight[];
 }
-
 
 const cards = ref<Card[]>([
   {
@@ -198,4 +223,22 @@ const cards = ref<Card[]>([
 ]);
 </script>
 
-<style scoped></style>
+<style scoped>
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from {
+  transform: translateX(-20px); /* Початкове положення зліва */
+  opacity: 0;
+}
+
+.slide-fade-leave-to {
+  transform: translateX(-20px); /* Кінцеве положення при зникненні праворуч */
+  opacity: 0;
+}
+</style>

@@ -7,7 +7,7 @@
 
   <!-- Content wrapper Start -->
   <div
-    class="w-full flex gap-6 px-6 py-8 rounded-2xl shadow-xl"
+    class="w-full flex flex-wrap gap-6 px-6 py-8 rounded-2xl shadow-xl"
   >
     <!-- Use Card Component -->
     <Card />

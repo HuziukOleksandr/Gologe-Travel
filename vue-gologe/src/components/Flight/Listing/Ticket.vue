@@ -1,24 +1,24 @@
 <template>
   <!-- Card wrapper Start -->
   <div
-    class="w-full h-[285px] shadow-xl p-4 flex justify-between"
+    class="w-full shadow-xl p-4 flex justify-between md:justify-around"
     v-for="element in cards"
   >
     <!-- Company image -->
     <img
       :src="getFlightsImagePng(element.image)"
       :alt="element.image"
-      class="self-start"
+      class="self-start sm:hidden md:self-center"
     />
     <!-- Content wrapper Start -->
-    <div class="max-w-[645px] w-full px-6 flex flex-col justify-between">
+    <div class="max-w-[645px] w-full px-6 flex flex-col justify-between gap-2">
       <!-- Content Header Start -->
-      <div class="w-full h-11 flex justify-between">
+      <div class="w-full flex justify-between items-center">
         <!-- Header Left Start -->
         <div class="flex gap-2 items-center">
           <!-- Rate Start -->
           <div
-            class="h-8 px-3 flex items-center rounded-sm border-2 border-custom-lightgreen"
+            class="px-3 flex items-center rounded-sm border-2 border-custom-lightgreen"
           >
             <!-- Rate text Start -->
             <p class="custom-text-xs text-custom-darkgreen font-semibold">
@@ -28,7 +28,7 @@
           </div>
           <!-- Rate End -->
           <!-- View Start -->
-          <p class="custom-text-xs text-custom-darkgreen font-semibold flex gap-1">
+          <p class="custom-text-xs text-custom-darkgreen font-semibold flex gap-1 sm:hidden">
             {{ $t("ListingFlight.Card.mark") }}
             <p class="font-medium">
               {{ element.views }} 
@@ -38,6 +38,15 @@
           <!-- View End -->
         </div>
         <!-- Header Left End -->
+
+        <!-- Header Image Start -->
+        <img
+            :src="getFlightsImagePng(element.image)"
+            :alt="element.image"
+            class="h-8 sm:flex hidden"
+          />
+        <!-- Header Image End -->
+
         <!-- Header Right Start -->
         <div class="flex flex-col justify-between">
           <!-- Text Start -->
@@ -56,7 +65,7 @@
       <!-- Content Center Start -->
       <div class="flex flex-col ">
         <!-- First CheckBox Start -->
-        <div class="h-[100px] flex flex-col justify-between">
+        <div class="flex flex-col justify-between gap-2">
           <Content :flights="element.flights[0]"/>
           <Content :flights="element.flights[1]"/>
         </div>

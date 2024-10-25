@@ -1,14 +1,8 @@
 <template>
   <!-- Sort wrapper Srart -->
-  <div class="w-full h-20 px-6 flex justify-between shadow-xl">
+  <div class="wrapper">
     <!-- Cheapest wrapper Start -->
-    <div
-      class="filter-wrapper"
-      :class="{
-        'border-b-custom-lightgreen border-b-[3px]': cheapest === true,
-      }"
-      @click="activeCheapest"
-    >
+    <div class="filter-wrapper" @click="activeCheapest">
       <!-- Header Start -->
       <h2 class="title">
         {{ $t("ListingFlight.Sort.cheapest") }}
@@ -30,15 +24,9 @@
       <!-- Wrapper for content End -->
     </div>
     <!-- Cheapest wrapper End -->
-    <!-- Line Start -->
-    <div class="line"></div>
-    <!-- Line End -->
+
     <!-- Best wrapper Start -->
-    <div
-      class="filter-wrapper"
-      :class="{ 'border-b-custom-lightgreen border-b-[3px]': best === true }"
-      @click="activeBest"
-    >
+    <div class="filter-wrapper" @click="activeBest">
       <!-- Header Start -->
       <h2 class="title">
         {{ $t("ListingFlight.Sort.best") }}
@@ -61,18 +49,8 @@
     </div>
     <!-- Best wrapper End -->
 
-    <!-- Line Start -->
-    <div class="line"></div>
-    <!-- Line End -->
-
     <!-- Quickest wrapper Start -->
-    <div
-      class="filter-wrapper"
-      :class="{
-        'border-b-custom-lightgreen border-b-[3px]': quickest === true,
-      }"
-      @click="activeQuickest"
-    >
+    <div class="filter-wrapper" @click="activeQuickest">
       <!-- Header Start -->
       <h2 class="title">
         {{ $t("ListingFlight.Sort.quickest") }}
@@ -95,12 +73,8 @@
     </div>
     <!-- Quickest wrapper End -->
 
-    <!-- Line Start -->
-    <div class="line"></div>
-    <!-- Line End -->
-
     <!-- Other Sort wrapper Start -->
-    <CustomButton class="max-w-40 w-full flex">
+    <CustomButton class="w-full flex">
       <img src="@/assets/images/svg/UI/menu.svg" alt="menu" />
       <p class="custom-text-xs text-custom-darkgreen font-semibold">
         {{ $t("ListingFlight.Sort.other") }}
@@ -146,33 +120,33 @@ const activeQuickest = () => {
   @apply font-serrat;
 }
 
-.line {
-  @apply w-0.5 bg-custom-lightgray;
-}
+.wrapper {
+  @apply px-6 shadow-xl grid justify-items-center justify-between gap-5 auto-rows-[minmax(80px,_auto)] lg:grid-cols-[repeat(auto-fit,_minmax(100px,_160px))] grid-cols-[repeat(auto-fit,_minmax(100px,_1fr))];
 
-.filter-wrapper {
-  @apply max-w-40 w-full py-4 flex flex-col justify-between;
+  .filter-wrapper {
+    @apply w-full h-20 p-4  flex flex-col flex-grow justify-between;
 
-  &:hover {
-    @apply cursor-pointer;
-  }
-
-  .title {
-    @include font();
-    @apply text-sm font-semibold text-custom-darkgreen;
-  }
-
-  .content-wrapper {
-    @apply flex gap-12 h-6;
-
-    .price {
-      @include font();
-      @apply text-xs text-custom-darkgray;
+    &:hover {
+      @apply cursor-pointer;
     }
 
-    .time {
+    .title {
       @include font();
-      @apply text-xs text-custom-darkgray;
+      @apply text-sm font-semibold text-custom-darkgreen;
+    }
+
+    .content-wrapper {
+      @apply flex justify-between h-6;
+
+      .price {
+        @include font();
+        @apply text-xs text-custom-darkgray;
+      }
+
+      .time {
+        @include font();
+        @apply text-xs text-custom-darkgray;
+      }
     }
   }
 }
