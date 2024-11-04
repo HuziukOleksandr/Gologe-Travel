@@ -40,12 +40,12 @@
           <!-- User image wrapper End -->
 
           <!-- User Name Start -->
-          <h1 class="custom-text-xl font-semibold mb-2">{{ Name }} {{ LastName }}</h1>
+          <h1 class="custom-text-xl font-semibold mb-2">ASAP</h1>
           <!-- User Name End -->
 
           <!-- User Email Start -->
           <h2 class="custom-text-base font-medium text-custom-gray">
-            {{ Email }}
+            ASAP
           </h2>
           <!-- User Email End -->
         </div>
@@ -119,33 +119,13 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { useAuthStore } from "@/stores/authStore.ts";
 import Info from "@/components/Account/Info.vue";
 import History from "@/components/Account/History.vue";
 import Payment from "@/components/Account/Payment.vue";
-const authStore = useAuthStore();
-interface User {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  password: string;
-}
-
-const user = ref<User>();
-user.value = authStore.getUser;
-
-const Name = user.value.firstName;
-const Email = user.value.email;
-const LastName = user.value.lastName;
-console.log(Email);
 
 const selectedTab = ref<string>("Account");
 
 let isOpen = ref<boolean>();
-
-
-
 
 // Method Change Tab
 const changeTab = (type: string) => {

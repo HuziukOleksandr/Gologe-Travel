@@ -25,7 +25,7 @@
           class="lg:h-14"
           type="email"
           :placeHolder="$t('Login.email')"
-          v-model="Email"
+          v-model="auth.email"
         >
           <!-- Slot for Name Start -->
           <template v-slot:input>
@@ -38,7 +38,7 @@
         <!-- Use Custom Input Password "Password" Start -->
         <CustomInputPassword
           :placeHolder="$t('Login.password')"
-          v-model="Password"
+          v-model="auth.password"
         >
           <!-- Slot for Name -->
           <template v-slot:input>
@@ -129,18 +129,20 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { useAuthStore } from "@/stores/authStore";
+import type AuthType from '@/types/auth-types';
 const slides = ref(["login-one", "login-two", "login-three"]);
 
 const router = useRouter();
 const authStore = useAuthStore();
-const Email = ref<any>();
-const Password = ref<any>();
+
+const auth = ref<AuthType>({
+  email: "",
+  password: "",
+});
 
 async function Login() {
   try {
-    authStore.setUserField("email", Email.value);
-    authStore.setUserField("password", Password.value);
-    
+    authStore.setAuth(auth.value);
     await authStore.login();
     router.push({name: "Account"})
   } catch (error) {

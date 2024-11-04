@@ -3,7 +3,8 @@ type UserType = {
   lastName: string,
   email: string,
   phone: string,
-  password: string,
+  address: string,
+  birth: string,
 };
 
 export default UserType;

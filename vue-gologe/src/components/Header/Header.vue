@@ -116,7 +116,7 @@
                   : 'text-default'
               "
             >
-              {{ firstName }}
+              ASAP
             </p>
             <!-- User Name End -->
           </div>
@@ -157,7 +157,7 @@ const { isLoggedIn } = storeToRefs(authStore);
 const settingsVisible = ref<boolean>(false);
 const List = ref<string[]>([t("Header.setting"), t("Header.signOut")]);
 
-const firstName = computed(() => authStore.getUserField("firstName"));
+// const firstName = computed(() => authStore.getUserField("firstName"));
 
 const openWindow = () => {
   settingsVisible.value = true;

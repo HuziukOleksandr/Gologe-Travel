@@ -2,7 +2,7 @@
   <!-- Register wrapper Start -->
   <div class="auth-wrapper">
     <!-- Carousel wrapper Start -->
-    <div class="max-w-[490px] auth-carousel-wrappe">
+    <div class="max-w-[490px] auth-carousel-wrapper">
       <!-- Use Custom Carousel Component -->
       <CustomCarousel :slides="slides" />
     </div>
@@ -65,7 +65,7 @@
           <CustomInput
             type="text"
             :placeHolder="$t('Register.email')"
-            v-model="user.email"
+            v-model="auth.email"
           >
             <!-- Slot for Name Start -->
             <template v-slot:input>
@@ -94,7 +94,7 @@
         <!-- Use Custom Input Password "Password" Start -->
         <CustomInputPassword
           :placeHolder="$t('Register.password')"
-          v-model="user.password"
+          v-model="auth.password"
         >
           <!-- Slot for Name Start -->
           <template v-slot:input>
@@ -193,33 +193,43 @@
 </template>
 
 <script setup lang="ts">
+// TODO добавити логіку ConfirmPassword
 import { ref } from "vue";
 import { useAuthStore } from "@/stores/authStore";
-import type UserType from "@/types/user-types";
+import { useUserStore } from '@/stores/userStore';
+import type AuthType from "@/types/auth-types";
+import type UserType from '@/types/user-types';
 
-const authStore = useAuthStore();
-const user = ref<UserType>({
-  firstName: "",
-  lastName: "",
-  email: "",
-  phone: "",
-  password: "",
-});
+const slides = ref<string[]>(["register-slide-one", "register-slide-two", "register-slide-one",]);
 const ConfirmPassword = ref<string>("");
 
-const slides = ref<string[]>([
-  "register-slide-one",
-  "register-slide-two",
-  "register-slide-one",
-]);
+const authStore = useAuthStore();
+const userStore = useUserStore();
+
+const auth = ref<AuthType>({
+  email: "",
+  password: "",
+});
+
+const user = ref<UserType>({
+  email: "",
+  firstName: "",
+  lastName: "",
+  phone: "",
+  address: "",
+  birth: ""
+});
 
 async function Register() {
-  if (user.value) { 
-    authStore.setUser(user.value);
+  if (auth.value) {
+    authStore.setAuth(auth.value);
     await authStore.register();
   } else {
     console.error("User data is missing.");
   }
+  if(user.value) {
+    user.value.email = auth.value.email
+    userStore.setUser(user.value)
+  }
 }
-
 </script>

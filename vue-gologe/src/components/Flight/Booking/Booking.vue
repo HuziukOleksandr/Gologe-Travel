@@ -1,6 +1,6 @@
 <template>
   <!-- Booking wrapper Start -->
-  <div class="max-w-primary-width w-full flex flex-col gap-7 py-12">
+  <div class="max-w-primary-width w-full flex flex-col gap-7 py-12 md:px-7">
     <!-- Use Navigation component -->
     <Navigation />
 

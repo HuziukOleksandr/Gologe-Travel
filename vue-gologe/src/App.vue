@@ -33,9 +33,6 @@ onMounted(() => {
       authStore.setAuthState(isLoggedIn.value);
       const firstName = localStorage.getItem("name") || '';
       const lastName = localStorage.getItem("lastName") || '';
-
-      authStore.setUserField("firstName", firstName);
-      authStore.setUserField("lastName", lastName);
     } else {
       isLoggedIn.value = false;
       localStorage.setItem("isLoggedIn", "false");

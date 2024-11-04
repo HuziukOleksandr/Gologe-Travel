@@ -53,7 +53,7 @@
         <!-- Showing info wrapper End -->
 
         <!-- Results wrapper Start -->
-        <div class="w-full h-[1210px] flex flex-col justify-between">
+        <div class="w-full min-h-[1210px] flex flex-col justify-between">
           <Card :cards="cards" />
         </div>
         <!-- Results wrapper End -->

@@ -1,50 +1,40 @@
 import { defineStore } from "pinia";
+//TODO добавити обробник помилок 
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  onAuthStateChanged,
   signOut,
 } from "firebase/auth";
 
-export const useAuthStore = defineStore("user", {
+export const useAuthStore = defineStore("auth", {
   state: () => {
     return {
-      user: {} as User,
+      user: {} as Auth,
       isLoggedIn: false,
     };
   },
   getters: {
-    getUserFormated: (state) => JSON.stringify(state.user, null, 2),
-    getUser: (state) => state.user,
-    
-    getUserName: (state) => state.user.firstName,
-
-    getUserLastName: (state) => state.user.lastName,
-
     getUserEmail: (state) => state.user.email,
 
     getAuthState: (state) => state.isLoggedIn,
   },
   actions: {
-    setUser(value: User) {
+    setAuth(value: Auth) {
       this.user = value;
     },
     setAuthState(value: boolean) {
       this.isLoggedIn = value;
     },
-    setUserField(key: keyof User, value: string) {
+    setAuthField(key: keyof Auth, value: string) {
       this.user[key] = value;
     },
-    getUserField(key: keyof User): string {
+    getAuthField(key: keyof Auth): string {
       return this.user[key];
     },
 
     async register() {
       try {
-        localStorage.setItem("email", this.user.email);
-        localStorage.setItem("name", this.user.firstName);
-        localStorage.setItem("lastName", this.user.lastName);
         return await createUserWithEmailAndPassword(
           getAuth(),
           this.user.email,
@@ -78,10 +68,7 @@ export const useAuthStore = defineStore("user", {
   },
 });
 
-interface User {
-  firstName: string;
-  lastName: string;
+interface Auth {
   email: string;
-  phone: string;
   password: string;
 }
