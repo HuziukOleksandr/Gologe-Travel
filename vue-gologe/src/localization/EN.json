@@ -226,7 +226,7 @@
 		"payment": "Payment methods",
 		"Account": {
 			"change": "Change",
-			"addEmail": "Add another email",
+			"confirm": "Confirm",
 			"name": "Name",
 			"email": "Email",
 			"password": "Password",

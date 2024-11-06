@@ -13,11 +13,15 @@ export const useUserStore = defineStore("user", {
     setUser(value: User) {
       this.user = value;
     },
+    setUserProperty(key: keyof User, value: string) {
+      this.user[key] = value;
+    },
   }
 });
 
 interface User {
   email: string;
+  name: string;
   firstName: string;
   lastName: string;
   phone: string;
