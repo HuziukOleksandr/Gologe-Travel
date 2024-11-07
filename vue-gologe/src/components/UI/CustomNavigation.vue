@@ -1,6 +1,6 @@
 <template>
   <!-- Custon navigation component wrapper Start -->
-  <div class="navigation h-[90px] flex gap-7 items-center">
+  <div class="h-full flex gap-7 items-center sm:gap-4">
     <!-- Router link button Flight Start -->
     <router-link
       to="/flight"
@@ -13,7 +13,7 @@
       <img
         src="@/assets/images/svg/UI/flight.svg"
         alt="flight"
-        class="w-6"
+        class="w-6 sm:w-5"
         v-if="route.name == 'Landing'"
       />
 
@@ -21,7 +21,7 @@
       <img
         src="@/assets/images/svg/UI/flight-black.svg"
         alt="flight"
-        class="w-6"
+        class="w-6 sm:w-5"
         v-else
       />
 
@@ -45,7 +45,7 @@
       <img
         src="@/assets/images/svg/UI/hotel.svg"
         alt="hotel"
-        class="w-6"
+        class="w-6 sm:w-5"
         v-if="route.name == 'Landing'"
       />
 
@@ -53,7 +53,7 @@
       <img
         src="@/assets/images/svg/UI/hotel-black.svg"
         alt="hotel"
-        class="w-6"
+        class="w-6 sm:w-5"
         v-else
       />
       <!-- Hotel Text Start -->

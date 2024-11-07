@@ -57,7 +57,6 @@ const selectValue = (value: number) => {
   }
 };
 
-
 async function signOut() {
   try {
     await authUser.handlerSignOut();
@@ -70,12 +69,12 @@ async function signOut() {
 
 <style lang="scss" scoped>
 .wrapper_list {
-  @apply absolute w-fit mt-3 bg-default
-	border-2 border-custom-darkgreen border-solid
+  @apply absolute max-w-[300px] w-full mt-3 bg-default 
+	border-[1px] border-custom-darkgreen border-solid
 	rounded opacity-100 z-50;
 
   .list {
-    @apply w-full flex flex-col gap-1  text-custom-darkgreen;
+    @apply max-w-40 w-full flex flex-col gap-1  text-custom-darkgreen;
 
     &:hover {
       @apply cursor-pointer;

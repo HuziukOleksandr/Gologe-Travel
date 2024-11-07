@@ -1,11 +1,10 @@
 <template>
-  <div class="relative w-[100%] h-[100vh] flex flex-col bg-background">
+  <div class="relative w-[100%]  flex flex-col bg-default">
     <router-view
       name="Header"
       v-if="route.name !== 'Landing'"
-      class="shadow-md bg-default sticky top-0 z-[999]"
     />
-    <router-view class="flex-grow flex" />
+    <router-view class="flex" />
     <router-view name="Footer" />
 
     <div id="modal"></div>

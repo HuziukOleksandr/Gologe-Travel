@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-[1440px] w-full my-[30px] mx-auto relative flex flex-col items-center"
+    class="max-w-[1440px] w-full mx-auto relative flex flex-col items-center"
   >
     <Preview />
     <Search />
