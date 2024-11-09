@@ -1,9 +1,6 @@
 <template>
-  <div class="relative w-[100%]  flex flex-col bg-default">
-    <router-view
-      name="Header"
-      v-if="route.name !== 'Landing'"
-    />
+  <div class="relative w-[100%] flex flex-col bg-default">
+    <router-view name="Header" v-if="route.name !== 'Landing'" />
     <router-view class="flex" />
     <router-view name="Footer" />
 
@@ -16,8 +13,8 @@ import { useRoute } from "vue-router";
 import { onMounted, ref } from "vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useAuthStore } from "@/stores/authStore.ts";
-import { useUserStore } from '@/stores/userStore';
-import { setItem, getItem } from "@/services/LocaleStorage"
+import { useUserStore } from "@/stores/userStore";
+import { setItem, getItem } from "@/services/LocaleStorage";
 
 const route = useRoute();
 
@@ -29,17 +26,16 @@ onMounted(() => {
   auth = getAuth();
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      
       // Add to Pinia Store
       authStore.setAuthState(true);
-      console.log(getItem("language"));
-      
+      userStore.getUserIndatabase(user.email);
+
       // Add to Locale Storage
-      setItem("isLoggedIn", true)
-      setItem("email", user.email)
+      setItem("isLoggedIn", true);
+      setItem("email", user.email);
     } else {
       // Add to Locale Storage
-      setItem("isLoggedIn", true)
+      setItem("isLoggedIn", true);
     }
   });
 });
