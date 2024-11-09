@@ -32,7 +32,10 @@ export const useUserStore = defineStore("user", {
       try {
         const response = await (axios.get(DatabaseUrl));
         const users: { [key: string]: UserType } = response.data;
-        const user = Object.values(users).find(user => user.email === email)
+        const user = Object.values(users).find(user => user.email === email);
+        if (user) {
+          this.user = user;
+        }
         return user;
       } catch (error) {
         alert(error)
