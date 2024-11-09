@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import Booking from "@/components/Flight/Booking/Booking.vue";
-import { scrollTop } from "@/helpers/ScrollHelper.ts";
+import { scrollTop } from "@/services/Scroll";
 
 scrollTop();
 </script>

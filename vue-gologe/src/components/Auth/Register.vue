@@ -196,11 +196,16 @@
 // TODO добавити логіку ConfirmPassword
 import { ref } from "vue";
 import { useAuthStore } from "@/stores/authStore";
-import { useUserStore } from '@/stores/userStore';
+import { useUserStore } from "@/stores/userStore";
 import type AuthType from "@/types/auth-types";
-import type UserType from '@/types/user-types';
+import type UserType from "@/types/user-types";
+import axios from "axios";
 
-const slides = ref<string[]>(["register-slide-one", "register-slide-two", "register-slide-one",]);
+const slides = ref<string[]>([
+  "register-slide-one",
+  "register-slide-two",
+  "register-slide-one",
+]);
 const ConfirmPassword = ref<string>("");
 
 const authStore = useAuthStore();
@@ -217,7 +222,7 @@ const user = ref<UserType>({
   lastName: "",
   phone: "",
   address: "",
-  birth: ""
+  birth: "",
 });
 
 async function Register() {
@@ -227,9 +232,11 @@ async function Register() {
   } else {
     console.error("User data is missing.");
   }
-  if(user.value) {
-    user.value.email = auth.value.email
-    userStore.setUser(user.value)
+  if (user.value) {
+    user.value.email = auth.value.email;
+    userStore.setUser(user.value);
+   await userStore.setUserInDatabase(user.value);
   }
 }
+
 </script>

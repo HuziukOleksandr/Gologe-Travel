@@ -98,7 +98,7 @@
 </template>
 
 <script setup lang="ts">
-import { getFlightsImagePng } from "@/helpers/Helpers.ts";
+import { getFlightsImagePng } from "@/services/Helpers";
 import Content from "./Cards/TicketCard.vue"
 
 interface Flight {

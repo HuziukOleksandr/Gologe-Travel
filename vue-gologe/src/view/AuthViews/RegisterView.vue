@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import Register from "@/components/Auth/Register.vue";
-import { scrollTop } from "@/helpers/ScrollHelper.ts"
+import { scrollTop } from "@/services/Scroll";
 
-scrollTop()
+scrollTop();
 </script>

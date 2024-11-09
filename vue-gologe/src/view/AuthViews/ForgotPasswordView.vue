@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import ForgotCompotent from "@/components/Auth/ForgotComponent.vue";
-import { scrollTop } from "@/helpers/ScrollHelper.ts"
+import { scrollTop } from "@/services/Scroll";
 
-scrollTop()
+scrollTop();
 </script>

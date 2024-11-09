@@ -20,4 +20,14 @@ export default defineConfig({
       ],
     }),
   ],
+  server: {
+    proxy: {
+      '/users': {
+        target: 'https://gologe-72d19-default-rtdb.europe-west1.firebasedatabase.app',
+        changeOrigin: true,
+        secure: false, 
+        rewrite: (path) => path.replace(/^\/users/, '')
+      }
+    }
+  }
 });

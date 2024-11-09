@@ -33,6 +33,7 @@
 
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
+import { setItem } from '@/services/LocaleStorage'
 import { ref } from "vue";
 
 // Props for open expected "true" or ""false
@@ -60,7 +61,7 @@ const close = (item: string) => {
 
 // Method Change
 const change = (item: string) => {
-  localStorage.setItem("language", item);
+  setItem("language", item);
   if (locale.value != item) {
     locale.value = item;
   }

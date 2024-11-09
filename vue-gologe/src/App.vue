@@ -16,25 +16,30 @@ import { useRoute } from "vue-router";
 import { onMounted, ref } from "vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useAuthStore } from "@/stores/authStore.ts";
+import { useUserStore } from '@/stores/userStore';
+import { setItem, getItem } from "@/services/LocaleStorage"
 
 const route = useRoute();
-const isLoggedIn = ref(false);
+
 const authStore = useAuthStore();
+const userStore = useUserStore();
 
 let auth;
 onMounted(() => {
   auth = getAuth();
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      isLoggedIn.value = true;
-      localStorage.setItem("isLoggedIn", isLoggedIn.value ? "true" : "false");
       
-      authStore.setAuthState(isLoggedIn.value);
-      const firstName = localStorage.getItem("name") || '';
-      const lastName = localStorage.getItem("lastName") || '';
+      // Add to Pinia Store
+      authStore.setAuthState(true);
+      console.log(getItem("language"));
+      
+      // Add to Locale Storage
+      setItem("isLoggedIn", true)
+      setItem("email", user.email)
     } else {
-      isLoggedIn.value = false;
-      localStorage.setItem("isLoggedIn", "false");
+      // Add to Locale Storage
+      setItem("isLoggedIn", true)
     }
   });
 });

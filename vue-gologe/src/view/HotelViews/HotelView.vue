@@ -14,7 +14,7 @@ import Preview from "@/components/Flight/Main/Preview.vue";
 import Search from "@/components/Flight/Main/Search.vue";
 import Places from "@/components/Flight/Main/Places.vue";
 import Travel from "@/components/Flight/Main/Travel.vue";
-import { scrollTop } from "@/helpers/ScrollHelper.ts";
+import { scrollTop } from "@/services/Scroll";
 
 scrollTop();
 </script>

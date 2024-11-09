@@ -1,4 +1,5 @@
 import { createI18n } from "vue-i18n";
+import { getItem } from "@/services/LocaleStorage"
 import EN from "./EN.json";
 import UA from "./UA.json";
 
@@ -9,7 +10,7 @@ import.meta.glob("../localization/*.json");
 export default createI18n({
     legacy: false,
     globalInjection: true,
-    locale: localStorage.getItem("language")?.toString(),
+    locale: getItem("language") || "EN",
     availableLocales: ["EN", "UA"],
     messages: {
         EN,

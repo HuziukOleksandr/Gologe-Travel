@@ -87,7 +87,7 @@
 </template>
 
 <script setup lang="ts">
-import { getImageUrlPng } from "@/helpers/Helpers.ts";
+import { getImageUrlPng } from "@/services/Helpers";
 import type Reviews from "@/types/reviews-types.ts";
 
 // Card props expected Array

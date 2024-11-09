@@ -51,13 +51,13 @@
 </template>
 
 <script setup lang="ts">
-import { getTravelCardImagePng } from "@/helpers/Helpers.ts";
+import { getTravelCardImagePng } from "@/services/Helpers";
 
 interface Card {
-  title: string,
-  subTitle: string,
-  price: string,
-  image: string
+  title: string;
+  subTitle: string;
+  price: string;
+  image: string;
 }
 
 // Props, array with card

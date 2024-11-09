@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import AddPaymentComponent from "@/components/Auth/AddPaymentComponent.vue";
-import { scrollTop } from "@/helpers/ScrollHelper.ts"
+import { scrollTop } from "@/services/Scroll";
 
-scrollTop()
+scrollTop();
 </script>

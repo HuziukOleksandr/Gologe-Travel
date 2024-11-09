@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import Details from "@/components/Flight/Details/Details.vue";
-import { scrollTop } from "@/helpers/ScrollHelper.ts";
+import { scrollTop } from "@/services/Scroll";
 
 scrollTop();
 </script>

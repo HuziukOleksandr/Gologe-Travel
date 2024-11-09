@@ -38,7 +38,7 @@
 </template>
 
 <script setup lang="ts">
-import { getImageUrlPng } from "@/helpers/Helpers.ts";
+import { getImageUrlPng } from "@/services/Helpers";
 import type TripCard from "@/types/trips-cards-types.ts";
 
 const props = withDefaults(

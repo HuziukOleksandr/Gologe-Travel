@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import Login from "@/components/Auth/Login.vue";
-import { scrollTop } from "@/helpers/ScrollHelper.ts"
+import { scrollTop } from "@/services/Scroll";
 
-scrollTop()
+scrollTop();
 </script>

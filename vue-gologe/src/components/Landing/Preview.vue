@@ -1,8 +1,6 @@
 <template>
   <!-- Preview Start -->
-  <div
-    class="landing-component-wrapper"
-  >
+  <div class="landing-component-wrapper">
     <!-- Preview wrapper Start -->
     <div
       class="background max-w-secondary-width w-full min-h-[600px] flex items-center rounded-2xl"
@@ -19,8 +17,7 @@
 
         <!-- Preview Title Start -->
         <h1
-          class="font-serrat font-semibold text-default uppercase text-center
-          "
+          class="font-serrat font-semibold text-default uppercase text-center"
           :class="getTitleStyles(locale)"
         >
           {{ $t("Landing.Preview.header") }}
@@ -28,7 +25,9 @@
         <!-- Preview Title End -->
 
         <!-- Preview Text Start -->
-        <h3 class="custom-text-2xl text-default sm:text-xl ph:text-sm text-center">
+        <h3
+          class="custom-text-2xl text-default sm:text-xl ph:text-sm text-center"
+        >
           {{ $t("Landing.Preview.headerBottom") }}
         </h3>
         <!-- Preview Text End -->
@@ -41,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import { getTitleStyles } from "@/helpers/Localization.ts";
+import { getTitleStyles } from "@/services/Localization";
 import { useI18n } from "vue-i18n";
 
 const { locale } = useI18n();

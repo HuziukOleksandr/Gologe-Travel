@@ -29,7 +29,7 @@
 <script setup lang="ts">
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Pagination } from "vue3-carousel";
-import { getCarouselImagePng } from "@/helpers/Helpers.ts";
+import { getCarouselImagePng } from "@/services/Helpers";
 
 // Props, array with name of images
 const props = withDefaults(
@@ -59,5 +59,4 @@ const props = withDefaults(
   border-radius: 5px;
   background-color: #8dd3bb;
 }
-
 </style>

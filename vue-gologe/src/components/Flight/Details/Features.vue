@@ -15,7 +15,11 @@
     <!-- Header wrapper End -->
     <!-- Content wrapper Start -->
     <div class="w-full flex justify-between">
-      <img v-for="element in images" :src="getDetailsImagePng(element)" :alt="element" />
+      <img
+        v-for="element in images"
+        :src="getDetailsImagePng(element)"
+        :alt="element"
+      />
     </div>
     <!-- Content wrapper End -->
   </div>
@@ -24,7 +28,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { getDetailsImagePng } from "@/helpers/Helpers.ts"
+import { getDetailsImagePng } from "@/services/Helpers";
 import Filters from "./Features/Filters.vue";
 
 const filters = ref<string[]>(["Economy", "First Class", "Busines Class"]);

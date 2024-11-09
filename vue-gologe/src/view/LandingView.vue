@@ -14,7 +14,7 @@ import Header from "@/components/Header/Header.vue";
 import QuickSearch from "@/components/Landing/QuickSearch.vue";
 import Trips from "@/components/Landing/Trips.vue";
 import Review from "@/components/Landing/Reviews.vue";
-import { scrollTop } from "@/helpers/ScrollHelper.ts";
+import { scrollTop } from "@/services/Scroll";
 
 scrollTop();
 </script>
