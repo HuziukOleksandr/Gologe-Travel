@@ -363,6 +363,10 @@
 </template>
 
 <script setup lang="ts">
+//TODO: Добавити валідацію
+//TODO: Добавити Зміну імені
+//TODO: Добавити Зміну пароля
+
 import { ref } from "vue";
 import { useUserStore } from "@/stores/userStore";
 import type UserType from "@/types/user-types";

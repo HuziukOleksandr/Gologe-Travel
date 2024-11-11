@@ -199,7 +199,6 @@ import { useAuthStore } from "@/stores/authStore";
 import { useUserStore } from "@/stores/userStore";
 import type AuthType from "@/types/auth-types";
 import type UserType from "@/types/user-types";
-import axios from "axios";
 
 const slides = ref<string[]>([
   "register-slide-one",
@@ -217,7 +216,6 @@ const auth = ref<AuthType>({
 });
 
 const user = ref<UserType>({
-  
   email: "",
   firstName: "",
   lastName: "",

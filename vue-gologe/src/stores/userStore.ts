@@ -2,6 +2,7 @@ import { defineStore } from 'pinia';
 import { ref, set, get, update, remove, child, orderByChild, query, equalTo} from 'firebase/database';
 import { getDatabase } from 'firebase/database';
 import type  UserType from '@/types/user-types.ts'
+import ResultType from '@/types/result-user-types'
 
 // TODO добавити обробник помилок
 export const useUserStore = defineStore("user", {
@@ -9,6 +10,7 @@ export const useUserStore = defineStore("user", {
     return {
       user: {} as UserType,
       errorMsg: '' as any,
+      result: {} as ResultType,
     }
   },
   getters: {
@@ -27,8 +29,9 @@ export const useUserStore = defineStore("user", {
       const userRef = ref(database, `users/${userId}`); 
       try {
         await set(userRef, this.user);
+        this.result.set = "Succes";
       } catch (error) {
-        this.errorMsg = (error as Error).message;
+        this.errorMsg = "Error:" + (error as Error).message;
       }
     },
 
@@ -39,12 +42,14 @@ export const useUserStore = defineStore("user", {
         const snapshot = await get(child(dbRef, `users/${userId}`));
         if (snapshot.exists()) {
           const userData = snapshot.val();
-          console.log(userData);
+          this.result.get = "Succes";
+          return userData;
         }
       } catch (error) {
-        this.errorMsg = (error as Error).message;
+        this.errorMsg = "Error:" + (error as Error).message;
       }
     },
+
     async getUserByEmail(email: string) {
       const database = getDatabase();
       const dbRef = ref(database, "users");
@@ -57,7 +62,7 @@ export const useUserStore = defineStore("user", {
           });
         }
       } catch (error) {
-        this.errorMsg = (error as Error).message;
+        this.errorMsg = "Error:" + (error as Error).message;
       }
     },
 
@@ -66,24 +71,21 @@ export const useUserStore = defineStore("user", {
       const userRef = ref(database, "users");
       const userQuery = query(userRef, orderByChild("email"), equalTo(this.user.email));
       try {
-        // Отримуємо знімок даних користувачів, що відповідають email
         const snapshot = await get(userQuery);
-    
         if (snapshot.exists()) {
-          // Проходимо по знайдених записах та оновлюємо їх
           snapshot.forEach((userSnapshot) => {
-            const userKey = userSnapshot.key; // Отримуємо ключ вузла користувача
+            const userKey = userSnapshot.key; 
             if (userKey) {
               const userToUpdateRef = ref(database, `users/${userKey}`);
-              update(userToUpdateRef, this.user); // Оновлюємо дані
+              update(userToUpdateRef, this.user);
+              this.result.update = "Succes"
             }
           });
-          console.log("Дані користувача успішно оновлено");
         } else {
-          console.log("Користувача не знайдено");
+          this.result.update = "User not found"
         }
       } catch (error) {
-        console.error("Помилка оновлення даних:", (error as Error).message);
+        this.errorMsg = "Error:" + (error as Error).message;
       }
     },
 
@@ -100,13 +102,14 @@ export const useUserStore = defineStore("user", {
             if(userKey) {
               const userToDeleteRef = ref(database, `users/${userKey}`);
               remove(userToDeleteRef);
+              this.result.remove = "Succes"
             }
           });
         }  else {
-          this.errorMsg = "Користувача не знайдено"
+          this.result.remove = "User not found"
         }
       } catch (error) {
-        this.errorMsg = (error as Error).message;
+        this.errorMsg = "Error:" + (error as Error).message;
       }
     }
   }

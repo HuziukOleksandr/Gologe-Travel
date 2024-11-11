@@ -1,1 +1,0 @@
-export const DatabaseUrl = "https://gologe-72d19-default-rtdb.europe-west1.firebasedatabase.app/users.json"

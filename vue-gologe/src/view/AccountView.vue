@@ -120,6 +120,9 @@
 </template>
 
 <script setup lang="ts">
+//TODO: Добавити зміну Frame Background
+//TODO: Добавити зігрузку і зміну фото профіля
+//TODO: Добавити кнопку видалення аккаунта
 import { ref } from "vue";
 import { useUserStore } from "@/stores/userStore";
 import Info from "@/components/Account/Info.vue";
