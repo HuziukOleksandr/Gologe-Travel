@@ -14,7 +14,7 @@ import { onMounted, ref } from "vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useAuthStore } from "@/stores/authStore.ts";
 import { useUserStore } from "@/stores/userStore";
-import { setItem, getItem } from "@/services/LocaleStorage";
+import { setItem, getItem, removeItem } from "@/services/LocaleStorage";
 
 const route = useRoute();
 
@@ -28,15 +28,18 @@ onMounted(() => {
     if (user) {
       // Add to Pinia Store
       authStore.setAuthState(true);
-      userStore.getUserIndatabase(user.email);
+      // userStore.getUserIndatabase(user.email || '');
 
       // Add to Locale Storage
       setItem("isLoggedIn", true);
       setItem("email", user.email);
+      userStore.getUserByEmail(getItem("email"))
     } else {
       // Add to Locale Storage
-      setItem("isLoggedIn", true);
+      setItem("isLoggedIn", false);
+      removeItem("email");
     }
   });
 });
+
 </script>

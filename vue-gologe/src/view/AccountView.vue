@@ -40,12 +40,14 @@
           <!-- User image wrapper End -->
 
           <!-- User Name Start -->
-          <h1 class="custom-text-xl font-semibold mb-2">ASAP</h1>
+          <h1 class="custom-text-xl font-semibold mb-2">
+            {{ userStore.user.firstName }} {{ userStore.user.lastName }}
+          </h1>
           <!-- User Name End -->
 
           <!-- User Email Start -->
           <h2 class="custom-text-base font-medium text-custom-gray">
-            ASAP
+            {{ userStore.user.email }}
           </h2>
           <!-- User Email End -->
         </div>
@@ -119,10 +121,12 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { useUserStore } from "@/stores/userStore";
 import Info from "@/components/Account/Info.vue";
 import History from "@/components/Account/History.vue";
 import Payment from "@/components/Account/Payment.vue";
 
+const userStore = useUserStore();
 const selectedTab = ref<string>("Account");
 
 let isOpen = ref<boolean>();
@@ -131,11 +135,6 @@ let isOpen = ref<boolean>();
 const changeTab = (type: string) => {
   selectedTab.value = type;
 };
-
-// Method Close
-// const close = () => {
-//   isOpen.value = false;
-// };
 
 // Method Open
 const open = () => {
@@ -155,9 +154,15 @@ const open = () => {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 80%;
+  width: 100%;
   border-bottom: solid 3px #8dd3bb;
   @apply inset-0 m-auto;
+  @screen md {
+    @apply w-[90%];
+  }
+  @screen sm {
+    @apply w-[80%];
+  }
 }
 
 .button {

@@ -1,8 +1,8 @@
 <template>
   <!-- Header content for User wrapper Start -->
-  <div class="flex gap-2 items-center" v-if="isLoggedIn == true">
+  <div class="w-fit flex gap-2 items-center" v-if="isLoggedIn == true">
     <!-- Favourites Start -->
-    <CustomButton class="w-40 flex gap-1 items-center mr-2">
+    <CustomButton class="w-fit flex gap-1 items-center mr-2">
       <img
         src="@/assets/images/svg/UI/favourites-light.svg"
         alt="favourites"
@@ -31,76 +31,162 @@
     ></div>
     <!-- Line End -->
 
-    <div class="max-w-40 w-full relative hover:cursor-pointer">
-      <!-- User Start -->
-      <div class="flex h-11 gap-1 items-center" @click="openWindow">
-        <!-- Image Start -->
-        <div class="w-11 h-11 rounded-full relative">
-          <img
-            src="@/assets/images/png/Account/avatar-light.svg"
-            alt="avatar"
-            class="w-11 h-11"
-            v-if="route.name == 'Landing'"
-          />
-          <img
-            src="@/assets/images/png/Account/avatar.svg"
-            alt="avatar"
-            class="w-11 h-11"
-            v-else
-          />
-          <CustomButton
-            class="w-3 h-3 rounded-full absolute bg-custom-red right-0 top-8 flex justify-center items-center"
-          >
-            <img
-              src="@/assets/images/svg/UI/chevron-down-user.svg"
-              alt="chevron-down-user"
-              class="rotate-180"
-              :class="{ 'rotate-0': settingsVisible }"
-            />
-          </CustomButton>
-        </div>
-        <!-- Image End -->
-        <!-- User Name Start -->
-        <p
-          class="custom-text-sm text-custom-darkgreen font-semibold sm:hidden"
-          :class="
-            route.name !== 'Landing' ? 'text-custom-darkgreen ' : 'text-default'
-          "
+    <div class="w-fit relative hover:cursor-pointer" v-click-away="onClickAway">
+      <Transition name="fade-slide">
+        <!-- User Start -->
+        <div
+        v-if="!settingsVisible"
+          class="flex h-11 gap-1 items-center"
+          @click="openWindow"
+          
         >
-          ASAP
-        </p>
-        <!-- User Name End -->
-      </div>
-      <!-- User Name End -->
-      <HeaderList
-        :dialogVisible="settingsVisible"
-        :list="List"
-        @close-window="settingsVisible = !settingsVisible"
-      />
-      <!-- User End -->
+          <!-- Image Start -->
+          <div class="w-11 h-11 rounded-full relative">
+            <img
+              src="@/assets/images/png/Account/avatar-light.svg"
+              alt="avatar"
+              class="w-11 h-11"
+              v-if="route.name == 'Landing'"
+            />
+            <img
+              src="@/assets/images/png/Account/avatar.svg"
+              alt="avatar"
+              class="w-11 h-11"
+              v-else
+            />
+            <CustomButton
+              class="w-3 h-3 rounded-full absolute bg-custom-red right-0 top-8 flex justify-center items-center"
+            >
+              <img
+                src="@/assets/images/svg/UI/chevron-down-user.svg"
+                alt="chevron-down-user"
+                class="rotate-180"
+                :class="{ 'rotate-0': settingsVisible }"
+              />
+            </CustomButton>
+          </div>
+          <!-- Image End -->
+          <!-- User Name Start -->
+          <p
+            class="custom-text-sm text-custom-darkgreen font-semibold sm:hidden flex-shrink-0"
+            :class="
+              route.name !== 'Landing'
+                ? 'text-custom-darkgreen '
+                : 'text-default'
+            "
+          >
+            {{ userStore.user.firstName }} {{ userStore.user.lastName }}
+          </p>
+          <!-- User Name End -->
+        </div>
+      </Transition>
     </div>
+    <Transition name="grow-right">
+      <div v-if="settingsVisible" class="flex gap-1">
+        <img
+          v-if="route.name !== 'Landing'"
+          src="@/assets/images/svg/UI/settings.svg"
+          alt="settings"
+          class="icon"
+          @click="router.push({ name: 'Account' })"
+        />
+        <img
+          v-if="route.name !== 'Landing'"
+          src="@/assets/images/svg/UI/sign-out.svg"
+          alt="sign-out"
+          class="icon"
+          @click="signOut"
+        />
+        <img
+          v-if="route.name == 'Landing'"
+          src="@/assets/images/svg/UI/settings-white.svg"
+          alt="settings"
+          class="icon"
+          @click="router.push({ name: 'Account' })"
+        />
+        <img
+          v-if="route.name == 'Landing'"
+          src="@/assets/images/svg/UI/sign-out-white.svg"
+          alt="sign-out"
+          class="icon"
+          @click="signOut"
+        />
+      </div>
+    </Transition>
   </div>
   <!-- Header content for User wrapper End -->
 </template>
 
 <script setup lang="ts">
-import HeaderList from "./HeaderList.vue";
 import { useRoute } from "vue-router";
-import { ref, computed, watch } from "vue";
-import { useI18n } from "vue-i18n";
+import { ref } from "vue";
 import { useAuthStore } from "@/stores/authStore.ts";
+import { useUserStore } from "@/stores/userStore";
 import { storeToRefs } from "pinia";
+import { useRouter } from "vue-router";
 
-const { t } = useI18n();
 const route = useRoute();
+const router = useRouter();
 const authStore = useAuthStore();
+const userStore = useUserStore();
 const { isLoggedIn } = storeToRefs(authStore);
 const settingsVisible = ref<boolean>(false);
-const List = ref<string[]>([t("Header.setting"), t("Header.signOut")]);
 
 const openWindow = () => {
   settingsVisible.value = true;
 };
+
+const onClickAway = () => {
+  settingsVisible.value = false;
+};
+
+async function signOut() {
+  try {
+    await authStore.handlerSignOut();
+    router.push({ name: "Landing" });
+  } catch (error) {
+    alert(error);
+  }
+}
 </script>
 
-<style scoped></style>
+<style scoped>
+.icon {
+  @apply w-6 h-6 hover:cursor-pointer transform hover:scale-110 transition duration-200;
+}
+
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.fade-slide-enter, 
+.fade-slide-leave-to /* .fade-slide-leave-active in <2.1.8 */ {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.grow-right-enter-active,
+.grow-right-leave-active {
+  transition: transform 0.5s ease;
+}
+.grow-right-enter-from {
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.grow-right-enter-to {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+.grow-right-leave-from {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+.grow-right-leave-to {
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.transition-transform {
+  transition: transform 0.3s ease; /* Анімація зсуву */
+}
+</style>

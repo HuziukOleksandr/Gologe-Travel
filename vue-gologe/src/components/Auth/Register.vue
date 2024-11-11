@@ -217,6 +217,7 @@ const auth = ref<AuthType>({
 });
 
 const user = ref<UserType>({
+  
   email: "",
   firstName: "",
   lastName: "",
@@ -226,16 +227,15 @@ const user = ref<UserType>({
 });
 
 async function Register() {
+
   if (auth.value) {
     authStore.setAuth(auth.value);
     await authStore.register();
-  } else {
-    console.error("User data is missing.");
   }
   if (user.value) {
     user.value.email = auth.value.email;
     userStore.setUser(user.value);
-   await userStore.setUserInDatabase(user.value);
+    await userStore.setUserInDatabase(user.value.phone);
   }
 }
 

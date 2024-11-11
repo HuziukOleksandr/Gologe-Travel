@@ -74,7 +74,7 @@ async function signOut() {
 	rounded opacity-100 z-50;
 
   .list {
-    @apply max-w-40 w-full flex flex-col gap-1  text-custom-darkgreen;
+    @apply w-full flex flex-col gap-1  text-custom-darkgreen;
 
     &:hover {
       @apply cursor-pointer;
@@ -82,7 +82,7 @@ async function signOut() {
 
     .list-element {
       @apply w-full h-10 flex items-center px-4
-        border-b-2 border-b-custom-darkgray;
+        border-b-[1px] border-b-custom-darkgray;
 
       &:hover {
         @apply text-custom-darkgreen;

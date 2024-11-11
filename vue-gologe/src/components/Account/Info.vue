@@ -20,7 +20,9 @@
         <!-- Title End -->
 
         <!-- Text Start -->
-        <h2 class="text">John Doe</h2>
+        <h2 class="text">
+          {{ userStore.user.firstName }} {{ userStore.user.lastName }}
+        </h2>
         <!-- Text End -->
       </div>
       <!-- Text wrapper End -->
@@ -78,11 +80,11 @@
         <!-- Title End -->
 
         <!-- Text Start -->
-        <h2 class="text">john.doe@gmail.com</h2>
+        <h2 class="text">{{ userStore.user.email }}</h2>
         <!-- Text End -->
       </div>
       <!-- Text wrapper End -->
-       
+
       <!-- Change wrapper Start -->
       <div class="change_wrapper">
         <!-- Change input Start -->
@@ -194,7 +196,7 @@
         <!-- Title End -->
 
         <!-- Text Start -->
-        <h2 class="text">+1 000-000-0000</h2>
+        <h2 class="text">{{ userStore.user.phone }}</h2>
         <!-- Text End -->
       </div>
       <!-- Text wrapper Start -->
@@ -252,7 +254,7 @@
         <!-- Title Start -->
 
         <!-- Text Start -->
-        <h2 class="text">St 32 main downtown, Los Angeles, California, USA</h2>
+        <h2 class="text">{{ userStore.user.address }}</h2>
         <!-- Text End -->
       </div>
       <!-- Text wrapper End -->
@@ -269,8 +271,8 @@
             v-model="Value"
           />
         </Transition>
-
         <!-- Change input End -->
+
         <!-- Confirm Button Start -->
         <CustomButton
           v-if="ChangeValue == 'address'"
@@ -310,7 +312,7 @@
         <!-- Title End -->
 
         <!-- Text Start -->
-        <h2 class="text">01-01-1992</h2>
+        <h2 class="text">{{ userStore.user.birth }}</h2>
         <!-- Text End -->
       </div>
       <!-- Text wrapper End -->
@@ -370,13 +372,18 @@ const ChangeValue = ref<string>("");
 const Value = ref<string>("");
 
 const Change = (value: string) => {
+  Value.value = '';
   ChangeValue.value = value;
 };
 
 const Confirm = () => {
-  userStore.setUserProperty(ChangeValue.value as keyof UserType, Value.value);
-  ChangeValue.value = "";
-  Value.value = "";
+  if(Value.value) {
+    userStore.setUserProperty(ChangeValue.value as keyof UserType, Value.value);
+    ChangeValue.value = "";
+    Value.value = "";
+  } else {
+    ChangeValue.value = "";
+  }
 };
 </script>
 
