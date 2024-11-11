@@ -379,6 +379,7 @@ const Change = (value: string) => {
 const Confirm = () => {
   if(Value.value) {
     userStore.setUserProperty(ChangeValue.value as keyof UserType, Value.value);
+    userStore.updateUserInDatabase();
     ChangeValue.value = "";
     Value.value = "";
   } else {

@@ -227,7 +227,6 @@ const user = ref<UserType>({
 });
 
 async function Register() {
-
   if (auth.value) {
     authStore.setAuth(auth.value);
     await authStore.register();
