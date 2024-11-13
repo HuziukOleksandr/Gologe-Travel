@@ -32,7 +32,7 @@
     <!-- Line End -->
 
     <div class="w-fit relative hover:cursor-pointer" v-click-away="onClickAway">
-      <Transition name="fade-slide">
+      <Transition name="user-name">
         <!-- User Start -->
         <div
         v-if="!settingsVisible"
@@ -81,7 +81,7 @@
         </div>
       </Transition>
     </div>
-    <Transition name="grow-right">
+    <Transition name="setting">
       <div v-if="settingsVisible" class="flex gap-1">
         <img
           v-if="route.name !== 'Landing'"
@@ -155,38 +155,25 @@ async function signOut() {
   @apply w-6 h-6 hover:cursor-pointer transform hover:scale-110 transition duration-200;
 }
 
-.fade-slide-enter-active,
-.fade-slide-leave-active {
-  transition: transform 0.5s ease, opacity 0.5s ease;
+/* Styles for User Name with Animation Start */
+.user-name-enter-active, .user-name-leave-active {
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
 
-.fade-slide-enter, 
-.fade-slide-leave-to /* .fade-slide-leave-active in <2.1.8 */ {
-  transform: translateX(-100%);
+.user-name-enter-from, .user-name-leave-to {
+  transform: translateX(-10px);
   opacity: 0;
 }
+/* Styles for User Name with Animation End */
 
-.grow-right-enter-active,
-.grow-right-leave-active {
-  transition: transform 0.5s ease;
+/* Styles for Setting with Animation Start */
+.setting-enter-active, .setting-leave-active {
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
-.grow-right-enter-from {
-  transform: scaleX(0);
-  transform-origin: right;
+
+.setting-enter-from, .setting-leave-to {
+  transform: translateX(0px);
+  opacity: 0;
 }
-.grow-right-enter-to {
-  transform: scaleX(1);
-  transform-origin: right;
-}
-.grow-right-leave-from {
-  transform: scaleX(1);
-  transform-origin: right;
-}
-.grow-right-leave-to {
-  transform: scaleX(0);
-  transform-origin: right;
-}
-.transition-transform {
-  transition: transform 0.3s ease; /* Анімація зсуву */
-}
+/* Styles for Setting with Animation End */
 </style>

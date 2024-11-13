@@ -26,13 +26,12 @@ onMounted(() => {
   auth = getAuth();
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      // Add to Pinia Store
-      authStore.setAuthState(true);
-      // userStore.getUserIndatabase(user.email || '');
-
       // Add to Locale Storage
       setItem("isLoggedIn", true);
       setItem("email", user.email);
+      
+      // Add to Pinia Store
+      authStore.setAuthState(true);
       userStore.getUserByEmail(getItem("email"))
     } else {
       // Add to Locale Storage
