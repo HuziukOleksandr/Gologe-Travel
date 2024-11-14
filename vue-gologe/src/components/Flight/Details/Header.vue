@@ -1,8 +1,8 @@
 <template>
   <!-- Header wrapper Start -->
-  <div class="w-full h-[105px] flex justify-between">
+  <div class="w-full min-h-[105px] flex justify-between flex-wrap">
     <!-- Aside wrapper Start -->
-    <div class="flex flex-col justify-between">
+    <div class="aside-wrapper">
       <!-- Title Start -->
       <h1 class="custom-text-2xl text-custom-darkgreen font-semibold">
         Emirates A380 Airbus
@@ -49,12 +49,12 @@
     <!-- Aside wrapper end -->
 
     <!-- Right side wrapper Start -->
-    <div class="max-w-[276px] w-full flex flex-col justify-between">
+    <div class="right-side">
       <!-- Price text Start -->
       <p class="custom-text-3xl self-end text-custom-red font-semibold">$204</p>
       <!-- Price text End -->
       <!-- Buttons wrapper Start -->
-      <div class="flex gap-4">
+      <div class="buttons-wrapper">
         <!-- Button "Favorite" Start -->
         <CustomButton class="h-12 p-3 border-2 border-custom-green">
           <img src="@/assets/images/svg/UI/heart.svg" alt="heart" />
@@ -69,7 +69,7 @@
 
         <!-- Button "Book" Start -->
         <CustomButton
-          class="max-w-[150px] w-full h-12 bg-custom-lightgreen flex justify-center"
+          class="main-button"
           @click="$router.push({ name: 'BookingDetails' })"
         >
           <p class="custom-text-sm text-custom-darkgreen font-semibold">
@@ -89,5 +89,40 @@
 
 <style lang="scss" scoped>
 
+.aside-wrapper {
+  @apply flex flex-col justify-between;
+  
+  @screen sm {
+    @apply w-full flex-col gap-4;
+  }
+}
+
+.right-side {
+  @apply w-full flex flex-col justify-between;
+
+  @screen lg {
+    @apply max-w-[280px];
+  }
+
+  @screen md {
+    @apply max-w-[280px];
+  }
+
+  @screen sm {
+    @apply w-full gap-4
+  }
+
+  .buttons-wrapper {
+    @apply flex gap-4;
+
+    .main-button {
+      @apply w-full h-12 bg-custom-lightgreen flex justify-center;
+
+      @screen lg {
+        @apply max-w-[150px]
+      }
+    }
+  }
+}
 
 </style>

@@ -1,8 +1,8 @@
 <template>
   <!-- Features wrapper Start -->
-  <div class="h-[175px] flex flex-col justify-between gap-6">
+  <div class="min-h-[175px] flex flex-col justify-between gap-6">
     <!-- Header wrapper Start -->
-    <div class="flex justify-between">
+    <div class="flex justify-between flex-wrap">
       <!-- Title Start -->
       <h1 class="custom-text-2xl text-custom-darkgreen font-semibold">
         Basic Economy Features
@@ -14,7 +14,7 @@
     </div>
     <!-- Header wrapper End -->
     <!-- Content wrapper Start -->
-    <div class="w-full flex justify-between">
+    <div class="w-full flex justify-between flex-wrap">
       <img
         v-for="element in images"
         :src="getDetailsImagePng(element)"

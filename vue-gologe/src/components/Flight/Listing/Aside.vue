@@ -152,6 +152,7 @@
 </template>
 
 <script setup lang="ts">
+// TODO: переробити Filters в Absolute
 import Price from "./Filters/Price.vue";
 import Departure from "./Filters/Departure.vue";
 import Rating from "./Filters/Rating.vue";
