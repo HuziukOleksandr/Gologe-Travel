@@ -64,6 +64,9 @@ const CustomLoginWith = defineAsyncComponent(
 const CustomRegisterWith = defineAsyncComponent(
     () => import("./CustomLoginWith.vue")
 )
+const CustomErrorWindow = defineAsyncComponent(
+    () => import("./CustomErrorWindow.vue")
+)
 export default {
     CustomNavigation,
     CustomLocalization,
@@ -81,4 +84,5 @@ export default {
     CustomAddPayment,
     CustomLoginWith,
     CustomRegisterWith,
+    CustomErrorWindow,
 };

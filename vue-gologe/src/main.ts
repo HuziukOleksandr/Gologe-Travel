@@ -14,6 +14,7 @@ import ElementPlus from "element-plus";
 
 import App from "./App.vue";
 
+import 'sweetalert2/dist/sweetalert2.min.css';
 import "element-plus/dist/index.css";
 import "./assets/root/style.scss";
 import "./assets/root/fonts.scss";

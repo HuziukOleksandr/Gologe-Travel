@@ -15,6 +15,7 @@ export const useUserStore = defineStore("user", {
   },
   getters: {
     getUser: (state) => state.user,
+    getResult: (state) => state.result,
   },
   actions: {
     setUser(value: UserType) {
@@ -29,7 +30,7 @@ export const useUserStore = defineStore("user", {
       const userRef = ref(database, `users/${userId}`); 
       try {
         await set(userRef, this.user);
-        this.result.set = "Succes";
+        this.result.set = "Success";
       } catch (error) {
         this.errorMsg = "Error:" + (error as Error).message;
       }
@@ -78,7 +79,7 @@ export const useUserStore = defineStore("user", {
             if (userKey) {
               const userToUpdateRef = ref(database, `users/${userKey}`);
               update(userToUpdateRef, this.user);
-              this.result.update = "Succes"
+              this.result.update = "Success"
             }
           });
         } else {

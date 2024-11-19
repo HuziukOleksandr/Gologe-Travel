@@ -335,6 +335,10 @@
         <CustomButton
           v-if="ChangeValue == 'birth'"
           class="change_button"
+          :class="{
+            'border-custom-red': Error, // Якщо Error true, додати цей клас
+            'border-custom-lightgreen': !Error, // Якщо Error false, додати цей клас
+          }"
           @click="Confirm"
         >
           <!-- Button Image -->
@@ -346,7 +350,7 @@
         </CustomButton>
         <!-- Confirm Button End -->
         <!-- Change Button Start -->
-        <CustomButton v-else class="change_button" @click="Change('birth')">
+        <CustomButton v-else class="change_button" @click="openModalWindow  ()">
           <!-- Button Image -->
           <img src="@/assets/images/svg/UI/change.svg" alt="change" />
           <p class="button-text">
@@ -360,11 +364,13 @@
     <!-- Date of Birth wrapper End -->
   </div>
   <!-- Info wrapper End -->
+  <CustomErrorWindow :isOpen="isModalOpen" @closeWindow="closeModal">
+      <p>Це вміст модального вікна.</p>
+    </CustomErrorWindow>
 </template>
 
 <script setup lang="ts">
 //TODO: Добавити валідацію
-//TODO: Добавити Зміну імені
 //TODO: Добавити Зміну пароля
 
 import { ref } from "vue";
@@ -374,22 +380,34 @@ import type UserType from "@/types/user-types";
 const userStore = useUserStore();
 const ChangeValue = ref<string>("");
 const Value = ref<string>("");
-const FirstName = ref<string>("");
-const LastName = ref<string>("");
 const InputName = ref<string>("");
-
+const Error = ref<boolean>(true);
+const isModalOpen = ref(false);
+const emit = defineEmits(["openWindow"]);
 const Change = (value: string) => {
   InputName.value = value;
-  if (value === "name") {
-    console.log(value);
-  } else {
-    Value.value = "";
-    ChangeValue.value = value;
-  }
   Value.value = "";
   ChangeValue.value = value;
 };
 
+const openWindow = ref<boolean>(false);
+
+const openModalWindow = () => {
+  openWindow.value = true;
+};
+
+const closeModal = () => {
+  openWindow.value = false;
+};
+
+const open = () => {
+  emit("openWindow");
+};
+
+
+const openModal = () => {
+  isModalOpen.value = true;
+};
 async function Confirm() {
   if (Value.value) {
     if (InputName.value === "name") {
@@ -435,8 +453,12 @@ async function Confirm() {
       @apply px-2 h-12 border-b-custom-lightgreen border-b-2;
     }
 
+    .error_input {
+      @apply px-2 h-12 border-b-custom-lightgreen border-b-2;
+    }
+
     .change_button {
-      @apply w-fit h-12 flex justify-center gap-1 border-custom-lightgreen border-2 px-8 
+      @apply w-fit h-12 flex border-custom-lightgreen justify-center gap-1 border-2 px-8 
       sm:h-10 sm:px-2 sm:w-10;
 
       .button-text {
@@ -445,6 +467,7 @@ async function Confirm() {
     }
   }
 }
+
 .grow-right-enter-active,
 .grow-right-leave-active {
   transition: transform 0.5s ease;

@@ -3,7 +3,6 @@
     <router-view name="Header" v-if="route.name !== 'Landing'" />
     <router-view class="flex" />
     <router-view name="Footer" />
-
     <div id="modal"></div>
   </div>
 </template>
