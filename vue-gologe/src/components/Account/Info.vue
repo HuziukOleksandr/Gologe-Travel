@@ -374,22 +374,39 @@ import type UserType from "@/types/user-types";
 const userStore = useUserStore();
 const ChangeValue = ref<string>("");
 const Value = ref<string>("");
+const FirstName = ref<string>("");
+const LastName = ref<string>("");
+const InputName = ref<string>("");
 
 const Change = (value: string) => {
-  Value.value = '';
+  InputName.value = value;
+  if (value === "name") {
+    console.log(value);
+  } else {
+    Value.value = "";
+    ChangeValue.value = value;
+  }
+  Value.value = "";
   ChangeValue.value = value;
 };
 
-const Confirm = () => {
-  if(Value.value) {
-    userStore.setUserProperty(ChangeValue.value as keyof UserType, Value.value);
-    userStore.updateUserInDatabase();
-    ChangeValue.value = "";
-    Value.value = "";
-  } else {
-    ChangeValue.value = "";
+async function Confirm() {
+  if (Value.value) {
+    if (InputName.value === "name") {
+      const [firstName, lastName] = Value.value.split(" ");
+      userStore.setUserProperty("firstName", firstName);
+      userStore.setUserProperty("lastName", lastName);
+    } else {
+      userStore.setUserProperty(
+        ChangeValue.value as keyof UserType,
+        Value.value
+      );
+    }
   }
-};
+  await userStore.updateUserInDatabase();
+  ChangeValue.value = "";
+  Value.value = "";
+}
 </script>
 
 <style lang="scss" scoped>

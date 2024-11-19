@@ -148,7 +148,7 @@ const open = () => {
 <style lang="scss" scoped>
 .user_wrapper {
   @apply absolute left-[50%] translate-x-[-50%] top-[275px] 
-      max-w-[185px] w-full h-[240px] 
+       w-fit h-[240px] 
       flex flex-col items-center;
 }
 
