@@ -350,7 +350,7 @@
         </CustomButton>
         <!-- Confirm Button End -->
         <!-- Change Button Start -->
-        <CustomButton v-else class="change_button" @click="openModalWindow  ()">
+        <CustomButton v-else class="change_button" @click="openModalWindow()">
           <!-- Button Image -->
           <img src="@/assets/images/svg/UI/change.svg" alt="change" />
           <p class="button-text">
@@ -365,49 +365,41 @@
   </div>
   <!-- Info wrapper End -->
   <CustomErrorWindow :isOpen="isModalOpen" @closeWindow="closeModal">
-      <p>Це вміст модального вікна.</p>
+      <div class="w-[400px] h-[100px] bg-black">
+
+      </div>
     </CustomErrorWindow>
 </template>
 
 <script setup lang="ts">
 //TODO: Добавити валідацію
 //TODO: Добавити Зміну пароля
-
 import { ref } from "vue";
 import { useUserStore } from "@/stores/userStore";
 import type UserType from "@/types/user-types";
 
-const userStore = useUserStore();
-const ChangeValue = ref<string>("");
-const Value = ref<string>("");
-const InputName = ref<string>("");
-const Error = ref<boolean>(true);
-const isModalOpen = ref(false);
-const emit = defineEmits(["openWindow"]);
+const userStore = useUserStore(),
+  ChangeValue = ref<string>(""),
+  Value = ref<string>(""),
+  InputName = ref<string>(""),
+  Error = ref<boolean>(true),
+  isModalOpen = ref(false),
+  emit = defineEmits(["openWindow"]);
+
+const openModalWindow = () => {
+  isModalOpen.value = true;
+};
+
+const closeModal = () => {
+  isModalOpen.value = false;
+};
+
 const Change = (value: string) => {
   InputName.value = value;
   Value.value = "";
   ChangeValue.value = value;
 };
 
-const openWindow = ref<boolean>(false);
-
-const openModalWindow = () => {
-  openWindow.value = true;
-};
-
-const closeModal = () => {
-  openWindow.value = false;
-};
-
-const open = () => {
-  emit("openWindow");
-};
-
-
-const openModal = () => {
-  isModalOpen.value = true;
-};
 async function Confirm() {
   if (Value.value) {
     if (InputName.value === "name") {

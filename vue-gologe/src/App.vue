@@ -4,6 +4,7 @@
     <router-view class="flex" />
     <router-view name="Footer" />
     <div id="modal"></div>
+    <div id="error"></div>
   </div>
 </template>
 

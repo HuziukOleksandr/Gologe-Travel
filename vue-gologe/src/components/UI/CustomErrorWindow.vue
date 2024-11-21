@@ -1,15 +1,8 @@
 <template>
-  <Teleport to="#modal">
-    <Transition
-      name="slide-from-top-right"
-      >
-      <div
-        class="fixed flex items-center "
-      >
-        <div
-          class="modal-content"
-          v-click-away="() => emit('closeWindow')"
-        >
+  <Teleport to="#error">
+    <Transition name="slide-from-right-to-left">
+      <div v-show="props.isOpen" class="fixed inset-0 flex justify-end">
+        <div>
           <slot></slot>
         </div>
       </div>
@@ -29,32 +22,29 @@ const props = withDefaults(
 
 const emit = defineEmits(["closeWindow"]);
 
-// Таймер для автоматичного закриття
 const startAutoClose = () => {
   setTimeout(() => {
     emit("closeWindow");
-  }, 5000); // 5 секунд
+  }, 5000);
 };
 </script>
 
 <style scoped>
-/* Анімація для з'явлення з правого верхнього кута */
-.slide-from-top-right-enter-active,
-.slide-from-top-right-leave-active {
-  transition: transform 0.5s ease, opacity 0.5s ease;
+.slide-from-right-to-left-enter-active,
+.slide-from-right-to-left-leave-active {
+  transition: transform 1s ease, opacity 0.5s ease;
 }
 
-.slide-from-top-right-enter {
-  transform: translate(50%, -50%);
+.slide-from-right-to-left-enter {
+  transform: translateX(100%);
   opacity: 0;
 }
 
-.slide-from-top-right-leave-to {
-  transform: translate(50%, -50%);
+.slide-from-right-to-left-leave-to {
+  transform: translateX(100%);
   opacity: 0;
 }
 
-/* Стили для модального вікна */
 .modal-content {
   background: white;
   border-radius: 8px;
