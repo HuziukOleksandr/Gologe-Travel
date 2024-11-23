@@ -365,10 +365,17 @@
   </div>
   <!-- Info wrapper End -->
   <CustomErrorWindow :isOpen="isModalOpen" @closeWindow="closeModal">
-      <div class="w-[400px] h-[100px] bg-black">
-
+    <div class="error-wrapper" @click="closeModal">
+      <img
+        src="@/assets/images/svg/UI/close.svg"
+        alt="close"
+        class="close-image"
+      />
+      <div class="w-fit">
+        <p class="error-text">Undefained email</p>
       </div>
-    </CustomErrorWindow>
+    </div>
+  </CustomErrorWindow>
 </template>
 
 <script setup lang="ts">
@@ -460,6 +467,21 @@ async function Confirm() {
   }
 }
 
+.error-wrapper {
+  @apply w-fit min-h-10 h-fit p-6 bg-default rounded shadow-lg flex items-center gap-4;
+
+  &:hover {
+    @apply cursor-pointer;
+  }
+
+  .close-image {
+    @apply w-2 h-2;
+  }
+
+  .error-text {
+    @apply font-serrat text-base text-custom-red font-semibold;
+  }
+}
 .grow-right-enter-active,
 .grow-right-leave-active {
   transition: transform 0.5s ease;

@@ -1,10 +1,8 @@
 <template>
   <Teleport to="#error">
     <Transition name="slide-from-right-to-left">
-      <div v-show="props.isOpen" class="fixed inset-0 flex justify-end">
-        <div>
-          <slot></slot>
-        </div>
+      <div v-if="props.isOpen" class="fixed inset-0 flex justify-end m-4">
+        <slot></slot>
       </div>
     </Transition>
   </Teleport>
@@ -32,7 +30,7 @@ const startAutoClose = () => {
 <style scoped>
 .slide-from-right-to-left-enter-active,
 .slide-from-right-to-left-leave-active {
-  transition: transform 1s ease, opacity 0.5s ease;
+  transition: transform 5s ease, opacity 5s ease;
 }
 
 .slide-from-right-to-left-enter {
@@ -40,15 +38,18 @@ const startAutoClose = () => {
   opacity: 0;
 }
 
+.slide-from-right-to-left-enter-to {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slide-from-right-to-left-leave {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 .slide-from-right-to-left-leave-to {
   transform: translateX(100%);
   opacity: 0;
-}
-
-.modal-content {
-  background: white;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 </style>
