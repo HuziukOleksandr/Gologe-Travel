@@ -1,7 +1,7 @@
 <template>
   <Teleport to="#error">
-    <Transition name="slide-from-right-to-left">
-      <div v-if="props.isOpen" class="fixed inset-0 flex justify-end m-4">
+    <Transition name="slide-fade">
+      <div v-show="props.isOpen" class="fixed inset-0 flex justify-end m-4">
         <slot></slot>
       </div>
     </Transition>
@@ -9,8 +9,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from "vue";
-
 const props = withDefaults(
   defineProps<{
     isOpen: boolean;
@@ -19,37 +17,20 @@ const props = withDefaults(
 );
 
 const emit = defineEmits(["closeWindow"]);
-
-const startAutoClose = () => {
-  setTimeout(() => {
-    emit("closeWindow");
-  }, 5000);
-};
 </script>
 
 <style scoped>
-.slide-from-right-to-left-enter-active,
-.slide-from-right-to-left-leave-active {
-  transition: transform 5s ease, opacity 5s ease;
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
 }
 
-.slide-from-right-to-left-enter {
-  transform: translateX(100%);
-  opacity: 0;
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-.slide-from-right-to-left-enter-to {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.slide-from-right-to-left-leave {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.slide-from-right-to-left-leave-to {
-  transform: translateX(100%);
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
   opacity: 0;
 }
 </style>

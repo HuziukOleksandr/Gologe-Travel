@@ -18,6 +18,7 @@
     />
     <!-- Slot for Image -->
     <slot name="image"></slot>
+
   </div>
   <!-- Custom input Start -->
 </template>

@@ -9,362 +9,25 @@
   <div
     class="w-full flex flex-col gap-8 px-6 py-8 rounded-2xl shadow-xl border-[1px] border-custom-lightgreen"
   >
-    <!-- Name wrapper Start -->
-    <div class="wrapper">
-      <!-- Text wrapper Start -->
-      <div class="text-wrapper">
-        <!-- Title Start -->
-        <h1 class="title">
-          {{ $t("Account.Account.name") }}
-        </h1>
-        <!-- Title End -->
+    <Name />
 
-        <!-- Text Start -->
-        <h2 class="text">
-          {{ userStore.user.firstName }} {{ userStore.user.lastName }}
-        </h2>
-        <!-- Text End -->
-      </div>
-      <!-- Text wrapper End -->
+    <Email />
 
-      <!-- Change wrapper Start -->
-      <div class="change_wrapper">
-        <!-- Change input Start -->
-        <Transition name="grow-right">
-          <input
-            v-if="ChangeValue == 'name'"
-            class="change_input"
-            type="text"
-            placeHolder="Name"
-            v-model="Value"
-          />
-        </Transition>
+    <Phone />
 
-        <!-- Change input End -->
-        <!-- Confirm Button Start -->
-        <CustomButton
-          v-if="ChangeValue == 'name'"
-          class="change_button"
-          @click="Confirm"
-        >
-          <!-- Button Image -->
-          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
+    <Address/>
 
-          <p class="button-text">
-            {{ $t("Account.Account.confirm") }}
-          </p>
-        </CustomButton>
-        <!-- Confirm Button End -->
-        <!-- Change Button Start -->
-        <CustomButton v-else class="change_button" @click="Change('name')">
-          <!-- Button Image -->
-          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
-          <p class="button-text">
-            {{ $t("Account.Account.change") }}
-          </p>
-        </CustomButton>
-        <!-- Change Button End -->
-      </div>
-      <!-- Change wrapper End -->
-    </div>
-    <!-- Name wrapper End -->
+    <Birth />
 
-    <!-- Email wrapper Start -->
-    <div class="wrapper">
-      <!-- Text wrapper Start -->
-      <div class="text-wrapper">
-        <!-- Title Start -->
-        <h1 class="title">
-          {{ $t("Account.Account.email") }}
-        </h1>
-        <!-- Title End -->
+    <Password />
 
-        <!-- Text Start -->
-        <h2 class="text">{{ userStore.user.email }}</h2>
-        <!-- Text End -->
-      </div>
-      <!-- Text wrapper End -->
-
-      <!-- Change wrapper Start -->
-      <div class="change_wrapper">
-        <!-- Change input Start -->
-        <Transition name="grow-right">
-          <input
-            v-if="ChangeValue == 'email'"
-            class="change_input"
-            type="text"
-            placeHolder="Email"
-            v-model="Value"
-          />
-        </Transition>
-
-        <!-- Change input End -->
-        <!-- Confirm Button Start -->
-        <CustomButton
-          v-if="ChangeValue == 'email'"
-          class="change_button"
-          @click="Confirm"
-        >
-          <!-- Button Image -->
-          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
-
-          <p class="button-text">
-            {{ $t("Account.Account.confirm") }}
-          </p>
-        </CustomButton>
-        <!-- Confirm Button End -->
-        <!-- Change Button Start -->
-        <CustomButton v-else class="change_button" @click="Change('email')">
-          <!-- Button Image -->
-          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
-          <p class="button-text">
-            {{ $t("Account.Account.change") }}
-          </p>
-        </CustomButton>
-        <!-- Change Button End -->
-      </div>
-      <!-- Change wrapper End -->
-    </div>
-    <!-- Email wrapper End -->
-
-    <!-- Password wrapper Start -->
-    <div class="wrapper">
-      <!-- Text wrapper Start -->
-      <div class="text-wrapper">
-        <!-- Title Start -->
-        <h1 class="title">
-          {{ $t("Account.Account.password") }}
-        </h1>
-        <!-- Title Start -->
-
-        <!-- Text Start -->
-        <h2 class="text">************</h2>
-        <!-- Text End -->
-      </div>
-      <!-- Text wrapper End -->
-
-      <!-- Change wrapper Start -->
-      <div class="change_wrapper">
-        <!-- Change input Start -->
-        <Transition name="grow-right">
-          <input
-            v-if="ChangeValue == 'password'"
-            class="change_input"
-            type="text"
-            placeHolder="Password"
-            v-model="Value"
-          />
-        </Transition>
-
-        <!-- Change input End -->
-        <!-- Confirm Button Start -->
-        <CustomButton
-          v-if="ChangeValue == 'password'"
-          class="change_button"
-          @click="Confirm"
-        >
-          <!-- Button Image -->
-          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
-
-          <p class="button-text">
-            {{ $t("Account.Account.confirm") }}
-          </p>
-        </CustomButton>
-        <!-- Confirm Button End -->
-        <!-- Change Button Start -->
-        <CustomButton v-else class="change_button" @click="Change('password')">
-          <!-- Button Image -->
-          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
-          <p class="button-text">
-            {{ $t("Account.Account.change") }}
-          </p>
-        </CustomButton>
-        <!-- Change Button End -->
-      </div>
-      <!-- Change wrapper End -->
-    </div>
-    <!-- Password wrapper End -->
-
-    <!-- Phone Number wrapper Start -->
-    <div class="wrapper">
-      <!-- Text wrapper Start -->
-      <div class="text-wrapper">
-        <!-- Title Start -->
-        <h1 class="title">
-          {{ $t("Account.Account.number") }}
-        </h1>
-        <!-- Title End -->
-
-        <!-- Text Start -->
-        <h2 class="text">{{ userStore.user.phone }}</h2>
-        <!-- Text End -->
-      </div>
-      <!-- Text wrapper Start -->
-
-      <!-- Change wrapper Start -->
-      <div class="change_wrapper">
-        <!-- Change input Start -->
-        <Transition name="grow-right">
-          <input
-            v-if="ChangeValue == 'phone'"
-            class="change_input"
-            type="text"
-            placeHolder="Phone"
-            v-model="Value"
-          />
-        </Transition>
-
-        <!-- Change input End -->
-        <!-- Confirm Button Start -->
-        <CustomButton
-          v-if="ChangeValue == 'phone'"
-          class="change_button"
-          @click="Confirm"
-        >
-          <!-- Button Image -->
-          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
-
-          <p class="button-text">
-            {{ $t("Account.Account.confirm") }}
-          </p>
-        </CustomButton>
-        <!-- Confirm Button End -->
-        <!-- Change Button Start -->
-        <CustomButton v-else class="change_button" @click="Change('phone')">
-          <!-- Button Image -->
-          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
-          <p class="button-text">
-            {{ $t("Account.Account.change") }}
-          </p>
-        </CustomButton>
-        <!-- Change Button End -->
-      </div>
-      <!-- Change wrapper End -->
-    </div>
-    <!-- Phone Number wrapper End -->
-
-    <!-- Address wrapper Start -->
-    <div class="wrapper">
-      <!-- Text wrapper Start -->
-      <div class="text-wrapper">
-        <!-- Title Start -->
-        <h1 class="title">
-          {{ $t("Account.Account.address") }}
-        </h1>
-        <!-- Title Start -->
-
-        <!-- Text Start -->
-        <h2 class="text">{{ userStore.user.address }}</h2>
-        <!-- Text End -->
-      </div>
-      <!-- Text wrapper End -->
-
-      <!-- Change wrapper Start -->
-      <div class="change_wrapper">
-        <!-- Change input Start -->
-        <Transition name="grow-right">
-          <input
-            v-if="ChangeValue == 'address'"
-            class="change_input"
-            type="text"
-            placeHolder="Address"
-            v-model="Value"
-          />
-        </Transition>
-        <!-- Change input End -->
-
-        <!-- Confirm Button Start -->
-        <CustomButton
-          v-if="ChangeValue == 'address'"
-          class="change_button"
-          @click="Confirm"
-        >
-          <!-- Button Image -->
-          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
-
-          <p class="button-text">
-            {{ $t("Account.Account.confirm") }}
-          </p>
-        </CustomButton>
-        <!-- Confirm Button End -->
-        <!-- Change Button Start -->
-        <CustomButton v-else class="change_button" @click="Change('address')">
-          <!-- Button Image -->
-          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
-          <p class="button-text">
-            {{ $t("Account.Account.change") }}
-          </p>
-        </CustomButton>
-        <!-- Change Button End -->
-      </div>
-      <!-- Change wrapper End -->
-    </div>
-    <!-- Address wrapper End -->
-
-    <!-- Date of Birth wrapper Start -->
-    <div class="wrapper">
-      <!-- Text wrapper Start -->
-      <div class="text-wrapper">
-        <!-- Title Start -->
-        <h1 class="title">
-          {{ $t("Account.Account.birth") }}
-        </h1>
-        <!-- Title End -->
-
-        <!-- Text Start -->
-        <h2 class="text">{{ userStore.user.birth }}</h2>
-        <!-- Text End -->
-      </div>
-      <!-- Text wrapper End -->
-
-      <!-- Change wrapper Start -->
-      <div class="change_wrapper">
-        <!-- Change input Start -->
-        <Transition name="grow-right">
-          <input
-            v-if="ChangeValue == 'birth'"
-            class="change_input"
-            type="text"
-            placeHolder="Date of birth"
-            v-model="Value"
-          />
-        </Transition>
-
-        <!-- Change input End -->
-        <!-- Confirm Button Start -->
-        <CustomButton
-          v-if="ChangeValue == 'birth'"
-          class="change_button"
-          :class="{
-            'border-custom-red': Error, // Якщо Error true, додати цей клас
-            'border-custom-lightgreen': !Error, // Якщо Error false, додати цей клас
-          }"
-          @click="Confirm"
-        >
-          <!-- Button Image -->
-          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
-
-          <p class="button-text">
-            {{ $t("Account.Account.confirm") }}
-          </p>
-        </CustomButton>
-        <!-- Confirm Button End -->
-        <!-- Change Button Start -->
-        <CustomButton v-else class="change_button" @click="openModalWindow()">
-          <!-- Button Image -->
-          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
-          <p class="button-text">
-            {{ $t("Account.Account.change") }}
-          </p>
-        </CustomButton>
-        <!-- Change Button End -->
-      </div>
-      <!-- Change wrapper End -->
-    </div>
-    <!-- Date of Birth wrapper End -->
+    <CustomButton class="px-4 h-12 bg-custom-red flex justify-center">
+      <p class="custom-text-base font-semibold"></p>
+      Save</CustomButton>
   </div>
+
   <!-- Info wrapper End -->
-  <CustomErrorWindow :isOpen="isModalOpen" @closeWindow="closeModal">
+  <CustomErrorWindow :isOpen="isModalOpen" @close-window="closeModal">
     <div class="error-wrapper" @click="closeModal">
       <img
         src="@/assets/images/svg/UI/close.svg"
@@ -383,15 +46,23 @@
 //TODO: Добавити Зміну пароля
 import { ref } from "vue";
 import { useUserStore } from "@/stores/userStore";
+import { useValidationStore } from "@/stores/validationStore";
 import type UserType from "@/types/user-types";
+import Name from "./InfoComponents/Name.vue";
+import Email from "./InfoComponents/Email.vue";
+import Password from "./InfoComponents/Password.vue";
+import Phone from "./InfoComponents/Phone.vue";
+import Address from "./InfoComponents/Address.vue";
+import Birth from "./InfoComponents/Birth.vue";
+import CustomButton from '../UI/CustomButton.vue'
 
 const userStore = useUserStore(),
+  validationStore = useValidationStore(),
   ChangeValue = ref<string>(""),
   Value = ref<string>(""),
   InputName = ref<string>(""),
   Error = ref<boolean>(true),
-  isModalOpen = ref(false),
-  emit = defineEmits(["openWindow"]);
+  isModalOpen = ref(false);
 
 const openModalWindow = () => {
   isModalOpen.value = true;
@@ -408,6 +79,15 @@ const Change = (value: string) => {
 };
 
 async function Confirm() {
+  switch (ChangeValue.value) {
+    case "name":
+      validationStore.Name(Value.value);
+      break;
+    case "email":
+      console.log("Email");
+      break;
+  }
+
   if (Value.value) {
     if (InputName.value === "name") {
       const [firstName, lastName] = Value.value.split(" ");
@@ -421,6 +101,8 @@ async function Confirm() {
     }
   }
   await userStore.updateUserInDatabase();
+  console.log(userStore.result);
+
   ChangeValue.value = "";
   Value.value = "";
 }
@@ -429,6 +111,9 @@ async function Confirm() {
 <style lang="scss" scoped>
 .wrapper {
   @apply w-full min-h-[52px] flex justify-between gap-2;
+  @screen sm {
+    @apply flex-col;
+  }
 
   .text-wrapper {
     @apply flex flex-col justify-between;
@@ -439,49 +124,34 @@ async function Confirm() {
 
     .text {
       @apply font-serrat text-xl font-semibold text-black overflow-hidden text-ellipsis text-nowrap;
-
-      @screen sm {
-        @apply max-w-[200px];
-      }
     }
   }
+
   .change_wrapper {
     @apply h-full flex items-center gap-2;
+    @screen sm {
+      @apply flex-col;
+    }
 
     .change_input {
       @apply px-2 h-12 border-b-custom-lightgreen border-b-2;
+      @screen sm {
+        @apply w-full;
+      }
     }
-
-    .error_input {
-      @apply px-2 h-12 border-b-custom-lightgreen border-b-2;
-    }
-
     .change_button {
-      @apply w-fit h-12 flex border-custom-lightgreen justify-center gap-1 border-2 px-8 
-      sm:h-10 sm:px-2 sm:w-10;
+      @apply w-fit h-12 flex border-custom-lightgreen justify-center gap-1 border-2 px-8;
+      @screen sm {
+        @apply h-10 px-2 w-full;
+      }
 
       .button-text {
-        @apply font-serrat text-sm text-custom-darkgreen font-medium sm:hidden;
+        @apply font-serrat text-sm text-custom-darkgreen font-medium;
       }
     }
   }
 }
 
-.error-wrapper {
-  @apply w-fit min-h-10 h-fit p-6 bg-default rounded shadow-lg flex items-center gap-4;
-
-  &:hover {
-    @apply cursor-pointer;
-  }
-
-  .close-image {
-    @apply w-2 h-2;
-  }
-
-  .error-text {
-    @apply font-serrat text-base text-custom-red font-semibold;
-  }
-}
 .grow-right-enter-active,
 .grow-right-leave-active {
   transition: transform 0.5s ease;
