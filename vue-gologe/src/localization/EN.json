@@ -149,7 +149,6 @@
 			"rating": "Rating",
 			"airlines": "Airlines",
 			"trips": "Trips"
-			
 		},
 		"Sort": {
 			"cheapest": "Cheapest",
@@ -232,7 +231,8 @@
 			"password": "Password",
 			"number": "Phone number",
 			"address": "Address",
-			"birth": "Date of birth"
+			"birth": "Date of birth",
+			"save": "Save"
 		},
 		"History": {
 			"title": "Tickets/Bookings",

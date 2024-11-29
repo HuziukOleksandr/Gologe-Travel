@@ -60,15 +60,23 @@
 import { ref } from "vue";
 import { useUserStore } from "@/stores/userStore";
 
+const emit = defineEmits(["show-error"]);
+
 const Name = ref<string>(""),
   inputVisible = ref<boolean>(false),
   userStore = useUserStore();
 
 const Change = () => {
-  const [firstName, lastName] = Name.value.split(" ");
-  userStore.setUserProperty("firstName", firstName);
-  userStore.setUserProperty("lastName", lastName);
-  inputVisible.value = false;
+  
+    const [firstName, lastName] = Name.value.split(" ");
+    userStore.setUserProperty("firstName", firstName);
+    userStore.setUserProperty("lastName", lastName);
+    inputVisible.value = false;
+    console.log(Name.value);
+    
+ 
+    emit("show-error")
+ 
 };
 </script>
 
