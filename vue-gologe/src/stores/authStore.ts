@@ -44,13 +44,13 @@ export const useAuthStore = defineStore("auth", {
         alert(error);
       }
     },
-    async login() {
+    async login(email: any, password: any) {
       try {
         const auth = getAuth();
         return await signInWithEmailAndPassword(
           auth,
-          this.user.email,
-          this.user.password
+          email,
+          password
         );
       } catch (error) {
         alert(error);

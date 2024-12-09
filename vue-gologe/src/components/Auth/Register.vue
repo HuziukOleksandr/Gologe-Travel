@@ -12,7 +12,6 @@
     <VForm
       class="max-w-[640px] auth-aside-wrapper"
       @submit="onSubmit"
-      v-slot="{ values }"
       :validation-schema="validationScheme"
     >
       <!-- Use Custom Logo Component -->
