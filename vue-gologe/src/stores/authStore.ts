@@ -53,7 +53,7 @@ export const useAuthStore = defineStore("auth", {
           password
         );
       } catch (error) {
-        alert(error);
+        
       }
     },
     async handlerSignOut() {

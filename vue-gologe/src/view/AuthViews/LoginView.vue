@@ -160,14 +160,17 @@ import { ErrorMessage, Field, Form as VForm } from "vee-validate";
 import { object, string } from "yup";
 import { useI18n } from "vue-i18n";
 import { scrollTop } from "@/services/Scroll";
+import { useRouter } from 'vue-router';
 
 const slides = ref(["login-one", "login-two", "login-three"]),
   authStore = useAuthStore(),
-  { t } = useI18n();
+  { t } = useI18n(),
+  router = useRouter();
 
 const Login = async (values: any) => {
   try {
     await authStore.login(values.email, values.password);
+    router.push({ name: "Account"})
   } catch (error) {
     alert(error);
   }

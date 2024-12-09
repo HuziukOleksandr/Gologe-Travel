@@ -11,7 +11,7 @@
     <!-- Aside wrapper Start -->
     <VForm
       class="max-w-[640px] auth-aside-wrapper"
-      @submit="onSubmit"
+      @submit="Register"
       :validation-schema="validationScheme"
     >
       <!-- Use Custom Logo Component -->
@@ -290,17 +290,21 @@ import { useI18n } from "vue-i18n";
 import { scrollTop } from "@/services/Scroll";
 import { useAuthStore } from "@/stores/authStore";
 import { useUserStore } from "@/stores/userStore";
+import { useRouter } from 'vue-router';
 
 const slides = ref(["login-one", "login-two", "login-three"]),
   ConfirmPassword = ref<string>(""),
   authStore = useAuthStore(),
   userStore = useUserStore(),
-  { t } = useI18n();
+  { t } = useI18n(),
+  router = useRouter();
 
-const onSubmit = async (values: any) => {
-  userStore.setUser(values);
-  await authStore.register(values.email, values.password);
+const Register = async (values: any) => {
+  const { password, ...userWithoutPassword } = values;
+  userStore.setUser(userWithoutPassword);
+  await authStore.register(values.email, password);
   await userStore.setUserInDatabase(values.phone);
+  router.push({ name: "Account" })
 };
 
 const validationScheme = object().shape({
