@@ -99,7 +99,7 @@ const validationScheme = object().shape({
   }
 
   .text-wrapper {
-    @apply flex flex-col justify-between;
+    @apply flex flex-col gap-1;
 
     .title {
       @apply font-serrat text-base font-semibold text-custom-darkgray;

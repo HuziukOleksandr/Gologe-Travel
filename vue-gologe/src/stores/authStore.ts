@@ -33,12 +33,12 @@ export const useAuthStore = defineStore("auth", {
       return this.user[key];
     },
 
-    async register() {
+    async register(email: any, password: any) {
       try {
         return await createUserWithEmailAndPassword(
           getAuth(),
-          this.user.email,
-          this.user.password
+          email,
+          password
         );
       } catch (error) {
         alert(error);

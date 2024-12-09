@@ -291,5 +291,16 @@
 			"OurStory": "Our Story",
 			"Workwithus": "Work with us"
 		}
+	},
+	"Errors": {
+		"required": "Required field*",
+		"short": "Too Short*",
+		"long": "Too Long*",
+		"email": "Invalid email address*",
+		"phone": "Invalid phone number*",
+		"passwordSize": "Password must be at least 8 characters*",
+		"passwordUpper": "Password must contain at least one uppercase letter*",
+		"passwordLower": "Password must contain at least one lowercase letter*",
+		"passwordNumber": "Password must contain at least one number*"
 	}
 }

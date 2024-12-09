@@ -52,7 +52,7 @@ watch(internalValue, (newValue) => {
 .wrapper_input {
   @apply flex gap-2.5 items-center rounded px-4
 	border-2 border-custom-darkgray border-solid relative
-  h-14 md:h-12 sm:h-10 flex-grow;
+  h-14 md:h-12 sm:h-10;
 
   .title {
     @apply absolute top-[-15px] z-50 px-3  font-serrat 
