@@ -4,7 +4,7 @@
 }
 
 .auth-wrapper {
-  @apply max-w-large-width w-full py-12 flex gap-5 lg:justify-center md:px-[90px] sm:py-5 sm:px-11;
+  @apply max-w-large-width w-full py-12 flex mx-auto gap-5 lg:justify-center md:px-[90px] sm:py-5 sm:px-11;
 
   .auth-aside-wrapper {
     @apply w-full flex flex-col justify-center sm:max-w-[700px];

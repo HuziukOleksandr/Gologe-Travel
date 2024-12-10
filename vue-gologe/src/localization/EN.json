@@ -301,6 +301,7 @@
 		"passwordSize": "Password must be at least 8 characters*",
 		"passwordUpper": "Password must contain at least one uppercase letter*",
 		"passwordLower": "Password must contain at least one lowercase letter*",
-		"passwordNumber": "Password must contain at least one number*"
+		"passwordNumber": "Password must contain at least one number*",
+		"passwordMatch": "Password does not match"
 	}
 }

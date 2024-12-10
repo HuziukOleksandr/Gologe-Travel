@@ -34,7 +34,7 @@
               type="email"
               :placeHolder="$t('Login.email')"
               v-bind="field"
-              v-model="Field.value"
+              v-model="field.value"
             >
               <!-- Slot for Name Start -->
               <template v-slot:input>
@@ -68,10 +68,10 @@
             </CustomInputPassword>
           </Field>
           <ErrorMessage
-              as="div"
-              name="password"
-              class="custom-text-xs text-custom-red font-semibold"
-            />
+            as="div"
+            name="password"
+            class="custom-text-xs text-custom-red font-semibold"
+          />
         </div>
         <!-- Use Custom Input Password "Password" End -->
 
@@ -160,7 +160,8 @@ import { ErrorMessage, Field, Form as VForm } from "vee-validate";
 import { object, string } from "yup";
 import { useI18n } from "vue-i18n";
 import { scrollTop } from "@/services/Scroll";
-import { useRouter } from 'vue-router';
+import { useRouter } from "vue-router";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const slides = ref(["login-one", "login-two", "login-three"]),
   authStore = useAuthStore(),
@@ -170,7 +171,13 @@ const slides = ref(["login-one", "login-two", "login-three"]),
 const Login = async (values: any) => {
   try {
     await authStore.login(values.email, values.password);
-    router.push({ name: "Account"})
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log("Користувач підтверджений:", user);
+        router.push({ name: "Account" });
+      }
+    });
   } catch (error) {
     alert(error);
   }
@@ -181,8 +188,8 @@ const validationScheme = object().shape({
   password: string()
     .required(t("Errors.required"))
     .min(8, t("Errors.passwordSize"))
-    .matches(/[A-Z]/, t("Errors.passwordUpper"))
-    .matches(/[a-z]/, t("Erorrs.passwordLower"))
+    .matches(/[A-ZА-Я]/, t("Errors.passwordUpper"))
+    .matches(/[a-zа-я]/, t("Errors.passwordLower"))
     .matches(/\d/, t("Errors.passwordNumber")),
 });
 

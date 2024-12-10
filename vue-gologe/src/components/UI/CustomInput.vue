@@ -45,6 +45,7 @@ const internalValue = ref(props.modelValue);
 
 watch(internalValue, (newValue) => {
   emit("update:modelValue", newValue);
+  
 });
 </script>
 

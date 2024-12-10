@@ -194,16 +194,28 @@
         <!-- Use Custom Input Password "Password" End -->
 
         <!-- Use Custom Input Password "Confirm Password" Start -->
-        <CustomInputPassword
-          :placeHolder="$t('Register.confirm')"
-          v-model="ConfirmPassword"
+        <div
+          class="flex flex-col gap-1 flex-grow h-[76px] md:h-[68px] sm:h-[60px]"
         >
-          <!-- Slot for Name Start -->
-          <template v-slot:input>
-            <p class="auth-input-text">{{ $t("Register.confirm") }}</p>
-          </template>
-          <!-- Slot for Name End -->
-        </CustomInputPassword>
+          <Field name="confirmPassword" v-slot="{ field }">
+            <CustomInputPassword
+              v-bind="field"
+              :placeHolder="$t('Register.confirm')"
+              v-model="field.value"
+            >
+              <!-- Slot for Name Start -->
+              <template v-slot:input>
+                <p class="auth-input-text">{{ $t("Register.confirm") }}</p>
+              </template>
+              <!-- Slot for Name End -->
+            </CustomInputPassword>
+          </Field>
+          <ErrorMessage
+            as="div"
+            name="confirmPassword"
+            class="custom-text-xs text-custom-red font-semibold"
+          />
+        </div>
         <!-- Use Custom Input Password "Confirm" End -->
 
         <!-- Use Custom CheckBox Start -->
@@ -282,18 +294,16 @@
 </template>
 
 <script setup lang="ts">
-// TODO добавити логіку ConfirmPassword
 import { ref } from "vue";
 import { ErrorMessage, Field, Form as VForm } from "vee-validate";
-import { object, string } from "yup";
+import { object, string, ref as Yref} from "yup";
 import { useI18n } from "vue-i18n";
 import { scrollTop } from "@/services/Scroll";
 import { useAuthStore } from "@/stores/authStore";
 import { useUserStore } from "@/stores/userStore";
-import { useRouter } from 'vue-router';
+import { useRouter } from "vue-router";
 
 const slides = ref(["login-one", "login-two", "login-three"]),
-  ConfirmPassword = ref<string>(""),
   authStore = useAuthStore(),
   userStore = useUserStore(),
   { t } = useI18n(),
@@ -304,7 +314,7 @@ const Register = async (values: any) => {
   userStore.setUser(userWithoutPassword);
   await authStore.register(values.email, password);
   await userStore.setUserInDatabase(values.phone);
-  router.push({ name: "Account" })
+  router.push({ name: "Account" });
 };
 
 const validationScheme = object().shape({
@@ -323,9 +333,21 @@ const validationScheme = object().shape({
   password: string()
     .required(t("Errors.required"))
     .min(8, t("Errors.passwordSize"))
-    .matches(/[A-Z]/, t("Errors.passwordUpper"))
-    .matches(/[a-z]/, t("Erorrs.passwordLower"))
+    .matches(/[A-ZА-Я]/, t("Errors.passwordUpper"))
+    .matches(/[a-zа-я]/, t("Errors.passwordLower"))
     .matches(/\d/, t("Errors.passwordNumber")),
+  confirmPassword: string()
+    .label(t("passwordConfirmation"))
+    .when("password", (password) =>
+    password
+      ? string()
+          .required(t("Errors.required"))
+          .oneOf(
+            [Yref("password")],
+            t("Errors.passwordMatch")
+          )
+      : string().notRequired()
+  ),
 });
 
 scrollTop();
