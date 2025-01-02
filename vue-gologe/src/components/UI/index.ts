@@ -67,6 +67,7 @@ const CustomRegisterWith = defineAsyncComponent(
 const CustomErrorWindow = defineAsyncComponent(
     () => import("./CustomErrorWindow.vue")
 )
+
 export default {
     CustomNavigation,
     CustomLocalization,
