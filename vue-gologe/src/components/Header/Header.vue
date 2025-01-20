@@ -1,6 +1,6 @@
 <template>
   <!-- Header wrapper Start -->
-  <div class="header_wrapper">
+  <div class="header_wrapper animation" :class="{ animate: isAnimated }">
     <!-- Header Content Start -->
     <div class="header_content">
       <!-- Use Navigation UI Component -->
@@ -36,7 +36,14 @@ import HeaderLoggedOff from './HeaderLoggedOff.vue';
 import HeaderLoggenIn from './HeaderLoggenIn.vue'
 import Localization from "./Localization.vue";
 import { useRoute } from "vue-router";
+import { ref, onMounted } from 'vue';
 
+const isAnimated = ref<boolean>(false)
+onMounted(() => {
+      setTimeout(() => {
+        isAnimated.value = true;
+      }, 100); // Невелика затримка
+    });
 const route = useRoute();
 </script>
 
@@ -60,5 +67,16 @@ const route = useRoute();
 
     }
   }
+}
+
+.animation {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animation.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
