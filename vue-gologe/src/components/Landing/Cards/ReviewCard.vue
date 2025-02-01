@@ -103,8 +103,8 @@ const props = withDefaults(
 .card_wrapper {
   @apply min-h-[585px] bg-white rounded-3xl
 	shadow-2xl p-6 flex flex-col justify-around gap-3
-    lg:max-w-[425px]
-    md:max-w-[425px]
+    lg:max-w-[400px]
+    md:max-w-[380px]
     sm:w-full;
 }
 

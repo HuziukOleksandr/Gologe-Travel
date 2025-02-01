@@ -1,11 +1,16 @@
 <template>
   <!-- Trips Start -->
-  <div class="landing-component-wrapper">
+  <div
+    class="landing-component-wrapper animation"
+    :class="{ animate: animationStore.tripsIsAnimated }"
+  >
     <!-- Trips wrapper Start -->
+
     <div class="max-w-[1230px] w-full min-h-[280px] flex flex-col gap-10">
       <!-- Trips Header wrapper Start -->
       <div
         class="flex items-center justify-between sm:flex-col sm:gap-4 sm:items-start"
+        id="trips"
       >
         <!-- Text wrapper Start -->
         <div class="flex flex-col gap-[15px]">
@@ -44,9 +49,9 @@
       <CustomButton
         class="landing-component-button hidden sm:flex sm:justify-center"
       >
-      <p class="landing-component-button-text">
-            {{ $t("Landing.Trips.button") }}
-          </p>
+        <p class="landing-component-button-text">
+          {{ $t("Landing.Trips.button") }}
+        </p>
       </CustomButton>
       <!-- Trip Header button End -->
 
@@ -71,7 +76,19 @@
 import Card from "./Cards/TripCard.vue";
 import Hotel from "./Cards/TripHotelCard.vue";
 import Flight from "./Cards/TripFlightCard.vue";
-import { ref } from "vue";
+import { ref,  watch } from "vue";
+import { useScrollToElement } from "@/services/ScrollToElement.ts";
+import { useAnimationStore } from '@/stores/animatiomStore';
+
+const isFrameVisible = useScrollToElement("trips");
+const animationStore = useAnimationStore();
+
+watch(isFrameVisible, (newValue) => {
+  if(!newValue) {
+    animationStore.tripsAnimation()
+  }
+})
+
 
 // Array of card
 const cards = ref([
@@ -87,4 +104,15 @@ const cards = ref([
 ]);
 </script>
 
-<style scoped></style>
+<style scoped>
+.animation {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animation.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+</style>

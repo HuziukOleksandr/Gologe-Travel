@@ -6,7 +6,9 @@
       class="background max-w-secondary-width w-full min-h-[600px] flex items-center rounded-2xl"
     >
       <!-- Preview Text wrapper Start -->
-      <div class="w-full flex flex-col items-center gap-6">
+      <div class="w-full flex flex-col items-center gap-6 animation"
+      :class="{ animate: animationStore.previewTextIsAnimated }"
+      >
         <!-- Preview Sub Title Start -->
         <h2
           class="custom-text-5xl text-default font-semibold sm:text-3xl ph:text-2xl"
@@ -42,8 +44,15 @@
 <script setup lang="ts">
 import { getTitleStyles } from "@/services/Localization";
 import { useI18n } from "vue-i18n";
-
+import { ref, onMounted } from "vue";
+import { useAnimationStore } from '@/stores/animatiomStore';
 const { locale } = useI18n();
+
+const animationStore = useAnimationStore();
+
+onMounted(() => {
+  animationStore.startAnimation();
+});
 </script>
 
 <style scoped>
@@ -51,5 +60,16 @@ const { locale } = useI18n();
   background: url("../../assets/images/png/Landing/background.png");
   background-position: center;
   background-size: cover;
+}
+
+.animation {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animation.animate {
+  opacity: 1;
+  transform: translateX(0);
 }
 </style>

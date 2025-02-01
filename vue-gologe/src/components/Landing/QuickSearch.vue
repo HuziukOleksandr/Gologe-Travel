@@ -1,6 +1,9 @@
 <template>
   <!-- Quick Search -->
-  <div class="max-w-large-width w-full flex justify-center px-20 ph:px-10">
+  <div 
+    class="max-w-large-width w-full flex justify-center px-20 ph:px-10 animation"
+    :class="{ animate: animationStore.quickSearchIsAnimated }"
+  >
     <!-- Quick Search wrapper Start -->
     <div class="search_wrapper">
       <!-- Quick Search Navigation wrapper Start -->
@@ -71,10 +74,16 @@
 <script setup lang="ts">
 import Navigation from "./UI/Navigation.vue";
 // import { useRoute } from "vue-router";
-import { ref } from "vue";
-
+import { ref, onMounted } from "vue";
+import { useAnimationStore } from '@/stores/animatiomStore';
 // const route = useRoute();
 const windowName = ref<string>("flight");
+
+const animationStore = useAnimationStore();
+
+onMounted(() => {
+  animationStore.startAnimation();
+});
 
 const change = (value: string) => {
   windowName.value = value;
@@ -93,6 +102,15 @@ const change = (value: string) => {
 	flex flex-col gap-7 shadow-2xl
   ph:gap-4;
 }
+.animation {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
 
+.animation.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 </style>

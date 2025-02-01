@@ -36,21 +36,15 @@ import HeaderLoggedOff from './HeaderLoggedOff.vue';
 import HeaderLoggenIn from './HeaderLoggenIn.vue'
 import Localization from "./Localization.vue";
 import { useRoute } from "vue-router";
-import { ref, onMounted } from 'vue';
+import { onMounted } from 'vue';
 import { useAnimationStore } from '@/stores/animatiomStore';
 
-const animationStore = useAnimationStore();
-const route = useRoute();
+const animationStore = useAnimationStore(),
+  route = useRoute();
 
 onMounted(() => {
-  
-  
-  animationStore.startAnimation()
-  
-      setTimeout(() => {
-        animationStore.setHeaderValue(true);
-      }, 100); // Невелика затримка
-    });
+  animationStore.startAnimation();
+});
 </script>
 
 <style lang="scss" scoped>
