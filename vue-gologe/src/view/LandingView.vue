@@ -2,10 +2,7 @@
   <div class="max-w-large-width w-full my-7 mx-auto relative flex flex-col">
     <Header class="absolute" />
     <Preview />
-    <QuickSearch
-      class="fromUp mt-[-100px] mb-10"
-      :class="{ animate: isAnimated }"
-    />
+    <QuickSearch class="mt-[-100px] mb-10" />
     <Trips class="mb-10" />
     <Review class="mb-10" />
   </div>
@@ -18,12 +15,6 @@ import QuickSearch from "@/components/Landing/QuickSearch.vue";
 import Trips from "@/components/Landing/Trips.vue";
 import Review from "@/components/Landing/Reviews.vue";
 import { scrollTop } from "@/services/Scroll";
-import { ref, onMounted } from 'vue';
-import { useAnimationStore } from '@/stores/animatiomStore';
-
-
-const animationStore = useAnimationStore(),
-  isAnimated = ref<any>(false);
 
 scrollTop();
 </script>

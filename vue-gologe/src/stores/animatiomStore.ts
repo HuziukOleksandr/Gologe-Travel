@@ -9,11 +9,17 @@ export const useAnimationStore = defineStore("animation", {
   getters: {
     getHeaderValue: (state) => state.headerIsAnimated,
   },
+
   actions: {
-    fromUpToDawn(start: any, end: any) {
+    setHeaderValue(value: boolean) {
+      this.headerIsAnimated = value;
+    },
+
+    startAnimation() {
       setTimeout(() => {
-        return 'true';
+        console.log("ADDD");
         
+        return "true";
       }, 100)
     }
   }

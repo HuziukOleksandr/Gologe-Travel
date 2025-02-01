@@ -1,6 +1,6 @@
 <template>
   <!-- Header wrapper Start -->
-  <div class="header_wrapper animation" :class="{ animate: isAnimated }">
+  <div class="header_wrapper animation" :class="{ animate: animationStore.getHeaderValue }">
     <!-- Header Content Start -->
     <div class="header_content">
       <!-- Use Navigation UI Component -->
@@ -37,14 +37,20 @@ import HeaderLoggenIn from './HeaderLoggenIn.vue'
 import Localization from "./Localization.vue";
 import { useRoute } from "vue-router";
 import { ref, onMounted } from 'vue';
+import { useAnimationStore } from '@/stores/animatiomStore';
 
-const isAnimated = ref<boolean>(false)
+const animationStore = useAnimationStore();
+const route = useRoute();
+
 onMounted(() => {
+  
+  
+  animationStore.startAnimation()
+  
       setTimeout(() => {
-        isAnimated.value = true;
+        animationStore.setHeaderValue(true);
       }, 100); // Невелика затримка
     });
-const route = useRoute();
 </script>
 
 <style lang="scss" scoped>
@@ -63,8 +69,6 @@ const route = useRoute();
 
     .header-auth-wrapper {
       @apply max-w-[400px] w-full h-full flex items-center justify-end gap-4;
-
-
     }
   }
 }
