@@ -1,6 +1,8 @@
 <template>
   <!-- Hotel Card wrapper Start -->
-  <div class="landing-trips-wrapper hotel">
+  <div class="landing-trips-wrapper hotel animations"
+    id="hotelcard"
+    :class="{ animate: animationStore.tripsCardsIsAnimated }">
     <!-- Card Title Start -->
     <h1 class="landing-trips-title">
       {{ $t("Landing.Trips.hotels") }}
@@ -29,7 +31,20 @@
   <!-- Hotel Card wrapper End -->
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useAnimationStore } from "@/stores/animatiomStore";
+import { watch } from "vue";
+import { useScrollToElement } from "@/services/ScrollToElement";
+
+const animationStore = useAnimationStore(),
+  isVisible = useScrollToElement("hotelcard");
+
+watch(isVisible, (newValue) => {
+  if (!newValue) {
+    animationStore.startAnimation("tripsCardsIsAnimated", true, 100);
+  }
+});
+</script>
 
 <style scoped>
 
@@ -37,5 +52,16 @@
   background: url("../../../assets/images/png/Landing/Hotel.png") no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.animations {
+  opacity: 0;
+  transform: translatex(100px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animations.animate {
+  opacity: 1;
+  transform: translatex(0);
 }
 </style>

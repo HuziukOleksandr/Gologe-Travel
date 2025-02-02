@@ -10,8 +10,6 @@ export function useScrollToElement(targetId: string) {
     const rect = element.getBoundingClientRect();
     const middleOfViewport = window.innerHeight / 2;
     isVisible.value = rect.top >= middleOfViewport;
-    console.log(isVisible.value);
-    
   };
   onMounted(() => {
     checkScroll();

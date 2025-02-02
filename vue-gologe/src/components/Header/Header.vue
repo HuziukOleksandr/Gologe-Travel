@@ -43,7 +43,7 @@ const animationStore = useAnimationStore(),
   route = useRoute();
 
 onMounted(() => {
-  animationStore.startAnimation();
+  animationStore.startAnimation("headerIsAnimated", true, 100);
 });
 </script>
 

@@ -51,7 +51,7 @@ const { locale } = useI18n();
 const animationStore = useAnimationStore();
 
 onMounted(() => {
-  animationStore.startAnimation();
+  animationStore.startAnimation("previewTextIsAnimated", true, 1000);
 });
 </script>
 
@@ -65,7 +65,7 @@ onMounted(() => {
 .animation {
   opacity: 0;
   transform: translateX(-100px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
 .animation.animate {

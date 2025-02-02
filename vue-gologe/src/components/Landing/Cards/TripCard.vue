@@ -62,4 +62,5 @@ const props = withDefaults(
     @apply font-serrat text-sm font-medium text-custom-darkgreen;
   }
 }
+
 </style>

@@ -7,6 +7,8 @@ export const useAnimationStore = defineStore("animation", {
       quickSearchIsAnimated: false,
       previewTextIsAnimated: false,
       tripsIsAnimated: false,
+      tripsCardsIsAnimated: false,
+      cardsIsAnimated: false,
     }
   },
   getters: {
@@ -17,18 +19,16 @@ export const useAnimationStore = defineStore("animation", {
     setHeaderValue(value: boolean) {
       this.headerIsAnimated = value;
     },
-
-    startAnimation() {
-      setTimeout(() => {
-        this.headerIsAnimated = true;
-        this.quickSearchIsAnimated = true;
-        this.previewTextIsAnimated = true;
-      }, 1000)
+    setValue(key: string, value: boolean) {
+      if (key in this.$state) {
+        (this.$state as any)[key] = value;
+      }
     },
-    tripsAnimation() {
+
+    startAnimation(name: string, value: boolean, time: number) {
       setTimeout(() => {
-        this.tripsIsAnimated = true;
-      }, 100)
-    }
+       this.setValue(name, value)
+      }, time)
+    },
   }
 })

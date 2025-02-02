@@ -1,15 +1,12 @@
 <template>
   <!-- Trips Start -->
-  <div
-    class="landing-component-wrapper animation"
-    :class="{ animate: animationStore.tripsIsAnimated }"
-  >
+  <div class="landing-component-wrapper">
     <!-- Trips wrapper Start -->
-
     <div class="max-w-[1230px] w-full min-h-[280px] flex flex-col gap-10">
       <!-- Trips Header wrapper Start -->
       <div
-        class="flex items-center justify-between sm:flex-col sm:gap-4 sm:items-start"
+        class="flex items-center justify-between sm:flex-col sm:gap-4 sm:items-start animation"
+        :class="{ animate: animationStore.tripsIsAnimated }"
         id="trips"
       >
         <!-- Text wrapper Start -->
@@ -39,7 +36,10 @@
       <!-- Trips Header wrapper End -->
 
       <!-- Cards wrapper Start -->
-      <div class="flex flex-wrap gap-[30px]">
+      <div
+        class="flex flex-wrap gap-[30px] animation"
+        :class="{ animate: animationStore.tripsIsAnimated }"
+      >
         <!-- User Card Component -->
         <Card :name="cards" />
       </div>
@@ -76,19 +76,18 @@
 import Card from "./Cards/TripCard.vue";
 import Hotel from "./Cards/TripHotelCard.vue";
 import Flight from "./Cards/TripFlightCard.vue";
-import { ref,  watch } from "vue";
+import { ref, watch } from "vue";
 import { useScrollToElement } from "@/services/ScrollToElement.ts";
-import { useAnimationStore } from '@/stores/animatiomStore';
+import { useAnimationStore } from "@/stores/animatiomStore";
 
-const isFrameVisible = useScrollToElement("trips");
-const animationStore = useAnimationStore();
+const isFrameVisible = useScrollToElement("trips"),
+  animationStore = useAnimationStore();
 
 watch(isFrameVisible, (newValue) => {
-  if(!newValue) {
-    animationStore.tripsAnimation()
+  if (!newValue) {
+    animationStore.startAnimation("tripsIsAnimated", true, 100);
   }
-})
-
+});
 
 // Array of card
 const cards = ref([

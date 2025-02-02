@@ -82,7 +82,7 @@ const windowName = ref<string>("flight");
 const animationStore = useAnimationStore();
 
 onMounted(() => {
-  animationStore.startAnimation();
+  animationStore.startAnimation("quickSearchIsAnimated", true, 100);
 });
 
 const change = (value: string) => {
