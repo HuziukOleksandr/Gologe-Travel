@@ -1,6 +1,9 @@
 <template>
   <!-- Card wrapper Start -->
-  <div class="card_wrapper" v-for="review in props.reviews">
+  <div class="card_wrapper animation" v-for="review in props.reviews"
+    id="reviews-card"
+    :class="{ animate : animationStore.reviewsCardIsAnimated}"
+  >
     <!-- Card Title Start -->
     <h1 class="custom-text-2xl font-semibold text-custom-darkgreen">
       {{ review?.title }}
@@ -89,6 +92,17 @@
 <script setup lang="ts">
 import { getImageUrlPng } from "@/services/Helpers";
 import type Reviews from "@/types/reviews-types.ts";
+import { watch } from 'vue';
+import { useAnimationStore } from '@/stores/animatiomStore';
+import { useScrollToElement } from '@/services/ScrollToElement';
+
+const isVisible = useScrollToElement("reviews-card", window.innerHeight / 2),
+  animationStore = useAnimationStore();
+
+watch(isVisible, (newValue) => {
+  if(!newValue)
+    animationStore.startAnimation("reviewsCardIsAnimated", true, 100)
+})
 
 // Card props expected Array
 const props = withDefaults(
@@ -112,5 +126,15 @@ const props = withDefaults(
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.animation {
+  opacity: 0;
+  
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animation.animate {
+  opacity: 1;
 }
 </style>

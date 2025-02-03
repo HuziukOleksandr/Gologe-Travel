@@ -1,6 +1,6 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 
-export function useScrollToElement(targetId: string) {
+export function useScrollToElement(targetId: string, viewPort: number) {
   const isVisible = ref(false);
 
   const checkScroll = () => {
@@ -8,8 +8,7 @@ export function useScrollToElement(targetId: string) {
     if (!element) return;
 
     const rect = element.getBoundingClientRect();
-    const middleOfViewport = window.innerHeight / 2;
-    isVisible.value = rect.top >= middleOfViewport;
+    isVisible.value = rect.top >= viewPort;
   };
   onMounted(() => {
     checkScroll();

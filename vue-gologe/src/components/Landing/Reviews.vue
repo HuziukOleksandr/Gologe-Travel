@@ -6,7 +6,8 @@
       class="max-w-secondary-width w-full min-h-[280px] flex flex-col gap-10"
     >
       <!-- Review Heared wrapper Start -->
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-between animation" id="reviews-header"
+      :class="{ animate: animationStore.reviewsIsAnimated }">
         <!-- Text wrapper Start -->
         <div class="flex flex-col gap-4">
           <!-- Review Title Start -->
@@ -62,9 +63,20 @@
 <script setup lang="ts">
 import Card from "./Cards/ReviewCard.vue";
 import axios from "axios";
-import { ref } from "vue";
+import { ref, watch } from "vue";
+import { useAnimationStore } from '@/stores/animatiomStore';
+import { useScrollToElement } from '@/services/ScrollToElement';
 
-const reviews = ref<any>();
+const reviews = ref<any>(),
+  animationStore = useAnimationStore(),
+  isVisible = useScrollToElement("reviews-header", window.innerHeight / 2);
+
+watch(isVisible, (newValue) => {
+  if(!newValue) 
+    animationStore.startAnimation("reviewsIsAnimated", true, 100)
+})
+
+
 
 // Get Cards fron json file
 axios
@@ -80,6 +92,14 @@ axios
 
 
 <style lang="scss" scoped>
+.animation {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
 
-
+.animation.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
 </style>

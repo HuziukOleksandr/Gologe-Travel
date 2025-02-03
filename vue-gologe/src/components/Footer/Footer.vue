@@ -1,6 +1,10 @@
 <template>
   <!-- Footer Wrapper Start -->
-  <div class="wrapper_footer">
+  <div
+    class="wrapper_footer animation"
+    id="footer"
+    :class="{ animate: animationStore.footerIsAnimated }"
+  >
     <!-- Use Subcribe Component -->
     <Subscribe class="mt-[-150px]" />
 
@@ -82,11 +86,21 @@ import Activities from "./Activities.vue";
 import Blogs from "./Blogs.vue";
 import AboutUs from "./AboutUs.vue";
 import Contact from "./Contact.vue";
+import { ref, watch } from "vue";
+import { useScrollToElement } from "@/services/ScrollToElement.ts";
+import { useAnimationStore } from "@/stores/animatiomStore";
+
+const isVisible = useScrollToElement("footer", window.innerHeight),
+  animationStore = useAnimationStore();
+
+watch(isVisible, (newValue) => {
+  if (!newValue) animationStore.startAnimation("footerIsAnimated", true, 100);
+});
 </script>
 
 <style lang="scss" scoped>
 .wrapper_footer {
-  @apply w-full  m-auto mt-36 pb-16 bg-custom-lightgreen  flex flex-col justify-between md:px-12 sm:px-6 sm:pb-9;
+  @apply w-full  m-auto mt-36 pb-8 bg-custom-lightgreen  flex flex-col justify-between md:px-12 sm:px-6 sm:pb-9;
 
   .wrapper_container {
     @apply max-w-primary-width w-full mx-auto pt-12 flex justify-between gap-5
@@ -107,4 +121,14 @@ import Contact from "./Contact.vue";
   }
 }
 
+.animation {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animation.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>

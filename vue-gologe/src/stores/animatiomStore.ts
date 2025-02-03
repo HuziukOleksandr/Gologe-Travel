@@ -9,16 +9,12 @@ export const useAnimationStore = defineStore("animation", {
       tripsIsAnimated: false,
       tripsCardsIsAnimated: false,
       cardsIsAnimated: false,
+      reviewsIsAnimated: false,
+      reviewsCardIsAnimated: false,
+      footerIsAnimated: false
     }
   },
-  getters: {
-    getHeaderValue: (state) => state.headerIsAnimated,
-  },
-
   actions: {
-    setHeaderValue(value: boolean) {
-      this.headerIsAnimated = value;
-    },
     setValue(key: string, value: boolean) {
       if (key in this.$state) {
         (this.$state as any)[key] = value;

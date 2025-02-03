@@ -1,6 +1,6 @@
 <template>
   <!-- Header wrapper Start -->
-  <div class="header_wrapper animation" :class="{ animate: animationStore.getHeaderValue }">
+  <div class="header_wrapper animation" :class="{ animate: animationStore.headerIsAnimated }">
     <!-- Header Content Start -->
     <div class="header_content">
       <!-- Use Navigation UI Component -->

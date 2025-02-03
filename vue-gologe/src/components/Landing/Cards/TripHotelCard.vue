@@ -37,7 +37,7 @@ import { watch } from "vue";
 import { useScrollToElement } from "@/services/ScrollToElement";
 
 const animationStore = useAnimationStore(),
-  isVisible = useScrollToElement("hotelcard");
+  isVisible = useScrollToElement("hotelcard", window.innerHeight / 2);
 
 watch(isVisible, (newValue) => {
   if (!newValue) {

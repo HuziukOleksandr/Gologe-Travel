@@ -80,7 +80,7 @@ import { ref, watch } from "vue";
 import { useScrollToElement } from "@/services/ScrollToElement.ts";
 import { useAnimationStore } from "@/stores/animatiomStore";
 
-const isFrameVisible = useScrollToElement("trips"),
+const isFrameVisible = useScrollToElement("trips", window.innerHeight / 2),
   animationStore = useAnimationStore();
 
 watch(isFrameVisible, (newValue) => {
