@@ -52,10 +52,10 @@ const onClickAway = () => {
 .wrapper_list {
   @apply absolute w-full mt-2 bg-default
 	border-2 border-custom-darkgray border-solid
-	rounded opacity-100 z-[990];
+	rounded opacity-100;
 
   .list {
-    @apply w-full flex flex-col gap-1  text-custom-darkgray;
+    @apply relative w-full flex flex-col gap-1 text-custom-darkgray;
 
     &:hover {
       @apply cursor-pointer;

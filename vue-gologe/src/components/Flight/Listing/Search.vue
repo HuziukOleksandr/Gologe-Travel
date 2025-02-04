@@ -1,7 +1,7 @@
 <template>
   <!-- Flight Search wrapper Start -->
   <div
-    class="w-full rounded-2xl flex justify-between shadow-xl mb-8 py-8 px-6 md:gap-5 sm:flex-col sm:gap-4"
+    class="w-full rounded-2xl flex justify-between shadow-xl mb-8 py-8 px-6 md:gap-5 sm:flex-col sm:gap-4 z-[999]"
   >
     <!-- Use Flight Search Component -->
     <CustomFlightSearch 

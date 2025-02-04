@@ -1,7 +1,7 @@
 <template>
   <!-- Footer Wrapper Start -->
   <div
-    class="wrapper_footer animation"
+    class="wrapper_footer p-4 animation"
     id="footer"
     :class="{ animate: animationStore.footerIsAnimated }"
   >
@@ -16,7 +16,7 @@
       >
         <!-- Use logo Component -->
         <img
-          src="@/assets/images/svg/logo/logo-black.svg"
+          src="@/assets/images/svg/logo/logo-footer.svg"
           alt="logo"
           class="logo"
         />

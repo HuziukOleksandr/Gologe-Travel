@@ -56,7 +56,7 @@ watch(isVisible, (newValue) => {
 }
 .animation-card {
   opacity: 0;
-  transform: translateX(-100px);
+  transform: translateX(-10px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 

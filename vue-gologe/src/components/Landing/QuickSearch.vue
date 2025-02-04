@@ -1,7 +1,7 @@
 <template>
   <!-- Quick Search -->
   <div 
-    class="max-w-large-width w-full flex justify-center px-20 ph:px-10 animation"
+    class="max-w-large-width w-full flex justify-center px-20 ph:px-10 z-[999] animation"
     :class="{ animate: animationStore.quickSearchIsAnimated }"
   >
     <!-- Quick Search wrapper Start -->

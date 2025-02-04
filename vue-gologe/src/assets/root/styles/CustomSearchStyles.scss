@@ -1,7 +1,7 @@
 // Search Styles 
 
 .search-wrapper {
-  @apply w-full min-h-14 flex justify-between flex-wrap md:gap-6 sm:gap-4 sm:justify-around;
+  @apply relative w-full min-h-14 flex justify-between flex-wrap md:gap-6 sm:gap-4 sm:justify-around bg-white;
 
   .search-input-wrapper {
     @apply relative flex-grow lg:w-full;

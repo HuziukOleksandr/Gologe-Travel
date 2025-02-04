@@ -56,7 +56,7 @@ watch(isVisible, (newValue) => {
 
 .animations {
   opacity: 0;
-  transform: translatex(100px);
+  transform: translatex(10px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
