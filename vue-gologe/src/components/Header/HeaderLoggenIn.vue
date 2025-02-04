@@ -14,7 +14,7 @@
         v-else
       />
       <p
-        class="custom-text-sm text-custom-darkgreen font-semibold sm:hidden"
+        class="custom-text-sm text-custom-darkgreen font-semibold sm:hidden sq:hidden"
         :class="
           route.name !== 'Landing' ? 'text-custom-darkgreen ' : 'text-default'
         "
@@ -68,7 +68,7 @@
           <!-- Image End -->
           <!-- User Name Start -->
           <p
-            class="custom-text-sm text-custom-darkgreen font-semibold sm:hidden flex-shrink-0"
+            class="custom-text-sm text-custom-darkgreen font-semibold sm:hidden sq:hidden flex-shrink-0"
             :class="
               route.name !== 'Landing'
                 ? 'text-custom-darkgreen '

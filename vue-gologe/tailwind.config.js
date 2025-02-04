@@ -7,6 +7,7 @@ export default {
       screens: {
         ph: { min: "360px", max: "480px" },
         sm: { min: "360px", max: "767px" },
+        sq: { min: "767px", max: "1024px"},
         md: { min: "768px", max: "1365px" },
         lg: { min: "1366px" },
       },

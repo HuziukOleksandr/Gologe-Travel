@@ -13,7 +13,7 @@
       <img
         src="@/assets/images/svg/UI/flight.svg"
         alt="flight"
-        class="w-6 sm:w-5"
+        class="w-6 sm:w-6 sm:h-6"
         v-if="route.name == 'Landing'"
       />
 
@@ -21,7 +21,7 @@
       <img
         src="@/assets/images/svg/UI/flight-black.svg"
         alt="flight"
-        class="w-6 sm:w-5"
+        class="w-6 sm:w-6 sm:h-6"
         v-else
       />
 
@@ -45,7 +45,7 @@
       <img
         src="@/assets/images/svg/UI/hotel.svg"
         alt="hotel"
-        class="w-6 sm:w-5"
+        class="w-6 sm:w-6 sm:h-6"
         v-if="route.name == 'Landing'"
       />
 
@@ -53,7 +53,7 @@
       <img
         src="@/assets/images/svg/UI/hotel-black.svg"
         alt="hotel"
-        class="w-6 sm:w-5"
+        class="w-6 sm:w-6 sm:h-6"
         v-else
       />
       <!-- Hotel Text Start -->

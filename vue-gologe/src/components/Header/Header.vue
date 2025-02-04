@@ -12,7 +12,7 @@
       <!-- Use Logo UI Component -->
 
       <!-- Use Logo UI Component -->
-      <CustomLogo class="sm:hidden" />
+      <CustomLogo class="sm:hidden absolute left-1/2 -translate-x-1/2"/>
 
       <!-- Header Auth wrapper Start -->
       <div class="header-auth-wrapper">
@@ -59,7 +59,7 @@ onMounted(() => {
     @apply px-12 h-[60px];
   }
   .header_content {
-    @apply w-full h-full flex  items-center justify-between;
+    @apply w-full h-full flex  items-center justify-between relative;
 
     .header-auth-wrapper {
       @apply max-w-[400px] w-full h-full flex items-center justify-end gap-4;
