@@ -296,7 +296,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { ErrorMessage, Field, Form as VForm } from "vee-validate";
-import { object, string, ref as Yref} from "yup";
+import { object, string, ref as Yref } from "yup";
 import { useI18n } from "vue-i18n";
 import { scrollTop } from "@/services/Scroll";
 import { useAuthStore } from "@/stores/authStore";
@@ -339,15 +339,12 @@ const validationScheme = object().shape({
   confirmPassword: string()
     .label(t("passwordConfirmation"))
     .when("password", (password) =>
-    password
-      ? string()
-          .required(t("Errors.required"))
-          .oneOf(
-            [Yref("password")],
-            t("Errors.passwordMatch")
-          )
-      : string().notRequired()
-  ),
+      password
+        ? string()
+            .required(t("Errors.required"))
+            .oneOf([Yref("password")], t("Errors.passwordMatch"))
+        : string().notRequired()
+    ),
 });
 
 scrollTop();

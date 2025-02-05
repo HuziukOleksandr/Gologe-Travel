@@ -6,6 +6,7 @@
       class="max-w-[510px] auth-aside-wrapper"
       @submit="Login"
       :validation-schema="validationScheme"
+      v-slot="{ values}"
     >
       <!-- USe Custom Logo -->
       <CustomLogo class="logo" />
