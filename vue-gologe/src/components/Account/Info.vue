@@ -247,6 +247,240 @@
     </div>
     <!-- Password wrapper End -->
 
+    <!-- Phone wrapper Start -->
+    <div class="wrapper">
+      <!-- Text wrapper Start -->
+      <div class="text-wrapper">
+        <!-- Title Start -->
+        <h1 class="title flex gap-1">
+          {{ $t("Account.Account.number") }}
+          <p class="text-custom-red">*</p>
+        </h1>
+        <!-- Title End -->
+
+        <!-- Text Start -->
+        <h2 class="text">{{ userStore.user.phone }}</h2>
+        <!-- Text End -->
+      </div>
+      <!-- Text wrapper End -->
+
+      <!-- Change wrapper Start -->
+      <div class="change_wrapper">
+        <div class="flex flex-col gap-1">
+          <!-- Change input Start -->
+          <Field name="phone" v-slot="{ field }">
+            <Transition name="grow-right">
+              <input
+                v-show="inputVisible.phone"
+                v-bind="field"
+                class="change_input"
+                type="text"
+                placeHolder="Phone"
+                v-model="field.value"
+              />
+            </Transition>
+          </Field>
+          <!-- Change input End -->
+          <Transition name="grow-right">
+            <ErrorMessage
+              as="div"
+              name="phone"
+              class="custom-text-xs text-custom-red font-semibold"
+              v-show="inputVisible.password"
+            />
+          </Transition>
+        </div>
+        <!-- Confirm Button Start -->
+        <CustomButton
+          class="change_button"
+          type="submit"
+          @click="Change('phone', values.phone)"
+          v-if="inputVisible.phone"
+        >
+          <!-- Button Image -->
+          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
+
+          <p class="button-text">
+            {{ $t("Account.Account.confirm") }}
+          </p>
+        </CustomButton>
+        <!-- Confirm Button End -->
+        <!-- Confirm Button Start -->
+        <CustomButton
+          class="change_button"
+          type="submit"
+          @click="inputVisible.phone = true"
+          v-else
+        >
+          <!-- Button Image -->
+          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
+
+          <p class="button-text">
+            {{ $t("Account.Account.change") }}
+          </p>
+        </CustomButton>
+        <!-- Confirm Button End -->
+      </div>
+      <!-- Change wrapper End -->
+    </div>
+    <!-- Phone wrapper End -->
+
+    <!-- Address wrapper Start -->
+    <div class="wrapper">
+      <!-- Text wrapper Start -->
+      <div class="text-wrapper">
+        <!-- Title Start -->
+        <h1 class="title flex gap-1">
+          {{ $t("Account.Account.address") }}
+          <p class="text-custom-red">*</p>
+        </h1>
+        <!-- Title End -->
+
+        <!-- Text Start -->
+        <h2 class="text">{{ userStore.user.address }}</h2>
+        <!-- Text End -->
+      </div>
+      <!-- Text wrapper End -->
+
+      <!-- Change wrapper Start -->
+      <div class="change_wrapper">
+        <div class="flex flex-col gap-1">
+          <!-- Change input Start -->
+          <Field name="address" v-slot="{ field }">
+            <Transition name="grow-right">
+              <input
+                v-show="inputVisible.address"
+                v-bind="field"
+                class="change_input"
+                type="text"
+                placeHolder="Address"
+                v-model="field.value"
+              />
+            </Transition>
+          </Field>
+          <!-- Change input End -->
+          <Transition name="grow-right">
+            <ErrorMessage
+              as="div"
+              name="address"
+              class="custom-text-xs text-custom-red font-semibold"
+              v-show="inputVisible.password"
+            />
+          </Transition>
+        </div>
+        <!-- Confirm Button Start -->
+        <CustomButton
+          class="change_button"
+          type="submit"
+          @click="Change('address', values.address)"
+          v-if="inputVisible.address"
+        >
+          <!-- Button Image -->
+          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
+
+          <p class="button-text">
+            {{ $t("Account.Account.confirm") }}
+          </p>
+        </CustomButton>
+        <!-- Confirm Button End -->
+        <!-- Confirm Button Start -->
+        <CustomButton
+          class="change_button"
+          type="submit"
+          @click="inputVisible.address = true"
+          v-else
+        >
+          <!-- Button Image -->
+          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
+
+          <p class="button-text">
+            {{ $t("Account.Account.change") }}
+          </p>
+        </CustomButton>
+        <!-- Confirm Button End -->
+      </div>
+      <!-- Change wrapper End -->
+    </div>
+    <!-- Address wrapper End -->
+
+    <!-- Date of Birth wrapper Start -->
+    <div class="wrapper">
+      <!-- Text wrapper Start -->
+      <div class="text-wrapper">
+        <!-- Title Start -->
+        <h1 class="title flex gap-1">
+          {{ $t("Account.Account.birth") }}
+          <p class="text-custom-red">*</p>
+        </h1>
+        <!-- Title End -->
+
+        <!-- Text Start -->
+        <h2 class="text">{{ userStore.user.birth }}</h2>
+        <!-- Text End -->
+      </div>
+      <!-- Text wrapper End -->
+
+      <!-- Change wrapper Start -->
+      <div class="change_wrapper">
+        <div class="flex flex-col gap-1">
+          <!-- Change input Start -->
+          <Field name="birth" v-slot="{ field }">
+            <Transition name="grow-right">
+              <input
+                v-show="inputVisible.birth"
+                v-bind="field"
+                class="change_input"
+                type="text"
+                placeHolder="Date"
+                v-model="field.value"
+              />
+            </Transition>
+          </Field>
+          <!-- Change input End -->
+          <Transition name="grow-right">
+            <ErrorMessage
+              as="div"
+              name="birth"
+              class="custom-text-xs text-custom-red font-semibold"
+              v-show="inputVisible.password"
+            />
+          </Transition>
+        </div>
+        <!-- Confirm Button Start -->
+        <CustomButton
+          class="change_button"
+          type="submit"
+          @click="Change('birth', values.birth)"
+          v-if="inputVisible.birth"
+        >
+          <!-- Button Image -->
+          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
+
+          <p class="button-text">
+            {{ $t("Account.Account.confirm") }}
+          </p>
+        </CustomButton>
+        <!-- Confirm Button End -->
+        <!-- Confirm Button Start -->
+        <CustomButton
+          class="change_button"
+          type="submit"
+          @click="inputVisible.birth = true"
+          v-else
+        >
+          <!-- Button Image -->
+          <img src="@/assets/images/svg/UI/change.svg" alt="change" />
+
+          <p class="button-text">
+            {{ $t("Account.Account.change") }}
+          </p>
+        </CustomButton>
+        <!-- Confirm Button End -->
+      </div>
+      <!-- Change wrapper End -->
+    </div>
+    <!-- Date of Birth wrapper End -->
+
     <!-- Save Button Start -->
     <CustomButton
       class="w-fit px-8 h-12 bg-custom-darkgreen self-center"
@@ -273,22 +507,23 @@ const userStore = useUserStore(),
   inputVisible = ref({
     name: false,
     email: false,
-    password: false, 
+    password: false,
     phone: false,
     address: false,
-    birth: false
+    birth: false,
   });
 
 const Change = (field: keyof typeof inputVisible.value, values: any) => {
   inputVisible.value[field] = !inputVisible.value[field];
-  if (field === "name") {
+  if(values) {
+    if (field === "name") {
     const [firstName, lastName] = values.split(" ");
     userStore.setUserProperty("firstName", firstName);
     userStore.setUserProperty("lastName", lastName);
   } else if (field === "password") {
-
   } else {
     userStore.setUserProperty(field, values);
+  }
   }
 };
 
@@ -298,9 +533,20 @@ const validationScheme = object().shape({
     .min(2, t("Errors.short"))
     .max(50, t("Errors.long")),
   email: string().required(t("Errors.required")).email(t("Errors.email")),
+  password: string()
+    .required(t("Errors.required"))
+    .min(8, t("Errors.passwordSize"))
+    .matches(/[A-ZА-Я]/, t("Errors.passwordUpper"))
+    .matches(/[a-zа-я]/, t("Errors.passwordLower"))
+    .matches(/\d/, t("Errors.passwordNumber")),
+  phone: string()
+    .required(t("Errors.required"))
+    .matches(/^\+?[0-9]{10,15}$/, t("Errors.phone")),
+  address: string().required(t("Errors.required")),
+  dirth: string().required(t("Errors.required")),
 });
 
-const SaveChanges = async (values: any) => {
+const SaveChanges = async () => {
   await userStore.updateUserInDatabase();
 };
 </script>
