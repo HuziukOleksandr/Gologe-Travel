@@ -4,7 +4,9 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signOut,
+  updateEmail,
+  updatePassword,
+  signOut
 } from "firebase/auth";
 
 export const useAuthStore = defineStore("auth", {
@@ -56,6 +58,32 @@ export const useAuthStore = defineStore("auth", {
         
       }
     },
+
+    async updateUserEmail(newEmail: string){
+
+    },
+
+    async updateUserPassword(currentPassword: string, newPassword: string) {
+      console.log("Start");
+      
+      const auth = getAuth();
+      const user = auth.currentUser;
+      
+      if(user){ 
+        console.log(user);
+        
+        return await updatePassword(user, newPassword).then(() => {
+          console.log("Update Password");
+          
+        }).catch((error) => { console.log(error);
+        });
+      }
+      
+          
+
+
+    },
+
     async handlerSignOut() {
       try {
         let auth = getAuth();

@@ -98,7 +98,7 @@
       <!-- Wrapper for Inputs End -->
 
       <!-- Use Custom Button "Login" Start -->
-      <CustomButton class="auth-button" @click="Login">
+      <CustomButton class="auth-button">
         <p class="auth-button-text">{{ $t("Login.title") }}</p>
       </CustomButton>
       <!-- Use Custom Button "Login" End -->

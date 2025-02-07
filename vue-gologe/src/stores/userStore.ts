@@ -89,7 +89,7 @@ export const useUserStore = defineStore("user", {
         this.errorMsg = "Error:" + (error as Error).message;
       }
     },
-
+  
     async removeUserInDatabase(email: string) {
       const database = getDatabase();
       const userRef = ref(database, "users");

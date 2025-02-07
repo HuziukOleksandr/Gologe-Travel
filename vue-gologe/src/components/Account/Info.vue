@@ -197,7 +197,7 @@
                 v-bind="field"
                 class="change_input"
                 type="text"
-                placeHolder="Password"
+                placeHolder="Old Password"
                 v-model="field.value"
               />
             </Transition>
@@ -212,6 +212,31 @@
             />
           </Transition>
         </div>
+        <div class="flex flex-col gap-1">
+          <!-- Change input Start -->
+          <Field name="password" v-slot="{ field }">
+            <Transition name="grow-right">
+              <input
+                v-show="inputVisible.password"
+                v-bind="field"
+                class="change_input"
+                type="text"
+                placeHolder="New Password"
+                v-model="field.value"
+              />
+            </Transition>
+          </Field>
+          <!-- Change input End -->
+          <Transition name="grow-right">
+            <ErrorMessage
+              as="div"
+              name="passwor"
+              class="custom-text-xs text-custom-red font-semibold"
+              v-show="inputVisible.password"
+            />
+          </Transition>
+        </div>
+        <!-- Confirm Button Start -->
         <!-- Confirm Button Start -->
         <CustomButton
           class="change_button"
@@ -498,11 +523,13 @@
 //TODO: Добавити Зміну пароля
 import { ref } from "vue";
 import { useUserStore } from "@/stores/userStore";
+import { useAuthStore } from "@/stores/authStore";
 import { ErrorMessage, Field, useForm, Form as VForm } from "vee-validate";
-import { object, string } from "yup";
+import { object, string, ref as Yref } from "yup";
 import { useI18n } from "vue-i18n";
 
 const userStore = useUserStore(),
+  authStore = useAuthStore(),
   { t } = useI18n(),
   inputVisible = ref({
     name: false,
@@ -513,17 +540,21 @@ const userStore = useUserStore(),
     birth: false,
   });
 
-const Change = (field: keyof typeof inputVisible.value, values: any) => {
+const Change = async (field: keyof typeof inputVisible.value, values: any) => {
   inputVisible.value[field] = !inputVisible.value[field];
-  if(values) {
+  if (values) {
     if (field === "name") {
-    const [firstName, lastName] = values.split(" ");
-    userStore.setUserProperty("firstName", firstName);
-    userStore.setUserProperty("lastName", lastName);
-  } else if (field === "password") {
-  } else {
-    userStore.setUserProperty(field, values);
-  }
+      const [firstName, lastName] = values.split(" ");
+      userStore.setUserProperty("firstName", firstName);
+      userStore.setUserProperty("lastName", lastName);
+    } else if (field === "password") {
+      // await authStore.updateUserPassword(values);
+      console.log(values.value.password);
+      console.log(values.value.confirmPassword);
+      
+    } else {
+      userStore.setUserProperty(field, values);
+    }
   }
 };
 
@@ -539,6 +570,15 @@ const validationScheme = object().shape({
     .matches(/[A-ZА-Я]/, t("Errors.passwordUpper"))
     .matches(/[a-zа-я]/, t("Errors.passwordLower"))
     .matches(/\d/, t("Errors.passwordNumber")),
+  confirmPassword: string()
+    .label(t("passwordConfirmation"))
+    .when("password", (password) =>
+      password
+        ? string()
+            .required(t("Errors.required"))
+            .oneOf([Yref("password")], t("Errors.passwordMatch"))
+        : string().notRequired()
+    ),
   phone: string()
     .required(t("Errors.required"))
     .matches(/^\+?[0-9]{10,15}$/, t("Errors.phone")),
