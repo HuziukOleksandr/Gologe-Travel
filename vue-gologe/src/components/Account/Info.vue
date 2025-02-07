@@ -190,7 +190,7 @@
       <div class="change_wrapper">
         <div class="flex flex-col gap-1">
           <!-- Change input Start -->
-          <Field name="password" v-slot="{ field }">
+          <Field name="oldPassword" v-slot="{ field }">
             <Transition name="grow-right">
               <input
                 v-show="inputVisible.password"
@@ -206,7 +206,7 @@
           <Transition name="grow-right">
             <ErrorMessage
               as="div"
-              name="password"
+              name="oldPassword"
               class="custom-text-xs text-custom-red font-semibold"
               v-show="inputVisible.password"
             />
@@ -214,7 +214,7 @@
         </div>
         <div class="flex flex-col gap-1">
           <!-- Change input Start -->
-          <Field name="password" v-slot="{ field }">
+          <Field name="newPassword" v-slot="{ field }">
             <Transition name="grow-right">
               <input
                 v-show="inputVisible.password"
@@ -230,7 +230,7 @@
           <Transition name="grow-right">
             <ErrorMessage
               as="div"
-              name="passwor"
+              name="newPassword"
               class="custom-text-xs text-custom-red font-semibold"
               v-show="inputVisible.password"
             />
@@ -241,7 +241,7 @@
         <CustomButton
           class="change_button"
           type="submit"
-          @click="Change('password', values.password)"
+          @click="Change('password', values)"
           v-if="inputVisible.password"
         >
           <!-- Button Image -->
@@ -548,10 +548,10 @@ const Change = async (field: keyof typeof inputVisible.value, values: any) => {
       userStore.setUserProperty("firstName", firstName);
       userStore.setUserProperty("lastName", lastName);
     } else if (field === "password") {
-      // await authStore.updateUserPassword(values);
-      console.log(values.value.password);
-      console.log(values.value.confirmPassword);
-      
+      await authStore.updateUserPassword(values.oldPassword, values.newPassword);
+    } else if (field === "email") {
+      userStore.setUserProperty(field, values);
+      await authStore.updateUserEmail(values)
     } else {
       userStore.setUserProperty(field, values);
     }
@@ -564,21 +564,18 @@ const validationScheme = object().shape({
     .min(2, t("Errors.short"))
     .max(50, t("Errors.long")),
   email: string().required(t("Errors.required")).email(t("Errors.email")),
-  password: string()
+  oldPassword: string()
     .required(t("Errors.required"))
     .min(8, t("Errors.passwordSize"))
     .matches(/[A-ZА-Я]/, t("Errors.passwordUpper"))
     .matches(/[a-zа-я]/, t("Errors.passwordLower"))
     .matches(/\d/, t("Errors.passwordNumber")),
-  confirmPassword: string()
-    .label(t("passwordConfirmation"))
-    .when("password", (password) =>
-      password
-        ? string()
-            .required(t("Errors.required"))
-            .oneOf([Yref("password")], t("Errors.passwordMatch"))
-        : string().notRequired()
-    ),
+  newPassword: string()
+  .required(t("Errors.required"))
+    .min(8, t("Errors.passwordSize"))
+    .matches(/[A-ZА-Я]/, t("Errors.passwordUpper"))
+    .matches(/[a-zа-я]/, t("Errors.passwordLower"))
+    .matches(/\d/, t("Errors.passwordNumber")),
   phone: string()
     .required(t("Errors.required"))
     .matches(/^\+?[0-9]{10,15}$/, t("Errors.phone")),
