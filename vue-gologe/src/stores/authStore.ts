@@ -61,7 +61,7 @@ export const useAuthStore = defineStore("auth", {
       }
     },
 
-    async updateUserEmail(newEmail: string){
+    async updateUserEmail(newEmail: string, currentPassword: string){
       try {
         const auth = getAuth();
         const user = auth.currentUser;
@@ -69,9 +69,12 @@ export const useAuthStore = defineStore("auth", {
         if (!user) {
           throw new Error("Користувач не залогінений.");
         }
+        const credential = EmailAuthProvider.credential(user.email!, currentPassword);
+        await reauthenticateWithCredential(user, credential);
         
-        return await updateEmail(user, newEmail)
+        await updateEmail(user, newEmail)
       } catch (error) {
+        console.log(error);
         
       }
     },

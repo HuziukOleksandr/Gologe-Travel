@@ -310,7 +310,7 @@ const slides = ref(["login-one", "login-two", "login-three"]),
   router = useRouter();
 
 const Register = async (values: any) => {
-  const { password, ...userWithoutPassword } = values;
+  const { password, confirmPassword, ...userWithoutPassword } = values;
   userStore.setUser(userWithoutPassword);
   await authStore.register(values.email, password);
   await userStore.setUserInDatabase(values.phone);

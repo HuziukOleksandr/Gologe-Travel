@@ -175,7 +175,6 @@ const Login = async (values: any) => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log("Користувач підтверджений:", user);
         router.push({ name: "Account" });
       }
     });

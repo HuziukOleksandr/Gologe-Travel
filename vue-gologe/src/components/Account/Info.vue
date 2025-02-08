@@ -112,6 +112,30 @@
       <div class="change_wrapper">
         <div class="flex flex-col gap-1">
           <!-- Change input Start -->
+          <Field name="oldPassword" v-slot="{ field }">
+            <Transition name="grow-right">
+              <CustomInputPassword
+                v-show="inputVisible.email"
+                v-bind="field"
+                class="password_input"
+                type="text"
+                placeHolder="Current Password"
+                v-model="field.value"
+              />
+            </Transition>
+          </Field>
+          <!-- Change input End -->
+          <Transition name="grow-right">
+            <ErrorMessage
+              as="div"
+              name="oldPassword"
+              class="custom-text-xs text-custom-red font-semibold"
+              v-show="inputVisible.email"
+            />
+          </Transition>
+        </div>
+        <div class="flex flex-col gap-1">
+          <!-- Change input Start -->
           <Field name="email" v-slot="{ field }">
             <Transition name="grow-right">
               <input
@@ -119,7 +143,7 @@
                 v-bind="field"
                 class="change_input"
                 type="text"
-                placeHolder="Email"
+                placeHolder="example@gmail.com"
                 v-model="field.value"
               />
             </Transition>
@@ -138,7 +162,7 @@
         <CustomButton
           class="change_button"
           type="submit"
-          @click="Change('email', values.email)"
+          @click="Change('email', values)"
           v-if="inputVisible.email"
         >
           <!-- Button Image -->
@@ -192,12 +216,12 @@
           <!-- Change input Start -->
           <Field name="oldPassword" v-slot="{ field }">
             <Transition name="grow-right">
-              <input
+              <CustomInputPassword
                 v-show="inputVisible.password"
                 v-bind="field"
-                class="change_input"
+                class="password_input"
                 type="text"
-                placeHolder="Old Password"
+                placeHolder="Current Password"
                 v-model="field.value"
               />
             </Transition>
@@ -216,10 +240,10 @@
           <!-- Change input Start -->
           <Field name="newPassword" v-slot="{ field }">
             <Transition name="grow-right">
-              <input
+              <CustomInputPassword
                 v-show="inputVisible.password"
                 v-bind="field"
-                class="change_input"
+                class="password_input"
                 type="text"
                 placeHolder="New Password"
                 v-model="field.value"
@@ -548,10 +572,15 @@ const Change = async (field: keyof typeof inputVisible.value, values: any) => {
       userStore.setUserProperty("firstName", firstName);
       userStore.setUserProperty("lastName", lastName);
     } else if (field === "password") {
-      await authStore.updateUserPassword(values.oldPassword, values.newPassword);
+      if (values.oldPassword && values.newPassword) {
+        await authStore.updateUserPassword(
+          values.oldPassword,
+          values.newPassword
+        );
+      }
     } else if (field === "email") {
-      userStore.setUserProperty(field, values);
-      await authStore.updateUserEmail(values)
+      userStore.setUserProperty(field, values.email);
+      await authStore.updateUserEmail(values.email, values.oldPassword);
     } else {
       userStore.setUserProperty(field, values);
     }
@@ -571,7 +600,7 @@ const validationScheme = object().shape({
     .matches(/[a-zа-я]/, t("Errors.passwordLower"))
     .matches(/\d/, t("Errors.passwordNumber")),
   newPassword: string()
-  .required(t("Errors.required"))
+    .required(t("Errors.required"))
     .min(8, t("Errors.passwordSize"))
     .matches(/[A-ZА-Я]/, t("Errors.passwordUpper"))
     .matches(/[a-zа-я]/, t("Errors.passwordLower"))
@@ -604,7 +633,7 @@ const SaveChanges = async () => {
   }
 
   .text-wrapper {
-    @apply flex flex-col justify-between;
+    @apply flex flex-col gap-1;
 
     .title {
       @apply font-serrat text-base font-semibold text-custom-darkgray;
@@ -626,6 +655,10 @@ const SaveChanges = async () => {
       @screen sm {
         @apply w-full;
       }
+    }
+
+    .password_input {
+      @apply border-r-0 border-l-0 border-t-0 border-b-custom-lightgray;
     }
     .change_button {
       @apply w-fit h-12 flex border-custom-lightgreen justify-center gap-1 border-2 px-8;
