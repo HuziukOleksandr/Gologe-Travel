@@ -6,7 +6,7 @@
       class="max-w-[510px] auth-aside-wrapper"
       @submit="Login"
       :validation-schema="validationScheme"
-      v-slot="{ values}"
+      v-slot="{ values }"
     >
       <!-- USe Custom Logo -->
       <CustomLogo class="logo" />
@@ -163,6 +163,7 @@ import { useI18n } from "vue-i18n";
 import { scrollTop } from "@/services/Scroll";
 import { useRouter } from "vue-router";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { setItem } from '@/services/LocaleStorage'
 
 const slides = ref(["login-one", "login-two", "login-three"]),
   authStore = useAuthStore(),
@@ -175,6 +176,7 @@ const Login = async (values: any) => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
+        setItem("uid", user.uid)
         router.push({ name: "Account" });
       }
     });

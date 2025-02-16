@@ -37,8 +37,8 @@ const CustomInputPassword = defineAsyncComponent(
     () => import("./CustomInputPassword.vue")
 );
 
-const CustomUploadFile = defineAsyncComponent(
-    () => import("./CustomUploadFile.vue")
+const CustomUploadImage = defineAsyncComponent(
+    () => import("./CustomUploadImage.vue")
 );
 
 const CustomModalWindow = defineAsyncComponent(
@@ -67,7 +67,9 @@ const CustomRegisterWith = defineAsyncComponent(
 const CustomErrorWindow = defineAsyncComponent(
     () => import("./CustomErrorWindow.vue")
 )
-
+ const CustomCropperFile = defineAsyncComponent(
+    () => import("./CustomCropperFile.vue")
+ )
 export default {
     CustomNavigation,
     CustomLocalization,
@@ -78,7 +80,7 @@ export default {
     CustomCarousel,
     CustomCheckbox,
     CustomInputPassword,
-    CustomUploadFile,
+    CustomUploadImage,
     CustomModalWindow,
     CustomFlightSearch,
     CustomPlaceSearch,
@@ -86,4 +88,5 @@ export default {
     CustomLoginWith,
     CustomRegisterWith,
     CustomErrorWindow,
+    CustomCropperFile,
 };

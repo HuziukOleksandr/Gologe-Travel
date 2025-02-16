@@ -9,17 +9,18 @@
       <div class="w-full h-[350px] rounded-xl flex relative mb-60">
         <!-- Preview Image -->
         <img
-          class="w-full h-full"
-          src="@/assets/images/png/Account/Background/John-background.png"
+          class="w-full h-full rounded-xl object-cover"
+          :src="background()"
           alt="background"
         />
-
         <!-- Button Upload File Start -->
-        <CustomUploadFile
+        <CustomUploadImage
           class="absolute right-6 bottom-6 h-12 bg-custom-lightgreen rounded-lg cursor-pointer"
         >
-          <p class="sm:hidden">{{ $t("Account.upload") }}</p>
-        </CustomUploadFile>
+          <p class="sm:hidden hover:cursor-pointer">
+            {{ $t("Account.upload") }}
+          </p>
+        </CustomUploadImage>
         <!-- Button Upload File End -->
 
         <!-- User Info wrapper Start -->
@@ -29,12 +30,12 @@
             class="w-40 h-40 rounded-full mb-6 border-solid border-custom-red border-2 flex justify-end items-end"
           >
             <!-- Button Upload Ures Image Start -->
-            <CustomButton
+            <CustomUploadImage
               class="p-2 bg-custom-red rounded-full flex justify-center items-center"
             >
               <!-- Button Image -->
               <img src="@/assets/images/svg/UI/Pen.svg" alt="Pen" />
-            </CustomButton>
+            </CustomUploadImage>
             <!-- Button Upload Ures Image End -->
           </div>
           <!-- User image wrapper End -->
@@ -121,7 +122,7 @@
 
 <script setup lang="ts">
 //TODO: Добавити зміну Frame Background
-//TODO: Добавити зігрузку і зміну фото профіля
+//TODO: Добавити загрузку і зміну фото профіля
 //TODO: Добавити кнопку видалення аккаунта
 import { ref } from "vue";
 import { useUserStore } from "@/stores/userStore";
@@ -131,6 +132,17 @@ import Payment from "@/components/Account/Payment.vue";
 
 const userStore = useUserStore();
 const selectedTab = ref<string>("Account");
+
+const background = () => {
+  if (userStore.user.background) {
+    return userStore.user.background.toString();
+  } else {
+    return new URL(
+      "../assets/images/png/Account/Background/default-background.png",
+      import.meta.url
+    ).href;
+  }
+};
 
 let isOpen = ref<boolean>();
 

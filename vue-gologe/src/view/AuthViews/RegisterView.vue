@@ -301,20 +301,25 @@ import { useI18n } from "vue-i18n";
 import { scrollTop } from "@/services/Scroll";
 import { useAuthStore } from "@/stores/authStore";
 import { useUserStore } from "@/stores/userStore";
-import { useRouter } from "vue-router";
+import { getAuth } from 'firebase/auth';
+import { setItem } from '@/services/LocaleStorage';
 
 const slides = ref(["login-one", "login-two", "login-three"]),
   authStore = useAuthStore(),
   userStore = useUserStore(),
-  { t } = useI18n(),
-  router = useRouter();
+  { t } = useI18n();
 
 const Register = async (values: any) => {
   const { password, confirmPassword, ...userWithoutPassword } = values;
   userStore.setUser(userWithoutPassword);
   await authStore.register(values.email, password);
-  await userStore.setUserInDatabase(values.phone);
-  router.push({ name: "Account" });
+  const auth = getAuth();
+  const user = auth.currentUser
+  if (user){
+
+    setItem("uid", user.uid)
+    await userStore.setUserInDatabase(user.uid);
+  }
 };
 
 const validationScheme = object().shape({

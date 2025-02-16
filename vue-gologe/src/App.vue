@@ -28,14 +28,14 @@ onMounted(() => {
     if (user) {
       // Add to Locale Storage
       setItem("isLoggedIn", true);
-      setItem("email", user.email);
       
       // Add to Pinia Store
       authStore.setAuthState(true);
-      userStore.getUserByEmail(getItem("email"))
+      userStore.getCurrentUser()
     } else {
       // Add to Locale Storage
       setItem("isLoggedIn", false);
+      setItem("uid", null)
       removeItem("email");
     }
   });
