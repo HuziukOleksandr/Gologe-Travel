@@ -1,5 +1,5 @@
 <template>
-  <form class="flex items-center gap-1 px-4 hover:cursor-pointer">
+  <form class="flex items-center gap-1 hover:cursor-pointer">
     <!-- Унікальний id -->
     <input
       :id="uniqueId"
@@ -8,7 +8,7 @@
       @change="handleFileUpload"
     />
 
-    <label  
+    <label
       :for="uniqueId"
       class="custom-text-base font-semibold flex items-center gap-1"
     >
@@ -21,24 +21,27 @@
 import { ref } from "vue";
 import { useUserStore } from "@/stores/userStore";
 
-const image = ref<any>(),
-  userStore = useUserStore(),
+const userStore = useUserStore(),
   isUploading = ref(false);
+  const props = withDefaults(
+  defineProps<{
+    path: string;
+  }>(),
+  {}
+);
+
 
 const uniqueId = `file-input-${Math.random().toString(36).substring(2, 9)}`;
 
-async function  handleFileUpload(event: Event) {
+async function handleFileUpload(event: Event) {
   const target = event.target as HTMLInputElement;
   if (target.files && target.files.length > 0) {
     const file = target.files[0];
     isUploading.value = true;
-
     try {
-      const imageUrl = await userStore.uploadImageInStorage(file);
-
+      const imageUrl = await userStore.uploadImageInStorage(file, props.path);
       if (imageUrl) {
         await userStore.setUserProperty("background", imageUrl);
-        console.log("Зображення успішно збережене:", imageUrl);
       }
     } catch (error) {
       console.error("Помилка при завантаженні файлу:", error);
@@ -46,7 +49,7 @@ async function  handleFileUpload(event: Event) {
       isUploading.value = false;
     }
   }
-};
+}
 </script>
 
 <style scoped>

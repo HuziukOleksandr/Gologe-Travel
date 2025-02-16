@@ -10,13 +10,20 @@
         <!-- Preview Image -->
         <img
           class="w-full h-full rounded-xl object-cover"
-          :src="background()"
+          :src="url"
           alt="background"
         />
         <!-- Button Upload File Start -->
         <CustomUploadImage
-          class="absolute right-6 bottom-6 h-12 bg-custom-lightgreen rounded-lg cursor-pointer"
+          class="absolute right-6 bottom-6 h-12 bg-custom-lightgreen rounded-lg cursor-pointer px-4"
+          path="background"
         >
+          <img
+            src="@/assets/images/svg/UI/upload-file.svg"
+            alt="upload-file"
+            class="hover:cursor-pointer"
+            
+          />
           <p class="sm:hidden hover:cursor-pointer">
             {{ $t("Account.upload") }}
           </p>
@@ -24,14 +31,20 @@
         <!-- Button Upload File End -->
 
         <!-- User Info wrapper Start -->
-        <div class="user_wrapper">
+        <div class="user_wrapper relative">
           <!-- User image wrapper Start -->
           <div
-            class="w-40 h-40 rounded-full mb-6 border-solid border-custom-red border-2 flex justify-end items-end"
+            class="w-40 h-40 rounded-full mb-6 relative "
           >
+            <img
+              src="../assets/images/png/Account/textFoto.jpg"
+              alt="rounded-full"
+              class="w-40 h-40 rounded-full absolute inset-0 border-custom-red border-[4px]"
+            />
             <!-- Button Upload Ures Image Start -->
             <CustomUploadImage
-              class="p-2 bg-custom-red rounded-full flex justify-center items-center"
+              class="p-[10px] bg-custom-red rounded-full absolute right-0 bottom-0"
+              path="user-image"
             >
               <!-- Button Image -->
               <img src="@/assets/images/svg/UI/Pen.svg" alt="Pen" />
@@ -132,17 +145,20 @@ import Payment from "@/components/Account/Payment.vue";
 
 const userStore = useUserStore();
 const selectedTab = ref<string>("Account");
+const url =  userStore.updateRefImage("background").toString();
+console.log(url);
 
-const background = () => {
-  if (userStore.user.background) {
-    return userStore.user.background.toString();
-  } else {
-    return new URL(
-      "../assets/images/png/Account/Background/default-background.png",
-      import.meta.url
-    ).href;
-  }
-};
+// async function background() {
+//   if (userStore.userId) {
+//     const url =  userStore.updateRefImage("background");
+//     return url;
+//   } else {
+//     return new URL(
+//       "../assets/images/png/Account/Background/default-background.png",
+//       import.meta.url
+//     ).href;
+//   }
+// };
 
 let isOpen = ref<boolean>();
 

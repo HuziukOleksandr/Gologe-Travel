@@ -73,11 +73,14 @@ export const useUserStore = defineStore("user", {
     },
 
     async getCurrentUser() {
+      console.trace("gert called")
       const dbRef = ref(getDatabase());
       get(child(dbRef, `users/${this.userId}`))
         .then((snapshot) => {
           if (snapshot.exists()) {
             this.user = snapshot.val();
+            console.log("ddww");
+            
           } else {
             console.log("No data available");
           }
@@ -114,17 +117,32 @@ export const useUserStore = defineStore("user", {
       }
     },
 
-    async uploadImageInStorage(file: File) {
+    async uploadImageInStorage(file: File, path: string) {
       try {
         const storageRef = SRef(
           storage,
-          `gs://gologe-72d19/backgrounds/${this.userId}`
+          `gs://gologe-72d19/${path}/${this.userId}`
         );
-        await uploadBytes(storageRef, file); // Завантаження файлу
-        const url = await getDownloadURL(storageRef); // Отримуємо URL
-        console.log("Файл завантажено:", url);
+        await uploadBytes(storageRef, file); 
+        const url = await getDownloadURL(storageRef); 
         return url;
       } catch (error) {}
+    },
+
+    async updateRefImage(path: string) {
+      try {
+        const storageRef = SRef(
+          storage,
+          `gs://gologe-72d19/${path}/${this.userId}`
+        );
+        const url = await getDownloadURL(storageRef);
+        
+        
+        return url;
+       
+      } catch (error) {
+        
+      }
     },
 
     async removeUserInDatabase(email: string) {

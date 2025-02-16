@@ -30,10 +30,10 @@
           <!-- View Start -->
           <p class="custom-text-xs text-custom-darkgreen font-semibold flex gap-1 sm:hidden">
             {{ $t("ListingFlight.Card.mark") }}
-            <p class="font-medium">
+            <span class="font-medium">
               {{ element.views }} 
               {{ $t("ListingFlight.Card.reviews") }}
-            </p>
+            </span>
           </p>
           <!-- View End -->
         </div>

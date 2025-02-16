@@ -20,18 +20,23 @@ const route = useRoute();
 
 const authStore = useAuthStore();
 const userStore = useUserStore();
-
+let isFetched = false;
 let auth;
 onMounted(() => {
   auth = getAuth();
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      // Add to Locale Storage
-      setItem("isLoggedIn", true);
-      
-      // Add to Pinia Store
-      authStore.setAuthState(true);
-      userStore.getCurrentUser()
+      if (!isFetched) {
+        // Add to Locale Storage
+        setItem("isLoggedIn", true);
+
+        // Add to Pinia Store
+        authStore.setAuthState(true);
+        userStore.getCurrentUser();
+        userStore.setUserProperty("background", "sdsd");
+
+        isFetched = true; // Більше не викликати `getCurrentUser()`
+      }
     } else {
       // Add to Locale Storage
       setItem("isLoggedIn", false);

@@ -4,13 +4,14 @@ import path from "path";
 import { fileURLToPath } from "url";
 import alias from "@rollup/plugin-alias";
 
+
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 export default defineConfig({
   plugins: [
     vue(),
-
+    
     alias({
       entries: [
         {
@@ -29,5 +30,13 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/users/, '')
       }
     }
-  }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern', // or "modern"
+        silenceDeprecations: ["legacy-js-api"]
+      }
+    }
+  },
 });
