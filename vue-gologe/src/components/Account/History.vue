@@ -4,7 +4,6 @@
     {{ $t("Account.History.title") }}
   </h1>
   <!-- History Title End -->
-
   <!-- History wrapper Start -->
   <div class="w-full min-h-20 flex justify-around items-center shadow-xl rounded-xl mb-8 px-8">
     <!-- Use Custom Button "Stays" Start -->

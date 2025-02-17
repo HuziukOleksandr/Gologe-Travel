@@ -296,28 +296,27 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { ErrorMessage, Field, Form as VForm } from "vee-validate";
-import { object, string, ref as Yref } from "yup";
-import { useI18n } from "vue-i18n";
 import { scrollTop } from "@/services/Scroll";
 import { useAuthStore } from "@/stores/authStore";
 import { useUserStore } from "@/stores/userStore";
-import { getAuth } from 'firebase/auth';
-import { setItem } from '@/services/LocaleStorage';
+import { getAuth } from "firebase/auth";
+import { setItem } from "@/services/LocaleStorage";
+import { useI18n } from 'vue-i18n';
+import { object, string, ref as Yref } from "yup";
 
 const slides = ref(["login-one", "login-two", "login-three"]),
   authStore = useAuthStore(),
   userStore = useUserStore(),
-  { t } = useI18n();
+  {t} = useI18n();
 
 const Register = async (values: any) => {
   const { password, confirmPassword, ...userWithoutPassword } = values;
   userStore.setUser(userWithoutPassword);
   await authStore.register(values.email, password);
   const auth = getAuth();
-  const user = auth.currentUser
-  if (user){
-
-    setItem("uid", user.uid)
+  const user = auth.currentUser;
+  if (user) {
+    setItem("uid", user.uid);
     await userStore.setUserInDatabase(user.uid);
   }
 };

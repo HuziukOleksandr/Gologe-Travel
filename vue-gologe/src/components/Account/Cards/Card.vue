@@ -42,8 +42,6 @@
   <!-- Card wrapper End -->
 </template>
 
-<script setup lang="ts"></script>
-
 <style scoped>
 .card_wrapper {
   @apply max-w-[375px] w-full h-[210px] p-4

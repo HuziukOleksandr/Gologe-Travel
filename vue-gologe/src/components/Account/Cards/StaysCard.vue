@@ -160,7 +160,3 @@
   </div>
   <!-- Stays Card wrapper End -->
 </template>
-
-<script setup lang="ts"></script>
-
-<style scoped></style>

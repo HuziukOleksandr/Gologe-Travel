@@ -158,17 +158,17 @@
 import { ref } from "vue";
 import { useAuthStore } from "@/stores/authStore";
 import { ErrorMessage, Field, Form as VForm } from "vee-validate";
-import { object, string } from "yup";
-import { useI18n } from "vue-i18n";
 import { scrollTop } from "@/services/Scroll";
 import { useRouter } from "vue-router";
+import { object, string, ref as Yref } from "yup";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { setItem } from '@/services/LocaleStorage'
+import { setItem } from "@/services/LocaleStorage";
+import { useI18n } from "vue-i18n";
 
 const slides = ref(["login-one", "login-two", "login-three"]),
   authStore = useAuthStore(),
-  { t } = useI18n(),
-  router = useRouter();
+  router = useRouter(),
+  { t } = useI18n();
 
 const Login = async (values: any) => {
   try {
@@ -176,7 +176,7 @@ const Login = async (values: any) => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setItem("uid", user.uid)
+        setItem("uid", user.uid);
         router.push({ name: "Account" });
       }
     });
@@ -184,7 +184,6 @@ const Login = async (values: any) => {
     alert(error);
   }
 };
-
 const validationScheme = object().shape({
   email: string().required(t("Errors.required")).email(t("Errors.email")),
   password: string()
@@ -194,6 +193,5 @@ const validationScheme = object().shape({
     .matches(/[a-zа-я]/, t("Errors.passwordLower"))
     .matches(/\d/, t("Errors.passwordNumber")),
 });
-
 scrollTop();
 </script>

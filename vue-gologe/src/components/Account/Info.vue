@@ -540,7 +540,6 @@
       </p>
     </CustomButton>
     <!-- Save Button End -->
-
   </VForm>
 </template>
 
@@ -549,13 +548,11 @@
 import { ref } from "vue";
 import { useUserStore } from "@/stores/userStore";
 import { useAuthStore } from "@/stores/authStore";
-import { ErrorMessage, Field, useForm, Form as VForm } from "vee-validate";
-import { object, string, ref as Yref } from "yup";
+import { ErrorMessage, Field, Form as VForm } from "vee-validate";
+import { object, string } from "yup";
 import { useI18n } from "vue-i18n";
-
 const userStore = useUserStore(),
   authStore = useAuthStore(),
-  { t } = useI18n(),
   inputVisible = ref({
     name: false,
     email: false,
@@ -563,7 +560,8 @@ const userStore = useUserStore(),
     phone: false,
     address: false,
     birth: false,
-  });
+  }),
+  { t } = useI18n();
 
 const Change = async (field: keyof typeof inputVisible.value, values: any) => {
   inputVisible.value[field] = !inputVisible.value[field];
@@ -588,34 +586,34 @@ const Change = async (field: keyof typeof inputVisible.value, values: any) => {
   }
 };
 
-const validationScheme = object().shape({
-  name: string()
-    .required(t("Errors.required"))
-    .min(2, t("Errors.short"))
-    .max(50, t("Errors.long")),
-  email: string().required(t("Errors.required")).email(t("Errors.email")),
-  oldPassword: string()
-    .required(t("Errors.required"))
-    .min(8, t("Errors.passwordSize"))
-    .matches(/[A-ZА-Я]/, t("Errors.passwordUpper"))
-    .matches(/[a-zа-я]/, t("Errors.passwordLower"))
-    .matches(/\d/, t("Errors.passwordNumber")),
-  newPassword: string()
-    .required(t("Errors.required"))
-    .min(8, t("Errors.passwordSize"))
-    .matches(/[A-ZА-Я]/, t("Errors.passwordUpper"))
-    .matches(/[a-zа-я]/, t("Errors.passwordLower"))
-    .matches(/\d/, t("Errors.passwordNumber")),
-  phone: string()
-    .required(t("Errors.required"))
-    .matches(/^\+?[0-9]{10,15}$/, t("Errors.phone")),
-  address: string().required(t("Errors.required")),
-  dirth: string().required(t("Errors.required")),
-});
-
 const SaveChanges = async () => {
   await userStore.updateUserInDatabase();
 };
+
+const validationScheme = object().shape({
+      name: string()
+        .required(t("Errors.required"))
+        .min(2, t("Errors.short"))
+        .max(50, t("Errors.long")),
+      email: string().required(t("Errors.required")).email(t("Errors.email")),
+      oldPassword: string()
+        .required(t("Errors.required"))
+        .min(8, t("Errors.passwordSize"))
+        .matches(/[A-ZА-Я]/, t("Errors.passwordUpper"))
+        .matches(/[a-zа-я]/, t("Errors.passwordLower"))
+        .matches(/\d/, t("Errors.passwordNumber")),
+      newPassword: string()
+        .required(t("Errors.required"))
+        .min(8, t("Errors.passwordSize"))
+        .matches(/[A-ZА-Я]/, t("Errors.passwordUpper"))
+        .matches(/[a-zа-я]/, t("Errors.passwordLower"))
+        .matches(/\d/, t("Errors.passwordNumber")),
+      phone: string()
+        .required(t("Errors.required"))
+        .matches(/^\+?[0-9]{10,15}$/, t("Errors.phone")),
+      address: string().required(t("Errors.required")),
+      dirth: string().required(t("Errors.required")),
+    });
 </script>
 
 <style lang="scss" scoped>
