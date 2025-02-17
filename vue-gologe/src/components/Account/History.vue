@@ -1,47 +1,29 @@
 <template>
-  <!-- History Title Start -->
   <h1 class="custom-text-3xl font-semibold mb-4">
     {{ $t("Account.History.title") }}
   </h1>
-  <!-- History Title End -->
-  <!-- History wrapper Start -->
   <div class="w-full min-h-20 flex justify-around items-center shadow-xl rounded-xl mb-8 px-8">
-    <!-- Use Custom Button "Stays" Start -->
     <CustomButton
       class="button"
       :class="{ active: selectedTab === 'Flight' }"
       @click="changeTab('Flight')"
     >
-      <!-- Buuton Image -->
       <img src="@/assets/images/svg/UI/flight-black.svg" alt="flight-black" />
       <p class="button-text">
         {{ $t("Account.History.flights") }}
       </p>
     </CustomButton>
-    <!-- Use Custom Button "Stays" Start -->
-
-    <!-- Line Start -->
     <div class="line"></div>
-    <!-- Line End -->
-
-    <!-- Use Custom Button "Stays" Start -->
     <CustomButton
       class="button"
       :class="{ active: selectedTab === 'Stays' }"
       @click="changeTab('Stays')"
     >
-      <!-- Button Image -->
       <img src="@/assets/images/svg/UI/hotel-black.svg" alt="hotel-black" />
       <p class="button-text">{{ $t("Account.History.stays") }}</p>
     </CustomButton>
-    <!-- Use Custom Button "Stays" End -->
   </div>
-  <!-- History wrapper End -->
-
-  <!-- Use Stays Component -->
   <Stays v-if="selectedTab === 'Stays'" />
-
-  <!-- Use Flight Component -->
   <Flight v-else />
 </template>
 
@@ -52,7 +34,6 @@ import { ref } from "vue";
 
 const selectedTab = ref<string>("Flight");
 
-// Method Change Tab
 const changeTab = (type: string) => {
   selectedTab.value = type;
 };

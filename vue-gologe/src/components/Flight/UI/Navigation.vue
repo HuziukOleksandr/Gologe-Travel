@@ -1,5 +1,4 @@
 <template>
-  <!-- Navigation Start -->
   <div class="flex gap-2">
     <p class="text">Turkey</p>
     <img
@@ -13,10 +12,7 @@
     />
     <p class="active-text">CVK Park Bosphorus Hotel Istanbul</p>
   </div>
-  <!-- Navigation End -->
 </template>
-
-<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
 .text {

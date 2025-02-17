@@ -1,24 +1,15 @@
 <template>
-  <!-- Add Payment wrapper Start -->
   <div class="add_wrapper" @click="open">
-    <!-- Content wrapper Start -->
     <div class="flex flex-col gap-4 items-center">
-      <!-- Add Button Start -->
       <CustomButtom class="button">
-        <!-- Button Image -->
         <img src="@/assets/images/svg/UI/plus.svg" alt="plus" />
       </CustomButtom>
-      <!-- Add Button End -->
-
-      <!-- Button Title Start -->
+      
       <h1 class="custom-text-sm">
         {{ $t("Account.Payment.addButton") }}
       </h1>
-      <!-- Button Title End -->
     </div>
-    <!-- Content wrapper End -->
   </div>
-  <!-- Add Payment wrapper End -->
 </template>
 
 <script setup lang="ts">

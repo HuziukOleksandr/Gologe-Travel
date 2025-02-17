@@ -1,88 +1,48 @@
 <template>
-  <!-- Sort wrapper Srart -->
   <div class="wrapper">
-    <!-- Cheapest wrapper Start -->
     <div class="filter-wrapper" @click="activeCheapest">
-      <!-- Header Start -->
       <h2 class="title">
         {{ $t("ListingFlight.Sort.cheapest") }}
       </h2>
-      <!-- Header End -->
-      <!-- Wrapper for content Start -->
       <div class="content-wrapper">
-        <!-- Price Start -->
         <p class="price">{{ price }}</p>
-        <!-- Price End -->
-
-        <!-- Time Start -->
         <p class="time">
           {{ hour + $t("ListingFlight.Sort.hour") }}
           {{ minute + $t("ListingFlight.Sort.minute") }}
         </p>
-        <!-- Time End -->
       </div>
-      <!-- Wrapper for content End -->
     </div>
-    <!-- Cheapest wrapper End -->
-
-    <!-- Best wrapper Start -->
     <div class="filter-wrapper" @click="activeBest">
-      <!-- Header Start -->
       <h2 class="title">
         {{ $t("ListingFlight.Sort.best") }}
       </h2>
-      <!-- Header End -->
-      <!-- Wrapper for content Start -->
       <div class="content-wrapper">
-        <!-- Price Start -->
         <p class="price">{{ price }}</p>
-        <!-- Price End -->
-
-        <!-- Time Start -->
         <p class="time">
           {{ hour + $t("ListingFlight.Sort.hour") }}
           {{ minute + $t("ListingFlight.Sort.minute") }}
         </p>
-        <!-- Time End -->
       </div>
-      <!-- Wrapper for content End -->
     </div>
-    <!-- Best wrapper End -->
-
-    <!-- Quickest wrapper Start -->
     <div class="filter-wrapper" @click="activeQuickest">
-      <!-- Header Start -->
       <h2 class="title">
         {{ $t("ListingFlight.Sort.quickest") }}
       </h2>
-      <!-- Header End -->
-      <!-- Wrapper for content Start -->
       <div class="content-wrapper">
-        <!-- Price Start -->
         <p class="price">{{ price }}</p>
-        <!-- Price End -->
-
-        <!-- Time Start -->
         <p class="time">
           {{ hour + $t("ListingFlight.Sort.hour") }}
           {{ minute + $t("ListingFlight.Sort.minute") }}
         </p>
-        <!-- Time End -->
       </div>
-      <!-- Wrapper for content End -->
     </div>
-    <!-- Quickest wrapper End -->
-
-    <!-- Other Sort wrapper Start -->
     <CustomButton class="w-full flex">
       <img src="@/assets/images/svg/UI/menu.svg" alt="menu" />
       <p class="custom-text-xs text-custom-darkgreen font-semibold">
         {{ $t("ListingFlight.Sort.other") }}
       </p>
     </CustomButton>
-    <!-- Other Sort wrapper End -->
   </div>
-  <!-- Sort wrapper End -->
 </template>
 
 <script setup lang="ts">
