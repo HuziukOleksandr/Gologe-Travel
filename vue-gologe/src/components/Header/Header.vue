@@ -1,34 +1,20 @@
 <template>
   <!-- Header wrapper Start -->
   <div class="header_wrapper animation" :class="{ animate: animationStore.headerIsAnimated }">
-    <!-- Header Content Start -->
     <div class="header_content">
-      <!-- Use Navigation UI Component -->
       <CustomNavigation
         :class="
           route.name !== 'Landing' ? 'text-custom-darkgreen' : 'text-default'
         "
       />
-      <!-- Use Logo UI Component -->
-
-      <!-- Use Logo UI Component -->
       <CustomLogo class="sm:hidden absolute left-1/2 -translate-x-1/2"/>
-
-      <!-- Header Auth wrapper Start -->
       <div class="header-auth-wrapper">
-
-        <!-- Use component if User not Login -->
         <HeaderLoggedOff/>
-        <!-- Use component if User Is LoggedIn -->
         <HeaderLoggenIn/>
-        <!-- Use Localization Component -->
         <Localization />
       </div>
-      <!-- Header Auth wrapper End -->
     </div>
-    <!-- Header Content End -->
   </div>
-  <!-- Header wrapper End -->
 </template>
 
 <script setup lang="ts">

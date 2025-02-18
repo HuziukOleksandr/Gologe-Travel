@@ -1,7 +1,5 @@
 <template>
-  <!-- A drop-down list for input Start -->
   <TransitionGroup>
-    <!-- Wraper List Start -->
     <div
       class="wrapper_list"
       v-if="props.dialogVisible"
@@ -19,13 +17,10 @@
         </div>
       </div>
     </div>
-    <!-- Wraper List Start -->
   </TransitionGroup>
-  <!-- A drop-down list for input Start -->
 </template>
 
 <script setup lang="ts">
-// Props expected boolean
 const props = withDefaults(
   defineProps<{
     dialogVisible: boolean;
@@ -33,19 +28,13 @@ const props = withDefaults(
   }>(),
   {
     dialogVisible: false,
-    
   }
 );
 
-// Emit for close
 const emit = defineEmits(["closeWindow", "selectValue"]);
 const onClickAway = () => {
   emit("closeWindow");
 };
-
-// const selectValue = (value: string) => {
-//   emit("selectValue", value);
-// };
 </script>
 
 <style lang="scss" scoped>

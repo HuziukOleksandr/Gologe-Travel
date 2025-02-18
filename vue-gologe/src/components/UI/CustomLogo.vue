@@ -1,6 +1,4 @@
 <template>
-  <!-- Logo component -->
-  <!-- Logo for Landing Page -->
   <img
     src="@/assets/images/svg/logo/logo.svg"
     alt="Logo"
@@ -8,8 +6,6 @@
     @click="$router.push({ name: 'Landing' })"
     v-if="route.name == 'Landing'"
   />
-
-  <!-- Logo for other Pages -->
   <img
     src="@/assets/images/svg/logo/logo-black.svg"
     alt="Logo"

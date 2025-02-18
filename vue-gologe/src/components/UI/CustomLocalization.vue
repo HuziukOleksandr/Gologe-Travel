@@ -1,14 +1,10 @@
 <template>
-  <!-- Drop-dawn localization Start -->
   <Transition>
-    <!-- Localization wraper Start -->
     <div
       class="w-10 p-2 flex flex-col gap-2.5 rounded absolute"
       v-if="props.dialogVisible"
       v-click-away="onClickAway"
-
     >
-      <!-- Image EN flag -->
       <img
         src="@/assets/images/svg/EN.svg"
         alt="Flag EN"
@@ -16,8 +12,6 @@
         @click="close('EN')"
         v-if="locale != 'EN'"
       />
-
-      <!-- Image UA flag -->
       <img
         src="@/assets/images/svg/UA.svg"
         alt="Flag UA"
@@ -26,17 +20,14 @@
         v-else
       />
     </div>
-    <!-- Localization wraper End -->
   </Transition>
-  <!-- Drop-dawn localization End -->
 </template>
 
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import { setItem } from '@/services/LocaleStorage'
+import { setItem } from "@/services/LocaleStorage";
 import { ref } from "vue";
 
-// Props for open expected "true" or ""false
 const props = withDefaults(
   defineProps<{
     dialogVisible: boolean;
@@ -45,21 +36,15 @@ const props = withDefaults(
 );
 
 let language = ref("EN");
-const { locale } = useI18n();
+const { locale } = useI18n(),
+  emit = defineEmits(["closeWindow"]);
 
-// Set language value in storage
-// localStorage.setItem("language", language.value);
-
-const emit = defineEmits(["closeWindow"]);
-
-// Method Close
 const close = (item: string) => {
   emit("closeWindow");
   language.value = item;
   change(item);
 };
 
-// Method Change
 const change = (item: string) => {
   setItem("language", item);
   if (locale.value != item) {
@@ -67,7 +52,6 @@ const change = (item: string) => {
   }
 };
 
-// On Click Away for Close
 const onClickAway = () => {
   emit("closeWindow");
 };

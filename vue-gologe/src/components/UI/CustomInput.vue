@@ -1,32 +1,22 @@
 <template>
-  <!-- Custom input Start -->
   <div class="wrapper_input">
-    <!-- Text Start -->
     <h1 class="title">
-      <!-- Slot for text -->
       <slot name="input"></slot>
     </h1>
-    <!-- Text End -->
-    <!-- Slot for Image -->
     <slot name="previousImage"></slot>
-    <!-- Input -->
     <input
       class="input"
       :type="props.type"
       :placeholder="props.placeHolder"
       v-model="internalValue"
     />
-    <!-- Slot for Image -->
     <slot name="image"></slot>
-
   </div>
-  <!-- Custom input Start -->
 </template>
 
 <script setup lang="ts">
 import { ref, watch } from "vue";
 
-// Props, expected type input and plaseholder
 const props = withDefaults(
   defineProps<{
     type: string;
@@ -39,13 +29,11 @@ const props = withDefaults(
   }
 );
 
-// Emit passes the entered value
 const emit = defineEmits(["update:modelValue"]);
 const internalValue = ref(props.modelValue);
 
 watch(internalValue, (newValue) => {
   emit("update:modelValue", newValue);
-  
 });
 </script>
 

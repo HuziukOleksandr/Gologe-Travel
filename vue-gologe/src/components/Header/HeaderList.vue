@@ -1,7 +1,5 @@
 <template>
-  <!-- A drop-down list for input Start -->
   <TransitionGroup>
-    <!-- Wraper List Start -->
     <div
       class="wrapper_list"
       v-if="props.dialogVisible"
@@ -21,9 +19,7 @@
         </div>
       </div>
     </div>
-    <!-- Wraper List Start -->
   </TransitionGroup>
-  <!-- A drop-down list for input Start -->
 </template>
 
 <script setup lang="ts">

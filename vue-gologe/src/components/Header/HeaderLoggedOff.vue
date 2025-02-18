@@ -1,7 +1,5 @@
 <template>
-  <!-- Wrapper for Buttons Start -->
   <div class="flex gap-2" v-if="isLoggedIn == false">
-        <!-- Use UI Button component, Login button Start -->
         <CustomButton
           :class="
             route.name !== 'Landing' ? 'text-custom-darkgreen' : 'text-default'
@@ -11,9 +9,6 @@
         >
           <p class="button-text">{{ $t("Header.login") }}</p>
         </CustomButton>
-        <!-- Use UI Button component, Login button End -->
-
-        <!-- Use UI Button component, Register button Start -->
         <CustomButton
           :class="
             route.name !== 'Landing'
@@ -25,9 +20,7 @@
         >
           <p class="button-text">{{ $t("Header.signUp") }}</p>
         </CustomButton>
-        <!-- Use UI Button component, Register button End -->
       </div>
-      <!-- Wrapper for Buttons End -->
 </template>
 
 <script setup lang="ts">

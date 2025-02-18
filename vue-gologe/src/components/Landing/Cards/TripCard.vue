@@ -1,40 +1,24 @@
 <template>
-  <!-- Trips Card wrapper Start -->
   <div class="card_wrapper" v-for="card in props.name">
-    <!-- Card image -->
     <img
       :src="getImageUrlPng(card?.city)"
       :alt="card?.city"
       class="max-w-[90px] h-[90px] sm:h-[60px]"
     />
-
-    <!-- Content wrapper Start -->
     <div class="flex flex-col gap-1">
       <!-- Card Title Start -->
       <h2 class="custom-text-base font-semibold text-custom-darkgray">
         {{ card?.city }}, {{ card?.country }}
       </h2>
-      <!-- Card Title End -->
-
-      <!-- Card text Start -->
       <div class="flex items-center gap-2">
         <p class="card-text">{{ $t("Landing.Trips.flights") }}</p>
-
-        <!-- Point -->
         <hr class="w-1 h-1 rounded-full bg-custom-darkgreen" />
-
         <p class="card-text">{{ $t("Landing.Trips.hotels") }}</p>
-
-        <!-- Point -->
         <hr class="w-1 h-1 rounded-full bg-custom-darkgreen" />
-
         <p class="card-text">{{ $t("Landing.Trips.resorts") }}</p>
       </div>
-      <!-- Card text End -->
     </div>
-    <!-- Content wrapper End -->
   </div>
-  <!-- Trips Card wrapper End -->
 </template>
 
 <script setup lang="ts">

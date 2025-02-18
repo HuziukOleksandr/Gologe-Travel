@@ -1,7 +1,5 @@
 <template>
-  <!-- Header content for User wrapper Start -->
   <div class="w-fit flex gap-2 items-center" v-if="isLoggedIn == true">
-    <!-- Favourites Start -->
     <CustomButton class="w-fit flex gap-1 items-center mr-2">
       <img
         src="@/assets/images/svg/UI/favourites-light.svg"
@@ -22,25 +20,17 @@
         {{ $t("Header.favourites") }}
       </p>
     </CustomButton>
-    <!-- Favourites End -->
-
-    <!-- Line Start -->
     <div
       class="w-0.5 h-4 bg-custom-darkgreen"
       :class="route.name !== 'Landing' ? 'bg-custom-darkgreen ' : 'bg-default'"
     ></div>
-    <!-- Line End -->
-
     <div class="w-fit relative hover:cursor-pointer" v-click-away="onClickAway">
       <Transition name="user-name">
-        <!-- User Start -->
         <div
-        v-if="!settingsVisible"
+          v-if="!settingsVisible"
           class="flex h-11 gap-1 items-center"
           @click="openWindow"
-          
         >
-          <!-- Image Start -->
           <div class="w-11 h-11 rounded-full relative">
             <img
               src="@/assets/images/png/Account/avatar-light.svg"
@@ -65,8 +55,6 @@
               />
             </CustomButton>
           </div>
-          <!-- Image End -->
-          <!-- User Name Start -->
           <p
             class="custom-text-sm text-custom-darkgreen font-semibold sm:hidden sq:hidden flex-shrink-0"
             :class="
@@ -77,7 +65,6 @@
           >
             {{ userStore.user.firstName }} {{ userStore.user.lastName }}
           </p>
-          <!-- User Name End -->
         </div>
       </Transition>
     </div>
@@ -114,7 +101,6 @@
       </div>
     </Transition>
   </div>
-  <!-- Header content for User wrapper End -->
 </template>
 
 <script setup lang="ts">
@@ -156,22 +142,26 @@ async function signOut() {
 }
 
 /* Styles for User Name with Animation Start */
-.user-name-enter-active, .user-name-leave-active {
+.user-name-enter-active,
+.user-name-leave-active {
   transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
 
-.user-name-enter-from, .user-name-leave-to {
+.user-name-enter-from,
+.user-name-leave-to {
   transform: translateX(-10px);
   opacity: 0;
 }
 /* Styles for User Name with Animation End */
 
 /* Styles for Setting with Animation Start */
-.setting-enter-active, .setting-leave-active {
+.setting-enter-active,
+.setting-leave-active {
   transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
 
-.setting-enter-from, .setting-leave-to {
+.setting-enter-from,
+.setting-leave-to {
   transform: translateX(0px);
   opacity: 0;
 }

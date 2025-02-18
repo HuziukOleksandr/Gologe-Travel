@@ -1,22 +1,14 @@
 <template>
-  <!-- Custom input for password Start -->
   <div class="wrapper_input">
-    <!-- Title Start -->
     <h1 class="title">
-      <!-- Slot for name input -->
       <slot name="input"></slot>
     </h1>
-    <!-- Title End -->
-
-    <!-- Input password -->
     <input
       class="input"
       :type="passwordFieldType"
       :placeholder="props.placeHolder"
       v-model="internalValue"
     />
-
-    <!-- Image for close password -->
     <img
       src="@/assets/images/svg/UI/password-close.svg"
       alt="arrowswap"
@@ -24,8 +16,6 @@
       @click="switchVisibility"
       v-if="passwordFieldType === 'password'"
     />
-
-    <!-- Image for open password -->
     <img
       src="@/assets/images/svg/UI/password-open.svg"
       alt="arrowswap"
@@ -34,7 +24,6 @@
       v-else
     />
   </div>
-  <!-- Custom input for password End -->
 </template>
 
 <script setup lang="ts">
@@ -50,8 +39,8 @@ const props = withDefaults(
   }
 );
 
-const emit = defineEmits(["update:modelValue"]);
-const internalValue = ref(props.modelValue);
+const emit = defineEmits(["update:modelValue"]),
+  internalValue = ref(props.modelValue);
 
 watch(internalValue, (newValue) => {
   emit("update:modelValue", newValue);
