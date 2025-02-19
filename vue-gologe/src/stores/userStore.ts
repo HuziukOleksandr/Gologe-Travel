@@ -73,14 +73,11 @@ export const useUserStore = defineStore("user", {
     },
 
     async getCurrentUser() {
-      console.trace("gert called")
       const dbRef = ref(getDatabase());
       get(child(dbRef, `users/${this.userId}`))
         .then((snapshot) => {
           if (snapshot.exists()) {
             this.user = snapshot.val();
-            console.log("ddww");
-            
           } else {
             console.log("No data available");
           }
@@ -123,8 +120,8 @@ export const useUserStore = defineStore("user", {
           storage,
           `gs://gologe-72d19/${path}/${this.userId}`
         );
-        await uploadBytes(storageRef, file); 
-        const url = await getDownloadURL(storageRef); 
+        await uploadBytes(storageRef, file);
+        const url = await getDownloadURL(storageRef);
         return url;
       } catch (error) {}
     },
@@ -136,12 +133,19 @@ export const useUserStore = defineStore("user", {
           `gs://gologe-72d19/${path}/${this.userId}`
         );
         const url = await getDownloadURL(storageRef);
-        
-        
         return url;
-       
       } catch (error) {
-        
+        console.error(`Помилка отримання ${path}:`, error);
+
+        if (path === "background") {
+          return await getDownloadURL(
+            SRef(storage, `gs://gologe-72d19/${path}/default-background.png`)
+          );
+        } else if (path === "user") {
+          return "/images/default-user.jpg";
+        }
+
+        return "/images/default.jpg"; // Загальний дефолт
       }
     },
 
@@ -153,7 +157,6 @@ export const useUserStore = defineStore("user", {
         const snapshot = await get(userQuery);
         if (snapshot.exists()) {
           snapshot.forEach((userSnapshot) => {
-            console.log(userSnapshot);
             const userKey = userSnapshot.key;
             if (userKey) {
               const userToDeleteRef = ref(database, `users/${userKey}`);

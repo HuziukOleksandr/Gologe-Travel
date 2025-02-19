@@ -4,7 +4,7 @@ import { loadStyles } from "./assets/root/styles/index.ts";
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { firebaseConfig } from "./libs/firebase.ts";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, connectFirestoreEmulator, initializeFirestore  } from "firebase/firestore";
 import { getDatabase } from 'firebase/database';
 import { getStorage } from 'firebase/storage';
 
@@ -23,9 +23,10 @@ import "./assets/root/fonts.scss";
 
 
 const firebase = initializeApp(firebaseConfig);
-const db = getFirestore(firebase);
+const db = getFirestore(firebase, "golobe");
 const storage = getStorage(firebase)
 const database = getDatabase(firebase);
+
 export { db, database, storage }
 
 let app: any;

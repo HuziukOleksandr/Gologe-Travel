@@ -44,7 +44,7 @@ watch(internalValue, (newValue) => {
   h-14 md:h-12 sm:h-10;
 
   .title {
-    @apply absolute top-[-15px] z-50 px-3  font-serrat 
+    @apply absolute top-[-15px] z-40 px-3  font-serrat 
     bg-default text-custom-darkgreen
     md:text-sm sm:text-xs sm:top-[-10px];
   }

@@ -6,7 +6,7 @@ type UserType = {
   address: string,
   birth: string,
   userImage: any,
-  background: unknown,
+  background: any,
 };
 
 export default UserType;

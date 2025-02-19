@@ -51,7 +51,12 @@ import Flight from "./Cards/TripFlightCard.vue";
 import { ref, watch } from "vue";
 import { useScrollToElement } from "@/services/ScrollToElement.ts";
 import { useAnimationStore } from "@/stores/animatiomStore";
+import { onMounted } from "vue";
+import { db } from "@/main";
+import { collection, getDocs } from "firebase/firestore";
+import type  TripCard  from "@/types/trips-cards-types.ts";
 
+const cards = ref<TripCard[]>([]);
 const isFrameVisible = useScrollToElement("trips", window.innerHeight / 2),
   animationStore = useAnimationStore();
 
@@ -61,18 +66,17 @@ watch(isFrameVisible, (newValue) => {
   }
 });
 
-//TODO: Підклюсити FireStorage!!!
-const cards = ref([
-  { city: "Istanbul", country: "Turkey" },
-  { city: "Sydney", country: "Australia" },
-  { city: "Baku", country: "Azerbaijan" },
-  { city: "Male", country: "Maldives" },
-  { city: "Paris", country: "France" },
-  { city: "New York", country: "US" },
-  { city: "London", country: "UK" },
-  { city: "Tokyo", country: "Japan" },
-  { city: "Dubai", country: "UAE" },
-]);
+onMounted(async () => {
+  const querySnapshot = await getDocs(collection(db, "tripCards"));
+  querySnapshot.forEach((doc) => {
+    const data = doc.data() as { country: string, city: string}
+    cards.value.push({
+      id: doc.id,
+      country: data.country,
+      city: data.city
+    });
+  });
+});
 </script>
 
 <style scoped>

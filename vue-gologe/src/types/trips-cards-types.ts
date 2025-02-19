@@ -1,4 +1,5 @@
 interface TripCard {
+    id: string;
     city: string;
     country: string;
 }

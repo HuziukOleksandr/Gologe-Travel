@@ -44,7 +44,7 @@ import { ref, watch } from "vue";
 import { useAnimationStore } from '@/stores/animatiomStore';
 import { useScrollToElement } from '@/services/ScrollToElement';
 
-const reviews = ref<any>(),
+const reviews = ref<any>([]),
   animationStore = useAnimationStore(),
   isVisible = useScrollToElement("reviews-header", window.innerHeight / 2);
 
@@ -53,9 +53,6 @@ watch(isVisible, (newValue) => {
     animationStore.startAnimation("reviewsIsAnimated", true, 100)
 })
 
-
-
-// Get Cards fron json file
 axios
   .get("./Review.json")
   .then(function (response) {
@@ -66,7 +63,6 @@ axios
   })
   .finally(function () {});
 </script>
-
 
 <style lang="scss" scoped>
 .animation {

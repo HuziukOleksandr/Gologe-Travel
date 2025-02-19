@@ -6,12 +6,13 @@
       <div class="w-full h-[350px] rounded-xl flex relative mb-60">
         <img
           class="w-full h-full rounded-xl object-cover"
-          src="url"
-          alt="background"  
+          :src="userStore.user.background"
+          :alt="userStore.user.background"
         />
         <CustomUploadImage
           class="absolute right-6 bottom-6 h-12 bg-custom-lightgreen rounded-lg cursor-pointer px-4"
-          path="background"
+          @upload="(value: any) => uploadImage(value,'background')"
+
         >
           <img
             src="@/assets/images/svg/UI/upload-file.svg"
@@ -25,13 +26,13 @@
         <div class="user_wrapper relative">
           <div class="w-40 h-40 rounded-full mb-6 relative">
             <img
-              src="../assets/images/png/Account/textFoto.jpg"
-              alt="rounded-full"
-              class="w-40 h-40 rounded-full absolute inset-0 border-custom-red border-[4px]"
+              :src="userStore.user.userImage"
+              :alt="userStore.user.userImage"
+              class="w-40 h-40 rounded-full absolute inset-0 border-custom-red border-[4px] object-cover"
             />
             <CustomUploadImage
               class="p-[10px] bg-custom-red rounded-full absolute right-0 bottom-0"
-              path="user-image"
+              @upload="(value: any) => uploadImage(value,'userImage')"
             >
               <img src="@/assets/images/svg/UI/Pen.svg" alt="Pen" />
             </CustomUploadImage>
@@ -95,18 +96,27 @@ import Payment from "@/components/Account/Payment.vue";
 
 const userStore = useUserStore(),
   selectedTab = ref<string>("Account");
+  
 
-// async function background() {
-//   if (userStore.userId) {
-//     const url =  userStore.updateRefImage("background");
-//     return url;
-//   } else {
-//     return new URL(
-//       "../assets/images/png/Account/Background/default-background.png",
-//       import.meta.url
-//     ).href;
-//   }
-// };
+async function uploadImage(value: any, path: string) {
+  if (path === "background") {
+    const backgroundURL = await userStore.uploadImageInStorage(value, path);
+    await userStore.setUserProperty("background", backgroundURL);
+  } else if(path === "userImage") {
+    const userImageURL = await userStore.uploadImageInStorage(value, path);
+    await userStore.setUserProperty("userImage", userImageURL);
+  }
+}
+
+const background = async() => {
+  if (userStore.user.background) {
+    return userStore.user.background;
+  } else {
+    console.log(await userStore.updateRefImage("background"));
+    
+    return await userStore.updateRefImage("background")
+  }
+}
 
 const changeTab = (type: string) => {
   selectedTab.value = type;

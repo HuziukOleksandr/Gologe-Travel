@@ -41,7 +41,7 @@ const onClickAway = () => {
 .wrapper_list {
   @apply absolute w-full mt-2 bg-default
 	border-2 border-custom-darkgray border-solid
-	rounded opacity-100;
+	rounded z-50;
 
   .list {
     @apply relative w-full flex flex-col gap-1 text-custom-darkgray;

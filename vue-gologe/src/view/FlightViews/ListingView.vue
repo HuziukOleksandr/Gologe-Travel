@@ -1,7 +1,7 @@
 <template>
-  <div class="max-w-[1230px] w-full flex flex-col py-12 lg:px-0 px-10">
+  <div class="max-w-primary-width w-full flex flex-col py-12 lg:px-0 px-10 mx-auto">
     <Search />
-    <div class="w-full flex gap-2 mb-[120px] relative justify-between">
+    <div class="w-full flex gap-2 mb-40 relative justify-between">
       <Transition name="slide-fade">
         <div
           class="max-w-[300px] w-full min-h-[880px] h-full absolute shadow-xl rounded-xl"

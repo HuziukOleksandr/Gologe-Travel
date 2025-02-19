@@ -10,40 +10,38 @@
 
 <script setup lang="ts">
 import { useRoute } from "vue-router";
-import { onMounted, ref } from "vue";
+import { nextTick, onMounted, ref } from "vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useAuthStore } from "@/stores/authStore.ts";
 import { useUserStore } from "@/stores/userStore";
-import { setItem, getItem, removeItem } from "@/services/LocaleStorage";
+import { setItem, removeItem } from "@/services/LocaleStorage";
 
-const route = useRoute();
-
-const authStore = useAuthStore();
-const userStore = useUserStore();
-let isFetched = false;
+const route = useRoute(),
+  authStore = useAuthStore(),
+  userStore = useUserStore();
 let auth;
 onMounted(() => {
   auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
+  onAuthStateChanged(auth, async (user) => {
     if (user) {
-      if (!isFetched) {
-        // Add to Locale Storage
-        setItem("isLoggedIn", true);
+      setItem("isLoggedIn", true);
+      authStore.setAuthState(true);
+      userStore.getCurrentUser();
+      await nextTick();
 
-        // Add to Pinia Store
-        authStore.setAuthState(true);
-        userStore.getCurrentUser();
-        userStore.setUserProperty("background", "sdsd");
-
-        isFetched = true; // Більше не викликати `getCurrentUser()`
+      try {
+        const url = await userStore.updateRefImage("background");
+        const userUrl = await userStore.updateRefImage("userImage")
+        userStore.setUserProperty("background", url);
+        userStore.setUserProperty("userImage", userUrl);
+      } catch (error) {
+        console.error("Помилка при оновленні зображення:", error);
       }
     } else {
-      // Add to Locale Storage
       setItem("isLoggedIn", false);
-      setItem("uid", null)
+      setItem("uid", null);
       removeItem("email");
     }
   });
 });
-
 </script>
