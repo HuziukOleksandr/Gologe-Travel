@@ -31,7 +31,7 @@ onMounted(() => {
 
       try {
         const url = await userStore.updateRefImage("background");
-        const userUrl = await userStore.updateRefImage("userImage")
+        const userUrl = await userStore.updateRefImage("userImage");
         userStore.setUserProperty("background", url);
         userStore.setUserProperty("userImage", userUrl);
       } catch (error) {
