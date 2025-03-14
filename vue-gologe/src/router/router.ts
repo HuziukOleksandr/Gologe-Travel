@@ -1,20 +1,20 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { getAuth } from "firebase/auth";
-import Header from "@/components/Header/Header.vue";
-import Landing from "@/view/LandingView.vue";
+import Header from "@/components/layout/header/Header.vue";
+import Landing from "@/view/LandingView/LandingView.vue";
 import FlightView from "@/view/FlightViews/FlightView.vue";
 import ListingView from "@/view/FlightViews/ListingView.vue";
 import DetailsView from "@/view/FlightViews/DetailsView.vue";
 import BookingView from "@/view/FlightViews/BookingView.vue";
 import Hotel from "@/view/HotelViews/HotelView.vue";
-import Account from "@/view/AccountView.vue";
+import Account from "@/view/AccountView/AccountView.vue";
 import Login from "@/view/AuthViews/LoginView.vue";
 import Register from "@/view/AuthViews/RegisterView.vue";
 import ForgotPassword from "@/view/AuthViews/ForgotPasswordView.vue";
 import Verify from "@/view/AuthViews/VerifyView.vue";
 import ChangePassword from "@/view/AuthViews/ChangePasswordView.vue";
 import AddPayment from "@/view/AuthViews/AddPaymentView.vue";
-import Footer from "@/components/Footer/Footer.vue";
+import Footer from "@/components/layout/footer/Footer.vue";
 
 const routes = [
   {

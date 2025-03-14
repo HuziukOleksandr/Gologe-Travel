@@ -9,11 +9,11 @@
 </template>
 
 <script setup lang="ts">
-import Preview from "@/components/Landing/Preview.vue";
-import Header from "@/components/Header/Header.vue";
-import QuickSearch from "@/components/Landing/QuickSearch.vue";
-import Trips from "@/components/Landing/Trips.vue";
-import Review from "@/components/Landing/Reviews.vue";
+import Header from "@/components/layout/header/Header.vue";
+import Preview from "@/view/LandingView/models/LandingPreview.vue";
+import QuickSearch from "@/view/LandingView/models/LandingQuickSearch.vue";
+import Trips from "@/view/LandingView/models/LandingTrips.vue";
+import Review from "@/view/LandingView/models/LandingReviews.vue";
 import { scrollTop } from "@/services/Scroll";
 
 scrollTop();

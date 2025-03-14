@@ -1,11 +1,24 @@
 <template>
-  <div 
+  <div
     class="max-w-large-width w-full flex justify-center px-20 ph:px-10 z-[999] animation"
     :class="{ animate: animationStore.quickSearchIsAnimated }"
   >
     <div class="search_wrapper">
       <div class="flex gap-16 mb-7 sm:justify-center sm:mb-2">
-        <Navigation @changeWindow="change" />
+        <CustomButton
+          class="custom-text-base font-semibold"
+          @click="changeName('flight')"
+        >
+          <img src="@/assets/images/svg/UI/flight-black.svg" alt="flight" />
+          {{ $t("Landing.QuickSearch.flights") }}
+        </CustomButton>
+        <CustomButton
+          class="custom-text-base font-semibold"
+          @click="changeName('place')"
+        >
+          <img src="@/assets/images/svg/UI/hotel-black.svg" alt="hotel" />
+          {{ $t("Landing.QuickSearch.stays") }}
+        </CustomButton>
       </div>
       <CustomFlightSearch
         v-show="windowName == 'flight'"
@@ -51,11 +64,9 @@
 </template>
 
 <script setup lang="ts">
-import Navigation from "./UI/Navigation.vue";
-// import { useRoute } from "vue-router";
 import { ref, onMounted } from "vue";
-import { useAnimationStore } from '@/stores/animatiomStore';
-// const route = useRoute();
+import { useAnimationStore } from "@/stores/animatiomStore";
+
 const windowName = ref<string>("flight");
 
 const animationStore = useAnimationStore();
@@ -64,13 +75,12 @@ onMounted(() => {
   animationStore.startAnimation("quickSearchIsAnimated", true, 100);
 });
 
-const change = (value: string) => {
+const changeName = (value: string) => {
   windowName.value = value;
 };
 </script>
 
 <style lang="scss" scoped>
-
 @mixin font {
   @apply font-serrat;
 }
@@ -91,5 +101,4 @@ const change = (value: string) => {
   opacity: 1;
   transform: translateY(0);
 }
-
 </style>

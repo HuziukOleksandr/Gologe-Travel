@@ -3,8 +3,9 @@
     <div
       class="background max-w-secondary-width w-full min-h-[600px] flex items-center rounded-2xl"
     >
-      <div class="w-full flex flex-col items-center gap-6 animation"
-      :class="{ animate: animationStore.previewTextIsAnimated }"
+      <div
+        class="w-full flex flex-col items-center gap-6 animation"
+        :class="{ animate: animationStore.previewTextIsAnimated }"
       >
         <h2
           class="custom-text-5xl text-default font-semibold sm:text-3xl ph:text-2xl"
@@ -30,8 +31,8 @@
 <script setup lang="ts">
 import { getTitleStyles } from "@/services/Localization";
 import { useI18n } from "vue-i18n";
-import { ref, onMounted } from "vue";
-import { useAnimationStore } from '@/stores/animatiomStore';
+import { onMounted } from "vue";
+import { useAnimationStore } from "@/stores/animatiomStore";
 const { locale } = useI18n();
 
 const animationStore = useAnimationStore();
@@ -43,7 +44,7 @@ onMounted(() => {
 
 <style scoped>
 .background {
-  background: url("../../assets/images/png/Landing/background.png");
+  background: url("../../../assets/images/png/Landing/background.png");
   background-position: center;
   background-size: cover;
 }

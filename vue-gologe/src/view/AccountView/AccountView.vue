@@ -78,25 +78,22 @@
       </div>
       <History v-if="selectedTab === 'History'" />
       <Payment v-else-if="selectedTab === 'Payment'" @open-window="open" />
-      <Info v-else="selectedTab === 'Account'" />
+      <Details v-else="selectedTab === 'Account'" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-//TODO: Добавити зміну Frame Background
-//TODO: Добавити загрузку і зміну фото профіля
 //TODO: Добавити кнопку видалення аккаунта
 import { ref } from "vue";
 import { useUserStore } from "@/stores/userStore";
 import { scrollTop } from "@/services/Scroll";
-import Info from "@/components/Account/Info.vue";
-import History from "@/components/Account/History.vue";
-import Payment from "@/components/Account/Payment.vue";
+import History from "@/view/AccountView/models/AccountHistory.vue";
+import Details from "@/view/AccountView/models/AccountDetails.vue";
+import Payment from "@/view/AccountView/models/AccountPayment.vue";
 
 const userStore = useUserStore(),
   selectedTab = ref<string>("Account");
-  
 
 async function uploadImage(value: any, path: string) {
   if (path === "background") {
