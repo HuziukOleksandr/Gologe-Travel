@@ -14,6 +14,8 @@
 </template>
 
 <script setup lang="ts">
+// TODO: переробити на компонент
+
 const props = withDefaults(
   defineProps<{
     dialogVisible: boolean;

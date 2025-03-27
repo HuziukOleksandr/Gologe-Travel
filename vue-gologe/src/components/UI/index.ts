@@ -70,6 +70,18 @@ const CustomErrorWindow = defineAsyncComponent(
  const CustomCropperFile = defineAsyncComponent(
     () => import("./CustomCropperFile.vue")
  )
+
+const CustomPriceSlider = defineAsyncComponent(
+    () => import("./CustomPriceSlider.vue")
+)
+
+const CustomCheckboxList = defineAsyncComponent(
+    ()=> import("./CustomCheckboxList.vue")
+)
+
+const CustomBurgerButton = defineAsyncComponent(
+    ()=> import("./CustomBurgerButton.vue")
+)
 export default {
     CustomNavigation,
     CustomLocalization,
@@ -89,4 +101,7 @@ export default {
     CustomRegisterWith,
     CustomErrorWindow,
     CustomCropperFile,
+    CustomPriceSlider,
+    CustomCheckboxList,
+    CustomBurgerButton,
 };

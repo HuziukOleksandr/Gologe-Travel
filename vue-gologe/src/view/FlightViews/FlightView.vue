@@ -10,10 +10,10 @@
 </template>
 
 <script setup lang="ts">
-import Preview from "@/components/Flight/Main/Preview.vue";
-import Search from "@/components/Flight/Main/Search.vue";
-import Places from "@/components/Flight/Main/Places.vue";
-import Travel from "@/components/Flight/Main/Travel.vue";
+import Preview from "@/view/FlightViews/models/Flight/Preview.vue";
+import Search from "@/view/FlightViews/models/Flight/Search.vue";
+import Places from "@/view/FlightViews/models/Flight/Places.vue";
+import Travel from "@/view/FlightViews/models/Flight/Travel.vue";
 import { scrollTop } from "@/services/Scroll";
 
 scrollTop();

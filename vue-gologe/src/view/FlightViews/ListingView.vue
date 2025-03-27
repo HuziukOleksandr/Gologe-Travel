@@ -51,10 +51,10 @@
 </template>
 
 <script setup lang="ts">
-import Search from "@/components/Flight/Listing/Search.vue";
-import Aside from "@/components/Flight/Listing/Aside.vue";
-import Sort from "@/components/Flight/Listing/Sort.vue";
-import Card from "@/components/Flight/Listing/Ticket.vue";
+import Search from "@/view/FlightViews/models/Listing/Search.vue";
+import Aside from "@/view/FlightViews/models/Listing/Aside.vue";
+import Sort from "@/view/FlightViews/models/Listing/Sort.vue";
+import Card from "@/view/FlightViews/models/Listing/Ticket.vue";
 import { ref } from "vue";
 import { scrollTop } from "@/services/Scroll";
 

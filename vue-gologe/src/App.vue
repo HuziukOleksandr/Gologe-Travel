@@ -30,10 +30,10 @@ onMounted(() => {
       await nextTick();
 
       try {
-        const url = await userStore.updateRefImage("background");
-        const userUrl = await userStore.updateRefImage("userImage");
-        userStore.setUserProperty("background", url);
-        userStore.setUserProperty("userImage", userUrl);
+        const backgroundImageUrl = await userStore.updateRefImage("background");
+        const userImageUrl = await userStore.updateRefImage("userImage");
+        userStore.setUserProperty("background", backgroundImageUrl);
+        userStore.setUserProperty("userImage", userImageUrl);
       } catch (error) {
         console.error("Помилка при оновленні зображення:", error);
       }

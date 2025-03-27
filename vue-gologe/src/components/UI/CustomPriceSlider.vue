@@ -6,8 +6,8 @@
           v-model="value"
           range
           show-stops
-          :min="50"
-          :max="1200"
+          :min="min"
+          :max="max"
           :show-tooltip="false"
         />
       </div>
@@ -20,6 +20,7 @@
 </template>
 
 <script setup lang="ts">
+// TODO: переробити на компонент
 import { ref } from "vue";
 
 const value = ref([50, 1200]);
@@ -27,6 +28,8 @@ const value = ref([50, 1200]);
 const props = withDefaults(
   defineProps<{
     dialogVisible: boolean;
+    min: number;
+    max: number
   }>(),
   {}
 );

@@ -3,11 +3,11 @@
     <div class="w-full" v-if="props.dialogVisible">
       <el-checkbox-group
         class="flex flex-col gap-2"
-        @change="addTrips"
+        @change="addAirlines"
         v-model="checkList"
       >
         <el-checkbox
-          v-for="element in props.trips"
+          v-for="element in props.list"
           :label="element"
           :value="element"
         />
@@ -18,28 +18,25 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-  
-const props = withDefaults(
-  defineProps<{
-    dialogVisible: boolean;
-    trips: string[];
-  }>(),
-  {}
-);
 
 const checkList = ref([]);
 
-const addTrips = () => {
+const addAirlines = () => {};
 
-}
+const props = withDefaults(
+  defineProps<{
+    dialogVisible: boolean;
+    list: string[];
+  }>(),
+  {}
+);
 </script>
 
 <style scoped>
-
 :deep(.el-checkbox__inner) {
   width: 18px;
   height: 18px;
-  border-color: #79747E;
+  border-color: #79747e;
   border-width: 2px;
 }
 
@@ -53,7 +50,7 @@ const addTrips = () => {
   height: 9px;
 }
 
-:deep(.el-checkbox__input.is-checked+.el-checkbox__label) {
+:deep(.el-checkbox__input.is-checked + .el-checkbox__label) {
   color: #112211;
 }
 
@@ -61,7 +58,7 @@ const addTrips = () => {
   font-family: "Montserrat";
   font-size: 14px;
   font-weight: 500;
-  color: #79747E;
+  color: #79747e;
 }
 
 .v-enter-active,
@@ -72,5 +69,11 @@ const addTrips = () => {
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+</style>
+
+<style>
+:root {
+  --el-color-primary: #112211;
 }
 </style>

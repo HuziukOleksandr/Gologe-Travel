@@ -63,7 +63,7 @@
 
 <script setup lang="ts">
 import { getFlightsImagePng } from "@/services/Helpers";
-import Content from "./Cards/TicketCard.vue"
+import Content from "@/components/cards/TicketCard.vue"
 
 interface Flight {
   id: number;

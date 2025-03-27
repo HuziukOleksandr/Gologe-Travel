@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full flex flex-col gap-8 bg-default p-4 ">
+  <div class="w-full h-full flex flex-col gap-8 bg-default p-4">
     <p class="custom-text-xl font-semibold text-custom-darkgreen">
       {{ $t("ListingFlight.Aside.title") }}
     </p>
@@ -16,7 +16,11 @@
             alt="chevron-down"
           />
         </div>
-        <Price :dialogVisible="priceVisible" />
+        <CustomPriceSlider
+          :dialogVisible="priceVisible"
+          :min="50"
+          :max="1200"
+        />
       </div>
       <div class="line"></div>
       <div class="filter">
@@ -61,7 +65,7 @@
             alt="chevron-down"
           />
         </div>
-        <Airlines :dialogVisible="airlinesVisible" :airlines="airlines" />
+        <CustomCheckBoxList :dialogVisible="airlinesVisible" :list="airlines" />
       </div>
       <div class="line"></div>
       <div class="filter">
@@ -76,26 +80,22 @@
             alt="chevron-down"
           />
         </div>
-        <Trips :dialogVisible="tripsVisible" :trips="trips" />
+        <CustomCheckboxList :dialogVisible="tripsVisible" :list="trips" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-// TODO: переробити Filters в Absolute
-import Price from "./Filters/Price.vue";
+import { ref } from "vue";
 import Departure from "./Filters/Departure.vue";
 import Rating from "./Filters/Rating.vue";
-import Airlines from "./Filters/Airlines.vue";
-import Trips from "./Filters/Trips.vue";
-import { ref } from "vue";
 
-const priceVisible = ref<boolean>(false);
-const timeVisible = ref<boolean>(false);
-const ratingVisible = ref<boolean>(false);
-const airlinesVisible = ref<boolean>(false);
-const tripsVisible = ref<boolean>(false);
+const priceVisible = ref<boolean>(false),
+  timeVisible = ref<boolean>(false),
+  ratingVisible = ref<boolean>(false),
+  airlinesVisible = ref<boolean>(false),
+  tripsVisible = ref<boolean>(false);
 
 function changePriceVisibility() {
   return (priceVisible.value = !priceVisible.value);
@@ -117,13 +117,13 @@ function changeTripsVisibility() {
   return (tripsVisible.value = !tripsVisible.value);
 }
 
-const airlines = ref<string[]>(["Emirates", "Fly Dubai", "Qatar", "Etihad"]);
-const trips = ref<string[]>([
-  "Round trip",
-  "On Way",
-  "Multi-City",
-  "My Dates Are Flexible",
-]);
+const airlines = ref<string[]>(["Emirates", "Fly Dubai", "Qatar", "Etihad"]),
+  trips = ref<string[]>([
+    "Round trip",
+    "On Way",
+    "Multi-City",
+    "My Dates Are Flexible",
+  ]);
 </script>
 
 <style lang="scss" scoped>
